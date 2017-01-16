@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadCustomHubTile" name="Telerik.UI.RadCustomHubTile" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadCustomHubTile</title>
+  <description type="text/plain">RadCustomHubTile defines a hub tile with custom front and back contents and a swivel transition between them.</description>
+  <icons>
+    <icon src="hubtile_html_12.png" />
+    <icon src="hubtile_html_16.png" />
+  </icons>
+  <properties>
+    <property name="frontContentTemplate" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a value determining what the backside of the tile will render. The value can be either a string with HTML or a DOM element. If the value is an element, its inner HTML will be used as the template.</description>
+    </property>
+    <property name="updateInterval" datatype="Number" required="false" isInteger="true" defaultValue="3">
+      <description type="text/plain">Gets or sets the UpdateInterval in seconds. This interval determines how often the tile will update its visual states when it is not frozen.</description>
+    </property>
+    <property name="updateDeviation" datatype="Number" required="false" isInteger="true" defaultValue="0">
+      <description type="text/plain">Gets or sets the update deviation in seconds. The number will be used to make each update happen at random intervals from (updateInterval-updateDeviation) to (updateInterval+updateDeviation). For example, with updateInterval=5 and updateDeviation=2, the update can happen at any time between 3 and 7 seconds.</description>
+    </property>
+    <property name="isFrozen" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">Gets or sets the IsFrozen property. Freezing a hub tile means that it will cease to periodically update itself. For example when it is offscreen.</description>
+    </property>
+    <property name="title" datatype="String" required="false">
+      <description type="text/plain">Gets or sets the Title.</description>
+    </property>
+    <property name="backContentTemplate" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a value determining what the backside of the tile will render. The value can be either a string with HTML or a DOM element. If the value is an element, its inner HTML will be used as the template.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadCustomHubTile"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts>
+    <part name="hubtile" class="t-hubCustom">
+      <description type="text/plain">The RadCustomHubTile widget.</description>
+    </part>
+  </blend:parts>
+</widget>

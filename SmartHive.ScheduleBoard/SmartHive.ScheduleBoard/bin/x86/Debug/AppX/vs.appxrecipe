@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>MAKHLU-WIN10DEV</Machine>
+    <WindowsUser>a-makhlu</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>Debug|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>SmartHive.ScheduleBoard</PackageIdentityName>
+    <PackageIdentityPublisher>CN=TechnohowMakhluApp</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\x86\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <RegisteredManifestChecksum>A3219F5B4450888C91456CED0216A273B1E238DAFA86E91E06FE0DA15A0D9596</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>SmartHive.ScheduleBoard_1.1.0.118_x86__9cnpene89rvw2</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>SmartHive.ScheduleBoard_9cnpene89rvw2!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>SmartHive.ScheduleBoard</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=TechnohowMakhluApp</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.0.118</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bin\x86\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-01-16T13:36:23.009</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\x86\Debug\SmartHive.CloudConnection.winmd">
+      <PackagePath>SmartHive.CloudConnection.winmd</PackagePath>
+      <Modified>2017-01-16T13:28:18.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\x86\Debug\Microsoft.ServiceBus.winmd">
+      <PackagePath>Microsoft.ServiceBus.winmd</PackagePath>
+      <Modified>2016-11-14T12:17:17.198</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\x86\Debug\bouncy_castle_hmac_sha_pcl.dll">
+      <PackagePath>bouncy_castle_hmac_sha_pcl.dll</PackagePath>
+      <Modified>2015-01-23T11:08:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\x86\Debug\Newtonsoft.Json.Schema.dll">
+      <PackagePath>Newtonsoft.Json.Schema.dll</PackagePath>
+      <Modified>2016-01-09T12:06:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\x86\Debug\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2016-03-14T18:30:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\x86\Debug\PCLWebUtility.dll">
+      <PackagePath>PCLWebUtility.dll</PackagePath>
+      <Modified>2013-06-03T13:07:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.ApplicationInsights.2.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
+      <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
+      <Modified>2016-06-06T07:42:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+      <Modified>2015-02-19T17:10:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+      <Modified>2015-02-19T17:10:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\autocompletebox_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\autocompletebox_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\autocompletebox_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\autocompletebox_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\calendar_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\calendar_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\calendar_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\calendar_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\chart_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\chart_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\chart_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\chart_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\colorpicker_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\colorpicker_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\colorpicker_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\colorpicker_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\combobox_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\combobox_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\combobox_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\combobox_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\datepicker_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\datepicker_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\datepicker_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\datepicker_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\dropdownlist_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\dropdownlist_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\dropdownlist_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\dropdownlist_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\gauge_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\gauge_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\gauge_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\gauge_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\grid_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\grid_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\grid_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\grid_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\hubtile_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\hubtile_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\hubtile_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\hubtile_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\numericbox_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\numericbox_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\numericbox_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\numericbox_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\pagination_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\pagination_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\pagination_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\pagination_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\radialmenu_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\radialmenu_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\radialmenu_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\radialmenu_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\scheduler_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\scheduler_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\scheduler_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\scheduler_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\slider_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\slider_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\slider_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\slider_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\sparkline_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\sparkline_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\sparkline_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\sparkline_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\timepicker_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\timepicker_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\timepicker_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\timepicker_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\tokeninput_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\tokeninput_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\tokeninput_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\tokeninput_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\zoomable_html_12.png">
+      <PackagePath>Telerik.UI\js\metadata\zoomable_html_12.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\zoomable_html_16.png">
+      <PackagePath>Telerik.UI\js\metadata\zoomable_html_16.png</PackagePath>
+      <Modified>2014-02-20T23:00:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\css\common.css">
+      <PackagePath>Telerik.UI\css\common.css</PackagePath>
+      <Modified>2014-02-20T23:01:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\css\dark.css">
+      <PackagePath>Telerik.UI\css\dark.css</PackagePath>
+      <Modified>2014-02-20T23:01:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\css\light.css">
+      <PackagePath>Telerik.UI\css\light.css</PackagePath>
+      <Modified>2014-02-20T23:01:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\jquery.js">
+      <PackagePath>Telerik.UI\js\jquery.js</PackagePath>
+      <Modified>2014-02-20T23:01:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\ui-vsdoc.js">
+      <PackagePath>Telerik.UI\js\ui-vsdoc.js</PackagePath>
+      <Modified>2014-02-20T23:01:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\ui.js">
+      <PackagePath>Telerik.UI\js\ui.js</PackagePath>
+      <Modified>2014-02-20T23:01:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\telerik.ui_api_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\telerik.ui_api_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_autocompletebox_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_autocompletebox_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_calendar_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_calendar_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_chart_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_chart_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_colorpicker_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_colorpicker_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_combobox_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_combobox_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_customhubtile_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_customhubtile_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_datepicker_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_datepicker_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_dropdownlist_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_dropdownlist_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_grid_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_grid_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_hsbpicker_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_hsbpicker_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_hubtile_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_hubtile_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_lineargauge_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_lineargauge_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_mosaichubtile_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_mosaichubtile_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_numericbox_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_numericbox_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_pagination_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_pagination_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_palettepicker_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_palettepicker_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_picturerotatorhubtile_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_picturerotatorhubtile_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_radialgauge_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_radialgauge_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_radialmenu_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_radialmenu_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_rangeslider_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_rangeslider_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_rgbpicker_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_rgbpicker_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_scheduler_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_scheduler_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_slidehubtile_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_slidehubtile_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_slider_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_slider_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_sparkline_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_sparkline_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_timepicker_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_timepicker_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_tokeninput_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_tokeninput_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\ui_zoomable_oam.xml">
+      <PackagePath>Telerik.UI\js\metadata\ui_zoomable_oam.xml</PackagePath>
+      <Modified>2014-02-20T23:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2016-12-27T12:55:38.326</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-dark.css">
+      <PackagePath>WinJS\css\ui-dark.css</PackagePath>
+      <Modified>2016-12-27T12:57:04.405</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-dark.min.css">
+      <PackagePath>WinJS\css\ui-dark.min.css</PackagePath>
+      <Modified>2016-12-27T12:57:03.155</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-light.css">
+      <PackagePath>WinJS\css\ui-light.css</PackagePath>
+      <Modified>2016-12-27T12:57:03.483</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-light.min.css">
+      <PackagePath>WinJS\css\ui-light.min.css</PackagePath>
+      <Modified>2016-12-27T12:57:03.420</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2016-12-27T12:55:37.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\content.html">
+      <PackagePath>html\content.html</PackagePath>
+      <Modified>2016-11-14T10:43:24.681</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\SettingsFlyout-Connection.html">
+      <PackagePath>html\SettingsFlyout-Connection.html</PackagePath>
+      <Modified>2016-12-27T12:55:39.029</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\footer.html">
+      <PackagePath>html\footer.html</PackagePath>
+      <Modified>2016-11-14T10:43:24.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\header.html">
+      <PackagePath>html\header.html</PackagePath>
+      <Modified>2016-10-31T18:59:58.659</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\SettingsFlyout-Design.html">
+      <PackagePath>html\SettingsFlyout-Design.html</PackagePath>
+      <Modified>2016-12-27T12:55:38.467</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\BadgeLogo.scale-100.png">
+      <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
+      <Modified>2016-10-31T18:59:58.777</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\BadgeLogo.scale-140.png">
+      <PackagePath>images\BadgeLogo.scale-140.png</PackagePath>
+      <Modified>2016-10-31T18:59:58.801</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\BadgeLogo.scale-180.png">
+      <PackagePath>images\BadgeLogo.scale-180.png</PackagePath>
+      <Modified>2016-10-31T18:59:59.251</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-10-31T18:59:58.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\logo_310_150.png">
+      <PackagePath>images\logo_310_150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-10-31T18:59:58.875</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Александровский сад.png">
+      <PackagePath>images\MeetingRooms\Александровский сад.png</PackagePath>
+      <Modified>2016-10-31T18:59:59.869</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Ботанический сад.png">
+      <PackagePath>images\MeetingRooms\Ботанический сад.png</PackagePath>
+      <Modified>2016-10-31T19:00:02.629</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Воробьевы горы.png">
+      <PackagePath>images\MeetingRooms\Воробьевы горы.png</PackagePath>
+      <Modified>2016-10-31T19:00:04.804</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Измайловский парк.png">
+      <PackagePath>images\MeetingRooms\Измайловский парк.png</PackagePath>
+      <Modified>2016-10-31T19:00:06.118</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Лефортовский парк.png">
+      <PackagePath>images\MeetingRooms\Лефортовский парк.png</PackagePath>
+      <Modified>2016-10-31T19:00:04.049</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Нескучный сад.png">
+      <PackagePath>images\MeetingRooms\Нескучный сад.png</PackagePath>
+      <Modified>2016-10-31T19:00:04.706</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Парк Останкино.png">
+      <PackagePath>images\MeetingRooms\Парк Останкино.png</PackagePath>
+      <Modified>2016-10-31T19:00:05.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Парк Сокольники.png">
+      <PackagePath>images\MeetingRooms\Парк Сокольники.png</PackagePath>
+      <Modified>2016-10-31T19:00:04.735</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Патриаршие пруды.png">
+      <PackagePath>images\MeetingRooms\Патриаршие пруды.png</PackagePath>
+      <Modified>2016-10-31T19:00:05.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Сад Аквариум.png">
+      <PackagePath>images\MeetingRooms\Сад Аквариум.png</PackagePath>
+      <Modified>2016-10-31T19:00:08.914</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MeetingRooms\Сад Эрмитаж.png">
+      <PackagePath>images\MeetingRooms\Сад Эрмитаж.png</PackagePath>
+      <Modified>2016-10-31T19:00:09.538</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MTC_logo.png">
+      <PackagePath>images\MTC_logo.png</PackagePath>
+      <Modified>2016-10-31T18:59:59.265</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MTC_Tile_ProcessCyan_RGB.png">
+      <PackagePath>images\MTC_Tile_ProcessCyan_RGB.png</PackagePath>
+      <Modified>2016-10-31T18:59:59.116</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MTC_Tile_Transparent.png">
+      <PackagePath>images\MTC_Tile_Transparent.png</PackagePath>
+      <Modified>2016-10-31T18:59:58.995</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\Temperature.png">
+      <PackagePath>images\SmartHive\Temperature.png</PackagePath>
+      <Modified>2016-10-31T19:00:05.376</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\lost.png">
+      <PackagePath>images\SmartHive\lost.png</PackagePath>
+      <Modified>2016-10-31T19:00:04.909</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\Humidity.png">
+      <PackagePath>images\SmartHive\Humidity.png</PackagePath>
+      <Modified>2016-10-31T19:00:05.032</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\won.png">
+      <PackagePath>images\SmartHive\won.png</PackagePath>
+      <Modified>2016-10-31T19:00:05.110</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-10-31T18:59:59.034</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-10-31T18:59:59.250</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-10-31T18:59:59.202</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\circleloadinganimation.gif">
+      <PackagePath>images\circleloadinganimation.gif</PackagePath>
+      <Modified>2016-10-31T18:59:59.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\ClockControl.js">
+      <PackagePath>js\ClockControl.js</PackagePath>
+      <Modified>2016-11-14T10:43:24.791</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\Content.js">
+      <PackagePath>js\Content.js</PackagePath>
+      <Modified>2016-12-27T13:02:36.013</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\Data.js">
+      <PackagePath>js\Data.js</PackagePath>
+      <Modified>2016-12-27T12:55:38.546</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\Footer.js">
+      <PackagePath>js\Footer.js</PackagePath>
+      <Modified>2016-12-27T12:55:38.529</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\Header.js">
+      <PackagePath>js\Header.js</PackagePath>
+      <Modified>2016-11-14T10:43:24.963</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\jquery.tmpl.min.js">
+      <PackagePath>js\jquery.tmpl.min.js</PackagePath>
+      <Modified>2016-10-31T19:00:05.574</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\js\ai.js">
+      <PackagePath>js\js\ai.js</PackagePath>
+      <Modified>2016-12-27T12:55:38.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\js\Interactivity.1.0.js">
+      <PackagePath>js\js\Interactivity.1.0.js</PackagePath>
+      <Modified>2016-10-31T19:00:06.021</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\SettingsFlyout-Design.js">
+      <PackagePath>js\SettingsFlyout-Design.js</PackagePath>
+      <Modified>2016-10-31T19:00:06.239</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\ToastHelper.js">
+      <PackagePath>js\ToastHelper.js</PackagePath>
+      <Modified>2016-10-31T19:00:05.927</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\SettingsFlyout-Conection.js">
+      <PackagePath>js\SettingsFlyout-Conection.js</PackagePath>
+      <Modified>2016-12-27T12:55:38.701</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2016-12-27T12:55:38.498</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\base.js">
+      <PackagePath>WinJS\js\base.js</PackagePath>
+      <Modified>2016-12-27T12:57:18.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\base.min.js">
+      <PackagePath>WinJS\js\base.min.js</PackagePath>
+      <Modified>2016-12-27T12:57:04.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\en-US\ui.strings.js">
+      <PackagePath>WinJS\js\en-US\ui.strings.js</PackagePath>
+      <Modified>2016-12-27T12:57:04.717</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\ui.js">
+      <PackagePath>WinJS\js\ui.js</PackagePath>
+      <Modified>2016-12-27T12:57:18.733</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\ui.min.js">
+      <PackagePath>WinJS\js\ui.min.js</PackagePath>
+      <Modified>2016-12-27T12:57:05.514</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\WinJS.intellisense-setup.js">
+      <PackagePath>WinJS\js\WinJS.intellisense-setup.js</PackagePath>
+      <Modified>2016-12-27T12:57:04.952</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\WinJS.intellisense.js">
+      <PackagePath>WinJS\js\WinJS.intellisense.js</PackagePath>
+      <Modified>2016-12-27T12:57:04.514</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\Metadata\Microsoft.VS.Actions.CustomAction_oam.xml">
+      <PackagePath>Metadata\Microsoft.VS.Actions.CustomAction_oam.xml</PackagePath>
+      <Modified>2016-10-31T19:00:05.963</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\res\rooms.xml">
+      <PackagePath>res\rooms.xml</PackagePath>
+      <Modified>2016-10-31T19:02:14.265</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\packages.config">
+      <PackagePath>packages.config</PackagePath>
+      <Modified>2016-12-27T12:55:38.107</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\fonts\Symbols.ttf">
+      <PackagePath>WinJS\fonts\Symbols.ttf</PackagePath>
+      <Modified>2016-12-27T12:57:03.295</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\base.min.js.map">
+      <PackagePath>WinJS\js\base.min.js.map</PackagePath>
+      <Modified>2016-12-27T12:57:04.811</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\ui.min.js.map">
+      <PackagePath>WinJS\js\ui.min.js.map</PackagePath>
+      <Modified>2016-12-27T12:57:18.452</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\License.txt">
+      <PackagePath>WinJS\License.txt</PackagePath>
+      <Modified>2016-12-27T12:57:02.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\README.md">
+      <PackagePath>WinJS\README.md</PackagePath>
+      <Modified>2016-12-27T12:57:02.920</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bin\x86\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-01-16T13:36:17.349</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

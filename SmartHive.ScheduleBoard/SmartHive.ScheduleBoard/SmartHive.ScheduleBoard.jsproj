@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>fa859204-6687-4250-9155-f7ce9b47ad43</ProjectGuid>
+    <ExpressionBlendVersion>12.0.41212.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0'">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <DefaultLanguage>en</DefaultLanguage>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>67A7199D91CAB015C9FF30761180FE3F780B0A43</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>TechnohowMakhluApp.pfx</PackageCertificateKeyFile>
+    <AppxBundle>Auto</AppxBundle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="css\default.css" />
+    <Content Include="default.html" />
+    <Content Include="html\content.html" />
+    <Content Include="html\SettingsFlyout-Connection.html" />
+    <Content Include="html\footer.html" />
+    <Content Include="html\header.html" />
+    <Content Include="html\SettingsFlyout-Design.html" />
+    <Content Include="images\BadgeLogo.scale-100.png" />
+    <Content Include="images\BadgeLogo.scale-140.png" />
+    <Content Include="images\BadgeLogo.scale-180.png" />
+    <Content Include="images\circleloadinganimation.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo_310_150.png" />
+    <Content Include="images\MeetingRooms\Александровский сад.png" />
+    <Content Include="images\MeetingRooms\Ботанический сад.png" />
+    <Content Include="images\MeetingRooms\Воробьевы горы.png" />
+    <Content Include="images\MeetingRooms\Измайловский парк.png" />
+    <Content Include="images\MeetingRooms\Лефортовский парк.png" />
+    <Content Include="images\MeetingRooms\Нескучный сад.png" />
+    <Content Include="images\MeetingRooms\Парк Останкино.png" />
+    <Content Include="images\MeetingRooms\Парк Сокольники.png" />
+    <Content Include="images\MeetingRooms\Патриаршие пруды.png" />
+    <Content Include="images\MeetingRooms\Сад Аквариум.png" />
+    <Content Include="images\MeetingRooms\Сад Эрмитаж.png" />
+    <Content Include="images\MTC_logo.png" />
+    <Content Include="images\MTC_Tile_ProcessCyan_RGB.png" />
+    <Content Include="images\MTC_Tile_Transparent.png" />
+    <Content Include="images\SmartHive\Temperature.png" />
+    <Content Include="images\SmartHive\lost.png" />
+    <Content Include="images\SmartHive\Humidity.png" />
+    <Content Include="images\SmartHive\won.png" />
+    <Content Include="js\ClockControl.js" />
+    <Content Include="js\Content.js" />
+    <Content Include="js\Data.js" />
+    <Content Include="js\Footer.js" />
+    <Content Include="js\Header.js" />
+    <Content Include="js\jquery.tmpl.min.js" />
+    <Content Include="js\js\ai.js" />
+    <Content Include="js\js\Interactivity.1.0.js" />
+    <Content Include="js\SettingsFlyout-Design.js" />
+    <Content Include="js\ToastHelper.js" />
+    <Content Include="Metadata\Microsoft.VS.Actions.CustomAction_oam.xml" />
+    <Content Include="packages.config" />
+    <Content Include="res\rooms.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="images\smalllogo.png" />
+    <Content Include="images\splashscreen.png" />
+    <Content Include="images\storelogo.png" />
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="js\SettingsFlyout-Conection.js" />
+    <Content Include="js\default.js" />
+    <Content Include="WinJS\css\ui-dark.css" />
+    <Content Include="WinJS\css\ui-dark.min.css" />
+    <Content Include="WinJS\css\ui-light.css" />
+    <Content Include="WinJS\css\ui-light.min.css" />
+    <Content Include="WinJS\fonts\Symbols.ttf" />
+    <Content Include="WinJS\js\base.js" />
+    <Content Include="WinJS\js\base.min.js" />
+    <Content Include="WinJS\js\base.min.js.map" />
+    <Content Include="WinJS\js\en-US\ui.strings.js" />
+    <Content Include="WinJS\js\ui.js" />
+    <Content Include="WinJS\js\ui.min.js" />
+    <Content Include="WinJS\js\ui.min.js.map" />
+    <Content Include="WinJS\js\WinJS.intellisense-setup.js" />
+    <Content Include="WinJS\js\WinJS.intellisense.js" />
+    <Content Include="WinJS\License.txt" />
+    <Content Include="WinJS\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Telerik.UI, Version=2014.1.221" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartHive.CloudConnection\SmartHive.CloudConnection.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>

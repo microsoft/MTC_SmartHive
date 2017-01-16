@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadTimePicker" name="Telerik.UI.RadTimePicker" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadTimePicker</title>
+  <description type="text/plain">Allows the selection of a time value from maximum three different components: hour/minute/perio via intuitive and easy to use vertical looping lists that show in a popup.</description>
+  <icons>
+    <icon src="timepicker_html_12.png" />
+    <icon src="timepicker_html_16.png" />
+  </icons>
+  <properties>
+    <property name="baseDate" datatype="Date" required="false">
+      <description type="text/plain">Gets or sets the Date object, which date components (year, month, day) will be used as base for the Date object returned by the value property. Default value is null; in this case the value property returns a Date object with date components equal to today's.</description>
+    </property>
+    <property name="minuteStep" datatype="Number" required="false" defaultValue="1">
+      <description type="text/plain">Gets or sets the step value of the minute list of the control.</description>
+    </property>
+    <property name="value" datatype="Date" required="false">
+      <description type="text/plain">Gets or sets the value of the picker. (Only the date/time part of the Date object will be applied.) It can be null/undefined (not set).</description>
+    </property>
+    <property name="valueString" datatype="String" required="false" readonly="true">
+      <description type="text/plain">Gets the string representation of the current value.  The string representation is the current value formatted  according to the settings of the device and the control.</description>
+    </property>
+    <property name="minValue" datatype="Date" required="false">
+      <description type="text/plain">Gets or sets the minimum value of the value range for the control. (Only the date/time part of the Date object will be applied.)</description>
+    </property>
+    <property name="maxValue" datatype="Date" required="false">
+      <description type="text/plain">Gets or sets the maximum value of the value range for the control. (Only the date/time part of the Date object will be applied.)</description>
+    </property>
+    <property name="itemCount" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the number of items visible within the selector part of the control. This property is used to determine the height of the selector part when opened.  The calculated height will not exceed the height of the view port. Pass non-positive value to stretch the selector vertically. Default value is 3.</description>
+    </property>
+    <property name="itemLength" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the length (width and height; in pixels) of the items that appear in the selector part of the control. Default value is 70.</description>
+    </property>
+    <property name="itemSpacing" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the spacing (in pixels) between the items that appear in the selector part of the control. This propery also determines the spacing between the different  parts of the selector, e.g. lists, buttons, header. Default value is 10.</description>
+    </property>
+    <property name="selectorFormat" datatype="String" required="false">
+      <description type="text/plain">Gets or sets the selector format. This value defines how the different selector components will be ordered.  By setting this property, you can also define which editable parts of the selector will be visible.  For example 'y/m' will display the Year and Month components in a DatePicker. Valid values are: * h - hour, m - minute, t - period [AM/PM] if applicable for a TimePicker; * y - year, m - month, d - day for a DatePicker;</description>
+    </property>
+    <property name="selectorDefaultValue" datatype="Date" required="false">
+      <description type="text/plain">Gets or sets the value that represents the default value displayed in the selector part.  The default value is shown when the value property is not set (null/undefined). If no default value is specified, the current date/time on the system is displayed when the selector opens.</description>
+    </property>
+    <property name="isSelectorOpen" datatype="Boolean" required="false">
+      <description type="text/plain">Gets or sets a value determining whether the selector part of the control is open.</description>
+    </property>
+    <property name="isReadOnly" datatype="Boolean" required="false">
+      <description type="text/plain">Gets or sets a value determining whether the control is in read only mode.  If set to true, the control does not allow the user to modify its value.</description>
+    </property>
+    <property name="displayValueFormat" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a string representing the value format for the control.  The value format determines how the edited value is displayed on the screen after it has been selected.  If not set, the format from the current system clock configuration is used.</description>
+    </property>
+    <property name="autoSizeWidth" datatype="Boolean" required="false">
+      <description type="text/plain">Gets or sets a value indicating whether the control will automatically calculate its picker width, so that it equals the width of the selector part.</description>
+    </property>
+    <property name="closeSelectorOnBlur" datatype="Boolean" required="false">
+      <description type="text/plain">Gets or sets a value indicating whether the data/time selector will be closed automatically on blur. Default value is true.</description>
+    </property>
+    <property name="enabled" datatype="Boolean" required="false">
+      <description type="text/plain">Gets or sets a value indicating whether the control is enabled (default).</description>
+    </property>
+    <property name="itemTemplate" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a value determining how the items in all lists in the selector will be rendered. With this propery the default template can be overridden. Internally all items are bound to a data object having two fields: 'value' and 'label'. These correspond to the number of year, month, hour, etc. and to the name of the month, day and whether the year is leap respectively. In order to utilize either or both of the data object properties the template should have mappings to them, e.g. #= value #'#= label #'</description>
+    </property>
+    <property name="selectorHeader" datatype="Object" required="false">
+      <description type="text/plain">Gets or sets the header displayed in the selector. By default the 'Select Date' text is shown. This property value can be either a string or a data object. If the value is an object, the selectorHeaderTemplate property must also be set to specify which properties of the object will be rendered.</description>
+    </property>
+    <property name="selectorHeaderTemplate" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a value determining how the selectorHeader property value will be rendered. If the selectorHeader property is of a primitive type, this property should not be set -  the value will render as text. If the selectorHeader is an object the template should specify mappings in the form #= objectPropertyName #. Example: #= value # provided that the selectorHeader property is set to { value: 'Header Text' }.</description>
+    </property>
+    <property name="header" datatype="Object" required="false">
+      <description type="text/plain">Gets or sets the object that represents the header content. This property value can be either a string or a data object. If the value is an object, the headerTemplate property must also be set to specify which properties of the object will be rendered.</description>
+    </property>
+    <property name="headerTemplate" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a value determining how the header property value will be rendered. If the header property is of a primitive type, this property should not be set -  the value will render as text. If the header is an object the template should specify mappings in the form #= objectPropertyName #. Example: #= value # provided that the header property is set to { value: 'Header Text' }.</description>
+    </property>
+    <property name="emptyContent" datatype="Object" required="false">
+      <description type="text/plain">Gets or sets the empty content of the picker part of the control.  The empty content is displayed when there is no value defined. This property value can be either a string or a data object. If the value is an object, the headerTemplate property must also be set to specify which properties of the object will be rendered.</description>
+    </property>
+    <property name="emptyContentTemplate" datatype="String" required="false">
+      <description type="text/plain">Gets or sets a value determining how the emptyContent property value will be rendered. If the emptyContent property is of a primitive type, this property should not be set -  the value will render as text. If the emptyContent is an object the template should specify mappins in the form #= objectPropertyName #. Example: #= value # provided that the emptyContent property is set to { value: 'Empty' }.</description>
+    </property>
+    <property name="tabIndex" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the tab index of the control. The default value is -1.</description>
+    </property>
+    <property name="displayMode" datatype="String" required="false">
+      <description type="text/plain">Specifies the rendering and functioning mode of the control. Accepts values from the enums RadDatePicker.DisplayMode and RadTimePicker.DisplayMode. (Both enums are one and the same - they are available in both places for convenience. Default value is DisplayMode.standard.</description>
+    </property>
+    <property name="culture" datatype="String" required="false">
+      <description type="text/plain">BCP-47 language tag with language and region. For example: en-US, fr-FR, ar-KW</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<span data-win-control="Telerik.UI.RadTimePicker"></span>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts />
+</widget>

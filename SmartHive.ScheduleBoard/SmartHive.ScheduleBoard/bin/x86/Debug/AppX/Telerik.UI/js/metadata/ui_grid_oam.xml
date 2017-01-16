@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadGrid" name="Telerik.UI.RadGrid" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadGrid</title>
+  <description type="text/plain">A grid control that can display and edit data.</description>
+  <icons>
+    <icon src="grid_html_12.png" />
+    <icon src="grid_html_16.png" />
+  </icons>
+  <properties>
+    <property name="scrollable" datatype="String" required="false">
+      <description type="text/plain">Enable/disable scrolling. Possible values are "none", "enabled" and "virtual".</description>
+      <options>
+        <option value="none">none</option>
+        <option value="enabled">enabled</option>
+        <option value="virtual">virtual</option>
+      </options>
+    </property>
+    <property name="owner" datatype="Telerik.UI.RadGrid" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Gets the owner RadGrid instance.</description>
+    </property>
+    <property name="parentRow" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Gets the parent row of the table if it is nested.</description>
+    </property>
+    <property name="parentTable" datatype="Telerik.UI.Grid.TableView" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Gets the parent row of the table if it is nested.</description>
+    </property>
+    <property name="detailTables" datatype="Array" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Gets an array of all initialized child tables for this table.</description>
+    </property>
+    <property name="detailTable" datatype="Object" required="false">
+      <description type="text/plain">Gets or sets the options for the detail tables. All newly initialized detail tables will inherit these options automatically.</description>
+    </property>
+    <property name="parentRelation" datatype="Object" required="false">
+      <description type="text/plain">Gets the parent relations for this table as an object or an array of objects in the form:  { masterField: 'field1', detailField: 'field2' }. To configure parent relations, set the detailTable.parentRelation property of the parent table.</description>
+    </property>
+    <property name="autoBind" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Indicates whether the grid will call read on the DataSource initially.</description>
+    </property>
+    <property name="columns" datatype="Array" required="false">
+      <description type="text/plain">A collection of column objects or collection of strings that represents the name of the fields.</description>
+    </property>
+    <property name="dataSource" datatype="Telerik.Data.DataSource" required="false">
+      <description type="text/plain">Gets or sets the data source object for this control.</description>
+    </property>
+    <property name="detailTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">Template to be used for rendering the detail rows.</description>
+    </property>
+    <property name="rowTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">Template to be used for rendering the rows.</description>
+    </property>
+    <property name="altRowTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">Template to be used for rendering the alternating rows.</description>
+    </property>
+    <property name="height" datatype="Number" required="false" defaultValue="null">
+      <description type="text/plain">Sets the height of the grid.</description>
+    </property>
+    <property name="groupable" datatype="String" required="false" defaultValue="none">
+      <description type="text/plain">Indicates whether grouping is enabled.</description>
+      <options>
+        <option value="none">none</option>
+        <option value="enabled">enabled</option>
+        <option value="staticHeaders">staticHeaders</option>
+        <option value="enabled, staticHeaders">enabled, staticHeaders</option>
+      </options>
+    </property>
+    <property name="selectable" datatype="String" required="false">
+      <description type="text/plain">Indicates whether selection is enabled.</description>
+      <options>
+        <option value="none">none</option>
+        <option value="row">row</option>
+        <option value="cell">cell</option>
+        <option value="multiple, row">multiple, row</option>
+        <option value="multiple, cell">multiple, cell</option>
+      </options>
+    </property>
+    <property name="selection" datatype="Object" required="false">
+      <description type="text/plain">Gets or sets selected rows/cells.</description>
+    </property>
+    <property name="editable" datatype="Telerik.UI.Grid.EditableConfiguration" required="false">
+      <description type="text/plain">Gets and sets the editing related (create/update/delete) options.</description>
+    </property>
+    <property name="sortable" datatype="String" required="false">
+      <description type="text/plain">Indicates whether sorting is enabled.</description>
+      <options>
+        <option value="none">none</option>
+        <option value="single">single</option>
+        <option value="multiple">multiple</option>
+        <option value="single, allowUnsort">single, allowUnsort</option>
+        <option value="multiple, allowUnsort">multiple, allowUnsort</option>
+      </options>
+    </property>
+    <property name="resizable" datatype="Boolean" required="false">
+      <description type="text/plain">Indicates whether column resizing is enabled/disable.</description>
+    </property>
+    <property name="filterable" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">Indicates whether filtering is enabled/disabled.</description>
+    </property>
+    <property name="reorderable" datatype="Boolean" required="false">
+      <description type="text/plain">Gets or sets a value indicating whether column reordering is enabled.</description>
+    </property>
+    <property name="navigatable" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">Indicates whether keboard navigation is enabled/disabled.</description>
+    </property>
+    <property name="messages" datatype="Object" required="false">
+      <description type="text/plain">Gets the localization messages used by the control.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadGrid"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts>
+    <part name="grid" class="k-grid">
+      <description type="text/plain">The RadGrid widget.</description>
+    </part>
+  </blend:parts>
+</widget>

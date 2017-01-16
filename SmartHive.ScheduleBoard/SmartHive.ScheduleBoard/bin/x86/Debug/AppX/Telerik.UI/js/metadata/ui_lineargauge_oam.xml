@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadLinearGauge" name="Telerik.UI.RadLinearGauge" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadLinearGauge</title>
+  <description type="text/plain">A linear gauge control that can visualize a value on a linear scale.</description>
+  <icons>
+    <icon src="gauge_html_12.png" />
+    <icon src="gauge_html_16.png" />
+  </icons>
+  <properties>
+    <property name="mirror" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">Gets or sets a value indicating whether the scale labels and ticks are mirrored. Mirroring the scale will render the labels and ticks on the opposite side.</description>
+    </property>
+    <property name="vertical" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Gets or sets the position of the gauge.</description>
+    </property>
+    <property name="line" datatype="Telerik.UI.Gauge._LineConfiguration" required="false">
+      <description type="text/plain">Provides access to the line options of the linear gauge.</description>
+    </property>
+    <property name="pointer" datatype="Telerik.UI.Gauge._LinearPointerConfiguration" required="false">
+      <description type="text/plain">Retrieves the gauge pointer settings.</description>
+    </property>
+    <property name="theme" datatype="String" required="false" defaultValue="dark">
+      <description type="text/plain">Gets or sets the name of the visual theme applied to the gauge.</description>
+    </property>
+    <property name="background" datatype="String" required="false">
+      <description type="text/plain">Gets or sets the background of the gauge area. Any valid CSS color string is accepted.</description>
+    </property>
+    <property name="border" datatype="Telerik.UI.Common._BorderConfiguration" required="false">
+      <description type="text/plain">Gets the border settings of the gauge area.</description>
+    </property>
+    <property name="width" datatype="Number" required="false">
+      <description type="text/plain">Gets the width of the gauge area.</description>
+    </property>
+    <property name="height" datatype="Number" required="false" defaultValue="200">
+      <description type="text/plain">Gets the height of the gauge area.</description>
+    </property>
+    <property name="margin" datatype="Telerik.UI.Common._BoxConfiguration" required="false">
+      <description type="text/plain">Gets the margin of the gauge area.</description>
+    </property>
+    <property name="transitions" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Enables or disables transitions. True by default.</description>
+    </property>
+    <property name="labels" datatype="Telerik.UI.Gauge._LabelConfiguration" required="false">
+      <description type="text/plain">Retrieves the label settings for this gauge.</description>
+    </property>
+    <property name="minorUnit" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the interval between minor divisions</description>
+    </property>
+    <property name="majorUnit" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the interval between major divisions</description>
+    </property>
+    <property name="min" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the minimum value of the scale.</description>
+    </property>
+    <property name="max" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the maximum value of the scale.</description>
+    </property>
+    <property name="reverse" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">Gets or sets a value indicating whether the axis direction is reversed. Reversed axis values increase from right to left and from top to bottom.</description>
+    </property>
+    <property name="majorTicks" datatype="Telerik.UI.Gauge._TickConfiguration" required="false">
+      <description type="text/plain">Retrieves the major tick settings.</description>
+    </property>
+    <property name="minorTicks" datatype="Telerik.UI.Gauge._TickConfiguration" required="false">
+      <description type="text/plain">Retrieves the minor tick settings.</description>
+    </property>
+    <property name="ranges" datatype="Array" required="false" defaultValue="[]">
+      <description type="text/plain">Gets or sets the array of ranges that will appear on the scale.</description>
+    </property>
+    <property name="rangeSize" datatype="Number" required="false">
+      <description type="text/plain">The width of the ranges that will appear on the scale. If the property is not set, it will be calculated to 10% of the scale radius.</description>
+    </property>
+    <property name="rangePlaceholderColor" datatype="String" required="false">
+      <description type="text/plain">Gets or sets the default color for the ranges.</description>
+    </property>
+    <property name="svg" datatype="String" required="false" hidden="true">
+      <description type="text/plain">Gets the SVG representation of the current gauge.</description>
+    </property>
+    <property name="value" datatype="Number" required="false">
+      <description type="text/plain">Gets or sets the current gauge value.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadLinearGauge"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts>
+    <part name="linearGauge" class="k-gauge">
+      <description type="text/plain">The RadLinearGauge widget.</description>
+    </part>
+  </blend:parts>
+</widget>

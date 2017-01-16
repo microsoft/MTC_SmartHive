@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadPagination" name="Telerik.UI.RadPagination" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadPagination</title>
+  <description type="text/plain">A navigation control that tracks the current position within a pageable container like WinJS.UI.FlipView.</description>
+  <icons>
+    <icon src="pagination_html_12.png" />
+    <icon src="pagination_html_16.png" />
+  </icons>
+  <properties>
+    <property name="pageProvider" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control]">
+      <description type="text/plain">Gets or sets the page provider control that RadPagination will navigate.</description>
+    </property>
+    <property name="thumbnails" datatype="Telerik.UI.Pagination._ListView" required="false" hidden="true">
+      <description type="text/plain">Gets the thumbnails list for this control.</description>
+    </property>
+    <property name="label" datatype="Telerik.UI.Pagination._PageIndexLabel" required="false">
+      <description type="text/plain">Gets the thumbnails list for this control.</description>
+    </property>
+    <property name="itemTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">Gets or sets the template used for rendering thumbnail items. Accepts any of: WinJS.BindingTemplate instance or an HTML element hosting a template; a function returning an HTML string or a DOM element; an HTML string with binding expressions defining the template.</description>
+    </property>
+    <property name="showButtons" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Indicates whether the control displays previous and next buttons for navigation.</description>
+    </property>
+    <property name="showThumbnails" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Indicates whether the control displays thumbnails for navigation.</description>
+    </property>
+    <property name="showLabel" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Indicates whether the control displays a label.</description>
+    </property>
+    <property name="enabled" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Gets or sets the enabled state of the control.</description>
+    </property>
+    <property name="currentIndex" datatype="Number" required="false" isInteger="true">
+      <description type="text/plain">Gets or sets the index of the currently selected item.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadPagination"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts>
+    <part name="prevButton" class="t-prev">
+      <description type="text/plain">The previous button.</description>
+    </part>
+    <part name="nextButton" class="t-next">
+      <description type="text/plain">The next button.</description>
+    </part>
+    <part name="thumbnails" class="t-thumbnails">
+      <description type="text/plain">The thumbnails list.</description>
+    </part>
+    <part name="label" class="t-label">
+      <description type="text/plain">The label.</description>
+    </part>
+  </blend:parts>
+</widget>
