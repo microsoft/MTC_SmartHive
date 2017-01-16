@@ -262,12 +262,12 @@ function InitServiceConnection() {
 
         if (MtcScheduleBoard.Data.Settings.SasKeyName && MtcScheduleBoard.Data.Settings.SasKey) {
             // Initialize service bus connection component
-            MtcScheduleBoard.Data.ServiceConnectiont = new CloudConnection.ServiceBusConnection(MtcScheduleBoard.Data.Settings.ServiceBusNamespace,
+            MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.ServiceBusConnection(MtcScheduleBoard.Data.Settings.ServiceBusNamespace,
                                             MtcScheduleBoard.Data.Settings.ServiceBusSubscription, MtcScheduleBoard.Data.Settings.ServiceBusTopic,
                                             MtcScheduleBoard.Data.Settings.SasKeyName, MtcScheduleBoard.Data.Settings.SasKey);
         } else {
             // Initialize Http connection
-            MtcScheduleBoard.Data.ServiceConnectiont = new CloudConnection.HttpConnection(MtcScheduleBoard.Data.Settings.WebServiceUrl);          
+            MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.HttpConnection(MtcScheduleBoard.Data.Settings.WebServiceUrl);          
         }
 
 

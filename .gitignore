@@ -3,3 +3,8 @@
 ################################################################################
 
 /SmartHive.ScheduleBoard/Microsoft.ServiceBus/bin/x86/Debug
+/SmartHive.ScheduleBoard/Microsoft.ServiceBus/obj/x86/Debug
+/SmartHive.ScheduleBoard/SmartHive.CloudConnection/bin/x86/Debug
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/bin/x86/Debug
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/bld/x86/Debug
+/SmartHive.ScheduleBoard/SmartHive.CloudConnection/obj/x86/Debug
