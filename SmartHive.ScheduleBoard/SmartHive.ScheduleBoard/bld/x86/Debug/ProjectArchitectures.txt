@@ -1,3 +1,0 @@
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\Microsoft.ServiceBus\Microsoft.ServiceBus.csproj;x86
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\SmartHive.CloudConnection.csproj;x86
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard.jsproj;x86
