@@ -214,15 +214,16 @@ var promises = [];
                                                 function () {
                                                     writesCount++;
                                                     // check each 5000 writes if we need copy log to archive and reopen it
-                                                    if (writesCount > 5000) {
+                                                    if (writesCount > 5000) { 
                                                         writesCount = 0;
                                                         file.getBasicPropertiesAsync().done(
                                                                  function (basicProperties) {
-                                                                    // Check file size properties
-                                                                    var size = basicProperties.size;
-                                                                    if (size > 20000000) { // copy log to archive each 20 Mb
-                                                                         file.renameAsync("archive.log",  Windows.Storage.NameCollisionOption.replaceExisting).done(
-                                                                                    function (file) {                                                                                       
+                                                                     // Check file size properties
+                                                                     var size = basicProperties.size;          
+                                                                     if (size > 20000000) { // copy log to archive each 20 Mb 
+                                                                         WinJS.Utilities.stopLog();
+                                                                         file.renameAsync("archive.log", Windows.Storage.NameCollisionOption.replaceExisting).done(
+                                                                                    function (file) {
                                                                                         MtcScheduleBoard.UI.StatusControl.pageStatusControl.startFileLog();
                                                                                     });
                                                                      }
@@ -236,7 +237,7 @@ var promises = [];
                             });
 
                         };
-
+                        
                         WinJS.Utilities.startLog({ action: actionFn });
 
                         return logger;
@@ -429,7 +430,7 @@ var promises = [];
     function videoDownloadError(err) {
         var status = Windows.Networking.BackgroundTransfer.BackgroundTransferError.getStatus(err.number);
 
-        setTimeout(startScreenSaverVideoDownload(), 1 * 60 * 1000); //repeat video download in one minute
+        setTimeout(startScreenSaverVideoDownload, 1 * 60 * 1000); //repeat video download in one minute
 
         throw new WinJS.ErrorFromName("Video downlaod error", "Http Error:" + err.number + "; " + err.description);    
     }
