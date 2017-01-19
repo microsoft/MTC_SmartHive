@@ -64,7 +64,7 @@ namespace SmartHive.CloudConnection
                 //return all engagements where matched location and not finished yet or finished not leater then eventsExpiration minutes
                 DateTime expirationTime = DateTime.Now.AddMinutes(eventsExpiration * -1);
                 //return all engagements  and not finished yet or finished not leater then eventsExpiration minutes
-                Appointment[] retVal = Schedule.Where<Appointment>(a => Location.Contains(a.Location) &&
+                Appointment[] retVal = Schedule.Where<Appointment>(a => !string.IsNullOrEmpty(a.Location) && a.Location.Contains(Location) &&
                         expirationTime.CompareTo(DateTime.ParseExact(a.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture)) <= 0).ToArray<Appointment>();
 
                 return retVal;

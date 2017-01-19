@@ -8,6 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{665EA6FE-ED72-4F2C-80FE-89FDBD48C22B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostic Sessions", "Diagnostic Sessions", "{1E62BB4D-53C1-48F9-87B3-09A264BB3871}"
+	ProjectSection(SolutionItems) = preProject
+		20170117.diagsession = 20170117.diagsession
+		20170118.diagsession = 20170118.diagsession
+		20170119 (2).diagsession = 20170119 (2).diagsession
+		20170119.diagsession = 20170119.diagsession
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.CloudConnection", "SmartHive.CloudConnection\SmartHive.CloudConnection.csproj", "{C4166C3B-04E7-490D-ADD9-2C83B2DDB787}"
 EndProject

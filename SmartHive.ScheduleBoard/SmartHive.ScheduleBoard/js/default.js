@@ -202,11 +202,14 @@ var promises = [];
                                 if (!file)
                                     return; // looks like this some writes after archiving
 
+                                if (!tag || tag == 'winjs scheduler') 
+                                    return; // avoid spaming by scheduler
+
                                 var m = new Date().toLocaleString() + " " + WinJS.Utilities.formatLog(message, tag, type);
                                 sBuffer.push(m);
                                 if (!isLocked) {
                                     isLocked = true;
-                                    let tmpBuf = sBuffer.splice(0);                                    
+                                    let tmpBuf = sBuffer.splice(0, sBuffer.length);
                                     Windows.Storage.FileIO.appendLinesAsync(file, tmpBuf).done(
                                                 function () {
                                                     writesCount++;
@@ -219,8 +222,7 @@ var promises = [];
                                                                     var size = basicProperties.size;
                                                                     if (size > 20000000) { // copy log to archive each 20 Mb
                                                                          file.renameAsync("archive.log",  Windows.Storage.NameCollisionOption.replaceExisting).done(
-                                                                                    function (file) {
-                                                                                        file = null;
+                                                                                    function (file) {                                                                                       
                                                                                         MtcScheduleBoard.UI.StatusControl.pageStatusControl.startFileLog();
                                                                                     });
                                                                      }

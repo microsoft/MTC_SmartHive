@@ -68,9 +68,7 @@ MtcScheduleBoard.Data.loadSettings = function () {
 
 
 
-MtcScheduleBoard.Data.Rooms = [];//{ Location: "", Title: "", Title_En: "", IconTop: "", IconBottom: "", Css: "" }
-
-MtcScheduleBoard.Data.Appointments = [];
+MtcScheduleBoard.Data.Rooms = new Array();//{ Location: "", Title: "", Title_En: "", IconTop: "", IconBottom: "", Css: "" }
 
 MtcScheduleBoard.Data.RoomDefinitionDataSource = null;
 

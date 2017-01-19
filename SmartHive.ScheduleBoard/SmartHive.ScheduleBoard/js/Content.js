@@ -24,7 +24,14 @@
             WinJS.Application.removeEventListener("videoCached", this.onApplicationSettingsChanged);
         },
         onApplicationSettingsChanged: function (e) {
-            createGridView();
+          
+            // Create schedule grid
+            var filters = null;
+            if (MtcScheduleBoard.Data.ShowLocationColumn())
+                bindMultipleRoomGridView();
+            else
+                bindSingleRoomGridView();
+
         },
         screenSaverVideoCached: function (evt) {
             try{
@@ -60,20 +67,22 @@
    
     /// Handle schedule update eventds from service bus
     function connectToSchedule() {
-       
-        //   WinJS.Binding.processAll();
-
+               
+        // Bind to schedule updates
         MtcScheduleBoard.Data.ServiceConnectiont.addEventListener("onscheduleupdate", function (schedule, OnScheduleUpdateEventArgs) {
-  
-            MtcScheduleBoard.Data.Appointments = [];
 
-            if (!schedule)
+            if (!schedule) {
+                // looks starnge - report
+                MtcScheduleBoard.UI.StatusControl.pageStatusControl.trackAppInsightsError("onscheduleupdate event error", "Empty event object");
                 return;
+            }
 
-            if (schedule.schedule && schedule.schedule.length > 0){
-            
-                for (var i = 0; i < schedule.schedule.length; i++) {
-                    MtcScheduleBoard.Data.Appointments.push({
+            grid.dataSource.data.length = 0;
+
+            if (schedule.schedule && schedule.schedule.length > 0 && grid.dataSource.data) {
+                
+                for (var i = 0; i < schedule.schedule.length; i++) {                                       
+                    grid.dataSource.data.push({
                         startTime: schedule.parseDateString(schedule.schedule[i].startTime),
                         endTime: schedule.parseDateString(schedule.schedule[i].endTime),
                         location: MtcScheduleBoard.Data.Settings.Location,//schedule.schedule[i].location,
@@ -81,9 +90,9 @@
                         category: schedule.schedule[i].category,
                         meetingExternalLink: ""
                     });
-
                 }
-               
+
+                grid.dataSource.sort = [{ field: "StartTime", dir: "asc" }];
             }            
             
             checkScreenSaver();
@@ -95,26 +104,15 @@
 
     function onResize() {
         alignScreenSaver();
-    }
-
-
-    function createGridView() {
-            
-        var filters = null;
-        if (MtcScheduleBoard.Data.ShowLocationColumn())
-            bindMultipleRoomGridView();
-        else
-            bindSingleRoomGridView();
-
+        checkScreenSaver()
     }
 
     /* Create and Bind grid for multiple room display mode*/
     function bindMultipleRoomGridView() {
-    	
+        grid = null; // If we reload setting pereodically - avoid JS memeory leaks
         // define grid
         grid = new Telerik.UI.RadGrid(document.getElementById("scheduleGrid"), {
-            dataSource: MtcScheduleBoard.Data.CalendarDataSource,
-            // height: 500,
+           // dataSource: MtcScheduleBoard.Data.CalendarDataSource,            
             columns: [                     
                 {
                     title: 'Time', width: MtcScheduleBoard.Data.Settings.TitleColumnWidth,
@@ -139,25 +137,13 @@
                 }
             ],
         });
-
-        grid.dataSource.sort = [{ field: "StartTime", dir: "asc" }];
-
-     /*   var filters = MtcScheduleBoard.Data.LocationFilters();
-        if (filters) {
-            grid.dataSource.filter = { logic: "or", filters: [{}] };
-
-            //Add all rooms as filter creteria
-            for (var i = 0, len = filters.length; i < len; i++) {
-                grid.dataSource.filter.filters.push({ field: "Location", operator: "Contains", value: filters[i] });
-            }
-
-        }*/
+        
     }
 
     function ScreenSaverPlayBackError(error) {
 
         if (error.target && error.target.error) {
-            // Ерш is specific player error
+            // Catch specific player error
                 var errTitle = "PlayBackError: " + error.target.error.code;
                 var errObject = { detail: { message: "" } };
                 switch (error.target.error.code) {
@@ -179,10 +165,10 @@
                         break;
                 }
                 MtcScheduleBoard.UI.StatusControl.pageStatusControl.applicationError(errObject);
-        } else {
-            // This is some other error
-            MtcScheduleBoard.UI.StatusControl.pageStatusControl.applicationError(error);
-        }
+            } else {
+                // This is some other error
+                MtcScheduleBoard.UI.StatusControl.pageStatusControl.applicationError(error);
+            }
 
         // Hide videoplayer
         var theScreenSaver = $("#screenSaver");
@@ -202,32 +188,25 @@
 
     /* Create and Bind grid for single room display mode*/
     function bindSingleRoomGridView() {
-        grid = new Telerik.UI.RadGrid(document.getElementById("scheduleGrid"), {
-            dataSource: MtcScheduleBoard.Data.Appointments,
+        grid = new Telerik.UI.RadGrid(document.getElementById("scheduleGrid"), {          
             columns: [
-                             {
-                                 title: 'Time', width: MtcScheduleBoard.Data.Settings.TitleColumnWidth,
-                                 template: '#=MtcScheduleBoard.Data.FormatEngagementTime(startTime, endTime)#',
-                                 attributes: {
-                                     style: 'font-size: ' + MtcScheduleBoard.Data.Settings.TableFontSize + 'pt;'
-                                 },
-                             },
-                            {
-                                field: 'Title', title: 'Engagement',
-                                template: "#=MtcScheduleBoard.Data.FormatEngagementTitle(title, meetingExternalLink)#",
-                                attributes: {
-                                    style: 'font-size: ' + MtcScheduleBoard.Data.Settings.TableFontSize + 'pt;'
-                                },
-                            }
+                    {
+                        title: 'Time', width: MtcScheduleBoard.Data.Settings.TitleColumnWidth,
+                        template: '#=MtcScheduleBoard.Data.FormatEngagementTime(startTime, endTime)#',
+                        attributes: {
+                            style: 'font-size: ' + MtcScheduleBoard.Data.Settings.TableFontSize + 'pt;'
+                        },
+                    },
+                {
+                    field: 'Title', title: 'Engagement',
+                    template: "#=MtcScheduleBoard.Data.FormatEngagementTitle(title, meetingExternalLink)#",
+                    attributes: {
+                        style: 'font-size: ' + MtcScheduleBoard.Data.Settings.TableFontSize + 'pt;'
+                    },
+                }
             ],
 
         });
-        if (grid.dataSource) {
-            grid.dataSource.sort = [{ field: "StartTime", dir: "asc" }];
-         //   grid.dataSource.filter = { filters: [{}] };
-         //   grid.dataSource.filter.filters.push({ field: "Location", operator: "contains", value: MtcScheduleBoard.Data.Settings.Location });
-        }
-      
     }
 
     /* Position videoplayer at center of the screen*/
@@ -250,11 +229,10 @@
 
     function checkScreenSaver() {
 
-        var theScreenSaver = $('#screenSaver');
+        let theScreenSaver = $('#screenSaver');
 
-           if (MtcScheduleBoard.Data.Appointments && MtcScheduleBoard.Data.Appointments.length > 0) {
-                    createGridView();
-
+        if (grid.dataSource.data && grid.dataSource.data.length > 0) {
+                    
                     if ($('#status').css('display') != 'none') {
                         $('#status').hide();
                     }
@@ -269,11 +247,8 @@
                         $('#scheduleGrid').show();
                         MtcScheduleBoard.UI.StatusControl.trackAppInsightsPage("scheduleGrid");
                     }
-                    
-                   
-
-                    return;                
-           }else //We don't have rows - show video
+                                          
+           }else //We don't have rows - play video
                if (theScreenSaver && theScreenSaver.attr('src')) {
                     
                     if ($('#status').css('display') != 'none') {
@@ -289,8 +264,7 @@
 
                     if ($('#scheduleGrid').css('display') != 'none') {
                         $('#scheduleGrid').hide();
-                    }
-                   
+                    }                   
             }
         
     }
