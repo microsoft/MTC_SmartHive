@@ -91,7 +91,7 @@
                     grid.dataSource.data.push({
                         startTime: schedule.parseDateString(schedule.schedule[i].startTime),
                         endTime: schedule.parseDateString(schedule.schedule[i].endTime),
-                        location: MtcScheduleBoard.Data.Settings.Location,//schedule.schedule[i].location,
+                        location: schedule.schedule[i].location,
                         title: schedule.schedule[i].title,
                         category: schedule.schedule[i].category,
                         meetingExternalLink: ""
@@ -128,14 +128,14 @@
                 },
                 {
                     field: 'Title', title: 'Engagement',
-                    template: "#=MtcScheduleBoard.Data.FormatEngagementTitle(Title, MeetingExternalLink)#",
+                    template: "#=MtcScheduleBoard.Data.FormatEngagementTitle(title, meetingExternalLink)#",
                     attributes: {
                         style: 'font-size: ' + MtcScheduleBoard.Data.Settings.TableFontSize + 'pt;'
                     },
                 },
                 {
                     title: "Location", width: MtcScheduleBoard.Data.Settings.LocationColumnWidth,
-                    template: '#=MtcScheduleBoard.Data.MapRoom(Location)#',
+                    template: '#=MtcScheduleBoard.Data.MapRoom(location)#',
                     attributes: {
                         style: 'font-size: ' + MtcScheduleBoard.Data.Settings.TableFontSize + 'pt;'
                     },

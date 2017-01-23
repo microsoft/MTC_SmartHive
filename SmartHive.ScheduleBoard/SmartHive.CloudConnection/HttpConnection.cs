@@ -2,7 +2,7 @@
 using Windows.Data.Xml.Dom;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Threading;
+using System.Collections.Generic;
 using SmartHive.CloudConnection.Events;
 using Windows.ApplicationModel.Core;
 using System.Globalization;
@@ -74,52 +74,79 @@ namespace SmartHive.CloudConnection
 
         public async void ReadMessageAsync(string Location, int eventsExpiration)
         {
-            try
+            if (string.IsNullOrEmpty(Location)) {
+                this.LogEvent(EventTypeConsts.Error, "Invalid argument Locaton", " value is null or empty");
+                return;
+            }
+
+            string[] Locations = Location.Split(';');
+
+            OnScheduleUpdateEventArgs eventData = new OnScheduleUpdateEventArgs() { RoomId = Location };
+
+            List<Appointment> Appointments = new List<Appointment>();
+            foreach (string tmpLocation in Locations)
             {
-                OnScheduleUpdateEventArgs eventData = new OnScheduleUpdateEventArgs() { RoomId = Location };
-              
-                 string sXml = await this.HttpHelper.GetStringAsync(new Uri(this.UrlAddress));
+                Appointment[] roomAppointments = await ReadEventForLocationAsync(tmpLocation, eventsExpiration);
+                if (roomAppointments != null)
+                {
+                    Appointments.AddRange(roomAppointments);
+                }
+            }
 
-                    if (!string.IsNullOrEmpty(sXml))
+            eventData.Schedule = Appointments.ToArray();
+
+            var dispatcher = CoreApplication.GetCurrentView().Dispatcher;
+            await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                if (OnScheduleUpdate != null)
+                    OnScheduleUpdate.Invoke("", eventData);
+            });
+
+        }
+
+        private async Task<Appointment[]> ReadEventForLocationAsync(string Location, int eventsExpiration)
+        {
+            try
+            {               
+
+                string sXml = await this.HttpHelper.GetStringAsync(new Uri(this.UrlAddress));
+
+                if (!string.IsNullOrEmpty(sXml))
+                {
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(sXml);
+
+                    XmlNodeList eventsNodes = doc.SelectNodes("Appointments/Appointment");
+
+                    var result = from IXmlNode eventNode in eventsNodes
+                                 select (new Appointment()
+                                 {
+                                     StartTime = eventNode.SelectSingleNode("StartTime").InnerText,
+                                     EndTime = eventNode.SelectSingleNode("EndTime").InnerText,
+                                     Title = eventNode.SelectSingleNode("Title").InnerText,
+                                     Location = eventNode.SelectSingleNode("Location").InnerText, //appointment.Location,  
+                                     Category = eventNode.SelectSingleNode("Category").InnerText
+                                 });
+
+
+                    if (result.Count<Appointment>() > 0)
                     {
-                        XmlDocument doc = new XmlDocument();
-                        doc.LoadXml(sXml);
-
-                        XmlNodeList eventsNodes = doc.SelectNodes("Appointments/Appointment");
-
-                        var result = from IXmlNode eventNode in eventsNodes
-                                     select (new Appointment()
-                                     {
-                                         StartTime = eventNode.SelectSingleNode("StartTime").InnerText,
-                                         EndTime = eventNode.SelectSingleNode("EndTime").InnerText,
-                                         Title = eventNode.SelectSingleNode("Title").InnerText,
-                                         Location = eventNode.SelectSingleNode("Location").InnerText, //appointment.Location,  
-                                         Category = eventNode.SelectSingleNode("Category").InnerText
-                                     });
-
-
-                        if (result.Count<Appointment>() > 0)
-                        {
-                            eventData.Schedule = this.FilterAppointments(result.ToArray<Appointment>(), Location, eventsExpiration);
-                        }
-
-                    }else
-                    {
-                        this.LogEvent(EventTypeConsts.Error, "Empty response from WebService", this.UrlAddress);
+                        return this.FilterAppointments(result.ToArray<Appointment>(), Location, eventsExpiration);
                     }
 
-                    var dispatcher = CoreApplication.GetCurrentView().Dispatcher;
-                    await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-                    {
-                        if (OnScheduleUpdate != null)
-                            OnScheduleUpdate.Invoke("", eventData);
-                    });                
+                }
+                else
+                {
+                    this.LogEvent(EventTypeConsts.Error, "Empty response from WebService", this.UrlAddress);
+                }
+
+                return null;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 this.LogEvent(EventTypeConsts.Error, "Webservice request error", ex.Message + " " + ex.StackTrace);
             }
-
+                return null;
         }
 
         internal async void LogEvent(EventTypeConsts eventType, string Message, string Description)
