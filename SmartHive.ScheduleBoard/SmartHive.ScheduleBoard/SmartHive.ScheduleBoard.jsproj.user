@@ -3,9 +3,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
     <MachineName>10.101.51.17</MachineName>
-    <DebuggerType>ManagedOnly</DebuggerType>
+    <DebuggerType>Script</DebuggerType>
   </PropertyGroup>
   <PropertyGroup>
     <ReferenceCachePath>C:\Users\a-makhlu\AppData\Local\Temp\SmartHive.ScheduleBoard_refcache</ReferenceCachePath>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
   </PropertyGroup>
 </Project>

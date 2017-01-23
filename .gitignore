@@ -15,3 +15,11 @@
 /SmartHive.ScheduleBoard/20170116.diagsession
 /SmartHive.ScheduleBoard/20170116 (3).diagsession
 /SmartHive.ScheduleBoard/20170116 (2).diagsession
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/AppPackages
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/bin/Debug
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/bld/Debug
+*.diagsession
+/SmartHive.ScheduleBoard/SmartHive.CloudConnection/bin/Debug
+/SmartHive.ScheduleBoard/SmartHive.CloudConnection/obj/Debug
+/SmartHive.ScheduleBoard/Microsoft.ServiceBus/bin/Debug
+/SmartHive.ScheduleBoard/Microsoft.ServiceBus/obj/Debug

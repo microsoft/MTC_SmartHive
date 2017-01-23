@@ -23,14 +23,20 @@
             WinJS.Application.removeEventListener("settingsChanged", this.onApplicationSettingsChanged);
             WinJS.Application.removeEventListener("videoCached", this.onApplicationSettingsChanged);
         },
-        onApplicationSettingsChanged: function (e) {
-          
+        onApplicationSettingsChanged: function (e) {          
             // Create schedule grid
-            var filters = null;
-            if (MtcScheduleBoard.Data.ShowLocationColumn())
-                bindMultipleRoomGridView();
-            else
-                bindSingleRoomGridView();
+            if (grid == null) {
+                if (MtcScheduleBoard.Data.ShowLocationColumn())
+                    bindMultipleRoomGridView();
+                else
+                    bindSingleRoomGridView();
+            } else {
+                if (grid.dataSource && grid.dataSource.data) {
+                    grid.dataSource.data.length = 0; // clean existing array
+                } else {
+                    grid.dataSource = new Array(); // create new one if nothing exists
+                }
+            }
 
         },
         screenSaverVideoCached: function (evt) {
@@ -109,10 +115,9 @@
 
     /* Create and Bind grid for multiple room display mode*/
     function bindMultipleRoomGridView() {
-        grid = null; // If we reload setting pereodically - avoid JS memeory leaks
         // define grid
         grid = new Telerik.UI.RadGrid(document.getElementById("scheduleGrid"), {
-           // dataSource: MtcScheduleBoard.Data.CalendarDataSource,            
+            dataSource: new Array(),            
             columns: [                     
                 {
                     title: 'Time', width: MtcScheduleBoard.Data.Settings.TitleColumnWidth,
@@ -188,7 +193,9 @@
 
     /* Create and Bind grid for single room display mode*/
     function bindSingleRoomGridView() {
-        grid = new Telerik.UI.RadGrid(document.getElementById("scheduleGrid"), {          
+       
+        grid = new Telerik.UI.RadGrid(document.getElementById("scheduleGrid"), {
+            dataSource: new Array(),
             columns: [
                     {
                         title: 'Time', width: MtcScheduleBoard.Data.Settings.TitleColumnWidth,
