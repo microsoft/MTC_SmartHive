@@ -1,0 +1,4 @@
+MainPackage=C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bin\Debug\SmartHive.ScheduleBoard_1.1.0.120_AnyCPU_Debug.appx
+SymbolPackage=C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\AppPackages\SmartHive.ScheduleBoard_1.1.0.120_Debug_Test\SmartHive.ScheduleBoard_1.1.0.120_AnyCPU_Debug.appxsym
+ResourcePack=C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bin\Debug\SmartHive.ScheduleBoard_1.1.0.120_scale-140.appx
+ResourcePack=C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bin\Debug\SmartHive.ScheduleBoard_1.1.0.120_scale-180.appx

@@ -238,7 +238,7 @@
 
         let theScreenSaver = $('#screenSaver');
 
-        if (grid.dataSource.data && grid.dataSource.data.length > 0) {
+        if (grid && grid.dataSource && grid.dataSource.data && grid.dataSource.data.length > 0) {
                     
                     if ($('#status').css('display') != 'none') {
                         $('#status').hide();
@@ -254,6 +254,8 @@
                         $('#scheduleGrid').show();
                         MtcScheduleBoard.UI.StatusControl.trackAppInsightsPage("scheduleGrid");
                     }
+
+                    $('.k-grid-content').css({ 'height': '100%' });
                                           
            }else //We don't have rows - play video
                if (theScreenSaver && theScreenSaver.attr('src')) {
