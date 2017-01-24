@@ -4,6 +4,7 @@
     <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
     <MachineName>10.101.51.17</MachineName>
     <DebuggerType>Script</DebuggerType>
+    <RequireAuthentication>false</RequireAuthentication>
   </PropertyGroup>
   <PropertyGroup>
     <ReferenceCachePath>C:\Users\a-makhlu\AppData\Local\Temp\SmartHive.ScheduleBoard_refcache</ReferenceCachePath>

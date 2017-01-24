@@ -5,7 +5,8 @@ MtcScheduleBoard.Data = MtcScheduleBoard.Data || {  }; // Declare MtcScheduleBoa
 MtcScheduleBoard.Data.Settings = {
 	HttpServerUrl: "http://mtcscheduleboard.azurewebsites.net",
 	WebServiceUrl: null, 
-	RoomDefinitionUrl: null, 
+	RoomDefinitionUrl: null,
+	Location: null,
 	Title: "", Title_En: "",
 	IconTop: "", IconBottom: "",
 	Css: "",
