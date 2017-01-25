@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.Data.Xml.Dom;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Collections.Generic;
 using SmartHive.CloudConnection.Events;
 using Windows.ApplicationModel.Core;
@@ -10,7 +10,7 @@ using System.Net.Http;
 
 namespace SmartHive.CloudConnection
 {
-    public sealed class HttpConnection  
+    public sealed class HttpConnection 
     {
 #pragma warning disable CS0067 // The event 'HttpConnection.OnNotification' is never used
         public event EventHandler<OnNotificationEventArgs> OnNotification;
@@ -18,7 +18,10 @@ namespace SmartHive.CloudConnection
         public event EventHandler<string> OnServiceBusConnected;
         public event EventHandler<OnScheduleUpdateEventArgs> OnScheduleUpdate;
         public event EventHandler<OnEvenLogWriteEventArgs> OnEventLog;
-        private HttpClient HttpHelper = null;
+
+        Mutex ReaderMutex = new Mutex(false);
+        TimeSpan MutexWaitTime = TimeSpan.FromMinutes(1);
+        private HttpClientHelper HttpHelper = null;
 
         private string UrlAddress = null;
         public HttpConnection(string ServiceUrl)
@@ -30,9 +33,10 @@ namespace SmartHive.CloudConnection
         {
             try
             {
-                this.HttpHelper = new HttpClient();
-                var dispatcher = CoreApplication.GetCurrentView().Dispatcher;
-                    //CoreApplication.MainView.CoreWindow.Dispatcher; -- Windows 8.1
+                HttpHelper = new HttpClientHelper(this);
+
+                var dispatcher = DispatcherHelper.GetDispatcher;;
+                    
                 await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {                    
                     if (OnServiceBusConnected != null)
@@ -51,10 +55,14 @@ namespace SmartHive.CloudConnection
             catch (Exception ex)
             {
                 this.LogEvent(EventTypeConsts.Error, "Webservice request error", ex.Message + " " + ex.StackTrace);
+            }finally
+            {
+                // Log view mode to collect data for Kiosks
+                this.LogEvent(EventTypeConsts.Info, "View mode", String.Format("View IsMain: {0}, view count: {1} ", CoreApplication.GetCurrentView().IsMain, CoreApplication.Views.Count));
             }
         }
 
-        private Appointment[] FilterAppointments(Appointment[] Schedule, string Location, int eventsExpiration)
+        private static Appointment[] FilterAppointments(Appointment[] Schedule, string Location, int eventsExpiration)
         {
             if (Schedule == null || Schedule.Length == 0 || string.IsNullOrWhiteSpace(Location)) {
                 return new Appointment[0];
@@ -78,46 +86,65 @@ namespace SmartHive.CloudConnection
                 this.LogEvent(EventTypeConsts.Error, "Invalid argument Locaton", " value is null or empty");
                 return;
             }
-
-            string[] Locations = Location.Split(';');
-
-            OnScheduleUpdateEventArgs eventData = new OnScheduleUpdateEventArgs() { RoomId = Location };
-
-            List<Appointment> Appointments = new List<Appointment>();
-            foreach (string tmpLocation in Locations)
-            {
-                Appointment[] roomAppointments = await ReadEventForLocationAsync(tmpLocation, eventsExpiration);
-                if (roomAppointments != null)
-                {
-                    Appointments.AddRange(roomAppointments);
-                }
-            }
-
-            eventData.Schedule = Appointments.ToArray();
-
-            var dispatcher = CoreApplication.GetCurrentView().Dispatcher;
-            await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                if (OnScheduleUpdate != null)
-                    OnScheduleUpdate.Invoke("", eventData);
-            });
-
-        }
-
-        private async Task<Appointment[]> ReadEventForLocationAsync(string Location, int eventsExpiration)
-        {
+            ReaderMutex.WaitOne(MutexWaitTime); // Wait one minute for mutex
             try
-            {               
-
-                string sXml = await this.HttpHelper.GetStringAsync(new Uri(this.UrlAddress));
+            {
+                string[] Locations = Location.Split(';');
+               
+                string sXml =  await HttpHelper.GetStringResponse(this.UrlAddress);
+                
 
                 if (!string.IsNullOrEmpty(sXml))
-                {
-                    XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(sXml);
+                    {
 
-                    XmlNodeList eventsNodes = doc.SelectNodes("Appointments/Appointment");
+                        XmlDocument doc = new XmlDocument();                    
+                        doc.LoadXml(sXml);
 
+                        XmlNodeList eventsNodes = doc.SelectNodes("Appointments/Appointment");
+
+                        List<Appointment> Appointments = new List<Appointment>();
+                        foreach (string tmpLocation in Locations)
+                        {
+                            Appointment[] roomAppointments = ReadEventForLocation(eventsNodes, tmpLocation, eventsExpiration);
+                            if (roomAppointments != null)
+                            {
+                                Appointments.AddRange(roomAppointments);
+                            }
+                        }
+
+                        int eventsCount = Appointments.Count > 0 ? Appointments.Count : 0;
+                        OnScheduleUpdateEventArgs eventData = new OnScheduleUpdateEventArgs() { RoomId = Location };
+                        eventData.Schedule = new Appointment[eventsCount];
+
+                        if (eventsCount > 0)
+                            Array.Copy(Appointments.ToArray(), eventData.Schedule, eventsCount);                                            
+
+                    var dispatcher = DispatcherHelper.GetDispatcher;
+                    //CoreApplication.GetCurrentView().Dispatcher;
+                    await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                        {
+                            if (OnScheduleUpdate != null)
+                                OnScheduleUpdate.Invoke("", eventData);
+                        });
+                    }
+                    else
+                    {
+                        this.LogEvent(EventTypeConsts.Error, "Empty response from WebService", this.UrlAddress);
+                    }
+               
+            }
+            catch (Exception ex)
+            {
+                this.LogEvent(EventTypeConsts.Error, "Webservice read message error", ex.Message + " " + ex.StackTrace);
+            }finally
+            {
+                ReaderMutex.ReleaseMutex();
+            }
+        }
+
+        private static Appointment[] ReadEventForLocation(XmlNodeList eventsNodes, string Location, int eventsExpiration)
+        {
+ 
                     var result = from IXmlNode eventNode in eventsNodes
                                  select (new Appointment()
                                  {
@@ -131,21 +158,10 @@ namespace SmartHive.CloudConnection
 
                     if (result.Count<Appointment>() > 0)
                     {
-                        return this.FilterAppointments(result.ToArray<Appointment>(), Location, eventsExpiration);
+                        return FilterAppointments(result.ToArray<Appointment>(), Location, eventsExpiration);
                     }
+                               
 
-                }
-                else
-                {
-                    this.LogEvent(EventTypeConsts.Error, "Empty response from WebService", this.UrlAddress);
-                }
-
-                return null;
-            }
-            catch (Exception ex)
-            {
-                this.LogEvent(EventTypeConsts.Error, "Webservice request error", ex.Message + " " + ex.StackTrace);
-            }
                 return null;
         }
 
@@ -155,7 +171,7 @@ namespace SmartHive.CloudConnection
 
             if (OnEventLog != null)
             {
-                var dispatcher = CoreApplication.GetCurrentView().Dispatcher;
+                var dispatcher = DispatcherHelper.GetDispatcher;
                 await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     OnEventLog.Invoke(EventTypeName, new OnEvenLogWriteEventArgs()

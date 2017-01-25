@@ -66,7 +66,7 @@ namespace SmartHive.CloudConnection
             catch (HttpRequestException ex)
             {
                 this.sbConn.LogEvent(EventTypeConsts.Error, "GetEntity failed: ", ex.Message + " \n " + address);
-                return null;
+                throw ex;
             }
             string entityDescription = await response.Content.ReadAsStringAsync();
             return entityDescription;

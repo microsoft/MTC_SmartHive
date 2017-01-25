@@ -118,7 +118,7 @@ namespace SmartHive.CloudConnection
                 // Create a timer-initiated ThreadPool task to renew SAS token regularly
                 SASTokenRenewTimer = ThreadPoolTimer.CreatePeriodicTimer(RenewSASToken, TimeSpan.FromMinutes(15));
 
-                var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+                var dispatcher = DispatcherHelper.GetDispatcher;
                 await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     Task.Delay(TimeSpan.FromSeconds(5));
@@ -140,6 +140,8 @@ namespace SmartHive.CloudConnection
             finally
             {
                 ReaderMutex.ReleaseMutex();
+                // Log view mode to collect data for Kiosks
+                this.LogEvent(EventTypeConsts.Info, "View mode", String.Format("View IsMain: {0}, view count: {1} ", CoreApplication.GetCurrentView().IsMain, CoreApplication.Views.Count));
             }
         }
 
@@ -252,7 +254,7 @@ namespace SmartHive.CloudConnection
 
                     if (eventData != null && OnNotification != null)
                     {
-                        var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+                        var dispatcher = DispatcherHelper.GetDispatcher;
                         await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.High, () =>
                         {
                             double fValue = 0.0;
@@ -275,7 +277,7 @@ namespace SmartHive.CloudConnection
 
                     if (eventData != null && OnScheduleUpdate != null)
                     {
-                        var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+                        var dispatcher = DispatcherHelper.GetDispatcher;
                         await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                         {
                             OnScheduleUpdate.Invoke(sBody, eventData);
@@ -309,7 +311,7 @@ namespace SmartHive.CloudConnection
 
             if (OnEventLog != null)
             {
-                var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+                var dispatcher = DispatcherHelper.GetDispatcher;
                 await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     OnEventLog.Invoke(EventTypeName, new OnEvenLogWriteEventArgs()
