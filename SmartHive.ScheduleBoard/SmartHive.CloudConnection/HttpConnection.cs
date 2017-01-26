@@ -71,7 +71,7 @@ namespace SmartHive.CloudConnection
 
                 //return all engagements where matched location and not finished yet or finished not leater then eventsExpiration minutes
                 DateTime expirationTime = DateTime.Now.AddMinutes(eventsExpiration * -1);
-                //return all engagements  and not finished yet or finished not leater then eventsExpiration minutes
+                //return all engagements  and not finished yet or finished not leater then eventsExpiration minutes                
                 Appointment[] retVal = Schedule.Where<Appointment>(a => !string.IsNullOrEmpty(a.Location) && a.Location.Contains(Location) &&
                         expirationTime.CompareTo(DateTime.ParseExact(a.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture)) <= 0).ToArray<Appointment>();
 
@@ -112,12 +112,15 @@ namespace SmartHive.CloudConnection
                             }
                         }
 
-                        int eventsCount = Appointments.Count > 0 ? Appointments.Count : 0;
-                        OnScheduleUpdateEventArgs eventData = new OnScheduleUpdateEventArgs() { RoomId = Location };
-                        eventData.Schedule = new Appointment[eventsCount];
+                        
+                    OnScheduleUpdateEventArgs eventData = new OnScheduleUpdateEventArgs() { RoomId = Location };
+                       
 
-                        if (eventsCount > 0)
-                            Array.Copy(Appointments.ToArray(), eventData.Schedule, eventsCount);                                            
+                    if (Appointments.Count > 0)
+                        eventData.Schedule = Appointments.Distinct<Appointment>(new AppointmentComparer()).ToArray();
+                    else
+                        eventData.Schedule = new Appointment[0];
+
 
                     var dispatcher = DispatcherHelper.GetDispatcher;
                     //CoreApplication.GetCurrentView().Dispatcher;
@@ -154,7 +157,6 @@ namespace SmartHive.CloudConnection
                                      Location = eventNode.SelectSingleNode("Location").InnerText, //appointment.Location,  
                                      Category = eventNode.SelectSingleNode("Category").InnerText
                                  });
-
 
                     if (result.Count<Appointment>() > 0)
                     {

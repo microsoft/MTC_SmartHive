@@ -79,4 +79,30 @@ namespace SmartHive.CloudConnection.Events
 
         }
     }
+
+    class AppointmentComparer : IEqualityComparer<Appointment>
+    {
+        public bool Equals(Appointment x, Appointment y)
+        {
+            if (Object.ReferenceEquals(x, y)) return true;
+
+            if (Object.ReferenceEquals(x, null) || Object.ReferenceEquals(y, null))
+                return false;
+
+            return string.Compare(x.StartTime,y.StartTime,StringComparison.CurrentCultureIgnoreCase) == 0 &&
+                   string.Compare(x.EndTime, y.EndTime, StringComparison.CurrentCultureIgnoreCase) == 0 &&
+                   string.Compare(x.Location, y.Location, StringComparison.CurrentCultureIgnoreCase) == 0 &&
+                    string.Compare(x.Title, y.Title, StringComparison.CurrentCultureIgnoreCase) == 0;
+
+        }
+
+        public int GetHashCode(Appointment appointment)
+        {
+            if (Object.ReferenceEquals(appointment, null)) return 0;
+
+           string appointmentHashName = string.Concat(appointment.StartTime, appointment.EndTime, appointment.Title, appointment.Location);
+           return string.IsNullOrEmpty(appointmentHashName) ? 0 : appointmentHashName.GetHashCode();
+        }
+    }
+
 }

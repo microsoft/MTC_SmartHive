@@ -16,6 +16,6 @@
     <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
     <MachineName>mtc-apc-portal.technohow.ru</MachineName>
     <RequireAuthentication>false</RequireAuthentication>
-    <DebuggerType>Script</DebuggerType>
+    <DebuggerType>ManagedOnly</DebuggerType>
   </PropertyGroup>
 </Project>

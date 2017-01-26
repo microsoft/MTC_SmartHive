@@ -98,7 +98,7 @@
                     });
                 }
 
-                grid.dataSource.sort = [{ field: "StartTime", dir: "asc" }];
+                grid.dataSource.sort = [{ field: "startTime", dir: "asc" }];
             }            
             
             checkScreenSaver();
