@@ -17,5 +17,5 @@ With SmartHive you can digitally transform your facility into single smart room 
 </ul>
 SmartHive is a set of three projects:
 <ul>
-<li><a href="SmartHive.ScheduleBoard/Read.me">SmartHive.ScheduleBoard</a> - an application for schedule board tablet to display meeting room schedule and conditions (presence, temperature, humidity etc.) <li/>
+<li><a href="SmartHive.ScheduleBoard">SmartHive.ScheduleBoard</a> - an application for schedule board tablet to display meeting room schedule and conditions (presence, temperature, humidity etc.) <li/>
 <ul/>
