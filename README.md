@@ -6,7 +6,7 @@ SmartHive is smart meeting room solution for enterprise.
   <li>If people not actually come to  the meeting and nobody actually uses the room, we can send a Skype message to a meeting organizer and ask for cancelation in Exchange. </li>
   <li>Facility managers can monitor and predict room usage.</li>
 </ul>
-
+<img src="Docs/Images/Architecture.jpg"/>
 Meeting rooms is expensive resource for every organization.
 With SmartHive you can digitally transform your facility into single smart room management system that:
 <ul>
@@ -15,3 +15,7 @@ With SmartHive you can digitally transform your facility into single smart room 
   <li>If people not actually coming to the meeting ask owner to cancel booking - others can use this resource.</li>
   <li>Provide detailed meeting room usage statistic for facility manager.</li>
 </ul>
+SmartHive is a set of three projects:
+<ul>
+<li><a href="SmartHive.ScheduleBoard/Read.me">SmartHive.ScheduleBoard</a> - an application for schedule board tablet to display meeting room schedule and conditions (presence, temperature, humidity etc.) <li/>
+<ul/>
