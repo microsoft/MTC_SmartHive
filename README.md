@@ -17,7 +17,7 @@ With SmartHive you can digitally transform your facility into single smart room 
 </ul>
 SmartHive is a set of three projects:
 <ul>
-<li><a href="SmartHive.ScheduleBoard">SmartHive.ScheduleBoard</a> - an application for schedule board tablet to display meeting room schedule and conditions (presence, temperature, humidity etc.) </li>
-<li><a href="SmartHive.InfoboardSvc">SmartHive.InfoboardSvc</a> - cloud hosted services for working with sensors telemetry, room schedule and insights</li>
-<li><a href="SmartHive.SensorsGateway">SmartHive.SensorsGateway</a> - IoT protocol gateway for collecting room sensors data and sending telemetry to the cloud</li>
-<ul/>
+	<li><a href="SmartHive.ScheduleBoard">SmartHive.ScheduleBoard</a> - an application for schedule board tablet to display meeting room schedule and conditions (presence, temperature, humidity etc.) </li>
+	<li><a href="SmartHive.InfoboardSvc">SmartHive.InfoboardSvc</a> - cloud hosted services for working with sensors telemetry, room schedule and insights</li>
+	<li><a href="SmartHive.SensorsGateway">SmartHive.SensorsGateway</a> - IoT protocol gateway for collecting room sensors data and sending telemetry to the cloud</li>
+</ul>
