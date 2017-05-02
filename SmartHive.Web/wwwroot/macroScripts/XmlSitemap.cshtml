@@ -1,0 +1,106 @@
+@*
+sitemap XML script http://www.sitemaps.org
+Params
+    MaxLevelForSitemap (int, optional, default value is 4)
+*@
+
+@using System.Text
+@using System.Web.Caching
+@using System.Xml
+@using Bootstrap.Logic.Utils
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    string xml;
+    var root = Model.AncestorsOrSelf().First();
+    var cacheName = string.Format(MainHelper.XmlSitemapCache, root.Id);
+
+    var cache = Cache[cacheName] as string;
+    if (cache == null)
+    {
+        // Let's cache the xml for 8 hours
+        xml = GenerateXml(root);
+        Cache.Add(cacheName, xml, null, DateTime.Now.AddHours(8), Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
+    }
+    else
+    {
+        xml = cache;
+    }
+
+    // Change the mimetype
+    Context.Response.ContentType = "text/xml";
+    Context.Response.Write(xml);
+}
+
+@functions 
+{
+    string GenerateXml(dynamic root)
+    {
+        // MaxLevelForSitemap param. Default is 4
+        var maxLevel = string.IsNullOrEmpty(Parameter.MaxLevelForSitemap) ? 4 : int.Parse(Parameter.MaxLevelForSitemap);
+
+        // Let's save it in a MemoryStream. 
+        // We could use a StringWriter but the default encoding is UTF-16
+        using (var ms = new MemoryStream())
+        {
+            // Ensure is UTF8 and indented
+            using (var writer = new XmlTextWriter(ms, Encoding.UTF8) { Formatting = Formatting.Indented })
+            {
+                // Write <?xml version="1.0" encoding="utf-8"?>
+                writer.WriteStartDocument();
+
+                // Write the xml
+                writer.WriteStartElement("urlset");
+                writer.WriteAttributeString("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
+
+                // Iterate child nodes
+                GenerateInternal(root, maxLevel, writer);
+
+                // Close the xml
+                writer.WriteEndElement();
+            }
+
+            return Encoding.UTF8.GetString(ms.ToArray());
+        }
+    }
+
+    void GenerateInternal(dynamic parent, int maxLevel, XmlWriter writer)
+    {
+        WriteItem(parent, writer);
+        if (parent.Level <= maxLevel)
+        foreach (var child in parent.Children)
+        {
+            GenerateInternal(child, maxLevel, writer);
+        }
+    }
+
+    void WriteItem(dynamic item, XmlWriter writer)
+    {
+        // Filter pages with "umbracoNaviHide" set to 'true'
+        if (!item.Visible)
+        {
+            return;
+        }
+
+        writer.WriteStartElement("url");
+        
+        // Full url including host
+        var baseUrl = new UriBuilder(Context.Request.Url.Scheme, Context.Request.Url.Host).Uri;
+        var url = new Uri(baseUrl, item.Url.ToString());
+        writer.WriteElementString("loc", url.ToString());
+        writer.WriteElementString("lastmod", item.UpdateDate.ToUniversalTime().ToString("yyyy-MM-dd"));
+
+        // 'changeFreq' and 'priority' if available
+        if (item.HasValue("changeFreq"))
+        {
+            writer.WriteElementString("changefreq", item.ChangeFreq);
+        }
+
+        if (item.HasValue("priority"))
+        {
+            writer.WriteElementString("priority", item.Priority);
+        }
+        
+        writer.WriteEndElement();
+    }
+}

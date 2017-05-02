@@ -1,0 +1,3722 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <!-- Dlls -->
+    <file>
+      <guid>Combres.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Combres.dll</orgName>
+    </file>
+    <file>
+      <guid>dotless.Core.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>dotless.Core.dll</orgName>
+    </file>
+    <file>
+      <guid>EcmaScript.NET.modified.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>EcmaScript.NET.modified.dll</orgName>
+    </file>
+    <file>
+      <guid>Fasterflect.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Fasterflect.dll</orgName>
+    </file>
+    <file>
+      <guid>Newtonsoft.Json.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Newtonsoft.Json.dll</orgName>
+    </file>
+    <file>
+      <guid>PackageActionsContrib.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>PackageActionsContrib.dll</orgName>
+    </file>
+    <file>
+      <guid>WebActivator.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>WebActivator.dll</orgName>
+    </file>
+    <file>
+      <guid>Yahoo.Yui.Compressor.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Yahoo.Yui.Compressor.dll</orgName>
+    </file>
+    <file>
+      <guid>ImageResizer.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>ImageResizer.dll</orgName>
+    </file>
+    <file>
+      <guid>Bootstrap.Installer.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Bootstrap.Installer.dll</orgName>
+    </file>
+    <file>
+      <guid>Bootstrap.Logic.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Bootstrap.Logic.dll</orgName>
+    </file>
+    <!-- User controls -->
+    <file>
+      <guid>Installer.ascx</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>Installer.ascx</orgName>
+    </file>
+    <!-- Aspx files -->
+    <file>
+      <guid>EditLessFile.aspx</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>EditLessFile.aspx</orgName>
+    </file>
+    <!-- Razor files -->
+    <file>
+      <guid>Breadcrumb.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>Breadcrumb.cshtml</orgName>
+    </file>
+    <file>
+      <guid>ContactForm.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>ContactForm.cshtml</orgName>
+    </file>
+    <file>
+      <guid>DateFormat.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>DateFormat.cshtml</orgName>
+    </file>
+    <file>
+      <guid>DisplayImage.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>DisplayImage.cshtml</orgName>
+    </file>
+    <file>
+      <guid>GetInTouch.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>GetInTouch.cshtml</orgName>
+    </file>
+    <file>
+      <guid>HeaderTags.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>HeaderTags.cshtml</orgName>
+    </file>
+    <file>
+      <guid>LanguageSelector.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>LanguageSelector.cshtml</orgName>
+    </file>
+    <file>
+      <guid>LatestNews.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>LatestNews.cshtml</orgName>
+    </file>
+    <file>
+      <guid>ListGalleries.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>ListGalleries.cshtml</orgName>
+    </file>
+    <file>
+      <guid>ListPhotos.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>ListPhotos.cshtml</orgName>
+    </file>
+    <file>
+      <guid>ListThumbnails.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>ListThumbnails.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Navigation.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>Navigation.cshtml</orgName>
+    </file>
+    <file>
+      <guid>NewsFeed.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>NewsFeed.cshtml</orgName>
+    </file>
+    <file>
+      <guid>NewsList.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>NewsList.cshtml</orgName>
+    </file>
+    <file>
+      <guid>PageTitle.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>PageTitle.cshtml</orgName>
+    </file>
+    <file>
+      <guid>PhotoPager.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>PhotoPager.cshtml</orgName>
+    </file>
+    <file>
+      <guid>RecommendWidget.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>RecommendWidget.cshtml</orgName>
+    </file>
+    <file>
+      <guid>RelatedLinks.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>RelatedLinks.cshtml</orgName>
+    </file>
+    <file>
+      <guid>ResizeImage.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>ResizeImage.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Search.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>Search.cshtml</orgName>
+    </file>
+    <file>
+      <guid>SearchBox.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>SearchBox.cshtml</orgName>
+    </file>
+    <file>
+      <guid>SideNavigation.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>SideNavigation.cshtml</orgName>
+    </file>
+    <file>
+      <guid>SocialLinks.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>SocialLinks.cshtml</orgName>
+    </file>
+    <file>
+      <guid>XmlSitemap.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>XmlSitemap.cshtml</orgName>
+    </file>
+    <!-- Images -->
+    <file>
+      <guid>alhambra.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>alhambra.jpg</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-from-twitter.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>bootstrap-from-twitter.jpg</orgName>
+    </file>
+    <file>
+      <guid>cordoba.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>cordoba.jpg</orgName>
+    </file>
+    <file>
+      <guid>el-retiro.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>el-retiro.jpg</orgName>
+    </file>
+    <file>
+      <guid>holambra.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>holambra.jpg</orgName>
+    </file>
+    <file>
+      <guid>ibirapuera-three.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>ibirapuera-three.jpg</orgName>
+    </file>
+    <file>
+      <guid>iguazu.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>iguazu.jpg</orgName>
+    </file>
+    <file>
+      <guid>jubilee-walkway.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>jubilee-walkway.jpg</orgName>
+    </file>
+    <file>
+      <guid>liberdade-one.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>liberdade-one.jpg</orgName>
+    </file>
+    <file>
+      <guid>london-bridge.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>london-bridge.jpg</orgName>
+    </file>
+    <file>
+      <guid>praca-da-se.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>praca-da-se.jpg</orgName>
+    </file>
+    <file>
+      <guid>settings-less.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>settings-less.jpg</orgName>
+    </file>
+    <file>
+      <guid>sevilla.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>sevilla.jpg</orgName>
+    </file>
+    <file>
+      <guid>tenerife.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>tenerife.jpg</orgName>
+    </file>
+    <file>
+      <guid>wimbledon-common.jpg</guid>
+      <orgPath>/umbraco/developer/Bootstrap</orgPath>
+      <orgName>wimbledon-common.jpg</orgName>
+    </file>
+    <!-- Java scripts -->
+    <file>
+      <guid>bootstrap-alert.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-alert.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-button.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-button.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-carousel.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-carousel.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-collapse.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-collapse.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-dropdown.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-dropdown.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-modal.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-modal.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-popover.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-popover.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-scrollspy.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-scrollspy.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-tab.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-tab.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-tooltip.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-tooltip.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-transition.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-transition.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-typeahead.js</guid>
+      <orgPath>/scripts/bootstrap</orgPath>
+      <orgName>bootstrap-typeahead.js</orgName>
+    </file>
+    <file>
+      <guid>site.js</guid>
+      <orgPath>/scripts</orgPath>
+      <orgName>site.js</orgName>
+    </file>
+    <!-- Less files -->
+    <file>
+      <guid>accordion.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>accordion.less</orgName>
+    </file>
+    <file>
+      <guid>alerts.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>alerts.less</orgName>
+    </file>
+    <file>
+      <guid>bootstrap.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>bootstrap.less</orgName>
+    </file>
+    <file>
+      <guid>breadcrumbs.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>breadcrumbs.less</orgName>
+    </file>
+    <file>
+      <guid>button-groups.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>button-groups.less</orgName>
+    </file>
+    <file>
+      <guid>buttons.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>buttons.less</orgName>
+    </file>
+    <file>
+      <guid>carousel.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>carousel.less</orgName>
+    </file>
+    <file>
+      <guid>close.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>close.less</orgName>
+    </file>
+    <file>
+      <guid>code.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>code.less</orgName>
+    </file>
+    <file>
+      <guid>component-animations.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>component-animations.less</orgName>
+    </file>
+    <file>
+      <guid>dropdowns.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>dropdowns.less</orgName>
+    </file>
+    <file>
+      <guid>forms.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>forms.less</orgName>
+    </file>
+    <file>
+      <guid>grid.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>grid.less</orgName>
+    </file>
+    <file>
+      <guid>hero-unit.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>hero-unit.less</orgName>
+    </file>
+    <file>
+      <guid>labels-badges.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>labels-badges.less</orgName>
+    </file>
+    <file>
+      <guid>layouts.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>layouts.less</orgName>
+    </file>
+    <file>
+      <guid>mixins.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>mixins.less</orgName>
+    </file>
+    <file>
+      <guid>modals.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>modals.less</orgName>
+    </file>
+    <file>
+      <guid>navbar.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>navbar.less</orgName>
+    </file>
+    <file>
+      <guid>navs.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>navs.less</orgName>
+    </file>
+    <file>
+      <guid>pager.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>pager.less</orgName>
+    </file>
+    <file>
+      <guid>pagination.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>pagination.less</orgName>
+    </file>
+    <file>
+      <guid>popovers.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>popovers.less</orgName>
+    </file>
+    <file>
+      <guid>progress-bars.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>progress-bars.less</orgName>
+    </file>
+    <file>
+      <guid>reset.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>reset.less</orgName>
+    </file>
+    <file>
+      <guid>responsive-1200px-min.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>responsive-1200px-min.less</orgName>
+    </file>
+    <file>
+      <guid>responsive-767px-max.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>responsive-767px-max.less</orgName>
+    </file>
+    <file>
+      <guid>responsive-768px-979px.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>responsive-768px-979px.less</orgName>
+    </file>
+    <file>
+      <guid>responsive-navbar.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>responsive-navbar.less</orgName>
+    </file>
+    <file>
+      <guid>responsive-utilities.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>responsive-utilities.less</orgName>
+    </file>
+    <file>
+      <guid>responsive.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>responsive.less</orgName>
+    </file>
+    <file>
+      <guid>scaffolding.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>scaffolding.less</orgName>
+    </file>
+    <file>
+      <guid>sprites.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>sprites.less</orgName>
+    </file>
+    <file>
+      <guid>tables.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>tables.less</orgName>
+    </file>
+    <file>
+      <guid>thumbnails.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>thumbnails.less</orgName>
+    </file>
+    <file>
+      <guid>tooltip.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>tooltip.less</orgName>
+    </file>
+    <file>
+      <guid>type.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>type.less</orgName>
+    </file>
+    <file>
+      <guid>utilities.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>utilities.less</orgName>
+    </file>
+    <file>
+      <guid>variables.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>variables.less</orgName>
+    </file>
+    <file>
+      <guid>wells.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>wells.less</orgName>
+    </file>
+    <file>
+      <guid>theme.less</guid>
+      <orgPath>/less/bootstrap</orgPath>
+      <orgName>theme.less</orgName>
+    </file>
+    <file>
+      <guid>font-awesome.less</guid>
+      <orgPath>/less/font</orgPath>
+      <orgName>font-awesome.less</orgName>
+    </file>
+    <!-- fonts -->
+    <file>
+      <guid>fontawesome-webfont.eot</guid>
+      <orgPath>/font</orgPath>
+      <orgName>fontawesome-webfont.eot</orgName>
+    </file>
+    <file>
+      <guid>fontawesome-webfont.svg</guid>
+      <orgPath>/font</orgPath>
+      <orgName>fontawesome-webfont.svg</orgName>
+    </file>
+    <file>
+      <guid>fontawesome-webfont.ttf</guid>
+      <orgPath>/font</orgPath>
+      <orgName>fontawesome-webfont.ttf</orgName>
+    </file>
+    <file>
+      <guid>fontawesome-webfont.woff</guid>
+      <orgPath>/font</orgPath>
+      <orgName>fontawesome-webfont.woff</orgName>
+    </file>
+    <!-- icons -->
+    <file>
+      <guid>apple-touch-icon-57-precomposed.png</guid>
+      <orgPath>/ico</orgPath>
+      <orgName>apple-touch-icon-57-precomposed.png</orgName>
+    </file>
+    <file>
+      <guid>apple-touch-icon-72-precomposed.png</guid>
+      <orgPath>/ico</orgPath>
+      <orgName>apple-touch-icon-72-precomposed.png</orgName>
+    </file>
+    <file>
+      <guid>apple-touch-icon-114-precomposed.png</guid>
+      <orgPath>/ico</orgPath>
+      <orgName>apple-touch-icon-114-precomposed.png</orgName>
+    </file>
+    <file>
+      <guid>apple-touch-icon-144-precomposed.png</guid>
+      <orgPath>/ico</orgPath>
+      <orgName>apple-touch-icon-144-precomposed.png</orgName>
+    </file>
+    <file>
+      <guid>favicon.ico</guid>
+      <orgPath>/ico</orgPath>
+      <orgName>favicon.ico</orgName>
+    </file>
+    <!-- robots -->
+    <file>
+      <guid>robots.txt</guid>
+      <orgPath>/</orgPath>
+      <orgName>robots.txt</orgName>
+    </file>
+    <!-- config -->
+    <file>
+      <guid>Combres.config</guid>
+      <orgPath>/config</orgPath>
+      <orgName>Combres.config</orgName>
+    </file>
+    <!-- icons -->
+    <file>
+      <guid>email.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>email.png</orgName>
+    </file>
+    <file>
+      <guid>pictures.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>pictures.png</orgName>
+    </file>
+    <file>
+      <guid>images.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>images.png</orgName>
+    </file>
+    <file>
+      <guid>house.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>house.png</orgName>
+    </file>
+    <file>
+      <guid>date.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>date.png</orgName>
+    </file>
+    <file>
+      <guid>application_cascade.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>application_cascade.png</orgName>
+    </file>
+    <file>
+      <guid>page_delete.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>page_delete.png</orgName>
+    </file>
+    <file>
+      <guid>image.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>image.png</orgName>
+    </file>
+    <file>
+      <guid>find.png</guid>
+      <orgPath>/umbraco/images/umbraco</orgPath>
+      <orgName>find.png</orgName>
+    </file>
+    <!-- css -->
+    <file>
+      <guid>bootstrap.css</guid>
+      <orgPath>/css/bootstrap</orgPath>
+      <orgName>bootstrap.css</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-responsive.css</guid>
+      <orgPath>/css/bootstrap</orgPath>
+      <orgName>bootstrap-responsive.css</orgName>
+    </file>
+    <file>
+      <guid>theme.css</guid>
+      <orgPath>/css/bootstrap</orgPath>
+      <orgName>theme.css</orgName>
+    </file>
+    <file>
+      <guid>font-awesome.css</guid>
+      <orgPath>/css/font</orgPath>
+      <orgName>font-awesome.css</orgName>
+    </file>
+    <file>
+      <guid>bootstrap.rtl.css</guid>
+      <orgPath>/css/rtl</orgPath>
+      <orgName>bootstrap.rtl.css</orgName>
+    </file>
+    <file>
+      <guid>bootstrap-responsive.rtl.css</guid>
+      <orgPath>/css/rtl</orgPath>
+      <orgName>bootstrap-responsive.rtl.css</orgName>
+    </file>
+    <file>
+      <guid>theme.rtl.css</guid>
+      <orgPath>/css/rtl</orgPath>
+      <orgName>theme.rtl.css</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>uBootstrap</name>
+      <version>1.1.0</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://jlusar.es</url>
+      <requirements>
+        <major>4</major>
+        <minor>8</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Jorge Lusar</name>
+      <website>http://bs.jlusar.es</website>
+    </author>
+    <readme><![CDATA[uBootstrap it's a Starter Kit for Umbraco based on Bootstrap from Twitter and will help you to quickly setup a base multilingual website using html5, css3, and .less]]></readme>
+  </info>
+  <Documents>
+    <DocumentSet importMode="root">
+      <Homepage id="1284" parentID="-1" level="1" writerID="0" creatorID="0" nodeType="1123" template="1053" sortOrder="0" createDate="2011-12-26T18:38:36" updateDate="2012-01-19T12:16:04" nodeName="Home" urlName="home" writerName="admin" creatorName="admin" path="-1,1284" isDoc="">
+        <siteName>uBootstrap</siteName>
+        <headerText><![CDATA[Welcome to uBootstrap, a Starter Kit built using Html5 + CC3 + .less. Enjoy!]]></headerText>
+        <bodyImage>1395</bodyImage>
+        <bodyText>
+          <![CDATA[
+<p>uBootstrap it's a Starter Kit for Umbraco based on <a
+href="http://twitter.github.com/bootstrap/">Bootstrap from
+Twitter</a> and will help you to quickly setup a base multilingual
+website using html5, css3, .less, html5 boilerplate and
+modernizr.</p>
+]]>
+        </bodyText>
+        <twitterAccount>umbracoproject</twitterAccount>
+        <footerLinks>
+          <links>
+            <link title="About" link="1285" type="internal" newwindow="0" />
+            <link title="Contact us" link="1291" type="internal" newwindow="0" />
+            <link title="Gallery" link="1293" type="internal" newwindow="0" />
+          </links>
+        </footerLinks>
+        <facebookPage>http://www.facebook.com/pages/Umbraco/103774399660999</facebookPage>
+        <contactPhone>164 4564 456</contactPhone>
+        <contactEmail>info@umbraco.test</contactEmail>
+        <metaDescription><![CDATA[Bootstrap Started Kit]]></metaDescription>
+        <metaKeywords><![CDATA[bootstrap,twitter,umbraco,html5,css3,dotless]]></metaKeywords>
+        <umbracoUrlName />
+        <umbracoUrlAlias />
+        <umbracoRedirect />
+        <umbracoNaviHide>0</umbracoNaviHide>
+        <Textpage id="1285" parentID="1284" level="2" writerID="0" creatorID="0" nodeType="1116" template="1060" sortOrder="1" createDate="2011-12-26T18:38:37" updateDate="2012-01-18T16:17:48" nodeName="About uBootstrap" urlName="about-ubootstrap" writerName="admin" creatorName="admin" path="-1,1284,1285" isDoc="">
+          <headerText>Learn about the functionalities available in this package</headerText>
+          <bodyImage>1395</bodyImage>
+          <bodyText>
+            <![CDATA[
+<p>This starter kit is based on <a
+href="http://twitter.github.com/bootstrap/">Bootstrap from
+Twitter</a> and uses html5, css3, and .less. It is a multilingual
+package (English and Spanish) and uses the built-in Umbraco
+dictionary to localize labels used within the site</p>
+
+<h3>Other functionalities you might want to know</h3>
+
+<ul>
+<li><a href="/news-events.atom">Atom feed for news list</a></li>
+
+<li><a href="/sitemap.xml">Default sitemap xml for search
+engines</a></li>
+
+<li><a href="/robots.txt">Default robots.txt</a></li>
+
+<li><a href="/humans.txt">Because we are humans</a></li>
+
+<li><a rel="external"
+href="http://our.umbraco.org/projects/developer-tools/famfamfam-icons">
+Pretty icons</a></li>
+
+<li><a rel="external"
+href="http://our.umbraco.org/projects/website-utilities/imagegen">Resized
+images with ImageGen</a></li>
+
+<li><a href="/search?q=Umbraco">Built-in Examine search</a></li>
+
+<li><a href="/whatever">Friendly not found page</a></li>
+</ul>
+]]>
+          </bodyText>
+          <metaDescription><![CDATA[About uBootstrap]]></metaDescription>
+          <metaKeywords><![CDATA[bootstrap,twitter,umbraco,html5,css3,dotless]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Textpage id="1286" parentID="1285" level="3" writerID="0" creatorID="0" nodeType="1116" template="1060" sortOrder="1" createDate="2011-12-26T18:38:37" updateDate="2012-01-18T16:17:48" nodeName="Less is more" urlName="less-is-more" writerName="admin" creatorName="admin" path="-1,1284,1285,1286" isDoc="">
+            <headerText>Less is more</headerText>
+            <bodyImage>1396</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p>Write regular CSS with your .NET apps, then add a few variables,
+mixins and nested rules.</p>
+
+<p>This package already contains the dotless.Core.dll and has set
+the required handler in the web.config. You can also manage the
+.less files form Settings &gt; Less Files.</p>
+
+<h3>List of .less files</h3>
+
+<ul>
+<li>bootstrap.less&nbsp;</li>
+
+<li>forms.less&nbsp;</li>
+
+<li>mixins.less&nbsp;</li>
+
+<li>patterns.less&nbsp;</li>
+
+<li>reset.less&nbsp;</li>
+
+<li>scaffolding.less&nbsp;</li>
+
+<li>tables.less (not used by default, look at
+theme.less)&nbsp;</li>
+
+<li>theme.less&nbsp;</li>
+
+<li>type.less&nbsp;</li>
+
+<li>variables.less</li>
+</ul>
+
+<h3>Don't like the blue theme. How can I change it?</h3>
+
+<p>Open the variables.less file and change the
+<strong>@linkColor</strong>. You can also change the
+<strong>@basefont</strong> and <strong>@baseline</strong></p>
+
+<pre>
+/* Accent Colors */
+@blue:              #049CDB;
+@blueDark:          #0064CD;
+@green:             #46a546;
+@red:               #9d261d;
+@yellow:            #ffc40d;
+@orange:            #f89406;
+@pink:              #c3325f;
+@purple:            #7a43b6;
+
+/* Links */
+@linkColor:         @blue;
+@linkColorHover:    darken(@linkColor, 10);
+
+/* Baseline grid */
+@basefont:          14px;
+@baseline:          20px;
+</pre>
+
+<h3>I already change the <strong>@linkColor</strong> but I can't
+see the changes. Why?</h3>
+
+<p>All stylesheets and javascripts are compressed using
+ClientDependency, so simply change the version number in
+config/ClientDependency.config</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[Less is more]]></metaDescription>
+            <metaKeywords><![CDATA[dotless,clientdependency]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1287" parentID="1285" level="3" writerID="0" creatorID="0" nodeType="1116" template="1060" sortOrder="2" createDate="2011-12-26T18:38:37" updateDate="2012-01-18T16:17:48" nodeName="Requirements" urlName="requirements" writerName="admin" creatorName="admin" path="-1,1284,1285,1287" isDoc="">
+            <headerText>Before installing uBootstrap</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p>In order for this package to work properly, you need to install
+the famfamfam icons and ImageGen</p>
+
+<ul>
+<li><a
+href="/http:/our.umbraco.org/projects/developer-tools/famfamfam-icons">
+Pretty icons</a></li>
+
+<li><a
+href="http://our.umbraco.org/projects/website-utilities/imagegen">ImageGen</a></li>
+</ul>
+
+<p>Please notice that at the moment this package has only been
+tested on <strong>Umbraco Version 4.7.1</strong> running on
+<strong>IIS7.x</strong> on <strong>Integrated Mode</strong></p>
+
+<h3>Testing locally</h3>
+
+In order for both English and Spanish websites to run, you must add
+bootstrap.local and es.bootstrap.local to the host header on IIS
+and in you host file, You can also visit <a rel="external"
+href="http://bs.jlusar.es">this demo site</a> if you want to have a
+look.
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[Before installing uBootstrap]]></metaDescription>
+            <metaKeywords><![CDATA[imagegen,famfamfam,iis7]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1460" parentID="1285" level="3" writerID="0" creatorID="0" nodeType="1116" template="1060" sortOrder="3" createDate="2012-01-03T20:50:07" updateDate="2012-01-18T16:17:49" nodeName="Client dependency" urlName="client-dependency" writerName="admin" creatorName="admin" path="-1,1284,1285,1460" isDoc="">
+            <headerText>Stylesheets and javascripts are compressed with ClientDependency</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p>The stylesheets and scripts are compressed by default using the
+built-in <a
+href="http://clientdependency.codeplex.com/">ClientDependency
+framework</a>.</p>
+
+<h3>Examples</h3>
+
+<p>There are macro named CdLoader which will help us to load the
+css and js wherever we want. For example, see the code in the
+Public.master template:</p>
+
+<pre>
+&lt;umbraco:Macro Alias="CdLoader" CssPaths="/less/theme.less" runat="server" /&gt;
+</pre>
+
+<p>Or the scripts loaded at the bottom of the page in
+Public_Newslist.master</p>
+
+<pre>
+&lt;umbraco:Macro Alias="CdLoader" JsPaths="analytics.js|bootstrap-twipsy.js|twitter.js|facebook.js|site.js" IncludeDefaultPaths="true" runat="server" /&gt;
+</pre>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1463" parentID="1285" level="3" writerID="0" creatorID="0" nodeType="1116" template="1060" sortOrder="4" createDate="2012-01-03T20:57:21" updateDate="2012-01-18T16:17:49" nodeName="Runat server #NOT" urlName="runat-server-not" writerName="admin" creatorName="admin" path="-1,1284,1285,1463" isDoc="">
+            <headerText>No runat server in the master template. Why?</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p>One of the things you'll notice is that the Public.master
+template doesn't have a <em>head runat="server"</em> or <em>form
+runat="server"</em>, therefore, canvas is not available.</p>
+
+<h3>Why?</h3>
+
+<p>I never liked the idea of putting the whole body html in a big
+form tag. I think it's semantically incorrect and I also dislike
+the what asp.net makes by adding a viewstate, hidden inputs, naming
+controls, etc.</p>
+
+<h3>So, how do you handle a form?</h3>
+
+<p>You'll notice the ContactForm.cshtml uses the AntiforgeryToken
+located in the MainHelper class</p>
+
+<pre>
+public static HtmlString GetAntiForgeryHtml(this HttpContextBase context)
+{
+    return AntiForgery.GetHtml(context, String.Empty, String.Empty, String.Empty);
+}
+
+public static bool IsValidAntiForgery(this HttpContextBase context)
+{
+    try
+    {
+        AntiForgery.Validate(context, String.Empty);
+        return true;
+    }
+    catch
+    {
+        return false;
+    }
+}
+</pre>
+
+<p>This way, we prevent Cross-Site Request Forgery (CSRF). We also
+use the ModelState to validate the required fields, and dynamically
+map the from post using this helper</p>
+
+<pre>
+public static dynamic ToDynamic(this NameValueCollection collection)
+{
+    return new DynamicRequest(collection);
+}
+
+private class DynamicRequest : DynamicObject
+{
+    private readonly NameValueCollection nvc;
+
+    public DynamicRequest(NameValueCollection collection)
+    {
+        nvc = collection;
+    }
+
+    public override bool TryGetMember(GetMemberBinder binder, out object result)
+    {
+        result = nvc[binder.Name];
+        return true;
+    }
+}
+</pre>
+
+<p>So as you can see, we can create a whole contact form without
+wrapping it in a <em>runat="server"</em></p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+        </Textpage>
+        <Contactpage id="1291" parentID="1284" level="2" writerID="0" creatorID="0" nodeType="1125" template="1048" sortOrder="2" createDate="2011-12-26T18:38:38" updateDate="2012-01-18T16:17:49" nodeName="Contact us" urlName="contact-us" writerName="admin" creatorName="admin" path="-1,1284,1291" isDoc="">
+          <headerText>Contact us</headerText>
+          <formText>
+            <![CDATA[
+<p>Nulla quam odio, tempor vitae scelerisque sit amet, lacinia ut
+turpis. Aenean libero velit, interdum ut ultrices in, sagittis sit
+amet lectus. Fusce nulla nulla, adipiscing in sollicitudin eget,
+pharetra eget arcu</p>
+]]>
+          </formText>
+          <thankYouHeaderText><![CDATA[Thank you. Will contact you soon]]></thankYouHeaderText>
+          <thankYouMessageText>
+            <![CDATA[
+<p>Thanks for filling in our form.</p>
+
+<p>Regards,<br />
+ Your company</p>
+]]>
+          </thankYouMessageText>
+          <emailTo>test@umbraco.test</emailTo>
+          <emailSubject>Thanks for contacting us</emailSubject>
+          <emailBody>
+            <![CDATA[Hi, the contact form in your website has been filled in on [Date] at [Time]
+
+Nombre: [Name]
+Dirección: [AddressLine1], [AddressLine2]
+Email: [Email]
+Mensaje: [Message]]]>
+          </emailBody>
+          <emailReplySubject>Thanks for yor message</emailReplySubject>
+          <emailReplyBody>
+            <![CDATA[Hi [Name]
+Thanks for contacting us, we will get in touch with you as soon as possible
+
+My company
+testcompany.com]]>
+          </emailReplyBody>
+          <errorMessage><![CDATA[We are sorry, but we could not send your enquiry due to and error in our system.]]></errorMessage>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+        </Contactpage>
+        <Galleries id="1293" parentID="1284" level="2" writerID="0" creatorID="0" nodeType="1129" template="1051" sortOrder="4" createDate="2011-12-26T18:38:39" updateDate="2012-01-18T16:17:49" nodeName="Gallery" urlName="gallery" writerName="admin" creatorName="admin" path="-1,1284,1293" isDoc="">
+          <headerText>Start adding pictures to your gallery</headerText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Gallery id="1447" parentID="1293" level="3" writerID="0" creatorID="0" nodeType="1131" template="1052" sortOrder="3" createDate="2012-01-03T19:52:23" updateDate="2012-01-18T16:17:49" nodeName="Brazil" urlName="brazil" writerName="admin" creatorName="admin" path="-1,1284,1293,1447" isDoc="">
+            <headerText>Brazil</headerText>
+            <galleryThumbnail>1405</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1448" parentID="1447" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="1" createDate="2012-01-03T19:55:13" updateDate="2012-01-18T16:17:49" nodeName="Iguazu falls" urlName="iguazu-falls" writerName="admin" creatorName="admin" path="-1,1284,1293,1447,1448" isDoc="">
+              <headerText>Iguazú Falls</headerText>
+              <bodyImage>1405</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1449" parentID="1447" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="2" createDate="2012-01-03T19:56:14" updateDate="2012-01-18T16:17:49" nodeName="Praca de Se" urlName="praca-de-se" writerName="admin" creatorName="admin" path="-1,1284,1293,1447,1449" isDoc="">
+              <headerText>Praça da Sé (Sé Square)</headerText>
+              <bodyImage>1410</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1451" parentID="1447" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="4" createDate="2012-01-03T19:58:52" updateDate="2012-01-18T16:17:50" nodeName="Holambra" urlName="holambra" writerName="admin" creatorName="admin" path="-1,1284,1293,1447,1451" isDoc="">
+              <headerText>A piece of Holland in Brazil</headerText>
+              <bodyImage>1401</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1452" parentID="1447" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="5" createDate="2012-01-03T19:59:30" updateDate="2012-01-18T16:17:50" nodeName="Dancing frevo" urlName="dancing-frevo" writerName="admin" creatorName="admin" path="-1,1284,1293,1447,1452" isDoc="">
+              <headerText>Dancing frevo</headerText>
+              <bodyImage>1402</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1453" parentID="1447" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="6" createDate="2012-01-03T20:00:33" updateDate="2012-01-18T16:17:50" nodeName="Liberdade" urlName="liberdade" writerName="admin" creatorName="admin" path="-1,1284,1293,1447,1453" isDoc="">
+              <headerText>A piece of Japan in São Paulo</headerText>
+              <bodyImage>1407</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+          <Gallery id="1454" parentID="1293" level="3" writerID="0" creatorID="0" nodeType="1131" template="1052" sortOrder="4" createDate="2012-01-03T20:02:02" updateDate="2012-01-18T16:17:50" nodeName="Spain" urlName="spain" writerName="admin" creatorName="admin" path="-1,1284,1293,1454" isDoc="">
+            <headerText>España</headerText>
+            <galleryThumbnail>1435</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1455" parentID="1454" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="1" createDate="2012-01-03T20:04:09" updateDate="2012-01-18T16:17:50" nodeName="The Alhambra" urlName="the-alhambra" writerName="admin" creatorName="admin" path="-1,1284,1293,1454,1455" isDoc="">
+              <headerText>The Alhambra</headerText>
+              <bodyImage>1435</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1456" parentID="1454" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="2" createDate="2012-01-03T20:04:46" updateDate="2012-01-18T16:17:50" nodeName="Cordoba" urlName="cordoba" writerName="admin" creatorName="admin" path="-1,1284,1293,1454,1456" isDoc="">
+              <headerText>Great Mosque of Córdoba</headerText>
+              <bodyImage>1436</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1457" parentID="1454" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="3" createDate="2012-01-03T20:05:54" updateDate="2012-01-18T16:17:50" nodeName="El retiro" urlName="el-retiro" writerName="admin" creatorName="admin" path="-1,1284,1293,1454,1457" isDoc="">
+              <headerText>El retiro park</headerText>
+              <bodyImage>1437</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1458" parentID="1454" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="4" createDate="2012-01-03T20:06:17" updateDate="2012-01-18T16:17:50" nodeName="Seville" urlName="seville" writerName="admin" creatorName="admin" path="-1,1284,1293,1454,1458" isDoc="">
+              <headerText>Seville Cathedral</headerText>
+              <bodyImage>1438</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1459" parentID="1454" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="5" createDate="2012-01-03T20:07:13" updateDate="2012-01-18T16:17:51" nodeName="Tenerife" urlName="tenerife" writerName="admin" creatorName="admin" path="-1,1284,1293,1454,1459" isDoc="">
+              <headerText>Tenerife -  Canary Islands</headerText>
+              <bodyImage>1439</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+          <Gallery id="1387" parentID="1293" level="3" writerID="0" creatorID="0" nodeType="1131" template="1052" sortOrder="8" createDate="2012-01-03T17:27:06" updateDate="2012-01-18T16:17:51" nodeName="London" urlName="london" writerName="admin" creatorName="admin" path="-1,1284,1293,1387" isDoc="">
+            <headerText>London - England</headerText>
+            <galleryThumbnail>1431</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1388" parentID="1387" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="1" createDate="2012-01-03T17:27:59" updateDate="2012-01-18T16:17:51" nodeName="London bridge" urlName="london-bridge" writerName="admin" creatorName="admin" path="-1,1284,1293,1387,1388" isDoc="">
+              <headerText>View from London Bridge</headerText>
+              <bodyImage>1431</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1390" parentID="1387" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="3" createDate="2012-01-03T17:29:27" updateDate="2012-01-18T16:17:51" nodeName="Wimbledon Common" urlName="wimbledon-common" writerName="admin" creatorName="admin" path="-1,1284,1293,1387,1390" isDoc="">
+              <headerText>One afternoon in Wimbledon Common</headerText>
+              <bodyImage>1433</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1392" parentID="1387" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="5" createDate="2012-01-03T17:31:50" updateDate="2012-01-18T16:17:51" nodeName="Walkway" urlName="walkway" writerName="admin" creatorName="admin" path="-1,1284,1293,1387,1392" isDoc="">
+              <headerText>Jubilee Walkway</headerText>
+              <bodyImage>1430</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+        </Galleries>
+        <Newslist id="1322" parentID="1284" level="2" writerID="0" creatorID="0" nodeType="1170" template="1055" sortOrder="6" createDate="2011-12-26T18:38:43" updateDate="2012-01-18T16:46:49" nodeName="News &amp; Events" urlName="news-events" writerName="admin" creatorName="admin" path="-1,1284,1322" isDoc="">
+          <headerText>Latest news</headerText>
+          <feedTitle>News and Events feed</feedTitle>
+          <feedDescription>Our latest news and events</feedDescription>
+          <feedItems>10</feedItems>
+          <metaDescription><![CDATA[News and Events]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Newspage id="1523" parentID="1322" level="3" writerID="0" creatorID="0" nodeType="1174" template="1050" sortOrder="0" createDate="2012-01-18T16:44:56" updateDate="2012-01-18T16:46:50" nodeName="Umbraco 5 RC 2 ready for download" urlName="umbraco-5-rc-2-ready-for-download" writerName="admin" creatorName="admin" path="-1,1284,1322,1523" isDoc="">
+            <newsDate>2012-01-11T00:00:00</newsDate>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p><a
+href="http://umbraco.com/follow-us/blog-archive/2011/12/22/umbraco-5-rc1-is-out-today.aspx"
+ target="_blank">Before Christmas, we put up RC 1</a><span>&nbsp;-
+our first build of the "last mile to 5.0" process, so to speak.
+That was just under three weeks ago, meaning about 1.5 weeks of
+"official" working time for many, but the community have already
+put in a brilliant effort and we've got a lot of useful issues
+resolved.</span></p>
+
+<p>More info&nbsp;<a
+href="http://umbraco.com/follow-us/blog-archive/2012/1/11/umbraco-5-rc-2-is-on-codeplex,-ready-for-download.aspx">
+http://umbraco.com/follow-us/blog-archive/2012/1/11/umbraco-5-rc-2-is-on-codeplex,-ready-for-download.aspx</a></p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+          <Newspage id="1491" parentID="1322" level="3" writerID="0" creatorID="0" nodeType="1174" template="1050" sortOrder="1" createDate="2012-01-04T10:52:09" updateDate="2012-01-18T16:46:50" nodeName="Umbraco 5 RC1 is out today" urlName="umbraco-5-rc1-is-out-today" writerName="admin" creatorName="admin" path="-1,1284,1322,1491" isDoc="">
+            <newsDate>2011-12-22T00:00:00</newsDate>
+            <bodyImage>1107</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p>Hi everyone! Have you booked up your Seasonal Religious-or-not
+Coding Fun calendar yet? No? Well, allow me to proffer a toy for
+the holidays. We've put up a couple of new Umbraco 5 builds for you
+to try out. We're calling it Release Candidate 1 - we're almost
+there in terms of features, and the remaining work for us to get to
+a 5.0 release is around performance, bugfixes from community
+testing, and any quick wins around handy methods that help with
+building a site.</p>
+
+<a
+href="http://umbraco.com/follow-us/blog-archive/2011/12/22/umbraco-5-rc1-is-out-today.aspx">
+More info</a>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+          <Newspage id="1324" parentID="1322" level="3" writerID="0" creatorID="0" nodeType="1174" template="1050" sortOrder="2" createDate="2011-12-26T18:38:44" updateDate="2012-01-18T16:46:50" nodeName="Community Compatibility" urlName="community-compatibility" writerName="admin" creatorName="admin" path="-1,1284,1322,1324" isDoc="">
+            <newsDate>2011-12-14T00:00:00</newsDate>
+            <bodyImage>1212</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p>Today we released a new feature over at&nbsp;<a
+href="http://our.umbraco.org/">our.umbraco.org</a>&nbsp;to help
+identify package version compatibility.&nbsp;</p>
+
+<p>Previously it was up to the developer to specify whether a
+package was compatible&nbsp;with certain versions, however it
+sometimes wasn't entirely accurate.&nbsp; So we decided to give it
+to you, the community, to report on whether or not a package works
+with a certain version of Umbraco.&nbsp;</p>
+
+<p>If you are logged in and once you have downloaded a package you
+will be given an opportunity to report on compatibility.&nbsp; This
+information will be shared with the community via a small report
+displayed in the side bar of the package detail page.&nbsp;</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+        </Newslist>
+        <NotFound id="1330" parentID="1284" level="2" writerID="0" creatorID="0" nodeType="1328" template="1327" sortOrder="7" createDate="2011-12-27T15:54:00" updateDate="2012-01-18T16:17:52" nodeName="Not found" urlName="not-found" writerName="admin" creatorName="admin" path="-1,1284,1330" isDoc="">
+          <headerText>Not found</headerText>
+          <bodyImage />
+          <bodyText>
+            <![CDATA[
+<div>
+<p>Wer are sorry, the page you are looking for is no longer
+available</p>
+</div>
+]]>
+          </bodyText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>1</umbracoNaviHide>
+        </NotFound>
+        <Searchpage id="1334" parentID="1284" level="2" writerID="0" creatorID="0" nodeType="1332" template="1059" sortOrder="7" createDate="2011-12-30T10:12:36" updateDate="2012-01-18T16:17:52" nodeName="Search" urlName="search" writerName="admin" creatorName="admin" path="-1,1284,1334" isDoc="">
+          <headerText>Search results</headerText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>1</umbracoNaviHide>
+        </Searchpage>
+      </Homepage>
+      <Homepage id="1124" parentID="-1" level="1" writerID="0" creatorID="0" nodeType="1123" template="1053" sortOrder="1" createDate="2011-11-28T23:08:50" updateDate="2012-01-19T12:16:13" nodeName="Inicio" urlName="inicio" writerName="admin" creatorName="admin" path="-1,1124" isDoc="">
+        <siteName>uBootstrap</siteName>
+        <headerText><![CDATA[Bienvenid@ a uBootstrap, un kit de inicio para Umbraco construido con Html5 + CC3 + .less. ¡Espero que lo disfrutes!]]></headerText>
+        <bodyImage>1395</bodyImage>
+        <bodyText>
+          <![CDATA[
+<p>uBootstrap es un kit the inicio para Umbraco basado en <a
+href="http://twitter.github.com/bootstrap/">Bootstrap de
+Twitter</a> e instala dos sites, uno en inglés y otro en
+español.</p>
+]]>
+        </bodyText>
+        <twitterAccount>umbracoproject</twitterAccount>
+        <footerLinks>
+          <links>
+            <link title="Sobre uBootstrap" link="1117" type="internal" newwindow="0" />
+            <link title="Contáctanos" link="1126" type="internal" newwindow="0" />
+            <link title="Galería" link="1130" type="internal" newwindow="0" />
+          </links>
+        </footerLinks>
+        <facebookPage>http://www.facebook.com/pages/Umbraco/103774399660999</facebookPage>
+        <contactPhone>4681 494 546 4</contactPhone>
+        <contactEmail>info.es@umbraco.test</contactEmail>
+        <metaDescription><![CDATA[Kit de Inicio para Umbraco]]></metaDescription>
+        <metaKeywords><![CDATA[bootstrap,twitter,umbraco,html5,css3,dotless]]></metaKeywords>
+        <umbracoUrlName />
+        <umbracoUrlAlias />
+        <umbracoRedirect />
+        <umbracoNaviHide>0</umbracoNaviHide>
+        <Textpage id="1117" parentID="1124" level="2" writerID="0" creatorID="0" nodeType="1116" template="1060" sortOrder="0" createDate="2011-11-22T22:35:30" updateDate="2012-01-18T16:17:35" nodeName="Sobre uBootstrap" urlName="sobre-ubootstrap" writerName="admin" creatorName="admin" path="-1,1124,1117" isDoc="">
+          <headerText>Funcionalidades de uBootstrap</headerText>
+          <bodyImage>1395</bodyImage>
+          <bodyText>
+            <![CDATA[
+<p>Este kit de inicio está basado en <a
+href="http://twitter.github.com/bootstrap/">Bootstrap de
+Twitter</a> y usa html5, css3, y .less. Tiene dos sitios, uno en
+Inglés y otro en Espñol, y usa el dicionario de Umbraco para poner
+las etiquetas en su idioma correcto.</p>
+
+<h3>Otras características de este kit son:</h3>
+
+<ul>
+<li><a href="/noticias-eventos.atom">Atom feed para las
+noticias</a></li>
+
+<li><a href="/sitemap.xml">Sitemap xml para los motores de
+búsqueda</a></li>
+
+<li><a href="/robots.txt">robots.txt</a></li>
+
+<li><a href="/humans.txt">Porque somos humanos</a></li>
+
+<li><a rel="external"
+href="http://our.umbraco.org/projects/developer-tools/famfamfam-icons">
+Iconos mejorados</a></li>
+
+<li><a rel="external"
+href="http://our.umbraco.org/projects/website-utilities/imagegen">Imágenes
+ajustadas al tamaño correcto con ImageGen</a></li>
+
+<li><a href="/buscar?q=Umbraco">Motor de búsqueda con
+Examine</a></li>
+
+<li><a href="/loquesea">Página no encontrada con mensaje
+amigable</a></li>
+</ul>
+]]>
+          </bodyText>
+          <metaDescription><![CDATA[Funcionalidades de uBootstrap]]></metaDescription>
+          <metaKeywords><![CDATA[bootstrap,twitter,umbraco,html5,css3,dotless]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Textpage id="1217" parentID="1117" level="3" writerID="0" creatorID="1" nodeType="1116" template="1060" sortOrder="0" createDate="2011-12-05T20:51:54" updateDate="2012-01-18T16:17:36" nodeName="Menos es más" urlName="menos-es-mas" writerName="admin" creatorName="rocio" path="-1,1124,1117,1217" isDoc="">
+            <headerText>Descubre .less</headerText>
+            <bodyImage>1396</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p>Escribe las css CSS con tu aplicación .NET, luego añade algunas
+variables, mezclas y reglas anidadas para generar tu hoja de
+estilo.</p>
+
+<p>Este paquete ya tiene la librería dotless.Core.dll y ha añadido
+el handler en el web.config. Puedes modificar los archivos .less
+desde Settings &gt; Less Files.</p>
+
+<h3>Listado de archivos .less</h3>
+
+<ul>
+<li>bootstrap.less&nbsp;</li>
+
+<li>forms.less&nbsp;</li>
+
+<li>mixins.less&nbsp;</li>
+
+<li>patterns.less&nbsp;</li>
+
+<li>reset.less&nbsp;</li>
+
+<li>scaffolding.less&nbsp;</li>
+
+<li>tables.less (deshabilitado por defecto, puedes ponerlo de nuevo
+en el theme.less)&nbsp;</li>
+
+<li>theme.less&nbsp;</li>
+
+<li>type.less&nbsp;</li>
+
+<li>variables.less</li>
+</ul>
+
+<h3>¿Puedo cambiar el fondo azul?</h3>
+
+<p>Si. Abre el archivo variables.less file y modifica el
+<strong>@linkColor</strong>. También puedes cambiar el tamaño de la
+letra cambiando el <strong>@basefont</strong> y la
+<strong>@baseline</strong></p>
+
+<pre>
+/* Accent Colors */
+@blue:              #049CDB;
+@blueDark:          #0064CD;
+@green:             #46a546;
+@red:               #9d261d;
+@yellow:            #ffc40d;
+@orange:            #f89406;
+@pink:              #c3325f;
+@purple:            #7a43b6;
+
+/* Links */
+@linkColor:         @blue;
+@linkColorHover:    darken(@linkColor, 10);
+
+/* Baseline grid */
+@basefont:          14px;
+@baseline:          20px;
+</pre>
+
+<h3>Ya he cambiado el <strong>@linkColor</strong> pero no veo los
+cambios reflejados en el sitio web. ¿Por qué?</h3>
+
+<p>Todas las hojas de estilo y los javascripts han sido comprimidos
+con ClientDependency. Abre el config/ClientDependency.config y
+cámbiale el número de versión.</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[Descubre .less]]></metaDescription>
+            <metaKeywords><![CDATA[dotless,clientdependency]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1218" parentID="1117" level="3" writerID="0" creatorID="1" nodeType="1116" template="1060" sortOrder="1" createDate="2011-12-05T20:54:18" updateDate="2012-01-18T16:17:36" nodeName="Requisitos" urlName="requisitos" writerName="admin" creatorName="rocio" path="-1,1124,1117,1218" isDoc="">
+            <headerText>Antes de installar uBootstrap</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p>Antes de instalar este paquete, primero debes instalar los
+famfamfam icons y el ImageGen</p>
+
+<ul>
+<li><a
+href="/http:/our.umbraco.org/projects/developer-tools/famfamfam-icons">
+Famfamfam icons</a></li>
+
+<li><a
+href="http://our.umbraco.org/projects/website-utilities/imagegen">ImageGen</a></li>
+</ul>
+
+<p>Ten en cuenta que de momento este paquete a sido probado
+solamente en <strong>Umbraco Version 4.7.1</strong> usando
+<strong>IIS7.x</strong> en <strong>Integrated Mode</strong></p>
+
+<h3>Pruébalo en tu ordenador</h3>
+
+Para que puedas ver tanto el sitio en Español como el Inglés, debes
+añadir <strong>bootstrap.local</strong> y
+<strong>es.bootstrap.local</strong> en el host header en IIS y en
+tu arichivo host C:\Windows\System32\drivers\etc\hosts. También
+puedes echarle un vistazo <a rel="external"
+href="http://bses.jlusar.es">a esta demo</a>.
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[Antes de installar uBootstrap]]></metaDescription>
+            <metaKeywords><![CDATA[imagegen,famfamfam,iis7]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1206" parentID="1117" level="3" writerID="0" creatorID="1" nodeType="1116" template="1060" sortOrder="2" createDate="2011-12-05T20:41:42" updateDate="2012-01-18T16:17:36" nodeName="ClientDependency" urlName="clientdependency" writerName="admin" creatorName="rocio" path="-1,1124,1117,1206" isDoc="">
+            <headerText>Client dependency framework</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p>Las hojas de estilo y los scripts han sido comprimidos con el <a
+href="http://clientdependency.codeplex.com/">ClientDependency
+framework</a>.</p>
+
+<h3>Ejemplos</h3>
+
+<p>Hay una macro llamada CdLoader que es usada para poner los css y
+scripts comprimidos en donde queramos. Por ejemplo, mira el el
+template Public.master:</p>
+
+<pre>
+&lt;umbraco:Macro Alias="CdLoader" CssPaths="/less/theme.less" runat="server" /&gt;
+</pre>
+
+<p>También puedes porner los scripts al final del html, como ha
+sido hecho en el template Public_Newslist.master</p>
+
+<pre>
+&lt;umbraco:Macro Alias="CdLoader" JsPaths="analytics.js|bootstrap-twipsy.js|twitter.js|facebook.js|site.js" IncludeDefaultPaths="true" runat="server" /&gt;
+</pre>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[cuidado de la piel]]></metaDescription>
+            <metaKeywords><![CDATA[piel,perfecta,radiante,joven,antiedad,]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1219" parentID="1117" level="3" writerID="0" creatorID="1" nodeType="1116" template="1060" sortOrder="3" createDate="2011-12-05T20:58:02" updateDate="2012-01-18T16:17:36" nodeName="No runatserver" urlName="no-runatserver" writerName="admin" creatorName="rocio" path="-1,1124,1117,1219" isDoc="">
+            <headerText>No he vistos el form runat server template principal. ¿Por qué?</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p>Si le has echado un vistazo al template Public.master notarás
+que no tiene <em>head runat="server"</em> o <em>form
+runat="server"</em>, por lo tanto, canvas (el editor en vivo) no
+está disponible.</p>
+
+<h3>¿Por qué?</h3>
+
+<p>Porque nunca me ha gustado la idea de poner todos los elementos
+html en un gran formulario o form tag. Creo que es semánticamente
+incorrecto no me gusta lo que asp.net haceal añadir viewstate,
+hidden inputs, poniendo id en los tags, etc.</p>
+
+<h3>¿Y como hago para hacer un formulario de contacto?</h3>
+
+<p>Si miras en el ContactForm.cshtml usa el AntiforgeryToken de la
+clase MainHelper</p>
+
+<pre>
+public static HtmlString GetAntiForgeryHtml(this HttpContextBase context)
+{
+    return AntiForgery.GetHtml(context, String.Empty, String.Empty, String.Empty);
+}
+
+public static bool IsValidAntiForgery(this HttpContextBase context)
+{
+    try
+    {
+        AntiForgery.Validate(context, String.Empty);
+        return true;
+    }
+    catch
+    {
+        return false;
+    }
+}
+</pre>
+
+<p>De esta forma, podemos prevenir la falsificación de petición en
+sitios cruzados - Cross-Site Request Forgery (CSRF). También usamos
+el ModelState para validar los campos, y 'mapeamos' esos campos
+usado el metodo ToDynamic</p>
+
+<pre>
+public static dynamic ToDynamic(this NameValueCollection collection)
+{
+    return new DynamicRequest(collection);
+}
+
+private class DynamicRequest : DynamicObject
+{
+    private readonly NameValueCollection nvc;
+
+    public DynamicRequest(NameValueCollection collection)
+    {
+        nvc = collection;
+    }
+
+    public override bool TryGetMember(GetMemberBinder binder, out object result)
+    {
+        result = nvc[binder.Name];
+        return true;
+    }
+}
+</pre>
+
+<p>Como puedes ver, puedes perfectamente hacer un formulario sin
+poner el <em>runat="server"</em></p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+        </Textpage>
+        <Contactpage id="1126" parentID="1124" level="2" writerID="0" creatorID="0" nodeType="1125" template="1048" sortOrder="1" createDate="2011-11-28T23:18:02" updateDate="2012-01-18T16:17:36" nodeName="Contáctanos" urlName="contactanos" writerName="admin" creatorName="admin" path="-1,1124,1126" isDoc="">
+          <headerText>Ponte en contacto con nosotros.</headerText>
+          <formText>
+            <![CDATA[
+Si quieres concertar una cita, pedir presupuesto, o bien informarte
+sobre nuestros servicios, por favor rellena este formulario.
+]]>
+          </formText>
+          <thankYouHeaderText><![CDATA[Gracias. Nos pondremos en contacto a la mayor brevedad posible.]]></thankYouHeaderText>
+          <thankYouMessageText>
+            <![CDATA[
+<p>Gracias por rellenar nuestro formulario de contacto.</p>
+
+<p>Saludos,<br />
+ Mi empresa</p>
+]]>
+          </thankYouMessageText>
+          <emailTo>test-esp@umbraco.test</emailTo>
+          <emailSubject>Email del formulario de contacto del website</emailSubject>
+          <emailBody>
+            <![CDATA[Hola, alguien ha rellenado el formulario en tu website en la fecha [Date] a las [Time]
+
+Nombre: [Name]
+Dirección: [AddressLine1], [AddressLine2]
+Email: [Email]
+Mensaje: [Message]]]>
+          </emailBody>
+          <emailReplySubject>Gracias por tu mensaje</emailReplySubject>
+          <emailReplyBody>
+            <![CDATA[Hola [Name]
+Gracias por contactarnos, te responderemos a la mayor brevedad posible.
+]]>
+          </emailReplyBody>
+          <errorMessage>
+            <![CDATA[Lo sentimos, pero no hemos podido enviar su solicitud debido a un error en el sistema.
+Por favor, póngase en contacto con nosotros al correo test-esp@umbraco.test o llamando a nuestras oficinas 794561846.]]>
+          </errorMessage>
+          <metaDescription><![CDATA[Formulario de contacto]]></metaDescription>
+          <metaKeywords><![CDATA[contacto, contactanos]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+        </Contactpage>
+        <Galleries id="1130" parentID="1124" level="2" writerID="0" creatorID="0" nodeType="1129" template="1051" sortOrder="2" createDate="2011-11-29T12:16:40" updateDate="2012-01-18T16:17:36" nodeName="Galería" urlName="galeria" writerName="admin" creatorName="admin" path="-1,1124,1130" isDoc="">
+          <headerText>Pon las fotos de tu galería aquí</headerText>
+          <metaDescription><![CDATA[galeria de fotos]]></metaDescription>
+          <metaKeywords><![CDATA[galeria,fotos]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Gallery id="1471" parentID="1130" level="3" writerID="0" creatorID="0" nodeType="1131" template="1052" sortOrder="2" createDate="2012-01-04T10:37:43" updateDate="2012-01-18T16:17:37" nodeName="Brasil" urlName="brasil" writerName="admin" creatorName="admin" path="-1,1124,1130,1471" isDoc="">
+            <headerText>Brasil</headerText>
+            <galleryThumbnail>1405</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1472" parentID="1471" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="1" createDate="2012-01-04T10:37:44" updateDate="2012-01-18T16:17:37" nodeName="Iguazú" urlName="iguazu" writerName="admin" creatorName="admin" path="-1,1124,1130,1471,1472" isDoc="">
+              <headerText>Cataratas de Iguazú</headerText>
+              <bodyImage>1405</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1473" parentID="1471" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="2" createDate="2012-01-04T10:37:44" updateDate="2012-01-18T16:17:37" nodeName="Praca de Se" urlName="praca-de-se" writerName="admin" creatorName="admin" path="-1,1124,1130,1471,1473" isDoc="">
+              <headerText>Praça da Sé</headerText>
+              <bodyImage>1410</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1475" parentID="1471" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="4" createDate="2012-01-04T10:37:44" updateDate="2012-01-18T16:17:37" nodeName="Holambra" urlName="holambra" writerName="admin" creatorName="admin" path="-1,1124,1130,1471,1475" isDoc="">
+              <headerText>Un trozo de Holanda en Brasil</headerText>
+              <bodyImage>1401</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1476" parentID="1471" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="5" createDate="2012-01-04T10:37:44" updateDate="2012-01-18T16:17:37" nodeName="Frevo" urlName="frevo" writerName="admin" creatorName="admin" path="-1,1124,1130,1471,1476" isDoc="">
+              <headerText>Bailando frevo</headerText>
+              <bodyImage>1402</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1477" parentID="1471" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="6" createDate="2012-01-04T10:37:44" updateDate="2012-01-18T16:17:37" nodeName="Liberdade" urlName="liberdade" writerName="admin" creatorName="admin" path="-1,1124,1130,1471,1477" isDoc="">
+              <headerText>Un trozo de Japón en Sampa</headerText>
+              <bodyImage>1407</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+          <Gallery id="1478" parentID="1130" level="3" writerID="0" creatorID="0" nodeType="1131" template="1052" sortOrder="3" createDate="2012-01-04T10:39:55" updateDate="2012-01-18T16:17:37" nodeName="España" urlName="espana" writerName="admin" creatorName="admin" path="-1,1124,1130,1478" isDoc="">
+            <headerText>España</headerText>
+            <galleryThumbnail>1435</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1479" parentID="1478" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="1" createDate="2012-01-04T10:39:55" updateDate="2012-01-18T16:17:37" nodeName="La Alhambra" urlName="la-alhambra" writerName="admin" creatorName="admin" path="-1,1124,1130,1478,1479" isDoc="">
+              <headerText>La Alhambra</headerText>
+              <bodyImage>1435</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1480" parentID="1478" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="2" createDate="2012-01-04T10:39:55" updateDate="2012-01-18T16:17:38" nodeName="Cordoba" urlName="cordoba" writerName="admin" creatorName="admin" path="-1,1124,1130,1478,1480" isDoc="">
+              <headerText>La mezquita de Córdoba</headerText>
+              <bodyImage>1436</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1481" parentID="1478" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="3" createDate="2012-01-04T10:39:55" updateDate="2012-01-18T16:17:38" nodeName="El retiro" urlName="el-retiro" writerName="admin" creatorName="admin" path="-1,1124,1130,1478,1481" isDoc="">
+              <headerText>Parque El retiro en invierno</headerText>
+              <bodyImage>1437</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1482" parentID="1478" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="4" createDate="2012-01-04T10:39:55" updateDate="2012-01-18T16:17:38" nodeName="Sevilla" urlName="sevilla" writerName="admin" creatorName="admin" path="-1,1124,1130,1478,1482" isDoc="">
+              <headerText>Catedral de Sevilla</headerText>
+              <bodyImage>1438</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1483" parentID="1478" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="5" createDate="2012-01-04T10:39:55" updateDate="2012-01-18T16:17:38" nodeName="Tenerife" urlName="tenerife" writerName="admin" creatorName="admin" path="-1,1124,1130,1478,1483" isDoc="">
+              <headerText>Tenerife</headerText>
+              <bodyImage>1439</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+          <Gallery id="1484" parentID="1130" level="3" writerID="0" creatorID="0" nodeType="1131" template="1052" sortOrder="4" createDate="2012-01-04T10:41:22" updateDate="2012-01-18T16:17:38" nodeName="Londres" urlName="londres" writerName="admin" creatorName="admin" path="-1,1124,1130,1484" isDoc="">
+            <headerText>Londres</headerText>
+            <galleryThumbnail>1431</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1485" parentID="1484" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="1" createDate="2012-01-04T10:41:22" updateDate="2012-01-18T16:17:38" nodeName="London bridge" urlName="london-bridge" writerName="admin" creatorName="admin" path="-1,1124,1130,1484,1485" isDoc="">
+              <headerText>Vista desde London Bridge</headerText>
+              <bodyImage>1431</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1487" parentID="1484" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="3" createDate="2012-01-04T10:41:23" updateDate="2012-01-18T16:17:38" nodeName="Wimbledon Common" urlName="wimbledon-common" writerName="admin" creatorName="admin" path="-1,1124,1130,1484,1487" isDoc="">
+              <headerText>Una tarde en Wimbledon Common</headerText>
+              <bodyImage>1433</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1489" parentID="1484" level="4" writerID="0" creatorID="0" nodeType="1142" template="1057" sortOrder="5" createDate="2012-01-04T10:41:23" updateDate="2012-01-18T16:17:38" nodeName="Walkway" urlName="walkway" writerName="admin" creatorName="admin" path="-1,1124,1130,1484,1489" isDoc="">
+              <headerText>Jubilee Walkway</headerText>
+              <bodyImage>1430</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+        </Galleries>
+        <Newslist id="1171" parentID="1124" level="2" writerID="0" creatorID="0" nodeType="1170" template="1055" sortOrder="4" createDate="2011-11-29T21:00:27" updateDate="2012-01-18T16:17:38" nodeName="Noticias y Eventos" urlName="noticias-y-eventos" writerName="admin" creatorName="admin" path="-1,1124,1171" isDoc="">
+          <headerText>Nuestras últimas noticias y eventos</headerText>
+          <feedTitle>Noticias y eventos</feedTitle>
+          <feedDescription>Nuestras últimas noticias y eventos</feedDescription>
+          <feedItems>10</feedItems>
+          <metaDescription><![CDATA[noticias y eventos]]></metaDescription>
+          <metaKeywords><![CDATA[noticias,eventos]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Newspage id="1323" parentID="1171" level="3" writerID="0" creatorID="0" nodeType="1174" template="1050" sortOrder="1" createDate="2011-12-26T18:38:43" updateDate="2012-01-18T16:17:39" nodeName="Umbraco 5 RC1 ya está disponible" urlName="umbraco-5-rc1-ya-esta-disponible" writerName="admin" creatorName="admin" path="-1,1124,1171,1323" isDoc="">
+            <newsDate>2011-12-22T00:00:00</newsDate>
+            <bodyImage>1107</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p>Hi everyone! Have you booked up your Seasonal Religious-or-not
+Coding Fun calendar yet? No? Well, allow me to proffer a toy for
+the holidays. We've put up a couple of new Umbraco 5 builds for you
+to try out. We're calling it Release Candidate 1 - we're almost
+there in terms of features, and the remaining work for us to get to
+a 5.0 release is around performance, bugfixes from community
+testing, and any quick wins around handy methods that help with
+building a site.</p>
+
+ <a
+href="http://umbraco.com/follow-us/blog-archive/2011/12/22/umbraco-5-rc1-is-out-today.aspx">
+More info</a>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+          <Newspage id="1492" parentID="1171" level="3" writerID="0" creatorID="0" nodeType="1174" template="1050" sortOrder="2" createDate="2012-01-04T10:52:30" updateDate="2012-01-18T16:17:39" nodeName="Community Compatibility" urlName="community-compatibility" writerName="admin" creatorName="admin" path="-1,1124,1171,1492" isDoc="">
+            <newsDate>2011-12-14T00:00:00</newsDate>
+            <bodyImage>1212</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p>Today we released a new feature over at&nbsp;<a
+href="http://our.umbraco.org/">our.umbraco.org</a>&nbsp;to help
+identify package version compatibility.&nbsp;</p>
+
+<p>Previously it was up to the developer to specify whether a
+package was compatible&nbsp;with certain versions, however it
+sometimes wasn't entirely accurate.&nbsp; So we decided to give it
+to you, the community, to report on whether or not a package works
+with a certain version of Umbraco.&nbsp;</p>
+
+<p>If you are logged in and once you have downloaded a package you
+will be given an opportunity to report on compatibility.&nbsp; This
+information will be shared with the community via a small report
+displayed in the side bar of the package detail page.&nbsp;</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[clases del cuidado de la piel mary kay]]></metaDescription>
+            <metaKeywords><![CDATA[clase, clases,piel,mary,kay,]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+        </Newslist>
+        <NotFound id="1329" parentID="1124" level="2" writerID="0" creatorID="0" nodeType="1328" template="1327" sortOrder="5" createDate="2011-12-27T15:32:40" updateDate="2012-01-18T16:17:39" nodeName="No encontrado" urlName="no-encontrado" writerName="admin" creatorName="admin" path="-1,1124,1329" isDoc="">
+          <headerText>No encontrado</headerText>
+          <bodyImage />
+          <bodyText>
+            <![CDATA[
+<div>
+<p>Lo sentimos, la página que usted ha buscado no ha sido
+encontrada.</p>
+</div>
+]]>
+          </bodyText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>1</umbracoNaviHide>
+        </NotFound>
+        <Searchpage id="1333" parentID="1124" level="2" writerID="0" creatorID="0" nodeType="1332" template="1059" sortOrder="6" createDate="2011-12-30T10:12:17" updateDate="2012-01-18T16:17:39" nodeName="Buscar" urlName="buscar" writerName="admin" creatorName="admin" path="-1,1124,1333" isDoc="">
+          <headerText>Tu búsqueda</headerText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName />
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>1</umbracoNaviHide>
+        </Searchpage>
+      </Homepage>
+      <Homepage id="1148" parentID="-1" level="1" writerID="0" creatorID="0" nodeType="1061" template="1048" sortOrder="4" createDate="2012-01-14T18:04:34" updateDate="2012-02-08T09:34:30" nodeName="בית" urlName="bit" writerName="admin" creatorName="admin" path="-1,1148" isDoc="">
+        <siteName>uBootstrap</siteName>
+        <headerText><![CDATA[ברוכים הבאים לערכת המתחילים uBootstrap - ערכת עיצוב המבוססת על Html5 + CSS3 + .less. תהנו!]]></headerText>
+        <bodyImage>1395</bodyImage>
+        <bodyText>
+          <![CDATA[
+<p style="direction: rtl;">uBootstrap היא ערכת מתחילים לאומברקו
+המבוססת על <a href="http://twitter.github.com/bootstrap/">Bootstrap
+from Twitter</a>&nbsp;ונועדה לעזור לכם להתקין בקלות ולצרכי לימוד,
+אתר אומברקו רב לשוני המשתמש בטכנולוגיות הפיתוח לווב החדשות
+ביותר:<br />
+ html5, css3, .less, boileplate ו- modernizer.</p>
+]]>
+        </bodyText>
+        <twitterAccount>umbracoproject</twitterAccount>
+        <footerLinks>
+          <links>
+            <link title="אודות" link="1149" type="internal" newwindow="0" />
+            <link title="צור קשר" link="1154" type="internal" newwindow="0" />
+            <link title="גלרייה" link="1155" type="internal" newwindow="0" />
+            <link title="הבלוג של ז'ורז'" link="1155" type="internal" newwindow="0" />
+          </links>
+        </footerLinks>
+        <facebookPage>http://www.facebook.com/pages/Umbraco/103774399660999</facebookPage>
+        <contactPhone>164 4564 456</contactPhone>
+        <contactEmail>info@umbraco.test</contactEmail>
+        <metaDescription><![CDATA[Bootstrap Started Kit]]></metaDescription>
+        <metaKeywords><![CDATA[bootstrap,twitter,umbraco,html5,css3,dotless]]></metaKeywords>
+        <umbracoUrlName>bit</umbracoUrlName>
+        <umbracoUrlAlias />
+        <umbracoRedirect />
+        <umbracoNaviHide>0</umbracoNaviHide>
+        <Textpage id="1149" parentID="1148" level="2" writerID="0" creatorID="0" nodeType="1067" template="1055" sortOrder="1" createDate="2012-01-14T18:04:35" updateDate="2012-02-08T09:34:30" nodeName="אודות uBootstrap" urlName="about" writerName="admin" creatorName="admin" path="-1,1148,1149" isDoc="">
+          <headerText>למדו אודות הפונקציונליות הקיימת בערכת המתחילים</headerText>
+          <bodyImage>1395</bodyImage>
+          <bodyText>
+            <![CDATA[
+<p style="direction: rtl;">ערכת מתחילים זאת מבוססת על הערכה&nbsp;<a
+href="http://twitter.github.com/bootstrap/">Bootstrap from
+Twitter</a>&nbsp;ומשתמשת בטכנולוגיות
+כגון:&nbsp;&nbsp;html5,&nbsp;css3,&nbsp;ו- .less. זוהי ערכה התומכת
+באתרים רב-לשוניים המגיעה עם תמיכה באנגלית, ספרדית ועברית. הערכה
+משתמשת במנגנונים המובנים של אומברקו לפיתוח אתרים רב-לשוניים כגון
+dictionary על מנת לבצע לוקליזציה ל- lables וכו'.</p>
+
+<p style="direction: rtl;">עוד פיצ'רים הקיימים בערכה זאת:</p>
+
+<ul>
+<li style="direction: rtl;"><a href="/news-events.atom">פידים
+בפורמט atom עבור פריטי החדשות.</a></li>
+
+<li style="direction: rtl;"><a href="/sitemap.xml">מפת אתר בפורמט
+xml עבור מנועי חיפוש.</a></li>
+
+<li style="direction: rtl;"><a href="/robots.txt">קובץ robots עבור
+מנועי החיפוש.</a></li>
+
+<li style="direction: rtl;"><a href="/humans.txt">קובץ עבור בני
+האדם.</a></li>
+
+<li style="direction: rtl;"><a
+href="http://our.umbraco.org/projects/developer-tools/famfamfam-icons">
+אייקונים מגניבים.</a></li>
+
+<li style="direction: rtl;"><a
+href="http://our.umbraco.org/projects/website-utilities/imagegen">תמונות
+דינמיות באמצעות חבילת ImageGen.</a></li>
+
+<li style="direction: rtl;"><a href="/search?q=Umbraco">מימוש חיפוש
+באתר באמצעות Examine.</a></li>
+
+<li style="direction: rtl;"><a href="/whatever">דף שגיאה
+ידידותי.</a></li>
+</ul>
+]]>
+          </bodyText>
+          <metaDescription><![CDATA[About uBootstrap]]></metaDescription>
+          <metaKeywords><![CDATA[bootstrap,twitter,umbraco,html5,css3,dotless]]></metaKeywords>
+          <umbracoUrlName>about</umbracoUrlName>
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Textpage id="1150" parentID="1149" level="3" writerID="0" creatorID="0" nodeType="1067" template="1055" sortOrder="1" createDate="2012-01-14T18:04:35" updateDate="2012-02-08T09:34:30" nodeName="Less is more" urlName="less-is-more" writerName="admin" creatorName="admin" path="-1,1148,1149,1150" isDoc="">
+            <headerText>Less is more</headerText>
+            <bodyImage>1396</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p style="direction: rtl;">כתבו CSS רגיל באפליציות .NET שלכם, ואז
+הוסיפו משתנים חדשים, mixins וחוקים מכוננים.</p>
+
+<p style="direction: rtl;">ערכת המתחילים הזאת, כבר כוללת בתוכה את
+הקובץ dotless.Core.dll ואת הגדרות הקונפיגורציה הנדרשות בקובץ ה-
+web.config. אתם אפילו יכולים לנהל את קבצי ה- .less שלכם מתוך סקשן
+ה- Settings באומברקו.</p>
+
+<h3>רשימת קבצי ה- .less שהערכה מכילה</h3>
+
+<ul>
+<li style="direction: rtl;">bootstrap.less&nbsp;</li>
+
+<li style="direction: rtl;">forms.less&nbsp;</li>
+
+<li style="direction: rtl;">mixins.less&nbsp;</li>
+
+<li style="direction: rtl;">patterns.less&nbsp;</li>
+
+<li style="direction: rtl;">reset.less&nbsp;</li>
+
+<li style="direction: rtl;">scaffolding.less&nbsp;</li>
+
+<li style="direction: rtl;">tables.less (not used by default, look
+at theme.less)&nbsp;</li>
+
+<li style="direction: rtl;">theme.less&nbsp;</li>
+
+<li style="direction: rtl;">type.less&nbsp;</li>
+
+<li style="direction: rtl;">variables.less</li>
+</ul>
+
+<h3>אני לא אוהב את הערכה הכחולה. איך אני יכול לשנות אותה</h3>
+
+<p style="direction: rtl;">פתחו את קובץ variables.less ושנו את
+<strong>@linkColor</strong>. אתם יכולים לשנות גם את
+<strong>@basefont</strong> ואת <strong>@baseline</strong>. זה עד
+כדי כך פשוט.</p>
+
+<pre>
+/* Accent Colors */
+@blue:              #049CDB;
+@blueDark:          #0064CD;
+@green:             #46a546;
+@red:               #9d261d;
+@yellow:            #ffc40d;
+@orange:            #f89406;
+@pink:              #c3325f;
+@purple:            #7a43b6;
+
+/* Links */
+@linkColor:         @blue;
+@linkColorHover:    darken(@linkColor, 10);
+
+/* Baseline grid */
+@basefont:          14px;
+@baseline:          20px;
+</pre>
+
+<h3>שיניתי את @linkColor אך אינני רואה את השינוי. מדוע?</h3>
+
+<p style="direction: rtl;">כל קבצי ה-CSS וה-JS עוברים אופטימיזציה
+על ידי שימוש במנגנון ClientDependency, לכן פשוט העלו את מספר הגרסה
+בקובץ&nbsp;config/ClientDependency.config</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[Less is more]]></metaDescription>
+            <metaKeywords><![CDATA[dotless,clientdependency]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1151" parentID="1149" level="3" writerID="0" creatorID="0" nodeType="1067" template="1055" sortOrder="2" createDate="2012-01-14T18:04:36" updateDate="2012-02-08T09:34:31" nodeName="דרישות מערכת" urlName="דרישות-מערכת" writerName="admin" creatorName="admin" path="-1,1148,1149,1151" isDoc="">
+            <headerText>לפני שאתם מתקינים את uBootstrap</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p style="direction: rtl;">על מנת שהחבילה תתפקד כנדרש אנא וודאו
+שהחבילות הבאות מותקנות:</p>
+
+<ul>
+<li style="direction: rtl;"><a
+href="/http:/our.umbraco.org/projects/developer-tools/famfamfam-icons">
+Pretty icons</a></li>
+
+<li style="direction: rtl;"><a
+href="http://our.umbraco.org/projects/website-utilities/imagegen">ImageGen</a></li>
+</ul>
+
+<p style="direction: rtl;">כמו כן שימו לב שהחבילה נבדקה על
+<strong>אומברקו בגרסה 4.7.1</strong> שרץ על שרת
+<strong>IIS7.x</strong> במצב של <strong>Integrated
+Mode</strong>.</p>
+
+<h3>הרצה מקומית</h3>
+
+<p style="direction: rtl;">כיוון שהחבילה היא רב-לשונית ומכילה תמיכה
+במספר שפות, אתם נדרשים להוסיף את הדומיינים הבאים ל- IIS שלכם ולקובץ
+ה- hosts:</p>
+
+<ul>
+<li style="direction: rtl;">bootstrap.local</li>
+
+<li style="direction: rtl;">es.bootstrap.local</li>
+
+<li style="direction: rtl;">he.bootstrap.local</li>
+</ul>
+
+<p style="direction: rtl;">כמו כן אתם מוזמנים להציץ <a
+href="http://bs.jlusar.es" target="_blank">באתר הדמו</a> של
+הערכה.</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[Before installing uBootstrap]]></metaDescription>
+            <metaKeywords><![CDATA[imagegen,famfamfam,iis7]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1152" parentID="1149" level="3" writerID="0" creatorID="0" nodeType="1067" template="1055" sortOrder="3" createDate="2012-01-14T18:04:36" updateDate="2012-02-08T09:34:31" nodeName="Client dependency" urlName="client-dependency" writerName="admin" creatorName="admin" path="-1,1148,1149,1152" isDoc="">
+            <headerText>קבצי ה- Stylesheets וה- javascripts עוברים אופטימיזציה באמצעות מנגנון ה- ClientDependency</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p style="direction: rtl;">כל קבצי ה- Stylesheets וה- javascripts
+עוברים אופטימיזציה באמצעות ה- <a
+href="http://clientdependency.codeplex.com/">ClientDependency
+framework</a>&nbsp;המובנה באומברקו.</p>
+
+<h3>דוגמאות</h3>
+
+<p style="direction: rtl;">קיים מקרו בשם&nbsp;CdLoader אשר עוזר לנו
+לטעון את קבצי ה- CSS וה- JS כאשר אנו מעוניינים בכך.</p>
+
+<p style="direction: rtl;">לדוגמא, הסתכלו על הקוד בתבנית
+בשם&nbsp;Public.master:</p>
+
+<pre>
+&lt;umbraco:Macro Alias="CdLoader" CssPaths="/less/theme.less" runat="server" /&gt;
+</pre>
+
+<p>&nbsp;</p>
+
+<p style="direction: rtl;">או בסקריפטים הנטענים בתחתית התבנית
+בשם&nbsp;Public_Newslist.master:</p>
+
+<pre>
+&lt;umbraco:Macro Alias="CdLoader" JsPaths="analytics.js|bootstrap-twipsy.js|twitter.js|facebook.js|site.js" IncludeDefaultPaths="true" runat="server" /&gt;
+</pre>
+
+<h3>טעינת CSS מיושר לימין עבור השפה העברית</h3>
+
+<p style="direction: rtl;">כיוון שערכה זאת תומכת גם בשפה העברית
+שכידוע בניגוד לשאר השפות, מיושרת לימין, אנו נדרשים לטעון
+CSS&nbsp;שונה&nbsp;כאשר הגולש נמצא בשפה העברית. על מנת להשיג זאת,
+אנו בודקים את ה- Culture הנוכחי (שנקבע&nbsp;באמצעות הדומיין היחודי
+לכל שפה באתר).</p>
+
+<p style="direction: rtl;">תוכלו לראות דוגמא לכך
+בתבנית&nbsp;Public.master:</p>
+
+<pre>
+&lt;% if (Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft) { %&gt;
+  &lt;umbraco:Macro Alias="CdLoader" CssPaths="/less/theme.rtl.less" runat="server" /&gt;
+  &lt;% } else { %&gt;
+  &lt;umbraco:Macro Alias="CdLoader" CssPaths="/less/theme.less" runat="server" /&gt;
+  &amp;lt% } %&gt;&lt;/pre&gt;
+</pre>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+          <Textpage id="1153" parentID="1149" level="3" writerID="0" creatorID="0" nodeType="1067" template="1055" sortOrder="4" createDate="2012-01-14T18:04:36" updateDate="2012-02-08T09:34:31" nodeName="Runat server #NOT" urlName="runat-server-not" writerName="admin" creatorName="admin" path="-1,1148,1149,1153" isDoc="">
+            <headerText>אין שימוש ב- runat=server בתבניות או בטפסים. מדוע?</headerText>
+            <bodyImage />
+            <bodyText>
+              <![CDATA[
+<p style="direction: rtl;">אחד מהדברים שתבחינו כאשר תכנסו לקוד הוא
+שבתבנית&nbsp;Public.master אין שימוש ב- head runat="server" או form
+runat="server", בשל כך מוד הקנבס אינו אפשרי.</p>
+
+<h3>מדוע?</h3>
+
+<p style="direction: rtl;">מעולם לא אהבתי את הרעיון של לשים את כל
+ה- body של ה- html בתוך תגית form שעוטפת הכל. אני חושב שזה לא נכון
+סמנטית ואני גם לא אוהב מה ש- asp.net מוסיפה מבחינת viewstate,
+hidden inputs, naming controls וכו'.</p>
+
+<h3>אז, איך הערכה מטפלת בטפסים?</h3>
+
+<p style="direction: rtl;">אתם תבחינו
+שהמקרו&nbsp;ContactForm.cshtml משתמש ב-&nbsp;AntiforgeryToken הנמצא
+במחלקה&nbsp;MainHelper:</p>
+
+<pre>
+public static HtmlString GetAntiForgeryHtml(this HttpContextBase context)
+{
+    return AntiForgery.GetHtml(context, String.Empty, String.Empty, String.Empty);
+}
+
+public static bool IsValidAntiForgery(this HttpContextBase context)
+{
+    try
+    {
+        AntiForgery.Validate(context, String.Empty);
+        return true;
+    }
+    catch
+    {
+        return false;
+    }
+}
+</pre>
+
+<p>&nbsp;בדרך זאת, אנו מונעים מה שידוע בתור &nbsp;Cross-Site
+Request Forgery - CSRF. &nbsp;אנו גם משתמשים ב-&nbsp;ModelState על
+מנת לבצע ולידציה לשדות החובה ולמפות דינמית את הבקשה על ידי שימוש ב-
+helper:</p>
+
+<pre>
+public static dynamic ToDynamic(this NameValueCollection collection)
+{
+    return new DynamicRequest(collection);
+}
+
+private class DynamicRequest : DynamicObject
+{
+    private readonly NameValueCollection nvc;
+
+    public DynamicRequest(NameValueCollection collection)
+    {
+        nvc = collection;
+    }
+
+    public override bool TryGetMember(GetMemberBinder binder, out object result)
+    {
+        result = nvc[binder.Name];
+        return true;
+    }
+}
+</pre>
+
+<p>&nbsp;אז כמו שאתם רואים, ככה הצלחנו ליצור טופס צור קשר מבלי
+לעטוף אותו בתגית runat="server".</p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName />
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Textpage>
+        </Textpage>
+        <Contactpage id="1154" parentID="1148" level="2" writerID="0" creatorID="0" nodeType="1058" template="1044" sortOrder="2" createDate="2012-01-14T18:04:36" updateDate="2012-02-08T09:34:31" nodeName="צור קשר" urlName="contact" writerName="admin" creatorName="admin" path="-1,1148,1154" isDoc="">
+          <headerText>צור קשר</headerText>
+          <formText>
+            <![CDATA[
+<p style="direction: rtl;">כאן יהיה טקסט שלכם הפונה באופן יפה
+ומנומס ללקוחות פונטנציאליים ומבקש מהם להשאיר פרטי התקשרות.</p>
+]]>
+          </formText>
+          <thankYouHeaderText><![CDATA[תודה, נצור אתך קשר בהקדם.]]></thankYouHeaderText>
+          <thankYouMessageText>
+            <![CDATA[
+<p style="direction: rtl;">תודה שמלאת את הטופס באתר.</p>
+
+<div style="direction: rtl;">ברכות,</div>
+
+<div style="direction: rtl;">שם החברה.</div>
+]]>
+          </thankYouMessageText>
+          <emailTo>jorgitto@gmail.com</emailTo>
+          <emailSubject>Thanks for contacting us</emailSubject>
+          <emailBody>
+            <![CDATA[Hi, the contact form in your website has been filled in on [Date] at [Time]
+
+Nombre: [Name]
+Dirección: [AddressLine1], [AddressLine2]
+Email: [Email]
+Mensaje: [Message]]]>
+          </emailBody>
+          <emailReplySubject>Thanks for yor message</emailReplySubject>
+          <emailReplyBody>
+            <![CDATA[Hi [Name]
+Thanks for contacting us, we will get in touch with you as soon as possible
+
+My company
+testcompany.com]]>
+          </emailReplyBody>
+          <errorMessage><![CDATA[We are sorry, but we could not send your enquiry due to and error in our system.]]></errorMessage>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName>contact</umbracoUrlName>
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+        </Contactpage>
+        <Galleries id="1155" parentID="1148" level="2" writerID="0" creatorID="0" nodeType="1059" template="1046" sortOrder="3" createDate="2012-01-14T18:04:37" updateDate="2012-02-08T09:34:31" nodeName="גלריית תמונות" urlName="gallery" writerName="admin" creatorName="admin" path="-1,1148,1155" isDoc="">
+          <headerText>הוסיפו תמונות לגלריית התמונות</headerText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName>gallery</umbracoUrlName>
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Gallery id="1156" parentID="1155" level="3" writerID="0" creatorID="0" nodeType="1060" template="1047" sortOrder="1" createDate="2012-01-14T18:04:37" updateDate="2012-02-08T09:34:31" nodeName="ברזיל" urlName="brazil" writerName="admin" creatorName="admin" path="-1,1148,1155,1156" isDoc="">
+            <headerText>ברזיל</headerText>
+            <galleryThumbnail>1405</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName>brazil</umbracoUrlName>
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1157" parentID="1156" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="1" createDate="2012-01-14T18:04:37" updateDate="2012-02-08T09:34:32" nodeName="מפלי האיגואסו" urlName="iguazu-falls" writerName="admin" creatorName="admin" path="-1,1148,1155,1156,1157" isDoc="">
+              <headerText>מפלי האיגואסו</headerText>
+              <bodyImage>1405</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>iguazu-falls</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1158" parentID="1156" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="2" createDate="2012-01-14T18:04:38" updateDate="2012-02-08T09:34:32" nodeName="כיכר הקתדרלה" urlName="praca-se" writerName="admin" creatorName="admin" path="-1,1148,1155,1156,1158" isDoc="">
+              <headerText>כיכר הקתדרלה</headerText>
+              <bodyImage>1410</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>praca-se</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1159" parentID="1156" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="3" createDate="2012-01-14T18:04:38" updateDate="2012-02-08T09:34:32" nodeName="הולמברה" urlName="holambra" writerName="admin" creatorName="admin" path="-1,1148,1155,1156,1159" isDoc="">
+              <headerText>פיסת הולנד בברזיל</headerText>
+              <bodyImage>1401</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>holambra</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1160" parentID="1156" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="4" createDate="2012-01-14T18:04:38" updateDate="2012-02-08T09:34:32" nodeName="רוקדים frevo" urlName="frevo" writerName="admin" creatorName="admin" path="-1,1148,1155,1156,1160" isDoc="">
+              <headerText>רוקדים frevo</headerText>
+              <bodyImage>1402</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>frevo</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1161" parentID="1156" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="5" createDate="2012-01-14T18:04:38" updateDate="2012-02-08T09:34:32" nodeName="מחוז Liberdade" urlName="liberdade" writerName="admin" creatorName="admin" path="-1,1148,1155,1156,1161" isDoc="">
+              <headerText>פיסת יפן בסאו פאולו</headerText>
+              <bodyImage>1407</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>liberdade</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+          <Gallery id="1162" parentID="1155" level="3" writerID="0" creatorID="0" nodeType="1060" template="1047" sortOrder="2" createDate="2012-01-14T18:04:39" updateDate="2012-02-08T09:34:32" nodeName="ספרד" urlName="spain" writerName="admin" creatorName="admin" path="-1,1148,1155,1162" isDoc="">
+            <headerText>ספרד</headerText>
+            <galleryThumbnail>1435</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName>spain</umbracoUrlName>
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1163" parentID="1162" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="1" createDate="2012-01-14T18:04:39" updateDate="2012-02-08T09:34:32" nodeName="אלהמברה" urlName="alhambra" writerName="admin" creatorName="admin" path="-1,1148,1155,1162,1163" isDoc="">
+              <headerText>המבצר האדום - Alhambra</headerText>
+              <bodyImage>1435</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>alhambra</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1164" parentID="1162" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="2" createDate="2012-01-14T18:04:39" updateDate="2012-02-08T09:34:33" nodeName="קורדובה" urlName="cordoba" writerName="admin" creatorName="admin" path="-1,1148,1155,1162,1164" isDoc="">
+              <headerText>המסגד הגדול בקורדובה</headerText>
+              <bodyImage>1436</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>cordoba</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1165" parentID="1162" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="3" createDate="2012-01-14T18:04:39" updateDate="2012-02-08T09:34:33" nodeName="El retiro" urlName="el-retiro" writerName="admin" creatorName="admin" path="-1,1148,1155,1162,1165" isDoc="">
+              <headerText>פארק El retiro</headerText>
+              <bodyImage>1437</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>el-retiro</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1166" parentID="1162" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="4" createDate="2012-01-14T18:04:40" updateDate="2012-02-08T09:34:33" nodeName="סביליה" urlName="sevile" writerName="admin" creatorName="admin" path="-1,1148,1155,1162,1166" isDoc="">
+              <headerText>הקתדרלה של סביליה</headerText>
+              <bodyImage>1438</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>sevile</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1167" parentID="1162" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="5" createDate="2012-01-14T18:04:40" updateDate="2012-02-08T09:34:33" nodeName="טנריף" urlName="טנריף" writerName="admin" creatorName="admin" path="-1,1148,1155,1162,1167" isDoc="">
+              <headerText>טנריף - האיים הכנריים</headerText>
+              <bodyImage>1439</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName />
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+          <Gallery id="1168" parentID="1155" level="3" writerID="0" creatorID="0" nodeType="1060" template="1047" sortOrder="3" createDate="2012-01-14T18:04:40" updateDate="2012-02-08T09:34:33" nodeName="לונדון" urlName="london" writerName="admin" creatorName="admin" path="-1,1148,1155,1168" isDoc="">
+            <headerText>לונדון</headerText>
+            <galleryThumbnail>1431</galleryThumbnail>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName>london</umbracoUrlName>
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+            <Photo id="1169" parentID="1168" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="1" createDate="2012-01-14T18:04:40" updateDate="2012-02-08T09:34:33" nodeName="גשר לונדון" urlName="london-bridge" writerName="admin" creatorName="admin" path="-1,1148,1155,1168,1169" isDoc="">
+              <headerText>הנוף לגשר לונדון</headerText>
+              <bodyImage>1431</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>london-bridge</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1170" parentID="1168" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="2" createDate="2012-01-14T18:04:41" updateDate="2012-02-08T09:34:33" nodeName="פרק ווימבלדון" urlName="wimbledon-common" writerName="admin" creatorName="admin" path="-1,1148,1155,1168,1170" isDoc="">
+              <headerText>אחר הצהריים בפארק ווימבלדון</headerText>
+              <bodyImage>1433</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>wimbledon-common</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+            <Photo id="1171" parentID="1168" level="4" writerID="0" creatorID="0" nodeType="1065" template="1052" sortOrder="3" createDate="2012-01-14T18:04:41" updateDate="2012-02-08T09:34:34" nodeName="הטיילת" urlName="jubilee-walkway" writerName="admin" creatorName="admin" path="-1,1148,1155,1168,1171" isDoc="">
+              <headerText>טיילת Jubilee</headerText>
+              <bodyImage>1430</bodyImage>
+              <metaDescription><![CDATA[]]></metaDescription>
+              <metaKeywords><![CDATA[]]></metaKeywords>
+              <umbracoUrlName>jubilee-walkway</umbracoUrlName>
+              <umbracoUrlAlias />
+              <umbracoRedirect />
+              <umbracoNaviHide>0</umbracoNaviHide>
+            </Photo>
+          </Gallery>
+        </Galleries>
+        <Newslist id="1173" parentID="1148" level="2" writerID="0" creatorID="0" nodeType="1063" template="1049" sortOrder="5" createDate="2012-01-14T18:04:41" updateDate="2012-02-08T09:34:34" nodeName="חדשות ואירועים" urlName="news" writerName="admin" creatorName="admin" path="-1,1148,1173" isDoc="">
+          <headerText>חדשות אחרונות</headerText>
+          <feedTitle>פיד החדשות והאירועים</feedTitle>
+          <feedDescription>החדשות והאירועים האחרונים שלנו</feedDescription>
+          <feedItems>10</feedItems>
+          <metaDescription><![CDATA[News and Events]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName>news</umbracoUrlName>
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <Newspage id="1174" parentID="1173" level="3" writerID="0" creatorID="0" nodeType="1062" template="1050" sortOrder="1" createDate="2012-01-14T18:04:42" updateDate="2012-02-08T09:34:34" nodeName="חדשות נפלאות" urlName="umbraco-5-rc1-is-out-today-" writerName="admin" creatorName="admin" path="-1,1148,1173,1174" isDoc="">
+            <newsDate>2011-12-22T00:00:00</newsDate>
+            <bodyImage>1107</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p style="direction: rtl;"><span>לורם איפסום דולור סיט אמט,
+קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו
+בלוקריה שיצמה ברורק. לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג
+אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם.
+וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי
+טידום בעליק. קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום,
+לפריקך תצטריק לרטי.&nbsp;</span></p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName>umbraco-5-rc1-is-out-today </umbracoUrlName>
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+          <Newspage id="1175" parentID="1173" level="3" writerID="0" creatorID="0" nodeType="1062" template="1050" sortOrder="2" createDate="2012-01-14T18:04:42" updateDate="2012-02-08T09:34:34" nodeName="קהילת אומברקו" urlName="community-compatibility" writerName="admin" creatorName="admin" path="-1,1148,1173,1175" isDoc="">
+            <newsDate>2011-12-14T00:00:00</newsDate>
+            <bodyImage>1212</bodyImage>
+            <bodyText>
+              <![CDATA[
+<p style="direction: rtl;">למי שלא ידע, יש לא מעט מפתחי אומברקו
+בישראל.</p>
+
+<p style="direction: rtl;">על מנת שנאחד כוחות ונעזור אחד לשני ללמוד
+ולשתף ידע בכל הקשור למערכת ניהול התוכן האהובה אומברקו, קם בישראל
+אתר המרכז חדשות, אירועים, בלוג עם פוסטים מעניינים ומידע נוסף הקשור
+לקהילת מפתחי אומברקו.</p>
+
+<p style="direction: rtl;">אתם מוזמנים להציץ באתר, להרשם בקלות
+ולהתחיל להיות פעילים בקהילה.</p>
+
+<p style="direction: rtl;">אז בקרו ב<a href="http://udevs.org.il"
+target="_blank">אתר הקהילה</a>,&nbsp;הצטרפו לקבוצה שלנו <a
+href="http://www.facebook.com/groups/udevs.org.il/"
+target="_blank">בפייסבוק</a>&nbsp;או עקבו אחרינו <a
+href="https://twitter.com/#!/udevs"
+target="_blank">בטוויטר.</a></p>
+]]>
+            </bodyText>
+            <metaDescription><![CDATA[]]></metaDescription>
+            <metaKeywords><![CDATA[]]></metaKeywords>
+            <umbracoUrlName>community-compatibility</umbracoUrlName>
+            <umbracoUrlAlias />
+            <umbracoRedirect />
+            <umbracoNaviHide>0</umbracoNaviHide>
+          </Newspage>
+        </Newslist>
+        <NotFound id="1176" parentID="1148" level="2" writerID="0" creatorID="0" nodeType="1064" template="1051" sortOrder="6" createDate="2012-01-14T18:04:42" updateDate="2012-02-08T09:34:34" nodeName="עמוד לא נמצא" urlName="not-found" writerName="admin" creatorName="admin" path="-1,1148,1176" isDoc="">
+          <headerText>העמוד אינו נמצא</headerText>
+          <bodyImage />
+          <bodyText>
+            <![CDATA[
+<div>
+<p style="direction: rtl;">אנו מצטערים, אך העמוד שחיפשת אינו
+נמצא</p>
+</div>
+]]>
+          </bodyText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName>not-found</umbracoUrlName>
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>1</umbracoNaviHide>
+        </NotFound>
+        <Searchpage id="1177" parentID="1148" level="2" writerID="0" creatorID="0" nodeType="1066" template="1054" sortOrder="7" createDate="2012-01-14T18:04:42" updateDate="2012-02-08T09:34:34" nodeName="חיפוש" urlName="search" writerName="admin" creatorName="admin" path="-1,1148,1177" isDoc="">
+          <headerText>תוצאות חיפוש</headerText>
+          <metaDescription><![CDATA[]]></metaDescription>
+          <metaKeywords><![CDATA[]]></metaKeywords>
+          <umbracoUrlName>search</umbracoUrlName>
+          <umbracoUrlAlias />
+          <umbracoRedirect />
+          <umbracoNaviHide>1</umbracoNaviHide>
+        </Searchpage>
+      </Homepage>
+    </DocumentSet>
+  </Documents>
+  <DocumentTypes>
+    <DocumentType>
+      <Info>
+        <Name>Base</Name>
+        <Alias>Base</Alias>
+        <Icon>folder.gif</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>This is the base page with SEO meta data and umbraco generic properties</Description>
+        <AllowedTemplates />
+        <DefaultTemplate>
+        </DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Meta Description</Name>
+          <Alias>metaDescription</Alias>
+          <Type>67db8357-ef57-493e-91ac-936d305e0f2a</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Meta</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[Enter the description for the page.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Meta Keywords</Name>
+          <Alias>metaKeywords</Alias>
+          <Type>67db8357-ef57-493e-91ac-936d305e0f2a</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Meta</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description>
+            <![CDATA[Enter a comma seperated list of keywords.
+keyword, test, umbraco]]>
+          </Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Umbraco URL Name</Name>
+          <Alias>umbracoUrlName</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>
+          </Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[If you wish to change the URL of the node without changing the node name fill this in.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Umbraco URL Alias</Name>
+          <Alias>umbracoUrlAlias</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>
+          </Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description>
+            <![CDATA[Use this to give a node multiple urls.
+
+eg: home,homepage/another-level]]>
+          </Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name> Umbraco Redirect</Name>
+          <Alias>umbracoRedirect</Alias>
+          <Type>158aa029-24ed-4948-939e-c3da209e5fba</Type>
+          <Definition>a6857c73-d6e9-480c-b6e6-f15f6ad11125</Definition>
+          <Tab>
+          </Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[Pick a node you wish to redirect to if the user lands on this node.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Hide in Navi</Name>
+          <Alias>umbracoNaviHide</Alias>
+          <Type>38b352c1-e9f8-4fd8-9324-9a2eab06d97a</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab>
+          </Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[Use this property if you wish to hide this page in the navigation.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>37</Id>
+          <Caption>Meta</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Contact page</Name>
+        <Alias>Contactpage</Alias>
+        <Icon>email.png</Icon>
+        <Thumbnail>doc.png</Thumbnail>
+        <Description>This is the contact form document type for your site.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Contactpage</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Contactpage</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Form Text</Name>
+          <Alias>formText</Alias>
+          <Type>5e9b75ae-face-41c8-b47e-5f4b0fd82f83</Type>
+          <Definition>ca90c950-0aff-4e72-b976-a30b1ac57dad</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[This is the text that sits to the left of the contact form.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Thank You Header</Name>
+          <Alias>thankYouHeaderText</Alias>
+          <Type>67db8357-ef57-493e-91ac-936d305e0f2a</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Thank You</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[This is the header for the thankyou the user will see after sumbitting the contact form.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Thank You Message</Name>
+          <Alias>thankYouMessageText</Alias>
+          <Type>5e9b75ae-face-41c8-b47e-5f4b0fd82f83</Type>
+          <Definition>ca90c950-0aff-4e72-b976-a30b1ac57dad</Definition>
+          <Tab>Thank You</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[This is the thankyou message that the user will see after submitting your form.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Email To</Name>
+          <Alias>emailTo</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[The email address that you want the form to be sent to.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Email Subject</Name>
+          <Alias>emailSubject</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[The subject of the email that will be sent to you.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Email Message</Name>
+          <Alias>emailBody</Alias>
+          <Type>67db8357-ef57-493e-91ac-936d305e0f2a</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[Use placeholders [Name], [AddressLine1], [AddressLine2], [Email], [Message], [Time] and [Date]]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Email Reply Subject</Name>
+          <Alias>emailReplySubject</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description>
+            <![CDATA[The subject of the email that will be sent as the automated reply.
+]]>
+          </Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Email Reply Body</Name>
+          <Alias>emailReplyBody</Alias>
+          <Type>67db8357-ef57-493e-91ac-936d305e0f2a</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[Use placeholder [Name]]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Error Message</Name>
+          <Alias>errorMessage</Alias>
+          <Type>60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</Type>
+          <Definition>1251c96c-185c-4e9b-93f4-b48205573cbd</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>True</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[The error message to be shown if we can't send the email.]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>41</Id>
+          <Caption>Content</Caption>
+        </Tab>
+        <Tab>
+          <Id>42</Id>
+          <Caption>Thank You</Caption>
+        </Tab>
+        <Tab>
+          <Id>43</Id>
+          <Caption>Settings</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Galleries</Name>
+        <Alias>Galleries</Alias>
+        <Icon>pictures.png</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>This is the Galleries document type for your site which stores the Gallery document type as children.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Galleries</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Galleries</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>Gallery</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>48</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Gallery</Name>
+        <Alias>Gallery</Alias>
+        <Icon>images.png</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>This is the gallery document type which stores the Photo document type as children.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Gallery</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Gallery</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>Photo</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Thumbnail for Gallery</Name>
+          <Alias>galleryThumbnail</Alias>
+          <Type>ead69342-f06d-4253-83ac-28000225583b</Type>
+          <Definition>93929b9a-93a2-4e2a-b239-d99334440a59</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>51</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Homepage</Name>
+        <Alias>Homepage</Alias>
+        <Icon>house.png</Icon>
+        <Thumbnail>doc.png</Thumbnail>
+        <Description>This is the homepage document type for your site.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Homepage</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Homepage</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>Textpage</DocumentType>
+        <DocumentType>Contactpage</DocumentType>
+        <DocumentType>Galleries</DocumentType>
+        <DocumentType>Newslist</DocumentType>
+        <DocumentType>NotFound</DocumentType>
+        <DocumentType>Searchpage</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Site Name</Name>
+          <Alias>siteName</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[This is what your site is called.]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</Type>
+          <Definition>1251c96c-185c-4e9b-93f4-b48205573cbd</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Image</Name>
+          <Alias>bodyImage</Alias>
+          <Type>ead69342-f06d-4253-83ac-28000225583b</Type>
+          <Definition>93929b9a-93a2-4e2a-b239-d99334440a59</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Text</Name>
+          <Alias>bodyText</Alias>
+          <Type>5e9b75ae-face-41c8-b47e-5f4b0fd82f83</Type>
+          <Definition>ca90c950-0aff-4e72-b976-a30b1ac57dad</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Twitter Account</Name>
+          <Alias>twitterAccount</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Footer links</Name>
+          <Alias>footerLinks</Alias>
+          <Type>71b8ad1a-8dc2-425c-b6b8-faa158075e63</Type>
+          <Definition>21e798da-e06e-4eda-a511-ed257f78d4fa</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Facebook Page</Name>
+          <Alias>facebookPage</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Contact phone</Name>
+          <Alias>contactPhone</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Contact email</Name>
+          <Alias>contactEmail</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>40</Id>
+          <Caption>Content</Caption>
+        </Tab>
+        <Tab>
+          <Id>50</Id>
+          <Caption>Settings</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>News</Name>
+        <Alias>Newspage</Alias>
+        <Icon>date.png</Icon>
+        <Thumbnail>doc.png</Thumbnail>
+        <Description>This is the event document type for your site and lives beneath the News &amp; Events List document type.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Newspage</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Newspage</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>News date</Name>
+          <Alias>newsDate</Alias>
+          <Type>23e93522-3200-44e2-9f29-e61a6fcbb79a</Type>
+          <Definition>5046194e-4237-453c-a547-15db3a07c4e1</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Image</Name>
+          <Alias>bodyImage</Alias>
+          <Type>ead69342-f06d-4253-83ac-28000225583b</Type>
+          <Definition>93929b9a-93a2-4e2a-b239-d99334440a59</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Text</Name>
+          <Alias>bodyText</Alias>
+          <Type>5e9b75ae-face-41c8-b47e-5f4b0fd82f83</Type>
+          <Definition>ca90c950-0aff-4e72-b976-a30b1ac57dad</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>57</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>News list</Name>
+        <Alias>Newslist</Alias>
+        <Icon>application_cascade.png</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>This is the News &amp; Events List document type for your site which stores the News and Event Item document types as children.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Newslist</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Newslist</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>Newspage</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Feed title</Name>
+          <Alias>feedTitle</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Feed Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Feed Description</Name>
+          <Alias>feedDescription</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Feed Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Number of items</Name>
+          <Alias>feedItems</Alias>
+          <Type>1413afcb-d19a-4173-8e9a-68288d2a73b8</Type>
+          <Definition>2e6d3631-066e-44b8-aec4-96f09099b2b5</Definition>
+          <Tab>Feed Settings</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>54</Id>
+          <Caption>Content</Caption>
+        </Tab>
+        <Tab>
+          <Id>63</Id>
+          <Caption>Feed Settings</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Not found</Name>
+        <Alias>NotFound</Alias>
+        <Icon>page_delete.png</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>
+        </Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Notfound</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Notfound</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Image</Name>
+          <Alias>bodyImage</Alias>
+          <Type>ead69342-f06d-4253-83ac-28000225583b</Type>
+          <Definition>93929b9a-93a2-4e2a-b239-d99334440a59</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Text</Name>
+          <Alias>bodyText</Alias>
+          <Type>5e9b75ae-face-41c8-b47e-5f4b0fd82f83</Type>
+          <Definition>ca90c950-0aff-4e72-b976-a30b1ac57dad</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>59</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Photo</Name>
+        <Alias>Photo</Alias>
+        <Icon>image.png</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>This is the Photo document type for your site and lives beneath the Gallery document type.</Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Photo</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Photo</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header text</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[Enter a description]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Image</Name>
+          <Alias>bodyImage</Alias>
+          <Type>ead69342-f06d-4253-83ac-28000225583b</Type>
+          <Definition>93929b9a-93a2-4e2a-b239-d99334440a59</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>53</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Search page</Name>
+        <Alias>Searchpage</Alias>
+        <Icon>find.png</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description>
+        </Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Search</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Search</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>60</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Textpage</Name>
+        <Alias>Textpage</Alias>
+        <Icon>.sprTreeDoc</Icon>
+        <Thumbnail>doc.png</Thumbnail>
+        <Description>
+        </Description>
+        <Master>Base</Master>
+        <AllowedTemplates>
+          <Template>Public_Textpage</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Public_Textpage</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>Textpage</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Header</Name>
+          <Alias>headerText</Alias>
+          <Type>ec15c1e5-9d90-422a-aa52-4f7622c63bea</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Image</Name>
+          <Alias>bodyImage</Alias>
+          <Type>ead69342-f06d-4253-83ac-28000225583b</Type>
+          <Definition>93929b9a-93a2-4e2a-b239-d99334440a59</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Text</Name>
+          <Alias>bodyText</Alias>
+          <Type>5e9b75ae-face-41c8-b47e-5f4b0fd82f83</Type>
+          <Definition>ca90c950-0aff-4e72-b976-a30b1ac57dad</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation>
+          </Validation>
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>38</Id>
+          <Caption>Content</Caption>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+  </DocumentTypes>
+  <Templates>
+    <Template>
+      <Name>Contact page</Name>
+      <Alias>Public_Contactpage</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="ContactForm" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Feed</Name>
+      <Alias>Feed</Alias>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" %>
+<umbraco:Macro FeedItems="10" FeedTitle="[#feedTitle]" FeedDescription="[#feedDescription]" Alias="NewsFeed" runat="server" />]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Galleries</Name>
+      <Alias>Public_Galleries</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="ListGalleries" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="RecommendWidget" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Gallery</Name>
+      <Alias>Public_Gallery</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="ListPhotos" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="RecommendWidget" runat="server" />
+    <umbraco:Macro Alias="ListThumbnails" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Homepage</Name>
+      <Alias>Public_Homepage</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <div class="row">
+        <div class="span4">
+            <umbraco:Macro Alias="DisplayImage" MediaId="[#bodyImage]" ImageWidth="340" runat="server" />
+        </div>
+        <div class="span4">
+            <umbraco:Item Field="bodyText" runat="server" />
+        </div>
+    </div>
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="LatestNews" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>News list</Name>
+      <Alias>Public_Newslist</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+<%@ Import Namespace="System.Threading" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="NewsList" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <div class="well">
+    <ul class="unstyled" id="twtr-widget" data-user="<umbraco:Item field='twitterAccount' recursive='true' runat='server' />">
+      <li></li>
+    </ul>
+    </div>
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Newspage</Name>
+      <Alias>Public_Newspage</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="pageName" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="DateFormat" dateFormat="dd MMM yyyy" propertyAlias="newsDate" runat="server" />
+    <umbraco:Macro Alias="DisplayImage" ImageWidth="250" MediaId="[#bodyImage]" ImageClass="rounded" FloatImage="true" runat="server" />
+    <umbraco:Item field="bodyText" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="SideNavigation" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Not found</Name>
+      <Alias>Public_Notfound</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" AutoEventWireup="true" %>
+<%@ Import Namespace="System.Threading" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="DisplayImage" ImageWidth="250" MediaId="[#bodyImage]" ImageClass="rounded" FloatImage="true" runat="server" />
+    <umbraco:Item field="bodyText" runat="server" />
+    <script>
+        var GOOG_FIXURL_LANG = '<%= Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName %>';
+        var GOOG_FIXURL_SITE = location.host;
+    </script>
+    <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="SideNavigation" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>
+
+]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Photo</Name>
+      <Alias>Public_Photo</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <div class="thumbnails">
+    <div class="span9">
+    <a href="#" class="thumbnail">
+        <umbraco:Macro Alias="DisplayImage" MediaId="[#bodyImage]" ImageWidth="860" runat="server" />
+    </a>
+    </div>
+    </div>
+    
+    <umbraco:Macro Alias="PhotoPager" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="RecommendWidget" runat="server" />
+    <umbraco:Macro Alias="ListThumbnails" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Public</Name>
+      <Alias>Public</Alias>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" Inherits="Bootstrap.Logic.UI.MasterPageBase" %>
+<%@ Import Namespace="System.Threading" %><!doctype html>
+<html lang="<%= Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName %>">
+<head>
+    <meta charset="utf-8" />
+    <title><umbraco:Macro Alias="PageTitle" runat="server" /></title>
+    <umbraco:Macro Alias="HeaderTags" runat="server" />
+    <%= Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? Combres.WebExtensions.CombresLink("rtlCss") : Combres.WebExtensions.CombresLink("theme")%>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body <%= Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? "dir=\"rtl\"" : "" %>>
+    <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container" role="banner">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/"><umbraco:Item field="siteName" recursive="true" runat="server" /></a>
+        <nav role="navigation" class="nav-collapse">
+            <umbraco:Macro Alias="Navigation" runat="server" />
+            <umbraco:Macro Alias="SearchBox" runat="server" />
+        </nav>
+        </div>
+    </div>
+    </header>
+    
+    <div class="container">
+        <div class="hero-unit">
+            <asp:ContentPlaceHolder Id="HeaderContent" runat="server" />
+        </div>
+        <div class="row">
+        <section class="span9" role="main">
+            <asp:ContentPlaceHolder Id="MainContent" runat="server" />
+        </section>
+        <aside class="span3" role="complementary">
+            <asp:ContentPlaceHolder Id="SideContent" runat="server" />
+        </aside>
+        </div>
+    </div>
+    <footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <umbraco:Macro ID="Macro1" Alias="RelatedLinks" runat="server" />
+            </div>
+            <div class="span4">
+                <umbraco:Macro ID="Macro2" Alias="LanguageSelector" runat="server" />
+            </div>
+            <div class="span4">
+                <umbraco:Macro ID="Macro3" Alias="SocialLinks" runat="server" />
+            </div>
+        </div>
+    </div>
+    </footer>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js"></script>
+    <%= Combres.WebExtensions.CombresLink("siteJs") %>
+</body>
+</html>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Search</Name>
+      <Alias>Public_Search</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+        <umbraco:Macro Alias="Search" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="SideNavigation" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Textpage</Name>
+      <Alias>Public_Textpage</Alias>
+      <Master>Public</Master>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="DisplayImage" ImageWidth="250" MediaId="[#bodyImage]" ImageClass="rounded" FloatImage="true" runat="server" />
+    <umbraco:Item field="bodyText" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="SideNavigation" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>]]>
+      </Design>
+    </Template>
+    <Template>
+      <Name>Xml Sitemap</Name>
+      <Alias>XmlSitemap</Alias>
+      <Design>
+        <![CDATA[<%@ Master Language="C#" %>
+
+<umbraco:Macro Alias="XmlSitemap" runat="server" />]]>
+      </Design>
+    </Template>
+  </Templates>
+  <Stylesheets>
+    <Stylesheet>
+      <Name>bootstrap\bootstrap</Name>
+      <FileName>
+      </FileName>
+      <Content>
+        <![CDATA[/

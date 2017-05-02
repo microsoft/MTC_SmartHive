@@ -1,0 +1,110 @@
+@using System.Threading
+@using System.Text.RegularExpressions
+@using Examine
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    // retrieve the search term from the query string
+    var searchTerm = Request.QueryString["q"];
+    if (string.IsNullOrEmpty(searchTerm))
+    {
+        return;
+    }
+    
+    // Get the searcher from examine
+    var lang = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToUpperInvariant();
+    var searcherName = string.Format("Bootstrap{0}Searcher", lang);
+    var searcher = ExamineManager.Instance.SearchProviderCollection[searcherName];
+    
+    // Do the search
+    var results = searcher.Search(searchTerm, false);
+    
+    @ShowSummary(results, searchTerm)
+    <div>
+    @foreach (var result in results)
+    {
+        @DisplaySearchResult(result, searchTerm) 
+    }
+    </div>
+}
+
+@helper ShowSummary(ISearchResults results, string searchTerm)
+    {
+    var count = results.Count();
+    <h3>
+    @switch (count)
+    {
+        case 0:
+            @Html.Raw(string.Format(Dictionary.NoMatches, searchTerm))
+            break;
+        case 1:
+            @Html.Raw(string.Format(Dictionary.SearchResult, searchTerm))
+            break;
+        default:
+            @Html.Raw(string.Format(Dictionary.SearchResults, searchTerm, count))
+            break;
+    }
+    </h3>
+}
+
+@helper DisplaySearchResult(SearchResult result, string searchTerm)
+{
+    // Initialize title and description
+    var title = string.Empty;
+    var description = string.Empty;
+
+    // Get the nodeTypeAlias and based on this, set the title and description
+    var nodeTypeAlias = result.Fields["nodeTypeAlias"];
+    switch (nodeTypeAlias)
+    {
+        case "Homepage":
+        case "Textpage":
+            title = result.Fields["headerText"];
+            description = result.Fields["bodyText"];
+            break;
+        case "Newspage":
+            title = result.Fields["nodeName"];
+            description = result.Fields["bodyText"];
+            break;
+    }
+
+    // Format the description
+    description = FormatText(description, searchTerm);
+
+    // Get the item url
+    var url = Library.NodeById(result.Fields["id"]).Url;
+
+    <div class="well">
+        <h4><a href="@url">@title</a></h4>
+        <p>@Html.Raw(description)</p>
+    </div>
+}
+
+@functions
+{
+    static string FormatText(string text, string matchCase)
+    {
+        if (string.IsNullOrEmpty(text) || string.IsNullOrEmpty(matchCase))
+        {
+            return string.Empty;
+        }
+
+        var regex = new Regex(string.Format(@"({0})", matchCase), RegexOptions.IgnoreCase);
+        string[] sentences = regex.Split(text);
+        if (sentences.Length > 2 && !sentences[0].Equals(matchCase))
+        {
+            if (sentences[0].Length > 60)
+            {
+                text = "... " + text.Remove(0, sentences[0].Length - 40);
+            }
+        }
+
+        if (text.Length > 200)
+        {
+            text = text.Substring(0, 200) + " ...";
+        }
+
+        text = regex.Replace(text, string.Format("<strong>{0}</strong>", matchCase));
+        return text;
+    }
+}

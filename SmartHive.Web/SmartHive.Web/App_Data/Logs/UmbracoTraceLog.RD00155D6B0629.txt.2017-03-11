@@ -1,0 +1,86 @@
+﻿ 2017-03-11 13:00:30,088 [P4936/D58/T13] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.11 application starting on RD00155D6B0629
+ 2017-03-11 13:00:30,573 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-03-11 13:00:30,651 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Hash determined (took 69ms)
+ 2017-03-11 13:00:30,807 [P4936/D58/T13] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-03-11 13:00:30,807 [P4936/D58/T13] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-03-11 13:00:30,823 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-03-11 13:00:31,104 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 293ms)
+ 2017-03-11 13:00:31,495 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-03-11 13:00:31,495 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+ 2017-03-11 13:00:31,495 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-03-11 13:00:31,495 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
+ 2017-03-11 13:00:31,526 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-03-11 13:00:31,526 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 0ms)
+ 2017-03-11 13:00:31,526 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-03-11 13:00:31,573 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 45ms)
+ 2017-03-11 13:00:31,807 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-03-11 13:00:31,823 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2017-03-11 13:00:31,823 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-03-11 13:00:31,823 [P4936/D58/T13] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 6ms)
+ 2017-03-11 13:00:37,034 [P4936/D58/T13] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-03-11 13:00:39,701 [P4936/D58/T13] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-03-11 13:00:39,982 [P4936/D58/T13] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-03-11 13:00:40,935 [P4936/D58/T13] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-03-11 13:00:41,154 [P4936/D58/T13] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 11514ms)
+ 2017-03-11 13:00:44,167 [P4936/D58/T22] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://smarthiveweb.azurewebsites.net:80/umbraco (UmbracoModule request)
+ 2017-03-11 13:00:48,120 [P4936/D58/T39] INFO  umbraco.content - Load Xml from file...
+ 2017-03-11 13:00:48,464 [P4936/D58/T39] INFO  umbraco.content - Loaded Xml from file.
+ 2017-03-11 13:00:50,626 [P4936/D58/T39] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-11 13:00:50,626 [P4936/D58/T39] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 4ms)
+ 2017-03-11 13:01:48,645 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-10 13:01:48
+ 2017-03-11 13:01:48,895 [P4936/D58/T57] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-03-11 13:01:48,895 [P4936/D58/T57] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 2ms)
+ 2017-03-11 13:04:20,941 [P4936/D58/T49] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username m.khlupnov@inbox.ru from IP address 46.188.121.148
+ 2017-03-11 13:04:20,956 [P4936/D58/T49] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: m.khlupnov@inbox.ru logged in from IP address 46.188.121.148
+ 2017-03-11 13:04:21,538 [P4936/D58/T49] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-11 13:04:21,538 [P4936/D58/T49] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 3ms)
+ 2017-03-11 13:04:22,210 [P4936/D58/T49] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2017-03-11 13:04:22,210 [P4936/D58/T49] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 1ms)
+ 2017-03-11 13:04:22,639 [P4936/D58/T58] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-11 13:04:22,639 [P4936/D58/T58] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 6ms)
+ 2017-03-11 13:04:22,671 [P4936/D58/T58] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-11 13:04:22,671 [P4936/D58/T58] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-11 13:04:22,671 [P4936/D58/T58] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-11 13:04:22,671 [P4936/D58/T58] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
+ 2017-03-11 13:04:55,127 [P4936/D58/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IDataType
+ 2017-03-11 13:04:55,184 [P4936/D58/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IDataType, found 0 (took 69ms)
+ 2017-03-11 13:04:55,278 [P4936/D58/T45] WARN  Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter - A legacy GUID id was generated for property editor Umbraco.Grid. This occurs when the legacy APIs are used and done to attempt to maintain backwards compatibility. Consider upgrading all code to use the new Services APIs instead to avoid any potential issues.
+ 2017-03-11 13:04:55,340 [P4936/D58/T45] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Learn' with Id '1079' has been published.
+ 2017-03-11 13:04:55,606 [P4936/D58/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2017-03-11 13:04:55,606 [P4936/D58/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 1ms)
+ 2017-03-11 13:04:59,723 [P4936/D58/T68] INFO  umbraco.content - Save Xml to file...
+ 2017-03-11 13:04:59,880 [P4936/D58/T68] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-11 13:05:06,384 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Extend' with Id '1087' has been published.
+ 2017-03-11 13:05:06,447 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Explore' with Id '1083' has been published.
+ 2017-03-11 13:05:06,494 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Package repository' with Id '1089' has been published.
+ 2017-03-11 13:05:06,527 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Umbraco Forms' with Id '1088' has been published.
+ 2017-03-11 13:05:06,574 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Meetup groups' with Id '1086' has been published.
+ 2017-03-11 13:05:06,607 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Codegarden' with Id '1085' has been published.
+ 2017-03-11 13:05:06,653 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Our Umbraco' with Id '1084' has been published.
+ 2017-03-11 13:05:06,699 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Masterclasses' with Id '1082' has been published.
+ 2017-03-11 13:05:06,731 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Basics' with Id '1081' has been published.
+ 2017-03-11 13:05:06,778 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'The starter kit' with Id '1080' has been published.
+ 2017-03-11 13:05:12,006 [P4936/D58/T43] INFO  umbraco.content - Save Xml to file...
+ 2017-03-11 13:05:12,131 [P4936/D58/T43] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-11 13:07:07,029 [P4936/D58/T20] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Learn' with Id '1079' has been published.
+ 2017-03-11 13:07:07,029 [P4936/D58/T20] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Explore' with Id '1083' has been published.
+ 2017-03-11 13:07:07,029 [P4936/D58/T20] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Extend' with Id '1087' has been published.
+ 2017-03-11 13:07:07,029 [P4936/D58/T20] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Contact' with Id '1078' has been published.
+ 2017-03-11 13:07:16,193 [P4936/D58/T43] INFO  umbraco.content - Save Xml to file...
+ 2017-03-11 13:07:16,318 [P4936/D58/T43] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-11 13:08:21,969 [P4936/D58/T57] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username m.khlupnov@inbox.ru from IP address 46.188.121.148
+ 2017-03-11 13:08:21,969 [P4936/D58/T57] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: m.khlupnov@inbox.ru logged in from IP address 46.188.121.148
+ 2017-03-11 13:08:22,269 [P4936/D58/T43] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-11 13:08:22,269 [P4936/D58/T43] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-11 13:09:13,528 [P4936/D58/T45] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2017-03-11 13:11:22,035 [P4936/D58/T24] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-11 13:11:26,108 [P4936/D58/T49] INFO  umbraco.content - Save Xml to file...
+ 2017-03-11 13:11:26,312 [P4936/D58/T49] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-11 13:13:09,854 [P4936/D58/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-11 13:13:13,981 [P4936/D58/T49] INFO  umbraco.content - Save Xml to file...
+ 2017-03-11 13:13:14,184 [P4936/D58/T49] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-11 13:15:14,535 [P4936/D58/T20] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-11 13:15:18,645 [P4936/D58/T49] INFO  umbraco.content - Save Xml to file...
+ 2017-03-11 13:15:18,802 [P4936/D58/T49] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-11 17:01:48,631 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-10 17:01:48
+ 2017-03-11 21:01:48,981 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-10 21:01:48

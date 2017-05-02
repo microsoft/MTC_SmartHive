@@ -35,10 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Events\OnEvenLogWriteEventArgs.cs" />
-    <Compile Include="Events\OnNotificationEventArgs.cs" />
-    <Compile Include="Events\OnReadingTaskEventArgs.cs" />
-    <Compile Include="Events\OnScheduleUpdateEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBusConnection.cs" />
   </ItemGroup>
@@ -53,6 +49,12 @@
     <Reference Include="AzureSBLite.WinRT">
       <HintPath>..\..\..\AZURE\azuresblite\bin\Debug\AzureSBLite.WinRT\AzureSBLite.WinRT.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SmartHive.Models\SmartHive.Models\SmartHive.Models.csproj">
+      <Project>{38d4ba3b-fff0-4e6d-9534-90ed4594dddb}</Project>
+      <Name>SmartHive.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

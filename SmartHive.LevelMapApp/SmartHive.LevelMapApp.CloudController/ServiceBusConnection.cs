@@ -8,7 +8,7 @@ using System.Threading;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using ppatierno.AzureSBLite.Messaging;
-using SmartHive.LevelMapApp.CloudController.Events;
+using SmartHive.Models.Events;
 using System.Globalization;
 using System.Xml;
 
@@ -29,8 +29,6 @@ namespace SmartHive.LevelMapApp.CloudController
 
 
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-
-        // private static IHockeyClientConfigurable HockeyAppConfig = null;
 
         /** */
         public event EventHandler<OnNotificationEventArgs> OnNotification;

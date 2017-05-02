@@ -1,0 +1,31 @@
+@using System.Globalization
+@using umbraco.MacroEngines
+@using umbraco.cms.businesslogic.web
+@inherits DynamicNodeContext
+@{
+    var dict = new Dictionary<string, string>();
+    var roots = Document.GetRootDocuments();
+    foreach (var root in roots)
+    {
+        var domain = Domain.GetDomainsById(root.Id).FirstOrDefault();
+        if (domain == null)
+        {
+            continue;
+        }
+        
+        var culture = CultureInfo.GetCultureInfo(domain.Language.CultureAlias);
+        dict.Add(Library.NodeById(@root.Id).Url, culture.TextInfo.ToTitleCase(culture.Parent.NativeName));
+    }
+    
+    if (dict.Count > 1)
+    {
+    <ul class="nav nav-pills">
+    <li><span>@Dictionary.Languages</span></li>
+    @foreach (var item in dict)
+    {
+        <li><a href="@item.Key">@item.Value</a></li>
+    }
+    </ul>
+    } 
+}
+    

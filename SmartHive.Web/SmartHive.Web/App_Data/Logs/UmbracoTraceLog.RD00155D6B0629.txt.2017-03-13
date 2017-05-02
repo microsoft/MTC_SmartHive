@@ -1,0 +1,32 @@
+﻿ 2017-03-13 01:01:49,113 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-12 01:01:49
+ 2017-03-13 05:01:49,266 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-12 05:01:49
+ 2017-03-13 06:38:54,283 [P4936/D58/T182] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2017-03-13 06:41:03,202 [P4936/D58/T188] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2017-03-13 09:01:49,354 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-12 09:01:49
+ 2017-03-13 13:01:49,515 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-12 13:01:49
+ 2017-03-13 17:01:49,732 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-12 17:01:49
+ 2017-03-13 18:38:51,419 [P4936/D58/T268] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username m.khlupnov from IP address 46.188.121.148
+ 2017-03-13 18:39:03,583 [P4936/D58/T271] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username m.khlupnov@inbox.ru from IP address 46.188.121.148
+ 2017-03-13 18:39:03,583 [P4936/D58/T271] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: m.khlupnov@inbox.ru logged in from IP address 46.188.121.148
+ 2017-03-13 18:39:03,907 [P4936/D58/T268] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-13 18:39:03,907 [P4936/D58/T268] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-13 18:47:26,586 [P4936/D58/T279] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-13 18:47:26,586 [P4936/D58/T279] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-13 18:49:15,209 [P4936/D58/T280] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-13 18:49:15,209 [P4936/D58/T280] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-13 18:53:23,954 [P4936/D58/T285] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-13 18:53:28,171 [P4936/D58/T82] INFO  umbraco.content - Save Xml to file...
+ 2017-03-13 18:53:28,375 [P4936/D58/T82] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-13 18:55:19,280 [P4936/D58/T268] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-13 18:55:23,420 [P4936/D58/T82] INFO  umbraco.content - Save Xml to file...
+ 2017-03-13 18:55:23,639 [P4936/D58/T82] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-13 19:02:07,091 [P4936/D58/T270] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-13 19:02:11,223 [P4936/D58/T82] INFO  umbraco.content - Save Xml to file...
+ 2017-03-13 19:02:11,473 [P4936/D58/T82] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-13 19:18:30,817 [P4936/D58/T275] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-13 19:18:34,952 [P4936/D58/T270] INFO  umbraco.content - Save Xml to file...
+ 2017-03-13 19:18:35,187 [P4936/D58/T270] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-13 19:25:38,330 [P4936/D58/T267] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'ru.smarthive.ru' with Id '1077' has been published.
+ 2017-03-13 19:25:45,955 [P4936/D58/T248] INFO  umbraco.content - Save Xml to file...
+ 2017-03-13 19:25:49,205 [P4936/D58/T248] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-13 21:01:49,941 [P4936/D58/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-12 21:01:49

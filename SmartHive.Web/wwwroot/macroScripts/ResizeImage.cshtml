@@ -1,0 +1,85 @@
+﻿@*
+    Paramaters:
+    MediaId (mandatory)
+    ImageWidth (mandatory)
+    ImageHeight (optional)
+    Constrain (optional. Only works if ImageHeight has been set)
+    BgColor (optional. Only works if ImageHeight. Ignores the constrain and sets the the pad value to true
+    AltText (optional, gets media name by default)
+    ImageClass (optional, sets the css class to an image)
+*@
+
+@using System.Collections.Specialized
+@using Bootstrap.Logic.Utils
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    int mediaId;
+    if(!int.TryParse(PageData[0], out mediaId))
+    {
+        return;
+    }
+    
+    var nvc = new NameValueCollection();
+    var media = Library.MediaById(mediaId);
+    if (media == null || media.NodeTypeAlias != "Image")
+    {
+        return;
+    }
+        
+    string mediaPath = media.UmbracoFile;
+    if (string.IsNullOrEmpty(mediaPath))
+    {
+        return;
+    }
+    
+    int mediaWidth =  int.Parse(media.UmbracoWidth.ToString());
+    int mediaHeight = int.Parse(media.UmbracoHeight.ToString());
+    int newWidth = int.Parse(PageData[1]);
+    int newHeight = newWidth * mediaHeight / mediaWidth;
+    int maxHeight;
+    if (int.TryParse(PageData[2], out maxHeight))
+    {
+        bool constrain;
+        if (bool.TryParse(PageData[3], out constrain))
+        {
+            if (constrain)
+            {
+                nvc.Add("constrain", "true");
+                if (newHeight > maxHeight)
+                {
+                    newWidth = maxHeight * mediaWidth / mediaHeight;
+                    newHeight = maxHeight;
+                }
+            }
+            else
+            {
+                nvc.Add("constrain", "false");
+                newHeight = int.Parse(PageData[2]);
+            }
+        }
+            
+        if(!string.IsNullOrEmpty(PageData[4]))
+        {
+            // Ignore constrain 
+            newWidth = int.Parse(PageData[1]);
+            newHeight = int.Parse(PageData[2]);
+            nvc.Remove("constrain");
+            nvc.Add("pad", "true");
+            nvc.Add("bgcolor", PageData[4]);                
+        }
+
+        nvc.Add("width", newWidth.ToString());
+        nvc.Add("height", newHeight.ToString());
+    }
+    else
+    {
+        nvc.Add("width", newWidth.ToString());
+    }
+        
+    var query = nvc.ConstructQueryString();
+
+    string mediaName = string.IsNullOrEmpty(PageData[5]) ? media.Name : PageData[5];
+    string imageClass = !string.IsNullOrEmpty(PageData[6]) ? string.Format(" class=\"{0}\"", PageData[6]) : string.Empty;
+    <img src="@mediaPath?@query" width="@newWidth" height="@newHeight" alt="@mediaName"@Html.Raw(imageClass) />
+}

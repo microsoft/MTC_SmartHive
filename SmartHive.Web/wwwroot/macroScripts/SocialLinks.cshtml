@@ -1,0 +1,13 @@
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    var root = @Model.AncestorsOrSelf().First();
+    var news = root.Descendants("Newslist").First();
+    <ul class="nav nav-pills">
+        <li><a rel="external" href="http://twitter.com/@root.TwitterAccount"><i class="icon-twitter"></i>Twitter</a></li>
+        <li><a rel="external" href="@root.FacebookPage"><i class="icon-facebook"></i>Facebook</a></li>
+        <li><a href="@news.Url@Html.Raw(".atom")"><i class="icon-rss"></i>Feed</a></li>
+    </ul>
+}
+
+

@@ -1,0 +1,25 @@
+@*
+Params 
+    DateFormat (mandatory)
+    PropertyAlias (optional)
+*@
+
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    var dateFormat = Parameter.DateFormat;
+    DateTime result;
+    if (!string.IsNullOrEmpty(Parameter.PropertyAlias) && @Model.HasValue(Parameter.PropertyAlias))
+    {
+        if (!DateTime.TryParse(@Model.GetProperty(Parameter.PropertyAlias).Value, out result))
+        {
+            result = DateTime.Parse(@Model.CreateDate.ToString());
+        }
+    }
+    else
+    {
+        result = DateTime.Parse(@Model.CreateDate.ToString());
+    }
+    
+    @result.ToString(dateFormat)
+}

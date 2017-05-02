@@ -1,0 +1,68 @@
+@using System.Threading
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    IList<string> pages = @Model.Parent.Descendants("Photo").Pluck("Url");
+    string currentPage = @Model.Url;
+    @Paging(pages, currentPage)
+}
+
+@helper Paging(IList<string> pages, string currentPage)
+{
+    var totalPages = pages.Count();
+    var currentPageNumber = pages.IndexOf(currentPage);
+    if (totalPages < 1)
+    {
+        return;
+    }
+
+    var previous = Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft
+        ? Html.Raw(string.Format("&rarr; {0}", Dictionary.Previous)) 
+        : Html.Raw(string.Format("&larr; {0}", Dictionary.Previous));
+
+    var next = Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft
+        ? Html.Raw(string.Format("{0} &larr;", Dictionary.Next))
+        : Html.Raw(string.Format("{0} &rarr;", Dictionary.Next));
+    
+    <div class="pagination">
+    <ul>
+    @for (var i = 0; i < totalPages; i++)
+    {
+        if (i == 0)
+        {
+            if (currentPageNumber == 0)
+            {
+                <li class="prev disabled"><a href="#">@previous</a></li><li class="active"><a href="@pages[i]">@Html.Raw((i + 1).ToString())</a></li>
+            }
+            else
+            {
+                <li class="prev"><a href="@pages[currentPageNumber - 1]">@previous</a></li><li><a href="@pages[i]">@Html.Raw((i + 1).ToString())</a></li>
+            }
+        }
+        else if (i == totalPages - 1)
+        {
+            if (currentPageNumber == totalPages - 1)
+            {
+                <li class="active"><a href="@pages[i]">@Html.Raw((i + 1).ToString())</a></li><li class="next disabled"><a href="#">@next</a></li>
+            }
+            else
+            {
+                <li><a href="@pages[i]">@Html.Raw((i + 1).ToString())</a></li><li class="next"><a href="@pages[currentPageNumber + 1]">@next</a></li>
+            }
+        }
+        else
+        {
+            if (i == currentPageNumber)
+            {
+                <li class="active"><a href="@pages[i]">@Html.Raw((i + 1).ToString())</a></li>
+            }
+            else
+            {
+                <li><a href="@pages[i]">@Html.Raw((i + 1).ToString())</a></li>
+            }
+        }
+    }
+    </ul>
+  </div>
+
+}

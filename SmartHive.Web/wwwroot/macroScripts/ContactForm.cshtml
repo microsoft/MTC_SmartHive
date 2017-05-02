@@ -1,0 +1,188 @@
+@using System.Collections.Specialized
+@using System.Text
+@using System.Threading
+@using Bootstrap.Logic.Utils
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    var form = Context.Request.Form;
+
+    if (IsPost)
+    {
+        if (!Context.IsValidAntiForgery()) { ModelState.AddFormError(@Dictionary.InvalidPost); }
+        if (form["name"].IsNullOrWhiteSpace()) { ModelState.AddError("name", @Dictionary.FormNameValidation); }
+        if (!form["email"].IsMatch(MainHelper.EmailRegex)) { ModelState.AddError("email", @Dictionary.FormEmailValidation); }
+        if (form["enquiry"].IsNullOrWhiteSpace()) { ModelState.AddError("enquiry", @Dictionary.FormCommentValidation); }
+    }
+
+    if (!IsPost || !ModelState.IsValid)
+    {
+    @Html.Raw(library.RemoveFirstParagraphTag(Model.FormText.ToString()))
+    <form method="post" action="@Model.Url" class="form-horizontal validate">
+        <fieldset>
+            <legend>@Dictionary.FormLegend</legend>
+
+            @*Name field*@
+            <div class="control-group @{@(!ModelState.IsValidField("name") ? "error" : "")}">
+            @Html.Label(Dictionary.FormName, "name", new Dictionary<string, object> { { "class", "control-label" } })
+            <div class="controls">
+                @Html.TextBox("name", form["name"], new Dictionary<string, object>
+                            {
+                                {"class", !ModelState.IsValidField("name") ? "input-xlarge error" : "input-xlarge"},
+                                {"data-val", "true"},
+                                {"data-val-required", Dictionary.FormNameValidation}
+                            })
+              @if (!IsPost && ModelState.IsValid)
+              {
+                <span class="field-validation-valid help-inline" data-valmsg-for="name" data-valmsg-replace="true"></span>
+              }
+              else
+              {
+                  @Html.ValidationMessage("name", new Dictionary<string, object>
+                                          {
+                                            { "class", "help-inline" },
+                                            { "data-valmsg-for", "name" },
+                                            { "data-valmsg-replace", "true" }
+                                          })
+              }
+            </div>
+          </div>
+
+            @*Address one*@
+            <div class="control-group">
+            @Html.Label(Dictionary.AddressName, "address1", new Dictionary<string, object> { { "class", "control-label" } })
+            <div class="controls">
+                @Html.TextBox("address1", form["address1"], new Dictionary<string, object> { {"class", "input-xlarge"} })
+            </div>
+           </div>
+
+            @*Adress two*@
+            <div class="control-group">
+            @Html.Label(Dictionary.AddressName, "address2", new Dictionary<string, object> { { "class", "hide" } })
+            <div class="controls">
+                @Html.TextBox("address2", form["address2"], new Dictionary<string, object> { { "class", "input-xlarge" } })
+            </div>
+           </div>
+
+            @*Email field*@
+            <div class="control-group @{@(!ModelState.IsValidField("email") ? "error" : "")}">
+            @Html.Label(Dictionary.Email, "email", new Dictionary<string, object> { { "class", "control-label" } })
+            <div class="controls">
+                @Html.TextBox("email", form["email"], new Dictionary<string, object>
+                            {
+                                {"class", !ModelState.IsValidField("email") ? "input-xlarge error" : "input-xlarge"},
+                                {"data-val", "true"},
+                                {"data-val-regex", Dictionary.FormEmailValidation},
+                                {"data-val-regex-pattern", MainHelper.EmailRegex},
+                                {"data-val-required", Dictionary.FormEmailValidation}
+                            })
+              @if (!IsPost && ModelState.IsValid)
+              {
+                <span class="field-validation-valid help-inline" data-valmsg-for="email" data-valmsg-replace="true"></span>
+              }
+              else
+              {
+                  @Html.ValidationMessage("email", new Dictionary<string, object>
+                                          {
+                                            { "class", "help-inline" },
+                                            { "data-valmsg-for", "email" },
+                                            { "data-valmsg-replace", "true" }
+                                          })
+              }
+            </div>
+          </div>
+
+            @*Enquiry field*@
+            <div class="control-group @{@(!ModelState.IsValidField("enquiry") ? "error" : "")}">
+            @Html.Label(Dictionary.FormComment, "enquiry", new Dictionary<string, object> { { "class", "control-label" } })
+            <div class="controls">
+                @Html.TextArea("enquiry", form["enquiry"], new Dictionary<string, object>
+                            {
+                                {"rows", "5"},
+                                {"cols", "25"},
+                                {"class", !ModelState.IsValidField("enquiry") ? "input-xlarge error" : "input-xlarge"},
+                                {"data-val", "true"},
+                                {"data-val-required", Dictionary.FormCommentValidation}
+                            })
+              @if (!IsPost && ModelState.IsValid)
+              {
+                <span class="field-validation-valid help-inline" data-valmsg-for="enquiry" data-valmsg-replace="true"></span>
+              }
+              else
+              {
+                  @Html.ValidationMessage("enquiry", new Dictionary<string, object>
+                                          {
+                                            { "class", "help-inline" },
+                                            { "data-valmsg-for", "enquiry" },
+                                            { "data-valmsg-replace", "true" }
+                                          })
+              }
+            </div>
+          </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary textPw">@Dictionary.Send</button>
+        </div>
+        @*Anti forgery key*@
+        @Context.GetAntiForgeryHtml()
+        </fieldset>
+    </form>
+    }
+    else
+    {
+        var ok = SendForm(form);
+        if (!ok)
+        {
+            <div id="errorMailSettings">
+                @Model.ErrorMessage
+            </div>
+        }
+        else
+        {
+            // Set Thankyou text from our contact node
+            <div id="thankYou">
+                <h2>@Model.ThankYouHeaderText</h2>
+                @Model.ThankYouMessageText
+            </div>
+        }
+    }
+}
+
+@functions 
+{
+    public bool SendForm(NameValueCollection form)
+    {
+        // Get the variables from the form and set them in strings
+        string strName = Library.StripHtml(form["name"]).ToString();
+        string strAddressLine1 = Library.StripHtml(form["address1"]).ToString();
+        string strAddressLine2 = Library.StripHtml(form["address2"]).ToString();
+        string strEmailFrom = Library.StripHtml(form["email"]).ToString();
+        string strMessage = Library.StripHtml(form["enquiry"]).ToString();
+
+        // Lets set the values passed in from the Macro
+        string strEmailTo = Model.EmailTo.ToString();
+        string strEmailSubject = Model.EmailSubject.ToString();
+        var now = DateTime.Now;
+        var strTime = String.Format("{0:HH:mm:ss}", now);
+        var strDate = String.Format("{0:dd/MM/yyyy}", now);
+
+        // Let's Replace the placeholders in the email message body
+        var strEmailBody = new StringBuilder(Model.EmailBody.ToString());
+        strEmailBody.Replace("[Name]", strName); // Find and Replace [Name]
+        strEmailBody.Replace("[AddressLine1]", strAddressLine1); // Find and Replace [AddressLine1]
+        strEmailBody.Replace("[AddressLine2]", strAddressLine2); // Find and Replace [AddressLine2]
+        strEmailBody.Replace("[Email]", strEmailFrom); // Find and Replace [Email]
+        strEmailBody.Replace("[Message]", strMessage); // Find and Replace [Message]
+        strEmailBody.Replace("[Time]", strTime); // Find and Replace [Time]
+        strEmailBody.Replace("[Date]", strDate); // Find and Replace [Date]
+
+        // Now the email is sent out to the owner, lets send out an email
+        // to let the user know we have recieved their email & will respond shortly
+        string strEmailReplySubject = Model.EmailReplySubject.ToString();
+        var strEmailReplyBody = new StringBuilder(Model.EmailReplyBody.ToString());
+        strEmailReplyBody.Replace("[Name]", strName); // Find and Replace [Name]
+
+        return MainHelper.TrySendMail(strEmailTo, strEmailSubject, strEmailBody.ToString(), Thread.CurrentThread.CurrentUICulture, Model.Id)
+          && MainHelper.TrySendMail(strEmailFrom, strEmailReplySubject, strEmailReplyBody.ToString(), Thread.CurrentThread.CurrentUICulture, Model.Id);
+    }
+}

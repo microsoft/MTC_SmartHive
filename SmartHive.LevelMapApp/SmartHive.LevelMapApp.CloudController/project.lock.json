@@ -1,0 +1,120 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETPortable,Version=v4.6,Profile=Profile44": {
+      "Newtonsoft.Json/10.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Schema/2.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.2"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.Schema.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.Schema.dll": {}
+        }
+      },
+      "SmartHive.Models/1.0.0": {
+        "type": "project"
+      }
+    }
+  },
+  "libraries": {
+    "Newtonsoft.Json/10.0.2": {
+      "sha512": "iwElSU2IXmwGvytJsezyDML2ZWDkG2JzTYzlU/BNlmzMdlmRvbnwITsGGY74gwVEpDli1UdOLkMT7/3jxWvXzA==",
+      "type": "package",
+      "path": "newtonsoft.json/10.0.2",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wpa81+wp8/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wpa81+wp8/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "Newtonsoft.Json.Schema/2.0.11": {
+      "sha512": "QGKz+N5588R7lWY/lKfvjd/+Kppzsxt2hqI5GP1m9ji0oztnCEJQxcGdhe3RoUXOhtE1KKMP7aqlypqQRh2Dtw==",
+      "type": "package",
+      "path": "newtonsoft.json.schema/2.0.11",
+      "files": [
+        "LICENSE.md",
+        "lib/net35/Newtonsoft.Json.Schema.dll",
+        "lib/net35/Newtonsoft.Json.Schema.xml",
+        "lib/net40/Newtonsoft.Json.Schema.dll",
+        "lib/net40/Newtonsoft.Json.Schema.xml",
+        "lib/net45/Newtonsoft.Json.Schema.dll",
+        "lib/net45/Newtonsoft.Json.Schema.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Schema.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Schema.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.Schema.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.Schema.xml",
+        "newtonsoft.json.schema.2.0.11.nupkg.sha512",
+        "newtonsoft.json.schema.nuspec"
+      ]
+    },
+    "SmartHive.Models/1.0.0": {
+      "type": "project",
+      "path": "../../SmartHive.Models/SmartHive.Models/SmartHive.Models.csproj",
+      "msbuildProject": "../../SmartHive.Models/SmartHive.Models/SmartHive.Models.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Newtonsoft.Json >= 10.0.2",
+      "Newtonsoft.Json.Schema >= 2.0.11"
+    ],
+    ".NETPortable,Version=v4.6,Profile=Profile44": []
+  },
+  "packageFolders": {
+    "C:\\Users\\makhlu.EUROPE\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\PROJECTS\\SmartHive\\SmartHive.LevelMapApp\\SmartHive.LevelMapApp.CloudController\\SmartHive.LevelMapApp.CloudController.csproj",
+      "projectName": "SmartHive.LevelMapApp.CloudController",
+      "projectPath": "C:\\PROJECTS\\SmartHive\\SmartHive.LevelMapApp\\SmartHive.LevelMapApp.CloudController\\SmartHive.LevelMapApp.CloudController.csproj",
+      "projectJsonPath": "C:\\PROJECTS\\SmartHive\\SmartHive.LevelMapApp\\SmartHive.LevelMapApp.CloudController\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "portable46-net451+win81": {
+          "projectReferences": {
+            "C:\\PROJECTS\\SmartHive\\SmartHive.Models\\SmartHive.Models\\SmartHive.Models.csproj": {
+              "projectPath": "C:\\PROJECTS\\SmartHive\\SmartHive.Models\\SmartHive.Models\\SmartHive.Models.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "Newtonsoft.Json": "10.0.2",
+      "Newtonsoft.Json.Schema": "2.0.11"
+    },
+    "frameworks": {
+      "portable46-net451+win81": {}
+    }
+  }
+}

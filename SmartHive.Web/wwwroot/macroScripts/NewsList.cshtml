@@ -1,0 +1,13 @@
+﻿@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    const int maxNoChars = 100;
+    var events = @Model.Children.OrderBy("NewsDate desc");
+    foreach (var item in events)
+    {
+        <div class="well">
+            <h4><a href="@item.Url">@item.Name</a></h4>
+            <p><span class="label">@item.NewsDate.ToString(@Dictionary.TimeFormat)</span> @Library.Truncate(Library.StripHtml(item.BodyText.ToString()), maxNoChars, true)</p>
+        </div>
+    }
+}

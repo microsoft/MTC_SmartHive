@@ -1,0 +1,121 @@
+﻿@*
+Parameters
+    FeedItems (int, mandatory)
+    FeedTitle (string, mandatory)
+    FeedDescription (string, mandatory)
+*@
+
+@using System.ServiceModel.Syndication
+@using System.Text
+@using System.Web.Caching
+@using System.Xml
+@using Bootstrap.Logic.Utils
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    if(Model.NodeTypeAlias != "Newslist")
+    {
+        return;
+    }
+    
+    if(Model.Descendants("Newspage").Count() == 0)
+    {
+        return;
+    }
+    
+    string xml;
+    var cacheName = string.Format(MainHelper.FeedCache, Model.Id);
+    var cache = Cache[cacheName] as string;
+    if (cache == null)
+    {
+        // Let's cache the xml for 8 hours
+        xml = GenerateFeed(Model);
+        Cache.Add(cacheName, xml, null, DateTime.Now.AddHours(8), Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
+    }
+    else
+    {
+        xml = cache;
+    }
+
+    // Cambia el mimetype
+    Context.Response.ContentType = "application/atom+xml";
+    Context.Response.Write(xml);
+}
+
+@functions 
+{
+    string GenerateFeed(dynamic root)
+    {
+        // Get the parameters passed by the macro
+        var feedItems = Parameter.FeedItems;
+        var feedTitle = Parameter.FeedTitle.ToString();
+        var feedDescription = Parameter.FeedDescription.ToString();
+    
+        // Sort the items by CreateDate and limit the number of feeds based on the feedItems parameter
+        // Notice that you could sort by "UpdateDate" too
+        var newsEvents = root.Descendants("Newspage").OrderBy("CreateDate").Take(int.Parse(feedItems));
+
+        // Get the base url to contruct the links for the feeds
+        var baseUrl = new UriBuilder(Context.Request.Url.Scheme, Context.Request.Url.Host).Uri;
+
+        // Let's create a list of Syndication Items
+        var items = new List<SyndicationItem>();
+
+        foreach (var item in newsEvents)
+        {
+            // Get the title of the item. 
+            var title = item.Name.ToString();
+        
+            // Get the content from the body text, strip the HTML-encode the string. 
+            // The SyndicationFeed class will handle the enconding for the content
+            var content = HttpUtility.HtmlDecode(Library.StripHtml(item.BodyText).ToString().Trim());
+        
+            // Create the link based on the baseUrl and the item url
+            var itemAlternateLink = new Uri(baseUrl, item.Url.ToString());
+        
+            // Get the updateDate
+            var updatedTime = DateTime.Parse(item.UpdateDate.ToString());
+
+            // Add the SyndicationItem to the list
+            var syndicationItem = new SyndicationItem(title, content, itemAlternateLink)
+            {
+                Id = itemAlternateLink.AbsoluteUri,
+                LastUpdatedTime = updatedTime
+            };
+
+            // Add the item
+            items.Add(syndicationItem);
+        }
+
+        // Get the feed link
+        var feedLink = new Uri(baseUrl, Context.Request.RawUrl);
+    
+        // Get the UpdateDate for the first item on the list
+        var feedDate = DateTime.Parse(newsEvents.First().UpdateDate.ToString());
+    
+        // Create the feed
+        var feed = new SyndicationFeed(feedTitle, feedDescription, feedLink, feedLink.AbsoluteUri, feedDate, items);
+
+        // Improved interoperability with feed readers by implementing atom:link with rel="self"
+        feed.Links.Add(SyndicationLink.CreateSelfLink(feedLink));
+
+        // Let's save the content to a MemoryStream. You could use StringWriter too but you will have to deal with UTF-16 encoding
+        using (var ms = new MemoryStream())
+        {   
+            // Ensure the writer is UTF8 and nicely indented
+            using (var writer = new XmlTextWriter(ms, Encoding.UTF8) { Formatting = Formatting.Indented })
+            {
+                // Write <?xml version="1.0" encoding="utf-8"?>
+                writer.WriteStartDocument();
+
+                // Save as atom
+                // This feed won't validate unless you add an author and name
+                feed.Authors.Add(new SyndicationPerson { Name = Model.AncestorsOrSelf().First().SiteName });
+                feed.SaveAsAtom10(writer);
+            }
+
+            var sb = new StringBuilder(Encoding.UTF8.GetString(ms.ToArray()));
+            return sb.ToString();
+        }
+    }
+}

@@ -1,0 +1,11 @@
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\SmartHive.Models.dll
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\SmartHive.Models.pdb
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\obj\Debug\SmartHive.Models.dll
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\obj\Debug\SmartHive.Models.pdb
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\Newtonsoft.Json.dll
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\Newtonsoft.Json.Schema.dll
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\Newtonsoft.Json.xml
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\Newtonsoft.Json.Schema.xml
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\obj\Debug\SmartHive.Models.csprojResolveAssemblyReference.cache
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\obj\Debug\SmartHive.Models.dll.mdb
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models\bin\Debug\SmartHive.Models.dll.mdb

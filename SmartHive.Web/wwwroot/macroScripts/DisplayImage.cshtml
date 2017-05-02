@@ -1,0 +1,33 @@
+﻿@*
+    Paramaters:
+    MediaId (mandatory)
+    ImageWidth (int, mandatory)
+    ImageHeight (optional)
+    Constrain (optional. Only works if ImageHeight has been set)
+    BgColor (optional. Only works if ImageHeight. Ignores the constrain and sets the the pad value to true
+    AltText (optional, gets media name by default)
+    ImageClass (optional, sets the css class to an image)
+    FloatImage (bool, optional, floats the image)
+*@
+@using umbraco.MacroEngines
+@inherits DynamicNodeContext
+@{
+    int mediaId;
+    if (!int.TryParse(Parameter.MediaId, out mediaId))
+    {
+        return;
+    }
+    
+    bool floatImage;
+    bool.TryParse(Parameter.FloatImage, out floatImage);
+    if (floatImage)
+    {
+        <div class="floatImage">
+        @RenderPage("ResizeImage.cshtml", Parameter.MediaId, Parameter.ImageWidth, Parameter.ImageHeight, Parameter.Constrain, Parameter.BgColor, Parameter.AltText, Parameter.ImageClass)
+        </div>
+    }
+    else
+    {
+        @RenderPage("ResizeImage.cshtml", Parameter.MediaId, Parameter.ImageWidth, Parameter.ImageHeight, Parameter.Constrain, Parameter.BgColor, Parameter.AltText, Parameter.ImageClass)
+    }
+}
