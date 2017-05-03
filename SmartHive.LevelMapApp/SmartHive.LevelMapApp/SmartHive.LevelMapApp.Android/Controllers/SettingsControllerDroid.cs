@@ -2,36 +2,70 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-using SmartHive.LevelMapApp.Controllers;
+using System.Threading.Tasks;
 using SmartHive.Models.Config;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
+
 
 namespace SmartHive.LevelMapApp.Droid.Controllers
 {
-    class SettingsControllerDroid : ISettingsProvider
+    public class SettingsControllerDroid : ISettingsProvider
     {
+
+        private static SettingsControllerDroid appSettings = null;
+        public static ISettingsProvider AppSettings
+        {
+            get
+            {
+                if (appSettings == null)
+                    appSettings = new SettingsControllerDroid();
+
+                return appSettings;
+            }
+        }
+
+        private Dictionary<string, ILevelConfig> LevelConfig = new Dictionary<string, ILevelConfig>();
+
+        private static readonly string SettingsDefault = string.Empty;
+
+        ISettings applicationSettings = null;
+        private SettingsControllerDroid()
+        {
+            this.applicationSettings = CrossSettings.Current;
+        }
+
         public event EventHandler<bool> OnSettingsLoaded;
 
         public ILevelConfig GetLevelConfig(string levelId)
         {
-            throw new NotImplementedException();
+            ILevelConfig cfg = LevelConfig.ContainsKey(levelId) ? LevelConfig[levelId] : null;
+
+            if (cfg == null)
+            {
+                cfg = new LevelXmlConfig(this, levelId);
+                cfg.OnSettingsLoaded += Cfg_OnSettingsLoaded;
+                LevelConfig[levelId] = cfg;
+            }
+
+            return cfg;
         }
 
-        public string GetPropertyValue(string Parameter)
+        private void Cfg_OnSettingsLoaded(object sender, bool e)
         {
-            throw new NotImplementedException();
+            //Inform subsciber if settings sucessfully loaded
+            if (OnSettingsLoaded != null)
+                OnSettingsLoaded.Invoke(sender, e);
         }
 
-        public void SetPropertyValue(string Proeperty, string Value)
+        public string GetPropertyValue(string Property)
         {
-            throw new NotImplementedException();
+            return this.applicationSettings.GetValueOrDefault(Property, SettingsDefault);
+        }
+
+        public void SetPropertyValue(string Property, string Value)
+        {
+            this.applicationSettings.AddOrUpdateValue(Property, Value);
         }
     }
 }
