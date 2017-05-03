@@ -21,17 +21,37 @@ namespace SmartHive.LevelMapApp.UWP.Controllers
         public event EventHandler<OnEvenLogWriteEventArgs> OnEventLog;
 
         private ServiceBusConnection connection;
-        
-        public void Connect(ISettingsProvider settingsProvider)
+        private ILevelConfig levelConfig;
+
+        public void Connect(IRoomConfig SettingsProvider)
         {
+            throw new NotImplementedException();
+        }
+        public void Connect(ILevelConfig levelConfig)
+        {
+            this.levelConfig = levelConfig;
+            if (this.levelConfig.isLoaded) // Check if settings ready 
+            {
+                Connect();
+            }
+            else
+            {
+                this.levelConfig.OnSettingsLoaded += LevelConfig_OnSettingsLoaded;
+            }
+            
+        }
 
-            string DefaultLevelId = settingsProvider.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName);
-            ILevelConfig levelConfig = settingsProvider.GetLevelConfig(DefaultLevelId);
+        private void LevelConfig_OnSettingsLoaded(object sender, bool e)
+        {
+            Connect();
+        }
 
-            this.connection = new ServiceBusConnection(levelConfig.SbNamespace, levelConfig.SasKeyName, levelConfig.SasKey);
+        private void Connect()
+        {
+            this.connection = new ServiceBusConnection(levelConfig.ServiceBusNamespace, levelConfig.SasKeyName, levelConfig.SasKey);
             this.connection.OnServiceBusConnected += Connection_OnServiceBusConnected;
             this.connection.OnEventLog += Connection_OnEventLog;
-            this.connection.InitSubscription(levelConfig.SbTopicName, levelConfig.SbSubscriptionName, 10);
+            this.connection.InitSubscription(levelConfig.ServiceBusTopic, levelConfig.ServiceBusSubscriptionName, 10);
         }
 
 
@@ -71,5 +91,7 @@ namespace SmartHive.LevelMapApp.UWP.Controllers
                 this.OnEventLog.Invoke(sender, e);
             }
         }
+
+        
     }
 }

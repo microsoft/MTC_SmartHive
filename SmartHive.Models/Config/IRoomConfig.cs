@@ -15,7 +15,7 @@ namespace SmartHive.Models.Config
         RoomOccupied,
         RoomScheduledAndOccupied,
     }
-    public interface IRoomConfig
+    public interface IRoomConfig : IServiceBusConfig
     {     
       string Location {get; set;}     
       string Title { get; set; }
@@ -23,8 +23,9 @@ namespace SmartHive.Models.Config
       string IconTop { get; set; }
       string IconBottom { get; set; }
       string Css { get; set; }
-       
-      IEnumerator<string> RoomDeviceIDs { get; }
+    
+      
+      List<string> RoomDeviceIDs { get; }
 
       RoomStatus RoomStatus { get; set; }
     }

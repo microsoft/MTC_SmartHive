@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5EDC1334-1177-414F-829D-6D200B45E83B}</ProjectGuid>
+    <ProjectGuid>{38D4BA3B-FFF0-4E6D-9534-90ED4594DDDB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartHive.Controllers</RootNamespace>
-    <AssemblyName>SmartHive.Controllers</AssemblyName>
+    <RootNamespace>SmartHive.Models</RootNamespace>
+    <AssemblyName>SmartHive.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -35,25 +35,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Config\ILevelConfig.cs" />
+    <Compile Include="Config\IRoomConfig.cs" />
+    <Compile Include="Config\IServiceBusConfig.cs" />
+    <Compile Include="Config\ISettingsProvider.cs" />
+    <Compile Include="Config\LevelXmlConfig.cs" />
+    <Compile Include="Config\RoomConfig.cs" />
+    <Compile Include="Config\SettingsConst.cs" />
+    <Compile Include="Events\OnEvenLogWriteEventArgs.cs" />
+    <Compile Include="Events\OnNotificationEventArgs.cs" />
+    <Compile Include="Events\OnReadingTaskEventArgs.cs" />
+    <Compile Include="Events\OnScheduleUpdateEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceBusConnection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Amqp.NetCore">
-      <HintPath>..\..\..\AZURE\azuresblite\bin\Debug\AzureSBLite.WinRT\Amqp.NetCore.dll</HintPath>
-    </Reference>
-    <Reference Include="AzureSBLite.WinRT">
-      <HintPath>..\..\..\AZURE\azuresblite\bin\Debug\AzureSBLite.WinRT\AzureSBLite.WinRT.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\SmartHive.LevelMapApp\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\SmartHive.LevelMapApp\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\SmartHive.Models\SmartHive.Models\SmartHive.Models.csproj">
-      <Project>{38d4ba3b-fff0-4e6d-9534-90ed4594dddb}</Project>
-      <Name>SmartHive.Models</Name>
-    </ProjectReference>
+    <Reference Include="Newtonsoft.Json.Schema, Version=2.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\SmartHive.LevelMapApp\packages\Newtonsoft.Json.Schema.2.0.11\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.Schema.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -17,13 +17,26 @@ namespace SmartHive.LevelMapApp.Controllers
 
             string levelId = settingsProvider.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName);
             this.levelConfig = settingsProvider.GetLevelConfig(levelId);
-            
+
             this.transport = transport;            
-            this.transport.OnServiceBusConnected += Transport_OnServiceBusConnected;
-            this.transport.OnEventLog += Transport_OnEventLog;
-            this.transport.Connect(settingsProvider);
+            
+            // Check if settings loaded or wait until Configuration will be ready for that
+            if (this.levelConfig.isLoaded)
+                InitTransport();
+            else
+                this.levelConfig.OnSettingsLoaded += LevelConfig_OnSettingsLoaded;
         }
-      
+
+        private void InitTransport()
+        {
+            this.transport.OnServiceBusConnected += Transport_OnServiceBusConnected;            
+            this.transport.Connect(this.levelConfig);
+        }
+
+        private void LevelConfig_OnSettingsLoaded(object sender, bool e)
+        {
+            InitTransport();
+        }
 
         private void Transport_OnServiceBusConnected(object sender, string e)
         {
@@ -36,7 +49,7 @@ namespace SmartHive.LevelMapApp.Controllers
             // This is presence sensor change
             if (Models.Events.NotificationEventSchema.PirSensorValueLabel.Equals(e.ValueLabel, StringComparison.CurrentCultureIgnoreCase));
             {
-                IRoomConfig roomConfig = this.levelConfig.FindRoomForSensorDeviceId(e.DeviceId);
+                IRoomConfig roomConfig = this.levelConfig.GetRoomConfigForSensorDeviceId(e.DeviceId);
                 this.mapController.SetRoomStatus(roomConfig, e.Value);               
             }
             
@@ -47,10 +60,6 @@ namespace SmartHive.LevelMapApp.Controllers
         {
             
         }
-
-        private void Transport_OnEventLog(object sender, Models.Events.OnEvenLogWriteEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

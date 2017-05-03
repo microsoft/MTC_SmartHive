@@ -23,7 +23,12 @@ namespace SmartHive.LevelMapApp.Droid.Controllers
         public event EventHandler<OnScheduleUpdateEventArgs> OnScheduleUpdate;
         public event EventHandler<OnEvenLogWriteEventArgs> OnEventLog;
 
-        public void Connect(ISettingsProvider SettingsProvider)
+        public void Connect(ILevelConfig SettingsProvider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Connect(IRoomConfig SettingsProvider)
         {
             throw new NotImplementedException();
         }

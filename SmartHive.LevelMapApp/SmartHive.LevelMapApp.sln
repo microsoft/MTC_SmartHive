@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.LevelMapApp.Andro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.LevelMapApp.UWP", "SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\SmartHive.LevelMapApp.UWP.csproj", "{C98F322A-3173-4F61-936F-3B57CE1FBCC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.Models", "..\SmartHive.Models\SmartHive.Models\SmartHive.Models.csproj", "{38D4BA3B-FFF0-4E6D-9534-90ED4594DDDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.Models", "..\SmartHive.Models\SmartHive.Models.csproj", "{38D4BA3B-FFF0-4E6D-9534-90ED4594DDDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.Controllers", "..\SmartHive.Controllers\SmartHive.Controllers\SmartHive.Controllers.csproj", "{5EDC1334-1177-414F-829D-6D200B45E83B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHive.Controllers", "..\SmartHive.Controllers\SmartHive.Controllers.csproj", "{5EDC1334-1177-414F-829D-6D200B45E83B}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

@@ -10,24 +10,45 @@ namespace SmartHive.LevelMapApp.UWP.Controllers
 {
     class SettingsControllerUwp : ISettingsProvider
     {
+
+        private Dictionary<string, ILevelConfig> LevelConfig = new Dictionary<string, ILevelConfig>();
+
         public SettingsControllerUwp()
         {
             Windows.Storage.ApplicationData.Current.DataChanged += Current_DataChanged;
         }
 
+        public event EventHandler<bool> OnSettingsLoaded;
+
         private void Current_DataChanged(ApplicationData sender, object args)
         {
-            throw new NotImplementedException();
+            
         }
 
         public ILevelConfig GetLevelConfig(string levelId)
         {
-            throw new NotImplementedException();
+            ILevelConfig cfg = LevelConfig.ContainsKey(levelId) ? LevelConfig[levelId] : null;
+
+            if (cfg == null)
+            {
+                cfg = new LevelXmlConfig(this, levelId);
+                cfg.OnSettingsLoaded += Cfg_OnSettingsLoaded;
+                LevelConfig[levelId] = cfg;
+            }
+
+            return cfg;
         }
 
-        public string GetPropertyValue(string Parameter)
+        private void Cfg_OnSettingsLoaded(object sender, bool e)
         {
-            object value =ApplicationData.Current.RoamingSettings.Values[Parameter];
+            //Inform subsciber if settings sucessfully loaded
+            if (OnSettingsLoaded != null)
+                OnSettingsLoaded.Invoke(sender, e);
+        }
+
+        public string GetPropertyValue(string Property)
+        {
+            object value =ApplicationData.Current.RoamingSettings.Values[Property];
             if (value != null)
                 return value.ToString();
             else
@@ -35,9 +56,9 @@ namespace SmartHive.LevelMapApp.UWP.Controllers
 
         }
 
-        public void SetPropertyValue(string Proeperty, string Value)
+        public void SetPropertyValue(string Property, string Value)
         {
-            throw new NotImplementedException();
+            ApplicationData.Current.RoamingSettings.Values[Property] = Value;
         }
     }
 }

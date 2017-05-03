@@ -6,6 +6,8 @@ namespace SmartHive.Models.Config
 {
     public interface ISettingsProvider
     {
+        event EventHandler<bool> OnSettingsLoaded;        
+
         string GetPropertyValue(string Property);
 
         void SetPropertyValue(string Property, string Value);

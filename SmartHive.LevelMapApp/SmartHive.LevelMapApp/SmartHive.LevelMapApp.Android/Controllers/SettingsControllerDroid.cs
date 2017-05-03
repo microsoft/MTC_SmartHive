@@ -17,6 +17,8 @@ namespace SmartHive.LevelMapApp.Droid.Controllers
 {
     class SettingsControllerDroid : ISettingsProvider
     {
+        public event EventHandler<bool> OnSettingsLoaded;
+
         public ILevelConfig GetLevelConfig(string levelId)
         {
             throw new NotImplementedException();

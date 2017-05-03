@@ -15,7 +15,7 @@ namespace SmartHive.LevelMapApp.Controllers
         /// <summary>
         /// Perform initialization and conenct to datasource
         /// </summary>
-        void Connect(ISettingsProvider SettingsProvider);
-
+        void Connect(ILevelConfig SettingsProvider);
+        void Connect(IRoomConfig SettingsProvider);
     }
 }

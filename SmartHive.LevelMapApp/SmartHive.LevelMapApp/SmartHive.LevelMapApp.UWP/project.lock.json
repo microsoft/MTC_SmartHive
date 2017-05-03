@@ -24684,13 +24684,13 @@
     },
     "SmartHive.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../../SmartHive.Controllers/SmartHive.Controllers/SmartHive.Controllers.csproj",
-      "msbuildProject": "../../../SmartHive.Controllers/SmartHive.Controllers/SmartHive.Controllers.csproj"
+      "path": "../../../SmartHive.Controllers/SmartHive.Controllers.csproj",
+      "msbuildProject": "../../../SmartHive.Controllers/SmartHive.Controllers.csproj"
     },
     "SmartHive.Models/1.0.0": {
       "type": "project",
-      "path": "../../../SmartHive.Models/SmartHive.Models/SmartHive.Models.csproj",
-      "msbuildProject": "../../../SmartHive.Models/SmartHive.Models/SmartHive.Models.csproj"
+      "path": "../../../SmartHive.Models/SmartHive.Models.csproj",
+      "msbuildProject": "../../../SmartHive.Models/SmartHive.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -24713,11 +24713,11 @@
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\PROJECTS\\SmartHive\\SmartHive.Controllers\\SmartHive.Controllers\\SmartHive.Controllers.csproj": {
-              "projectPath": "C:\\PROJECTS\\SmartHive\\SmartHive.Controllers\\SmartHive.Controllers\\SmartHive.Controllers.csproj"
+            "C:\\PROJECTS\\SmartHive\\SmartHive.Controllers\\SmartHive.Controllers.csproj": {
+              "projectPath": "C:\\PROJECTS\\SmartHive\\SmartHive.Controllers\\SmartHive.Controllers.csproj"
             },
-            "C:\\PROJECTS\\SmartHive\\SmartHive.Models\\SmartHive.Models\\SmartHive.Models.csproj": {
-              "projectPath": "C:\\PROJECTS\\SmartHive\\SmartHive.Models\\SmartHive.Models\\SmartHive.Models.csproj"
+            "C:\\PROJECTS\\SmartHive\\SmartHive.Models\\SmartHive.Models.csproj": {
+              "projectPath": "C:\\PROJECTS\\SmartHive\\SmartHive.Models\\SmartHive.Models.csproj"
             }
           }
         }
