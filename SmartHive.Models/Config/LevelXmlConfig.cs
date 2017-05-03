@@ -47,7 +47,7 @@ namespace SmartHive.Models.Config
                             using (XmlReader reader = XmlReader.Create(xmlInStream))
                             {
                                 reader.ReadStartElement();
-                                while(reader.ReadToFollowing(SettingsConst.RoomConfigSections_XmlElementName) && reader.ReadState != ReadState.EndOfFile)
+                                while (reader.ReadToFollowing(SettingsConst.RoomConfigSections_XmlElementName))
                                 {
                                     RoomConfig room = ParseRoomConfigNode(reader);
                                     // If this room related to our level - store config in memory
@@ -59,7 +59,7 @@ namespace SmartHive.Models.Config
                                                 this.SasKey = room.SasKey;
                                                 this.SasKeyName = room.SasKeyName;
                                                 this.ServiceBusNamespace = room.ServiceBusNamespace;
-                                                this.ServiceBusSubscriptionName = room.ServiceBusSubscriptionName;
+                                                this.ServiceBusSubscription = room.ServiceBusSubscription;
                                                 this.ServiceBusTopic = room.ServiceBusTopic;
                                             }
                                     }
@@ -90,10 +90,11 @@ namespace SmartHive.Models.Config
 
         private void parseRoomConfigTag(RoomConfig roomConfig, string TagName, string TagValue)
         {
-            var propertyInfo = typeof(RoomConfig).GetRuntimeProperty(TagName);
-            if (propertyInfo != null)
-                propertyInfo.SetValue(roomConfig, TagValue);
-             
+            
+                var propertyInfo = typeof(RoomConfig).GetRuntimeProperty(TagName);
+                if (propertyInfo != null)
+                    propertyInfo.SetValue(roomConfig, TagValue);
+           
         }
 
         private RoomConfig ParseRoomConfigNode(XmlReader roomReader)
@@ -101,22 +102,43 @@ namespace SmartHive.Models.Config
             string RoomId = roomReader[SettingsConst.RoomId_PropertyName];
             RoomConfig roomConfig = new RoomConfig(RoomId);
 
-            roomReader.ReadToDescendant("Title");
+            roomReader.ReadToDescendant(SettingsConst.RoomTitle_XmlElementName);
 
             do{
-                parseRoomConfigTag(roomConfig, roomReader.LocalName, roomReader.ReadElementContentAsString());
+                if (SettingsConst.Sensors_XmlElementName.Equals(roomReader.LocalName))
+                {
+                    ParseSensorsNode(roomReader, roomConfig);
+                    roomReader.ReadEndElement();
+                }
+                else
+                {
+                    parseRoomConfigTag(roomConfig, roomReader.LocalName, roomReader.ReadElementContentAsString());
+                }
                 roomReader.Read();
             } while(!SettingsConst.RoomConfigSections_XmlElementName.Equals(roomReader.LocalName) && roomReader.ReadState != ReadState.EndOfFile);
 
             return roomConfig;
         }
 
+        private void ParseSensorsNode(XmlReader roomReader, RoomConfig roomConfig)
+        {
+            if (roomReader.ReadToDescendant(SettingsConst.Sensor_XmlElementName))
+            {
+                do
+                {
+                    RoomSensor sensor = new RoomSensor();
+                    sensor.DeviceId = roomReader[SettingsConst.DeviceId_PropertyName];
+                    sensor.Telemetry = roomReader[SettingsConst.Telemetry_XmlAttributeName];
+                    roomConfig.RoomSensors.Add(sensor);
+                } while (roomReader.ReadToNextSibling(roomReader.LocalName));
+            }
+        }
 
         public string LevelId { get; set;}
         public string ServiceBusNamespace { get; set; }
 
         private string sbSubscriptionName = null;
-        public string ServiceBusSubscriptionName {
+        public string ServiceBusSubscription {
             get {
                 if (string.IsNullOrEmpty(sbSubscriptionName))
                     return "FloorMap";
@@ -149,7 +171,7 @@ namespace SmartHive.Models.Config
             if (this.LevelRooms.Count == 0)
                 return null;
 
-            return this.LevelRooms.Values.FirstOrDefault<IRoomConfig>(room => room.RoomDeviceIDs.Contains(DeviceId));
+            return this.LevelRooms.Values.FirstOrDefault<IRoomConfig>(room => room.RoomSensors.Any<IRoomSensor>(sensor => DeviceId.Equals(sensor.DeviceId)));
         }
 
     }

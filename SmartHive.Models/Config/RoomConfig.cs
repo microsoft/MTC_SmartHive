@@ -12,7 +12,7 @@ namespace SmartHive.Models.Config
         public RoomConfig (string Location) : base()
         {
             this.Location = Location;
-            this.RoomDeviceIDs = new List<string>();
+            this.RoomSensors = new List<IRoomSensor>();
         }
         public string Location { get; set; }
         public string Title { get; set; }
@@ -20,17 +20,16 @@ namespace SmartHive.Models.Config
         public string IconTop { get; set; }
         public string IconBottom { get; set; }
         public string Css { get; set; }
-
-        public List<string> RoomDeviceIDs{
-            get;
-            private set;
-        }
-
+        public DateTime ScheduledTill { get; set; }
+       
         public RoomStatus RoomStatus { get; set; }
         public string ServiceBusNamespace { get; set; }
-        public string ServiceBusSubscriptionName { get; set; }
+        public string ServiceBusSubscription { get; set; }
         public string ServiceBusTopic { get; set; }
         public string SasKeyName { get; set; }
         public string SasKey { get; set; }
+
+        public List<IRoomSensor> RoomSensors { get; set; }
+        public string FloorMapVarName {get; set; }
     }
 }

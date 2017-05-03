@@ -168,10 +168,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SmartHive.Controllers\SmartHive.Controllers.csproj">
-      <Project>{5edc1334-1177-414f-829d-6d200b45e83b}</Project>
-      <Name>SmartHive.Controllers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\SmartHive.Models\SmartHive.Models.csproj">
       <Project>{38d4ba3b-fff0-4e6d-9534-90ed4594dddb}</Project>
       <Name>SmartHive.Models</Name>

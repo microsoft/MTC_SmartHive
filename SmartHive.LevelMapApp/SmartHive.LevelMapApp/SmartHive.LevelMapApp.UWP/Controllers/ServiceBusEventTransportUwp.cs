@@ -51,7 +51,7 @@ namespace SmartHive.LevelMapApp.UWP.Controllers
             this.connection = new ServiceBusConnection(levelConfig.ServiceBusNamespace, levelConfig.SasKeyName, levelConfig.SasKey);
             this.connection.OnServiceBusConnected += Connection_OnServiceBusConnected;
             this.connection.OnEventLog += Connection_OnEventLog;
-            this.connection.InitSubscription(levelConfig.ServiceBusTopic, levelConfig.ServiceBusSubscriptionName, 10);
+            this.connection.InitSubscription(levelConfig.ServiceBusTopic, levelConfig.ServiceBusSubscription, 10);
         }
 
 

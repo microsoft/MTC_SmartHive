@@ -22,11 +22,10 @@ namespace SmartHive.Models.Config
       string Title_En { get; set; }
       string IconTop { get; set; }
       string IconBottom { get; set; }
-      string Css { get; set; }
-    
-      
-      List<string> RoomDeviceIDs { get; }
-
+      string Css { get; set; }    
+      string FloorMapVarName { get; set; }
+      DateTime ScheduledTill { get; set; }
+      List<IRoomSensor> RoomSensors { get; }
       RoomStatus RoomStatus { get; set; }
     }
 }

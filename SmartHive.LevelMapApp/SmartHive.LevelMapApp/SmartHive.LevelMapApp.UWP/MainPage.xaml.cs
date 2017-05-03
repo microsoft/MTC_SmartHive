@@ -34,7 +34,7 @@ namespace SmartHive.LevelMapApp.UWP
             
             //Set some settings for debugging
             if (this.SettingsController.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName) == null)
-                this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/rooms.xml");
+                this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml");
             if (this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName) == null)
                 this.SettingsController.SetPropertyValue(SettingsConst.DefaultLevel_PropertyName, "wgoc");
             //    this.connection = new ServiceBusConnection("mtcdatacenter", );

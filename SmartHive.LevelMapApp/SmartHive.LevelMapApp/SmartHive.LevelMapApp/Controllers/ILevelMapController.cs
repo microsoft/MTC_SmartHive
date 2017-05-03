@@ -9,8 +9,9 @@ namespace SmartHive.LevelMapApp.Controllers
     interface ILevelMapController
     {
 
-        void SetRoomStatus(IRoomConfig roomConfig, string roomStatus);
-        void SetRoomStatus(string roomId, RoomStatus roomStatus);
+        void SetRoomStatus(IRoomConfig roomConfig, RoomStatus roomStatus);   
 
+        void OnRoomSensorChanged(object sender, IRoomSensor e);
+        
     }
 }

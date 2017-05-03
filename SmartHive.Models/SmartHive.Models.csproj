@@ -37,10 +37,12 @@
   <ItemGroup>
     <Compile Include="Config\ILevelConfig.cs" />
     <Compile Include="Config\IRoomConfig.cs" />
+    <Compile Include="Config\IRoomSensor.cs" />
     <Compile Include="Config\IServiceBusConfig.cs" />
     <Compile Include="Config\ISettingsProvider.cs" />
     <Compile Include="Config\LevelXmlConfig.cs" />
     <Compile Include="Config\RoomConfig.cs" />
+    <Compile Include="Config\RoomSensor.cs" />
     <Compile Include="Config\SettingsConst.cs" />
     <Compile Include="Events\OnEvenLogWriteEventArgs.cs" />
     <Compile Include="Events\OnNotificationEventArgs.cs" />

@@ -1,6 +1,8 @@
 ﻿using System;
 using SmartHive.Models.Config;
+using SmartHive.Models.Events;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SmartHive.LevelMapApp.Controllers
@@ -10,10 +12,13 @@ namespace SmartHive.LevelMapApp.Controllers
         private IEventTransport transport;
         private ILevelMapController mapController;
         private ILevelConfig levelConfig;
+
+        event EventHandler<IRoomSensor> OnRoomSensorChanged;
         public ServiceBusEventController(IEventTransport transport, ISettingsProvider settingsProvider)
         {
             //TODO : Add Factory method to choose map provider
             this.mapController = new WireGeoRoomController(settingsProvider);
+            this.OnRoomSensorChanged += this.mapController.OnRoomSensorChanged;
 
             string levelId = settingsProvider.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName);
             this.levelConfig = settingsProvider.GetLevelConfig(levelId);
@@ -25,7 +30,7 @@ namespace SmartHive.LevelMapApp.Controllers
                 InitTransport();
             else
                 this.levelConfig.OnSettingsLoaded += LevelConfig_OnSettingsLoaded;
-        }
+        }       
 
         private void InitTransport()
         {
@@ -44,19 +49,29 @@ namespace SmartHive.LevelMapApp.Controllers
             this.transport.OnNotification += Transport_OnNotification;
         }
 
-        private void Transport_OnNotification(object sender, Models.Events.OnNotificationEventArgs e)
+        private void Transport_OnNotification(object sender, OnNotificationEventArgs e)
         {
-            // This is presence sensor change
-            if (Models.Events.NotificationEventSchema.PirSensorValueLabel.Equals(e.ValueLabel, StringComparison.CurrentCultureIgnoreCase));
+            IRoomConfig roomConfig = this.levelConfig.GetRoomConfigForSensorDeviceId(e.DeviceId);
+            if (roomConfig != null)
             {
-                IRoomConfig roomConfig = this.levelConfig.GetRoomConfigForSensorDeviceId(e.DeviceId);
-                this.mapController.SetRoomStatus(roomConfig, e.Value);               
-            }
-            
-            
-        }
+                var sensor = roomConfig.RoomSensors.FirstOrDefault<IRoomSensor>(s => s.DeviceId.Equals(e.DeviceId) && s.Telemetry.Equals(e.ValueLabel));
 
-        private void Transport_OnScheduleUpdate(object sender, Models.Events.OnScheduleUpdateEventArgs e)
+                bool IsChanged = false;
+                                                
+                if (sensor != null)
+                {
+                    // Check if value was changed
+                    IsChanged = sensor.LastMeasurement == null|| (!string.IsNullOrEmpty(sensor.LastMeasurement.Value) && !sensor.LastMeasurement.Value.Equals(e.Value)); 
+                    sensor.LastMeasurement = e;
+                    if (IsChanged && this.OnRoomSensorChanged != null)
+                        this.OnRoomSensorChanged.Invoke(roomConfig, sensor);
+                }
+            }
+        }
+        
+
+
+        private void Transport_OnScheduleUpdate(object sender, OnScheduleUpdateEventArgs e)
         {
             
         }

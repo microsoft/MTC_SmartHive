@@ -10,7 +10,7 @@ namespace SmartHive.Models.Config
     {
         string ServiceBusNamespace { get; set; }
 
-        string ServiceBusSubscriptionName { get; set; }
+        string ServiceBusSubscription { get; set; }
 
         string ServiceBusTopic { get; set; }
 
