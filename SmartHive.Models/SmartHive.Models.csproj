@@ -48,7 +48,6 @@
     <Compile Include="Events\OnNotificationEventArgs.cs" />
     <Compile Include="Events\OnReadingTaskEventArgs.cs" />
     <Compile Include="Events\OnScheduleUpdateEventArgs.cs" />
-    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,12 +56,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json.Schema, Version=2.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\SmartHive.LevelMapApp\packages\Newtonsoft.Json.Schema.2.0.11\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.Schema.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Settings, Version=2.5.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\SmartHive.LevelMapApp\packages\Xam.Plugins.Settings.2.5.4\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\SmartHive.LevelMapApp\packages\Xam.Plugins.Settings.2.5.4\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

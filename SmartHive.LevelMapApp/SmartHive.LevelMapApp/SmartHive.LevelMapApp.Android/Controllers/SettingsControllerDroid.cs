@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SmartHive.Models.Config;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+
 
 
 namespace SmartHive.LevelMapApp.Droid.Controllers
@@ -29,10 +28,10 @@ namespace SmartHive.LevelMapApp.Droid.Controllers
 
         private static readonly string SettingsDefault = string.Empty;
 
-        ISettings applicationSettings = null;
+        SettingsImplementation applicationSettings = null;
         private SettingsControllerDroid()
         {
-            this.applicationSettings = CrossSettings.Current;
+            this.applicationSettings = new SettingsImplementation();
         }
 
         public event EventHandler<bool> OnSettingsLoaded;

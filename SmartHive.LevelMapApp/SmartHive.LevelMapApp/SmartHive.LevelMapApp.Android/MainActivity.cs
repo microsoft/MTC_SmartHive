@@ -34,9 +34,9 @@ namespace SmartHive.LevelMapApp.Droid
             this.SettingsController = SettingsControllerDroid.AppSettings;
 
             //Set some settings for debugging
-            if (this.SettingsController.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName) == null)
+            if (string.IsNullOrEmpty(this.SettingsController.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName)))
                 this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml");
-            if (this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName) == null)
+            if (string.IsNullOrEmpty(this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName)))
                 this.SettingsController.SetPropertyValue(SettingsConst.DefaultLevel_PropertyName, "wgoc");
                 
         }
