@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SmartHive.Models.Events;
 
 namespace SmartHive.Models.Config
 {
@@ -24,7 +25,7 @@ namespace SmartHive.Models.Config
       string IconBottom { get; set; }
       string Css { get; set; }    
       string FloorMapVarName { get; set; }
-      DateTime ScheduledTill { get; set; }
+      Appointment CurrentAppointment { get; set; }
       List<IRoomSensor> RoomSensors { get; }
       RoomStatus RoomStatus { get; set; }
     }

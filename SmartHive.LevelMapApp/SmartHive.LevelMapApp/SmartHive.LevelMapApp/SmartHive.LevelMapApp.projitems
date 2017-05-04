@@ -14,7 +14,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\IEventTransport.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ILevelMapController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controllers\RoomStatusHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ServiceBusEventController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\WireGeoRoomController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">

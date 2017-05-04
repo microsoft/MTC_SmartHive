@@ -37,10 +37,17 @@ namespace SmartHive.LevelMapApp.UWP
                 this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml");
             if (this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName) == null)
                 this.SettingsController.SetPropertyValue(SettingsConst.DefaultLevel_PropertyName, "wgoc");
-            //    this.connection = new ServiceBusConnection("mtcdatacenter", );
-            //    this.connection.InitSubscription("wgoc", "FloorMap");
-            //  LoadApplication(new SmartHive.LevelMapApp.App());
-        }
+
+            if (this.SettingsController.GetPropertyValue(WireGeoRoomController.WireGeoApiUrl_PropertyName) == null)
+                this.SettingsController.SetPropertyValue(WireGeoRoomController.WireGeoApiUrl_PropertyName, "https://cloud.wiregeo.com/api/v1/");
+
+            if (this.SettingsController.GetPropertyValue(WireGeoRoomController.WireGeoApiToken_PropertyName) == null)
+                this.SettingsController.SetPropertyValue(WireGeoRoomController.WireGeoApiToken_PropertyName, "t3ij3nwcwet88fnmhb0337haugkqlmv5");
+
+        //    this.connection = new ServiceBusConnection("mtcdatacenter", );
+        //    this.connection.InitSubscription("wgoc", "FloorMap");
+        //  LoadApplication(new SmartHive.LevelMapApp.App());
+    }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -49,10 +56,7 @@ namespace SmartHive.LevelMapApp.UWP
             this.serviceBusEventController = new LevelMapApp.Controllers.ServiceBusEventController(ServiceBusEventTransport, this.SettingsController);
             
         }
-
-        
-
-        
+  
 
         private void floorMapView_ScriptNotify(object sender, NotifyEventArgs e)
         {

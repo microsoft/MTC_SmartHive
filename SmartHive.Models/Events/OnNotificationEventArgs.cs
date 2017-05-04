@@ -97,16 +97,9 @@ namespace SmartHive.Models.Events
 
        
         public static bool IsValid(string json)
-        {
-            try
-            {                
+        {             
                 JObject jObject = JObject.Parse(json);
                 return jObject.IsValid(schemaJson);
-            }
-            catch
-            {
-                return false;
-            }
         }
     }
 }

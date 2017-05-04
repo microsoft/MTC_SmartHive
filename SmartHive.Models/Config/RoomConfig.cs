@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SmartHive.Models.Events;
 
 namespace SmartHive.Models.Config
 {
@@ -13,6 +14,7 @@ namespace SmartHive.Models.Config
         {
             this.Location = Location;
             this.RoomSensors = new List<IRoomSensor>();
+            this.RoomStatus = RoomStatus.Unknown;
         }
         public string Location { get; set; }
         public string Title { get; set; }
@@ -20,7 +22,7 @@ namespace SmartHive.Models.Config
         public string IconTop { get; set; }
         public string IconBottom { get; set; }
         public string Css { get; set; }
-        public DateTime ScheduledTill { get; set; }
+        public Appointment CurrentAppointment { get; set; }
        
         public RoomStatus RoomStatus { get; set; }
         public string ServiceBusNamespace { get; set; }

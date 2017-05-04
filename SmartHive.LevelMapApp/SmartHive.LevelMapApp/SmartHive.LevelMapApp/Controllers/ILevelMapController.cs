@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using SmartHive.Models.Events;
 using SmartHive.Models.Config;
 
 namespace SmartHive.LevelMapApp.Controllers
@@ -9,9 +9,9 @@ namespace SmartHive.LevelMapApp.Controllers
     interface ILevelMapController
     {
 
-        void SetRoomStatus(IRoomConfig roomConfig, RoomStatus roomStatus);   
+        void SetRoomStatus(IRoomConfig roomConfig);   
 
         void OnRoomSensorChanged(object sender, IRoomSensor e);
-        
+        void OnRoomScheduleStatusChanged(object sender, Appointment e);
     }
 }

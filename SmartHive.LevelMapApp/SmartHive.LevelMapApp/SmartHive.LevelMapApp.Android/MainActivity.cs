@@ -26,19 +26,19 @@ namespace SmartHive.LevelMapApp.Droid
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			LoadApplication (new SmartHive.LevelMapApp.App ());
 
-            string attr = SmartHive.LevelMapApp.Droid.Helpers.Settings.GeneralSettings;
+           /* string attr = SmartHive.LevelMapApp.Droid.Helpers.Settings.GeneralSettings;
 
             if (string.IsNullOrEmpty(attr))
-                SmartHive.LevelMapApp.Droid.Helpers.Settings.GeneralSettings = "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml";
+                SmartHive.LevelMapApp.Droid.Helpers.Settings.GeneralSettings = "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml";*/
 
-           /* this.SettingsController = SettingsControllerDroid.AppSettings;
+            this.SettingsController = SettingsControllerDroid.AppSettings;
 
             //Set some settings for debugging
             if (this.SettingsController.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName) == null)
                 this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml");
             if (this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName) == null)
                 this.SettingsController.SetPropertyValue(SettingsConst.DefaultLevel_PropertyName, "wgoc");
-                */
+                
         }
 
         
