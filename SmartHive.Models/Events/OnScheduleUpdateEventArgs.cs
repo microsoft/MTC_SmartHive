@@ -72,7 +72,7 @@ namespace SmartHive.Models.Events
         }
     }
 
-    class AppointmentComparer : IEqualityComparer<Appointment>
+   public class AppointmentComparer : IEqualityComparer<Appointment>
     {
         public bool Equals(Appointment x, Appointment y)
         {

@@ -17,5 +17,12 @@ namespace SmartHive.Models.Config
         string SasKeyName { get; set; }
 
         string SasKey { get; set; }
+
+        /// <summary>
+        /// Time allowanse in seconds
+        /// Room assumed as sceduled before this amount of seconds 
+        /// And assumed as free after this this amount of seconds after end of event
+        /// </summary>
+        int EventLeewaySeconds { get; set; }
     }
 }

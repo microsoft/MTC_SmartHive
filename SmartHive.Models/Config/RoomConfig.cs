@@ -33,5 +33,6 @@ namespace SmartHive.Models.Config
 
         public List<IRoomSensor> RoomSensors { get; set; }
         public string FloorMapVarName {get; set; }
+        public int EventLeewaySeconds { get; set; }
     }
 }

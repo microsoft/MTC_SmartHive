@@ -2,6 +2,7 @@
 using SmartHive.Models.Config;
 using SmartHive.Models.Events;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -21,6 +22,7 @@ namespace SmartHive.LevelMapApp.Controllers
             //TODO : Add Factory method to choose map provider
             this.mapController = new WireGeoRoomController(settingsProvider);
             this.OnRoomSensorChanged += this.mapController.OnRoomSensorChanged;
+            this.OnRoomScheduleStatusChanged += this.mapController.OnRoomScheduleStatusChanged;
 
             string levelId = settingsProvider.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName);
             this.levelConfig = settingsProvider.GetLevelConfig(levelId);
@@ -85,21 +87,32 @@ namespace SmartHive.LevelMapApp.Controllers
             if (roomConfig == null)
                 return; // Nothing to do;
 
-            if (sensor == null || !NotificationEventSchema.PirSensorValueLabel.Equals(sensor.Telemetry)) // Extract sensor from Room Config
+            // If this is PiR a sensor telemetry 
+            IRoomSensor piRSensor = null;
+            if (sensor != null && NotificationEventSchema.PirSensorValueLabel.Equals(sensor.Telemetry)) 
             {
-                sensor = roomConfig.RoomSensors.FirstOrDefault<IRoomSensor>(s => NotificationEventSchema.PirSensorValueLabel.Equals(sensor.Telemetry));
+                piRSensor = sensor;
+            }
+            else if (roomConfig.RoomSensors != null)
+            {
+                // If Not - extract sensor from Room Config
+                piRSensor = roomConfig.RoomSensors.FirstOrDefault<IRoomSensor>(s => NotificationEventSchema.PirSensorValueLabel.Equals(s.Telemetry));
             }
 
-            if (roomConfig.CurrentAppointment != null && DateTime.Now >= DateTime.Parse(roomConfig.CurrentAppointment.EndTime))
+            DateTime leeWayEndTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
+            // Remove outdated appointments
+            // TODO? Perform this check for all rooms ?
+            if (roomConfig.CurrentAppointment != null && leeWayEndTime >= DateTime.Parse(roomConfig.CurrentAppointment.EndTime))
             { // Check if room appointment expired
                 roomConfig.CurrentAppointment = null;
             }
+           
 
-            double PiR = 0;
+            double PiR = -1.0;
 
-            if (sensor != null && NotificationEventSchema.PirSensorValueLabel.Equals(sensor.Telemetry))// PiR sensor changed
+            if (piRSensor != null && piRSensor.LastMeasurement != null)// PiR sensor changed
             {
-                Double.TryParse(sensor.LastMeasurement.Value, out PiR);            
+                Double.TryParse(piRSensor.LastMeasurement.Value, out PiR);            
             }
 
             if (PiR > 0.0) //Presense detected
@@ -118,7 +131,6 @@ namespace SmartHive.LevelMapApp.Controllers
             }
         }
 
-
         private void Transport_OnScheduleUpdate(object sender, OnScheduleUpdateEventArgs e)
         {
             IRoomConfig roomConfig = this.levelConfig.GetRoomConfig(e.RoomId);
@@ -128,10 +140,20 @@ namespace SmartHive.LevelMapApp.Controllers
             Appointment currentAppointment = null;
             if (e.Schedule != null &&  e.Schedule.Length > 0)
             {
-                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => DateTime.Parse(a.StartTime) >= DateTime.Now && DateTime.Parse(a.EndTime) <= DateTime.Now);               
+                //Assume event started early to add leeway
+                DateTime leeWayStartTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
+                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => leeWayStartTime >= DateTime.Parse(a.StartTime));               
             }
 
-            bool IsChanged = roomConfig.CurrentAppointment == currentAppointment;
+            bool IsChanged = false;
+            if (roomConfig.CurrentAppointment != null)
+            {
+                IsChanged = !new AppointmentComparer().Equals(roomConfig.CurrentAppointment, currentAppointment);
+            }
+            else
+            {
+                IsChanged = roomConfig.CurrentAppointment != currentAppointment;
+            }
 
             if (currentAppointment != null)
                 roomConfig.CurrentAppointment = currentAppointment;

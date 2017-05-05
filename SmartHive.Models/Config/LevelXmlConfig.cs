@@ -101,6 +101,7 @@ namespace SmartHive.Models.Config
         {
             string RoomId = roomReader[SettingsConst.RoomId_PropertyName];
             RoomConfig roomConfig = new RoomConfig(RoomId);
+            roomConfig.EventLeewaySeconds = this.EventLeewaySeconds;
 
             roomReader.ReadToDescendant(SettingsConst.RoomTitle_XmlElementName);
 
@@ -158,9 +159,16 @@ namespace SmartHive.Models.Config
             private set;
         }
 
+        // Assume 10 minutes default time for Event Leeway
+        private int eventLeewaySeconds = 60 * 10;
+        public int EventLeewaySeconds {
+            get { return this.eventLeewaySeconds; }
+            set{ this.eventLeewaySeconds = value; }
+        }
+
         public IRoomConfig GetRoomConfig(string RoomId)
         {
-            if (!this.LevelRooms.ContainsKey(RoomId))
+            if (this.LevelRooms.ContainsKey(RoomId))
                 return this.LevelRooms[RoomId];
             else
                 return null;

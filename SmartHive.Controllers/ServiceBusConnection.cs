@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using ppatierno.AzureSBLite.Messaging;
 using SmartHive.Models.Events;
+using SmartHive.Models.Config;
 using System.Globalization;
 using System.Xml;
 
@@ -20,13 +21,8 @@ namespace SmartHive.Controllers
     public sealed class ServiceBusConnection
     {
 
-        internal string ServiceBusConnectionString { get; set; }
-
-        private const int MaxMessageBatchCount = 10;
-        private int eventsExpiration = 10; // minutes after calendar event counted as expired
-
         private SubscriptionClient subscriptionClient;
-
+        private IServiceBusConfig sbConfig = null;
 
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
@@ -36,32 +32,21 @@ namespace SmartHive.Controllers
         public event EventHandler<OnScheduleUpdateEventArgs> OnScheduleUpdate;
         public event EventHandler<OnEvenLogWriteEventArgs> OnEventLog;
 
-        public ServiceBusConnection(string ServiceBusNamespace, string SasKeyName, string SasKey)
+        public ServiceBusConnection(IServiceBusConfig sbConfig)
         {
-            try
-            {
-
-                this.ServiceBusConnectionString = String.Format(@"Endpoint=sb://{0}.servicebus.windows.net/;SharedAccessKeyName={1};SharedAccessKey={2};",
-                    ServiceBusNamespace, SasKeyName, SasKey);
-
-            }
-            catch (Exception ex)
-            {
-                //DC.Trace(ex.Message + ex.StackTrace);
-                this.LogEvent(EventTypeConsts.Error, "Service bus error", ex.Message);
-                throw ex;
-            }
+            this.sbConfig = sbConfig;
         }
 
-        public void InitSubscription(string TopicName, string SubscriptionName, int eventsExpiration)
-        {
-            this.eventsExpiration = eventsExpiration;
-
+        public void Connect()
+        {           
             try
             {
+                string ServiceBusConnectionString = String.Format(@"Endpoint=sb://{0}.servicebus.windows.net/;SharedAccessKeyName={1};SharedAccessKey={2};",
+                    sbConfig.ServiceBusNamespace, sbConfig.SasKeyName, sbConfig.SasKey);
 
-                MessagingFactory factory = MessagingFactory.CreateFromConnectionString(this.ServiceBusConnectionString);
-                this.subscriptionClient = SubscriptionClient.CreateFromConnectionString(this.ServiceBusConnectionString, TopicName, SubscriptionName, ReceiveMode.ReceiveAndDelete);
+                MessagingFactory factory = MessagingFactory.CreateFromConnectionString(ServiceBusConnectionString);
+                this.subscriptionClient = SubscriptionClient.CreateFromConnectionString(ServiceBusConnectionString, sbConfig.ServiceBusTopic, 
+                    sbConfig.ServiceBusSubscription, ReceiveMode.ReceiveAndDelete);
 
                 this.subscriptionClient.OnMessage(this.OnNewMessage);
 
@@ -124,7 +109,7 @@ namespace SmartHive.Controllers
             {
                 OnScheduleUpdateEventArgs eventData = JsonConvert.DeserializeObject<OnScheduleUpdateEventArgs>(sBody);
 
-                eventData.Schedule = this.FilterAppointments(eventData, eventsExpiration);
+                eventData.Schedule = this.FilterAppointments(eventData);
                 if (eventData != null && OnScheduleUpdate != null)
                 {
                     OnScheduleUpdate.Invoke(sBody, eventData);
@@ -138,13 +123,13 @@ namespace SmartHive.Controllers
 
         }
 
-        private Appointment[] FilterAppointments(OnScheduleUpdateEventArgs eventData, int eventsExpiration)
+        private Appointment[] FilterAppointments(OnScheduleUpdateEventArgs eventData)
         {
             if (eventData == null || eventData.Schedule == null)
                 return new Appointment[0];
 
-            DateTime expirationTime = DateTime.Now.AddMinutes(eventsExpiration * -1);
-            //return all engagements  and not finished yet or finished not leater then eventsExpiration minutes
+            DateTime expirationTime = DateTime.Now.AddSeconds(sbConfig.EventLeewaySeconds * -1);
+            //return all engagements  and not finished yet or finished not leater then eventsExpiration seconds
             Appointment[] retVal = eventData.Schedule.Where<Appointment>(a =>
                     expirationTime.CompareTo(DateTime.ParseExact(a.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture)) <= 0).ToArray<Appointment>();
 
