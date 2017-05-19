@@ -14,7 +14,7 @@ namespace SmartHive.LevelMapApp.Droid
 	[Activity (Label = "SmartHive.LevelMapApp", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
-        private ISettingsProvider SettingsController;
+        private ISettingsProvider settingsController;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -24,20 +24,11 @@ namespace SmartHive.LevelMapApp.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new SmartHive.LevelMapApp.App ());
 
-           /* string attr = SmartHive.LevelMapApp.Droid.Helpers.Settings.GeneralSettings;
+            SmartHive.LevelMapApp.App app = new SmartHive.LevelMapApp.App(null);
+            this.settingsController = app.settingsController;
 
-            if (string.IsNullOrEmpty(attr))
-                SmartHive.LevelMapApp.Droid.Helpers.Settings.GeneralSettings = "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml";*/
-
-            this.SettingsController = SettingsControllerDroid.AppSettings;
-
-            //Set some settings for debugging
-            if (string.IsNullOrEmpty(this.SettingsController.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName)))
-                this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml");
-            if (string.IsNullOrEmpty(this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName)))
-                this.SettingsController.SetPropertyValue(SettingsConst.DefaultLevel_PropertyName, "wgoc");
+            LoadApplication (app);
                 
         }
 

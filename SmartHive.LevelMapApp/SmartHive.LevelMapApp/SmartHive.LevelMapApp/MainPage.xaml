@@ -2,8 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SmartHive.LevelMapApp"
-             x:Class="SmartHive.LevelMapApp.MainPage">
+             xmlns:v="clr-namespace:SmartHive.LevelMapApp.Views"
+             x:Class="SmartHive.LevelMapApp.MainPage"
+             x:Name="mainPage">
 
-    <WebView Source="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame" x:Name="floorMapView" />
     
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style x:Key="titleStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="100"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+            
+            <Label Grid.Column="0" Text="First pannel" Style="{StaticResource titleStyle}" />
+
+
+        <ListView x:Name="roomsScheduleView" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding IconTop}" />
+                                <Label Text="{Binding Title}"
+                                TextColor="#f35e20" />
+                                <Label Text="{Binding Title_En}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+    </Grid>
 </ContentPage>

@@ -10,6 +10,8 @@ namespace SmartHive.Models.Config
 
         string GetPropertyValue(string Property);
 
+        string GetValueOrDefault(string Property, string SettingsDefault);
+
         void SetPropertyValue(string Property, string Value);
 
         ILevelConfig GetLevelConfig(string levelId);

@@ -55,9 +55,9 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>67A7199D91CAB015C9FF30761180FE3F780B0A43</PackageCertificateThumbprint>
-    <PackageCertificateKeyFile>TechnohowMakhluApp.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>DF9354F7945CAD952C99A70DE264AD437D002914</PackageCertificateThumbprint>
     <AppxBundle>Auto</AppxBundle>
+    <PackageCertificateKeyFile>SmartHive.ScheduleBoard_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\default.css" />
@@ -114,6 +114,7 @@
     </AppxManifest>
     <Content Include="js\SettingsFlyout-Conection.js" />
     <Content Include="js\default.js" />
+    <None Include="SmartHive.ScheduleBoard_TemporaryKey.pfx" />
     <Content Include="WinJS\css\ui-dark.css" />
     <Content Include="WinJS\css\ui-dark.min.css" />
     <Content Include="WinJS\css\ui-light.css" />

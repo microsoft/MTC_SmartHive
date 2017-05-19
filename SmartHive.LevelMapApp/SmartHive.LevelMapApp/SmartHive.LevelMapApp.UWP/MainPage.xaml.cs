@@ -22,39 +22,21 @@ namespace SmartHive.LevelMapApp.UWP
     {
 
         private ServiceBusEventController serviceBusEventController = null;
-        private ISettingsProvider SettingsController;
+        private ISettingsProvider settingsController = null;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            this.Loaded += MainPage_Loaded;
-
-            this.SettingsController = new SettingsControllerUwp();
-            
-            //Set some settings for debugging
-            if (this.SettingsController.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName) == null)
-                this.SettingsController.SetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName, "http://mtcscheduleboard.azurewebsites.net/test/rooms.xml");
-            if (this.SettingsController.GetPropertyValue(SettingsConst.DefaultLevel_PropertyName) == null)
-                this.SettingsController.SetPropertyValue(SettingsConst.DefaultLevel_PropertyName, "wgoc");
-
-            if (this.SettingsController.GetPropertyValue(WireGeoRoomController.WireGeoApiUrl_PropertyName) == null)
-                this.SettingsController.SetPropertyValue(WireGeoRoomController.WireGeoApiUrl_PropertyName, "https://cloud.wiregeo.com/api/v1/");
-
-            if (this.SettingsController.GetPropertyValue(WireGeoRoomController.WireGeoApiToken_PropertyName) == null)
-                this.SettingsController.SetPropertyValue(WireGeoRoomController.WireGeoApiToken_PropertyName, "t3ij3nwcwet88fnmhb0337haugkqlmv5");
-
-        //    this.connection = new ServiceBusConnection("mtcdatacenter", );
-        //    this.connection.InitSubscription("wgoc", "FloorMap");
-        //  LoadApplication(new SmartHive.LevelMapApp.App());
-    }
-
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
             // Initialize Service Bus connection and set required event handlers
             IEventTransport ServiceBusEventTransport = new ServiceBusEventTransportUwp();
-            this.serviceBusEventController = new LevelMapApp.Controllers.ServiceBusEventController(ServiceBusEventTransport, this.SettingsController);
-            
+
+            SmartHive.LevelMapApp.App  mainApp = new SmartHive.LevelMapApp.App(ServiceBusEventTransport);
+           
+            this.settingsController = mainApp.settingsController;
+
+            LoadApplication(mainApp);
+
         }
   
 

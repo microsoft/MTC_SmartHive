@@ -14,8 +14,8 @@ namespace SmartHive.LevelMapApp.Controllers
         private ILevelMapController mapController;
         private ILevelConfig levelConfig;
 
-        event EventHandler<IRoomSensor> OnRoomSensorChanged;
-        event EventHandler<Appointment> OnRoomScheduleStatusChanged;
+        public event EventHandler<IRoomSensor> OnRoomSensorChanged;
+        public event EventHandler<Appointment> OnRoomScheduleStatusChanged;
 
         public ServiceBusEventController(IEventTransport transport, ISettingsProvider settingsProvider)
         {
@@ -70,7 +70,10 @@ namespace SmartHive.LevelMapApp.Controllers
                     if (IsChanged && this.OnRoomSensorChanged != null)
                     {
                         UpdateRoomStatus(roomConfig, sensor);
-                        this.OnRoomSensorChanged.Invoke(roomConfig, sensor);
+                        Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                        {
+                            this.OnRoomSensorChanged.Invoke(roomConfig, sensor);
+                        });                        
                     }
                 }
             }
@@ -102,7 +105,7 @@ namespace SmartHive.LevelMapApp.Controllers
             DateTime leeWayEndTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
             // Remove outdated appointments
             // TODO? Perform this check for all rooms ?
-            if (roomConfig.CurrentAppointment != null && leeWayEndTime >= DateTime.Parse(roomConfig.CurrentAppointment.EndTime))
+            if (roomConfig.CurrentAppointment != null && leeWayEndTime >= DateTime.ParseExact(roomConfig.CurrentAppointment.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture))
             { // Check if room appointment expired
                 roomConfig.CurrentAppointment = null;
             }
@@ -142,7 +145,7 @@ namespace SmartHive.LevelMapApp.Controllers
             {
                 //Assume event started early to add leeway
                 DateTime leeWayStartTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
-                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => leeWayStartTime >= DateTime.Parse(a.StartTime));               
+                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => leeWayStartTime >= DateTime.ParseExact(a.StartTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture));               
             }
 
             bool IsChanged = false;
@@ -163,7 +166,12 @@ namespace SmartHive.LevelMapApp.Controllers
             if (IsChanged && this.OnRoomScheduleStatusChanged != null)
             {
                 UpdateRoomStatus(roomConfig, null);
-                this.OnRoomScheduleStatusChanged(roomConfig, currentAppointment);
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                {
+                    this.OnRoomScheduleStatusChanged(roomConfig, currentAppointment);
+                });
+
+               
             }
         }
       

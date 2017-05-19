@@ -15,10 +15,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\IEventTransport.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ILevelMapController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ServiceBusEventController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\SettingsController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\WireGeoRoomController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LevelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">

@@ -13,8 +13,8 @@ namespace SmartHive.Models.Config
         Unknown,
         RoomFree,
         RoomScheduled,
-        RoomOccupied,
         RoomScheduledAndOccupied,
+        RoomOccupied,        
     }
     public interface IRoomConfig : IServiceBusConfig
     {     

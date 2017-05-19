@@ -53,10 +53,10 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.231\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Amqp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Azure.Amqp.2.0.2\lib\monoandroid\Microsoft.Azure.Amqp.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Azure.Amqp.2.0.4\lib\monoandroid\Microsoft.Azure.Amqp.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Azure.ServiceBus, Version=0.0.3.0, Culture=neutral, PublicKeyToken=7e34167dcc6d6d8c, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Azure.ServiceBus.0.0.3-preview\lib\netstandard1.3\Microsoft.Azure.ServiceBus.dll</HintPath>
+    <Reference Include="Microsoft.Azure.ServiceBus, Version=0.0.5.0, Culture=neutral, PublicKeyToken=7e34167dcc6d6d8c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.ServiceBus.0.0.5-preview\lib\netstandard1.3\Microsoft.Azure.ServiceBus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
@@ -66,6 +66,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json.Schema, Version=2.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.Schema.2.0.11\lib\netstandard1.3\Newtonsoft.Json.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings, Version=2.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.4\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.4\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -145,8 +151,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ServiceBusEventTransportDroid.cs" />
-    <Compile Include="Controllers\Settings.cs" />
-    <Compile Include="Controllers\SettingsControllerDroid.cs" />
+    <Compile Include="Controls\LevelMapView.xaml.cs">
+      <DependentUpon>LevelMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,6 +181,12 @@
       <Project>{38d4ba3b-fff0-4e6d-9534-90ed4594dddb}</Project>
       <Name>SmartHive.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\LevelMapView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="..\SmartHive.LevelMapApp\SmartHive.LevelMapApp.projitems" Label="Shared" Condition="Exists('..\SmartHive.LevelMapApp\SmartHive.LevelMapApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
