@@ -30,6 +30,17 @@ namespace SmartHive.LevelMapApp.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.UnhandledException += App_UnhandledException;
+        }
+
+        /// <summary>
+        /// ToDo: Log unhandled exception
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            
         }
 
         /// <summary>

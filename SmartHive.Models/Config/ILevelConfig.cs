@@ -16,7 +16,7 @@ namespace SmartHive.Models.Config
 
         IRoomConfig GetRoomConfig(string RoomId);
 
-        IEnumerator<IRoomConfig> RoomsConfig { get; }
+        IEnumerable<IRoomConfig> RoomsConfig { get; }
 
         IRoomConfig GetRoomConfigForSensorDeviceId(string DeviceId);
 

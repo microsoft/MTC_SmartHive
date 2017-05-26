@@ -10,10 +10,9 @@ namespace SmartHive.LevelMapApp.Views
 {
     public class LevelViewModel : ObservableCollection<RoomTypeGroup>
     {
-
         private Mutex updateMutex = new Mutex(false, "LevelViewModelUpdateMutex");
 
-        internal void UpdateRoomConfig(RoomConfig currentConfig)
+        internal void UpdateRoomConfig(IRoomConfig currentConfig)
         {
                 try
                 {
@@ -24,13 +23,17 @@ namespace SmartHive.LevelMapApp.Views
                     {
                         // Handle update as remove and add
                         bool isSuccess = existingGroup.Remove(currentConfig);
+                        if (isSuccess && existingGroup.Count == 0)
+                        { // If this is the last room in a group - remove whole group
+                        this.Remove(existingGroup);
+                        }
                     }
 
                     existingGroup = FindRoomTypeGroupForStatus(currentConfig.RoomStatus);
                     if (existingGroup == null)
                     {
                         existingGroup = new RoomTypeGroup(currentConfig.RoomStatus);
-                        this.Add(existingGroup);
+                        this.Insert(0,existingGroup);                        
                     }
                     existingGroup.Add(currentConfig);
                 }
@@ -57,9 +60,9 @@ namespace SmartHive.LevelMapApp.Views
         /// </summary>
         /// <param name="config"></param>
         /// <returns></returns>
-        private RoomTypeGroup FindRoomTypeGroupForRoom(RoomConfig room)
+        private RoomTypeGroup FindRoomTypeGroupForRoom(IRoomConfig room)
         {
-            return this.FirstOrDefault<RoomTypeGroup>(t => t.FirstOrDefault<RoomConfig>(r => r.Location.Equals(room.Location)) != null);
+            return this.FirstOrDefault<RoomTypeGroup>(t => t.FirstOrDefault<IRoomConfig>(r => r.Location.Equals(room.Location)) != null);
         }
 
 
@@ -70,7 +73,7 @@ namespace SmartHive.LevelMapApp.Views
     /// <summary>
     /// Collection of RommConfigurations with the same Room Booking Status
     /// </summary>
-    public class RoomTypeGroup : ObservableCollection<RoomConfig>
+    public class RoomTypeGroup : ObservableCollection<IRoomConfig>
     {
         public RoomStatus RoomStatus { get; private set; }
 

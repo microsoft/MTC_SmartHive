@@ -40,12 +40,12 @@ namespace SmartHive.LevelMapApp
 
 
             MainPage = new SmartHive.LevelMapApp.MainPage();
-            
 
+
+            this.settingsController.OnSettingsLoaded += ((SmartHive.LevelMapApp.MainPage)this.MainPage).OnSettingsLoaded;            
         }
 
-
-		protected override void OnStart ()
+        protected override void OnStart ()
 		{            
             this.serviceBusEventController = new LevelMapApp.Controllers.ServiceBusEventController(transport, this.settingsController);
             this.serviceBusEventController.OnRoomScheduleStatusChanged +=

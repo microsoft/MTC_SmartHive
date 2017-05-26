@@ -35,7 +35,7 @@ namespace SmartHive.LevelMapApp.UWP
            
             this.settingsController = mainApp.settingsController;
 
-            LoadApplication(mainApp);
+            LoadApplication(mainApp);            
 
         }
   

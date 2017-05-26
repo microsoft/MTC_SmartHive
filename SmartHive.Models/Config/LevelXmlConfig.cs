@@ -166,6 +166,13 @@ namespace SmartHive.Models.Config
             set{ this.eventLeewaySeconds = value; }
         }
 
+        IEnumerable<IRoomConfig> ILevelConfig.RoomsConfig {
+            get
+            {
+                return this.LevelRooms.Values;
+            }
+        }
+
         public IRoomConfig GetRoomConfig(string RoomId)
         {
             if (this.LevelRooms.ContainsKey(RoomId))

@@ -26,13 +26,7 @@
 
 
         <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True">
-            <ListView.GroupHeaderTemplate>
-                <DataTemplate>
-                    <TextCell BackgroundColor="#00FF00" Text="{Binding Group.Key}" Margin="30, 10, 10, 10" 
-                              TextColor="#f35e20" DetailColor="#503026" />  
-                    <!-- {Binding Path=Group.Key, Converter={StaticResource BrushConverter}}-->
-                </DataTemplate>
-            </ListView.GroupHeaderTemplate>
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -40,7 +34,7 @@
                         Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
                                 <Image Source="{Binding IconTop}" />
-                                <Label Text="{Binding Title}"
+                                <Label Text="{Binding Title} "
                                 TextColor="#f35e20" />
                                 <Label Text="{Binding Title_En}"
                                 HorizontalOptions="EndAndExpand"
@@ -50,6 +44,12 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding RoomStatusTitle}"                  
+                    TextColor="#f35e20"  />
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
             </ListView>
 
 

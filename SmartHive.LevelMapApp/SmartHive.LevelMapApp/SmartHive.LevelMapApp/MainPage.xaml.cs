@@ -18,6 +18,7 @@ namespace SmartHive.LevelMapApp
 		{          
             InitializeComponent();
             roomsScheduleView.ItemsSource = LevelData;
+
         }
 
         internal void OnRoomScheduleStatusChanged(object sender, Appointment e)
@@ -38,5 +39,27 @@ namespace SmartHive.LevelMapApp
             LevelData.UpdateRoomConfig(roomConfig);
 
         }
+
+        internal void OnSettingsLoaded(object sender, bool e)
+        {
+            if (LevelData.Count == 0)
+            {
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                {
+                    // Initialize all rooms when Settings loaded
+                    var levelConfig = sender as ILevelConfig;
+                    if (levelConfig != null)
+                    {
+                        foreach (IRoomConfig roomCfg in levelConfig.RoomsConfig)
+                        {
+                            LevelData.UpdateRoomConfig(roomCfg);
+                        }
+                    }
+                });
+            }
+            
+        }
+
+
     }
 }
