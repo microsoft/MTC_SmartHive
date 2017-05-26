@@ -25,7 +25,14 @@
             <Label Grid.Column="0" Text="First pannel" Style="{StaticResource titleStyle}" />
 
 
-        <ListView x:Name="roomsScheduleView" Grid.Column="1">
+        <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <TextCell BackgroundColor="#00FF00" Text="{Binding Group.Key}" Margin="30, 10, 10, 10" 
+                              TextColor="#f35e20" DetailColor="#503026" />  
+                    <!-- {Binding Path=Group.Key, Converter={StaticResource BrushConverter}}-->
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

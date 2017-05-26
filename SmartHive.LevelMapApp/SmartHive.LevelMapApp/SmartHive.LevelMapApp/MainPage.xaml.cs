@@ -22,20 +22,20 @@ namespace SmartHive.LevelMapApp
 
         internal void OnRoomScheduleStatusChanged(object sender, Appointment e)
         {
-            var roomConfig = sender as IRoomConfig;
+            var roomConfig = sender as RoomConfig;
             if (roomConfig == null)
                 return;
             
-            LevelData.Add(roomConfig);
+            LevelData.UpdateRoomConfig(roomConfig);
         }
 
         internal void OnRoomSensorChanged(object sender, IRoomSensor e)
         {
-            var roomConfig = sender as IRoomConfig;
+            var roomConfig = sender as RoomConfig;
             if (roomConfig == null)
                 return;
 
-            LevelData.Add(roomConfig);
+            LevelData.UpdateRoomConfig(roomConfig);
 
         }
     }
