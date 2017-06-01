@@ -10,7 +10,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <WebView HorizontalAlignment="Left" Source="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame" Margin="10,10,0,0" 
-            VerticalAlignment="Top" Width="1200" Height="720" x:Name="floorMapView" ScriptNotify="floorMapView_ScriptNotify"/>
+        
     </Grid>
 </forms:WindowsPage>

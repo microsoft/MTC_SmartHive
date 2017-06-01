@@ -17,15 +17,15 @@
         </Grid.Resources>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
+        <StackLayout Grid.Column="0" x:Name="levelMapLayout">
             
-            <Label Grid.Column="0" Text="First pannel" Style="{StaticResource titleStyle}" />
+        </StackLayout>
 
-
-        <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True">
+        <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True" >
 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -33,12 +33,11 @@
                         <StackLayout BackgroundColor="#eee"
                         Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding IconTop}" />
-                                <Label Text="{Binding Title} "
-                                TextColor="#f35e20" />
-                                <Label Text="{Binding Title_En}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#503026" />
+                                <Image Source="{Binding IconTop}"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding TitleFull}" TextColor="#f35e20" />
+                                    <Label Text="{Binding CurrentAppointment.DecodedTitle}" HorizontalOptions="EndAndExpand" TextColor="#503026" />
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>

@@ -42,6 +42,16 @@ namespace SmartHive.Models.Events
         public string Title { get; set; }
         public string Category { get; set; }
         public string MeetingExternalLink { get; set; }
+        public string DecodedTitle
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Title))
+                    return System.Net.WebUtility.HtmlDecode(Title);
+                else
+                    return null;
+            }
+        }
     }
 
     public static class ScheduleUpdateEventSchema

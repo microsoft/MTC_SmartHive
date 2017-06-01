@@ -21,7 +21,6 @@ namespace SmartHive.LevelMapApp.UWP
     public sealed partial class MainPage
     {
 
-        private ServiceBusEventController serviceBusEventController = null;
         private ISettingsProvider settingsController = null;
 
         public MainPage()
@@ -35,14 +34,12 @@ namespace SmartHive.LevelMapApp.UWP
            
             this.settingsController = mainApp.settingsController;
 
-            LoadApplication(mainApp);            
+            LoadApplication(mainApp);   
+            
 
         }
   
 
-        private void floorMapView_ScriptNotify(object sender, NotifyEventArgs e)
-        {
-
-        }
+       
     }
 }
