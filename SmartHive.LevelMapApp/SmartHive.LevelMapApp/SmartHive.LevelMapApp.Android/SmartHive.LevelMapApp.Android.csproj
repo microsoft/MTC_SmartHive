@@ -60,6 +60,8 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Mono.Posix" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
@@ -151,8 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ServiceBusEventTransportDroid.cs" />
-    <Compile Include="Controls\LevelMapView.xaml.cs">
-      <DependentUpon>LevelMapView.xaml</DependentUpon>
+    <Compile Include="Controls\HybridWebViewRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\JSBridge.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
@@ -183,11 +188,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Controls\LevelMapView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="..\SmartHive.LevelMapApp\SmartHive.LevelMapApp.projitems" Label="Shared" Condition="Exists('..\SmartHive.LevelMapApp\SmartHive.LevelMapApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

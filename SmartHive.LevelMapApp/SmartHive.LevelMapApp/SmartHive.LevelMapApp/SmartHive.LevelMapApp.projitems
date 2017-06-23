@@ -17,7 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ServiceBusEventController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\SettingsController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\WireGeoRoomController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controls\ILevelMapViewControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\HybridWebView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

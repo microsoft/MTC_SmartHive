@@ -46,7 +46,10 @@ namespace SmartHive.LevelMapApp
         }
 
         protected override void OnStart ()
-		{            
+		{
+            if (transport == null)
+                return; 
+
             this.serviceBusEventController = new LevelMapApp.Controllers.ServiceBusEventController(transport, this.settingsController);
             this.serviceBusEventController.OnRoomScheduleStatusChanged +=
                 ((SmartHive.LevelMapApp.MainPage)this.MainPage).OnRoomScheduleStatusChanged;

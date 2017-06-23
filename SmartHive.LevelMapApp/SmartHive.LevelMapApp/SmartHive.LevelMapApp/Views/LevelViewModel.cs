@@ -10,13 +10,18 @@ namespace SmartHive.LevelMapApp.Views
 {
     public class LevelViewModel : ObservableCollection<RoomTypeGroup>
     {
+
+#if !__ANDROID__
         private Mutex updateMutex = new Mutex(false, "LevelViewModelUpdateMutex");
+#endif
 
         internal void UpdateRoomConfig(IRoomConfig currentConfig)
         {
                 try
                 {
+#if !__ANDROID__
                     updateMutex.WaitOne(5 * 1000);
+#endif
                     RoomTypeGroup existingGroup = this.FindRoomTypeGroupForRoom(currentConfig);
 
                     if (existingGroup != null)
@@ -39,9 +44,11 @@ namespace SmartHive.LevelMapApp.Views
                 }
                 finally
                 {
-                updateMutex.ReleaseMutex();
-                }
-            
+#if !__ANDROID__
+                    updateMutex.ReleaseMutex();
+#endif
+            }
+
         }
 
         /// <summary>

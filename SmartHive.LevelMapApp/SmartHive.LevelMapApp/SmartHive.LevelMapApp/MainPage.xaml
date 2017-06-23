@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SmartHive.LevelMapApp"
              xmlns:v="clr-namespace:SmartHive.LevelMapApp.Views"
+             xmlns:cntrl="clr-namespace:SmartHive.LevelMapApp.Controls"
              x:Class="SmartHive.LevelMapApp.MainPage"
              x:Name="mainPage">
 
     
-    <Grid>
+    <Grid x:Name="mainGrid">
         <Grid.Resources>
             <ResourceDictionary>
                 <Style x:Key="titleStyle" TargetType="Label">
@@ -21,11 +22,10 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <StackLayout Grid.Column="0" x:Name="levelMapLayout">
-            
-        </StackLayout>
+        <cntrl:HybridWebView x:Name="levelMapWebView" Grid.Column="0"  Uri="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame"
+ HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
 
-        <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True" >
+            <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True" >
 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -33,7 +33,7 @@
                         <StackLayout BackgroundColor="#eee"
                         Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding IconTop}"/>
+                                <!--Image Source="{Binding IconTop}"/ -->
                                 <StackLayout Orientation="Vertical">
                                     <Label Text="{Binding TitleFull}" TextColor="#f35e20" />
                                     <Label Text="{Binding CurrentAppointment.DecodedTitle}" HorizontalOptions="EndAndExpand" TextColor="#503026" />
