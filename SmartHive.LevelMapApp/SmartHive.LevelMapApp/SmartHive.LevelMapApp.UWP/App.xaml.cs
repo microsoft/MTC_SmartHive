@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Popup = Rg.Plugins.Popup.Windows.Popup;
 
 namespace SmartHive.LevelMapApp.UWP
 {
@@ -69,7 +70,8 @@ namespace SmartHive.LevelMapApp.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                // Need that .NET Native has worked
+                Xamarin.Forms.Forms.Init(e, Popup.GetExtraAssemblies());
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

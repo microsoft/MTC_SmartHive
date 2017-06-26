@@ -1,0 +1,4 @@
+C:\PROJECTS\SmartHive\Docs\MacWindows\MacWindows\bin\Debug\MacWindows.exe
+C:\PROJECTS\SmartHive\Docs\MacWindows\MacWindows\bin\Debug\MacWindows.pdb
+C:\PROJECTS\SmartHive\Docs\MacWindows\MacWindows\obj\Debug\MacWindows.exe
+C:\PROJECTS\SmartHive\Docs\MacWindows\MacWindows\obj\Debug\MacWindows.pdb

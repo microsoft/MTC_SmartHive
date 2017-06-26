@@ -9,30 +9,26 @@ using SmartHive.Models.Events;
 using SmartHive.Models.Config;
 using SmartHive.LevelMapApp.Views;
 using SmartHive.LevelMapApp.Controls;
+using Rg.Plugins.Popup.Extensions;
+
 
 namespace SmartHive.LevelMapApp
 {
 	public partial class MainPage : ContentPage
-	{       
-       LevelViewModel LevelData = new LevelViewModel();              
+	{
+        private RoomDetailPopupPage roomDetailPopup;
+        LevelViewModel LevelData = new LevelViewModel();              
         public MainPage()
 		{          
             InitializeComponent();
             roomsScheduleView.ItemsSource = LevelData;
-            InitWebView();
-        }
-
-
-        internal void InitWebView()
-        {
-
             levelMapWebView.RegisterAction(LevelView_LevelRoomClicked);
         }
 
-        private void LevelView_LevelRoomClicked(string JsonData)
+        private async void LevelView_LevelRoomClicked(string JsonData)
         {
-            
-            throw new NotImplementedException();
+            this.roomDetailPopup = new RoomDetailPopupPage();
+            await Navigation.PushPopupAsync(this.roomDetailPopup);
         }
 
         internal void OnRoomScheduleStatusChanged(object sender, Appointment e)
