@@ -7,26 +7,42 @@
              x:Class="SmartHive.LevelMapApp.MainPage"
              x:Name="mainPage">
 
-    
-    <Grid x:Name="mainGrid">
-        <Grid.Resources>
-            <ResourceDictionary>
-                <Style x:Key="titleStyle" TargetType="Label">
-                    <Setter Property="FontSize" Value="100"/>
-                </Style>
-            </ResourceDictionary>
-        </Grid.Resources>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="RoomGroupTitleLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="Margin" Value="15"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
+    <Grid x:Name="mainGrid" ColumnSpacing="0" RowSpacing="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <cntrl:HybridWebView x:Name="levelMapWebView" Grid.Column="0"  Uri="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame"
- HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        <StackLayout Orientation="Horizontal" x:Name="LeftHeader" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource TitleBgColor}">
+            <Image HorizontalOptions="Start" VerticalOptions="Center"  x:Name="LogoImage" Margin="10" WidthRequest="130">
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource" Android="MicrosoftLogo.png" iOS="MicrosoftLogo.png"  WinPhone="Assets/MicrosoftLogo.png"/>
+                </Image.Source>
+            </Image>
+            <Label x:Name="LevelName" Text="Microsoft Technology Center" TextColor="{StaticResource LabelColor}" Style="{StaticResource TitleLabel}" 
+                   HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start"/>
+        </StackLayout>
 
-            <ListView x:Name="roomsScheduleView" Grid.Column="1"  GroupDisplayBinding="{Binding RoomStatusTitle}" IsGroupingEnabled="True" >
+        <cntrl:CalendarClockView x:Name="clockView" Grid.Column="1" Grid.Row="0" Margin="5" VerticalOptions="Center"/>
 
+        <cntrl:HybridWebView x:Name="levelMapWebView" Grid.Column="0" Grid.Row="1" Uri="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame"
+            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        
+        <ListView x:Name="roomsScheduleView" Grid.Column="1" Grid.Row="1" IsGroupingEnabled="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -45,8 +61,11 @@
             </ListView.ItemTemplate>
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding RoomStatusTitle}"                  
-                    TextColor="#f35e20"  />
+                    <ViewCell Height="25">
+                        <StackLayout BackgroundColor="{Binding GroupTitleBgColor}" Orientation="Horizontal" >
+                            <Label Text="{Binding RoomStatusTitle}" Style="{StaticResource RoomGroupTitleLabel}"   TextColor="{StaticResource LabelColor}" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
             </ListView>

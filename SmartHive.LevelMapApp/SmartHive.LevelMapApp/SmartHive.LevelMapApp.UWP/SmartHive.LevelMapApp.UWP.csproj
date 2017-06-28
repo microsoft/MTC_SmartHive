@@ -115,6 +115,7 @@
     <Content Include="Assets\cfmalex.jpg" />
     <Content Include="Assets\close_circle_button.png" />
     <Content Include="Assets\github_octocat.png" />
+    <Content Include="Assets\MicrosoftLogo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />

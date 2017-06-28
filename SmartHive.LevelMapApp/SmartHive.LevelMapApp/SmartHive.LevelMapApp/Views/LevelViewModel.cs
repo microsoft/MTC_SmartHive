@@ -5,6 +5,7 @@ using System.Threading;
 using System.Linq;
 using System.Text;
 using SmartHive.Models.Config;
+using Xamarin.Forms;
 
 namespace SmartHive.LevelMapApp.Views
 {
@@ -57,10 +58,11 @@ namespace SmartHive.LevelMapApp.Views
         /// <param name="config"></param>
         /// <returns></returns>
         private RoomTypeGroup FindRoomTypeGroupForStatus(RoomStatus status)
-        {           
-            return this.FirstOrDefault<RoomTypeGroup>(t => t.RoomStatus == status);
+        {
+            RoomGroupType type = RoomTypeGroup.MapRoomStatusToGroup(status);
+            return this.FirstOrDefault<RoomTypeGroup>(t => t.GroupType == type);
         }
-
+       
 
         /// <summary>
         /// Find first existing room group for this room (match Location)
@@ -76,42 +78,51 @@ namespace SmartHive.LevelMapApp.Views
 
     }
 
+    public enum RoomGroupType
+    {       
+        FreeRooms,
+        OtherRooms,        
+    }
 
     /// <summary>
     /// Collection of RommConfigurations with the same Room Booking Status
     /// </summary>
     public class RoomTypeGroup : ObservableCollection<IRoomConfig>
     {
-        public RoomStatus RoomStatus { get; private set; }
+        public RoomGroupType GroupType { get; private set; }
 
         public string RoomStatusTitle { get; private set;}
         public string RoomStatusSubTitle { get; private set; }
 
+        public Color GroupTitleBgColor { get; private set; }
+
         public string RoomStatusIcon { get; private set; }
 
-        internal RoomTypeGroup(RoomStatus roomStatus)
+        public static RoomGroupType MapRoomStatusToGroup(RoomStatus roomStatus)
         {
-            this.RoomStatus = roomStatus;
-
             switch (roomStatus)
             {
                 case RoomStatus.RoomFree:
-                    this.RoomStatusTitle = "Свободные комнаты";
-                    //this.RoomStatusIcon = "http://";
-                    break;
-                case RoomStatus.RoomScheduled:
-                    this.RoomStatusTitle = "Забронированные комнаты";
-                    break;
-                case RoomStatus.RoomScheduledAndOccupied:
-                    this.RoomStatusTitle = "Забронированые и занятые комнаты";
-                    break;
-                case RoomStatus.RoomOccupied:
-                    this.RoomStatusTitle = "Занятые комнаты";
-                    break;
+                    return RoomGroupType.FreeRooms;
                 default:
-                    this.RoomStatusTitle = "Помещения без статуса";
-                    break;
+                    return RoomGroupType.OtherRooms;
+            }
+        }
 
+        internal RoomTypeGroup(RoomStatus roomStatus)
+        {
+            this.GroupType = MapRoomStatusToGroup(roomStatus);
+
+            switch (this.GroupType)
+            {
+                case RoomGroupType.FreeRooms:
+                    this.RoomStatusTitle = "Свободные комнаты";
+                    this.GroupTitleBgColor = Color.FromHex("#B7F7C5");
+                    break;                
+                default:
+                    this.RoomStatusTitle = "Помещения на этаже";
+                    this.GroupTitleBgColor = Color.FromHex("#F7B1AF");
+                    break;
             }
         }
         

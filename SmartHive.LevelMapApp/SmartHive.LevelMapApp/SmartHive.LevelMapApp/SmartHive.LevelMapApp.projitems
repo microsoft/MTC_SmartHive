@@ -17,6 +17,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ServiceBusEventController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\SettingsController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\WireGeoRoomController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CalendarClockView.xaml.cs">
+      <DependentUpon>CalendarClockView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\HybridWebView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoadingPopupPage.xaml.cs">
       <DependentUpon>LoadingPopupPage.xaml</DependentUpon>
@@ -49,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoadingPopupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\CalendarClockView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -4,7 +4,21 @@
              x:Class="SmartHive.LevelMapApp.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:FactoryMethod="FromHex" x:Key="TitleBgColor">
+                <x:Arguments>
+                    <x:String>#B1EDF8</x:String>
+                </x:Arguments>
+            </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="LabelColor">
+                <x:Arguments>
+                    <x:String>#686765</x:String>
+                </x:Arguments>
+            </Color>
+            <Style x:Key="TitleLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="70"/>
+            </Style>
+        </ResourceDictionary>
 
-	</Application.Resources>
+    </Application.Resources>
 </Application>
