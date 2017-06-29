@@ -9,10 +9,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="RoomGroupTitleLabel" TargetType="Label">
-                <Setter Property="FontSize" Value="30"/>
-                <Setter Property="Margin" Value="15"/>
-            </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -72,23 +69,7 @@
             </ListView.GroupHeaderTemplate>
             </ListView>
 
-        <StackLayout Orientation="Horizontal" x:Name="FooterLegend" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
-                <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomAvaliableColor}" />
-                <Label Text="- Свободно" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
-            
-                <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomScheduledColor}" />
-                <Label Text="- Забронировано" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
-            
-                <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomScheduledAndOccupiedColor}" />
-                <Label Text="- Забронировано и занято" TextColor="{StaticResource LabelColor}" VerticalOptions="Center" />
-
-                <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomOccupiedColor}" />
-                <Label Text="- Занято" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
-
-                <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomUnknownColor}" />
-                <Label Text="- Статус обновляется" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
-        </StackLayout>
-
+        <cntrl:ColorLegendView x:Name="FooterLegend" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="5"/>
 
     </Grid>
 </ContentPage>

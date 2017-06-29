@@ -11,25 +11,31 @@ using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Extensions;
 
+using SmartHive.Models.Config;
+
 namespace SmartHive.LevelMapApp
 {
     public partial class RoomDetailPopupPage : PopupPage
     {
-        public ObservableCollection<string> Items { get; set; }
 
-        public RoomDetailPopupPage()
+       public IRoomConfig CurrentRoom
+        {
+            get;
+            private set;
+        }
+
+        public string CurrentDate
+        {
+            get;
+            private set;
+        }
+
+        public RoomDetailPopupPage(IRoomConfig roomViewModel)
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
+            this.CurrentRoom = roomViewModel;
+            this.CurrentDate = "Расписание на " + DateTime.Now.ToString("dd/MM/yyyy ddd");
             BindingContext = this;
         }
 
@@ -43,19 +49,19 @@ namespace SmartHive.LevelMapApp
             CloseImage.Scale = 0.3;
             CloseImage.Opacity = 0;
 
-            LoginButton.Scale = 0.3;
+          /*  LoginButton.Scale = 0.3;
             LoginButton.Opacity = 0;
 
             UsernameEntry.TranslationX = PasswordEntry.TranslationX = -10;
-            UsernameEntry.Opacity = PasswordEntry.Opacity = 0;
+            UsernameEntry.Opacity = PasswordEntry.Opacity = 0;*/
         }
 
         protected async override Task OnAppearingAnimationEnd()
         {
             var translateLength = 400u;
 
-            await Task.WhenAll(
-                UsernameEntry.TranslateTo(0, 0, easing: Easing.SpringOut, length: translateLength),
+          /*  await Task.WhenAll(
+               UsernameEntry.TranslateTo(0, 0, easing: Easing.SpringOut, length: translateLength),
                 UsernameEntry.FadeTo(1),
                 (new Func<Task>(async () =>
                 {
@@ -64,14 +70,14 @@ namespace SmartHive.LevelMapApp
                         PasswordEntry.TranslateTo(0, 0, easing: Easing.SpringOut, length: translateLength),
                         PasswordEntry.FadeTo(1));
 
-                }))());
+                }))());*/
 
             await Task.WhenAll(
                 CloseImage.FadeTo(1),
                 CloseImage.ScaleTo(1, easing: Easing.SpringOut),
-                CloseImage.RotateTo(0),
-                LoginButton.ScaleTo(1),
-                LoginButton.FadeTo(1));
+                CloseImage.RotateTo(0) /*,
+               LoginButton.ScaleTo(1),
+                LoginButton.FadeTo(1)*/);
         }
 
         protected async override Task OnDisappearingAnimationBegin()
@@ -80,7 +86,7 @@ namespace SmartHive.LevelMapApp
 
             var currentHeight = FrameContainer.Height;
 
-            await Task.WhenAll(
+         /*   await Task.WhenAll(
                 UsernameEntry.FadeTo(0),
                 PasswordEntry.FadeTo(0),
                 LoginButton.FadeTo(0));
@@ -97,17 +103,17 @@ namespace SmartHive.LevelMapApp
                 taskSource.TrySetResult(true);
             });
 
-            await taskSource.Task;
+            await taskSource.Task;*/
         }
 
-        private async void OnLogin(object sender, EventArgs e)
+   /*     private async void OnLogin(object sender, EventArgs e)
         {
             var loadingPage = new LoadingPopupPage();
             await Navigation.PushPopupAsync(loadingPage);
             await Task.Delay(2000);
             await Navigation.RemovePopupPageAsync(loadingPage);
             await Navigation.PushPopupAsync(new RoomDetailPopupPage());
-        }
+        }*/
 
         private void OnCloseButtonTapped(object sender, EventArgs e)
         {

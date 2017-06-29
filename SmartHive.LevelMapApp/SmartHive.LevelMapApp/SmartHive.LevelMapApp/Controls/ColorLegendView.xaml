@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHive.LevelMapApp.Controls.ColorLegendView">
+  <ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomAvaliableColor}" />
+            <Label Text="- Свободно" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
+
+            <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomScheduledColor}" />
+            <Label Text="- Забронировано" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
+
+            <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomScheduledAndOccupiedColor}" />
+            <Label Text="- Забронировано и занято" TextColor="{StaticResource LabelColor}" VerticalOptions="Center" />
+
+            <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomOccupiedColor}" />
+            <Label Text="- Занято" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
+
+            <BoxView MinimumWidthRequest="5" BackgroundColor="{StaticResource RoomUnknownColor}" />
+            <Label Text="- Статус обновляется" TextColor="{StaticResource LabelColor}" VerticalOptions="Center"/>
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
