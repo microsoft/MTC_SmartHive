@@ -25,22 +25,22 @@
                     <x:String>#B7F7C5</x:String>
                 </x:Arguments>
             </Color>
-            <Color x:FactoryMethod="FromHex" x:Key="RoomScheduled">
+            <Color x:FactoryMethod="FromHex" x:Key="RoomScheduledColor">
                 <x:Arguments>
                     <x:String>#F6F8CB</x:String>
                 </x:Arguments>
             </Color>
-            <Color x:FactoryMethod="FromHex" x:Key="RoomScheduledAndOccupied">
+            <Color x:FactoryMethod="FromHex" x:Key="RoomScheduledAndOccupiedColor">
                 <x:Arguments>
                     <x:String>#FEA29D</x:String>
                 </x:Arguments>
             </Color>
-            <Color x:FactoryMethod="FromHex" x:Key="RoomOccupied">
+            <Color x:FactoryMethod="FromHex" x:Key="RoomOccupiedColor">
                 <x:Arguments>
                     <x:String>#F9CCC9</x:String>
                 </x:Arguments>
             </Color>
-            <Color x:FactoryMethod="FromHex" x:Key="RoomUnknown">
+            <Color x:FactoryMethod="FromHex" x:Key="RoomUnknownColor">
                 <x:Arguments>
                     <x:String>#C0C0C0</x:String>
                 </x:Arguments>

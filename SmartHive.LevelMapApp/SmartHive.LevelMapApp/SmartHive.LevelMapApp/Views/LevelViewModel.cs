@@ -49,6 +49,10 @@ namespace SmartHive.LevelMapApp.Views
                     existingGroup.AddSorted(new RoomViewModel(currentRoomConfig));
                 
 
+                }catch(Exception ex)
+                {
+                    // TODO Add logging
+                    throw ex;
                 }
                 finally
                 {
@@ -129,7 +133,7 @@ namespace SmartHive.LevelMapApp.Views
                     break;                
                 default:
                     this.RoomStatusTitle = "Помещения на этаже";
-                    this.GroupTitleBgColor = (Color)Application.Current.Resources["RoomScheduledAndOccupied"];
+                    this.GroupTitleBgColor = (Color)Application.Current.Resources["RoomScheduledAndOccupiedColor"];
                        // Color.FromHex("#F7B1AF");
                     break;
             }

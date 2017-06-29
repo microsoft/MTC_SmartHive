@@ -50,13 +50,13 @@ namespace SmartHive.LevelMapApp.Views
                     case RoomStatus.RoomFree:
                        return  (Color)Application.Current.Resources["RoomAvaliableColor"];                        
                     case RoomStatus.RoomScheduled:
-                        return (Color)Application.Current.Resources["RoomScheduled"];
+                        return (Color)Application.Current.Resources["RoomScheduledColor"];
                     case RoomStatus.RoomScheduledAndOccupied:
-                        return (Color)Application.Current.Resources["RoomScheduledAndOccupied"];
+                        return (Color)Application.Current.Resources["RoomScheduledAndOccupiedColor"];
                     case RoomStatus.RoomOccupied:
-                        return (Color)Application.Current.Resources["RoomOccupied"];
+                        return (Color)Application.Current.Resources["RoomOccupiedColor"];
                     default:
-                        return (Color)Application.Current.Resources["RoomUnknown"];
+                        return (Color)Application.Current.Resources["RoomUnknownColor"];
                 }
             }
         }
