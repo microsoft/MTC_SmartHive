@@ -34,6 +34,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\LevelViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RoomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">

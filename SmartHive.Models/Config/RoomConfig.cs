@@ -19,11 +19,6 @@ namespace SmartHive.Models.Config
         public string Location { get; set; }
         public string Title { get; set; }
         public string Title_En { get; set; }
-        public string TitleFull {
-            get {
-                return String.Format("{0} {1}",this.Title,this.Title_En);
-            }
-        }
         public string IconTop { get; set; }
         public string IconBottom { get; set; }
         public string Css { get; set; }

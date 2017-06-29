@@ -16,32 +16,39 @@ namespace SmartHive.LevelMapApp.Views
         private Mutex updateMutex = new Mutex(false, "LevelViewModelUpdateMutex");
 #endif
 
-        internal void UpdateRoomConfig(IRoomConfig currentConfig)
+        internal void UpdateRoomConfig(IRoomConfig currentRoomConfig)
         {
                 try
                 {
 #if !__ANDROID__
                     updateMutex.WaitOne(5 * 1000);
 #endif
-                    RoomTypeGroup existingGroup = this.FindRoomTypeGroupForRoom(currentConfig);
+                    RoomTypeGroup existingGroup = this.FindRoomTypeGroupForRoom(currentRoomConfig);
+                    
 
                     if (existingGroup != null)
                     {
+
+                        RoomViewModel existingViewModel = existingGroup.FirstOrDefault<RoomViewModel>(r => r.Location.Equals(currentRoomConfig.Location));
+
                         // Handle update as remove and add
-                        bool isSuccess = existingGroup.Remove(currentConfig);
+                        bool isSuccess = existingGroup.Remove(existingViewModel);
                         if (isSuccess && existingGroup.Count == 0)
                         { // If this is the last room in a group - remove whole group
-                        this.Remove(existingGroup);
+                            this.Remove(existingGroup);
                         }
                     }
 
-                    existingGroup = FindRoomTypeGroupForStatus(currentConfig.RoomStatus);
+                    existingGroup = FindRoomTypeGroupForStatus(currentRoomConfig);
                     if (existingGroup == null)
                     {
-                        existingGroup = new RoomTypeGroup(currentConfig.RoomStatus);
+                        existingGroup = new RoomTypeGroup(currentRoomConfig.RoomStatus);
                         this.Insert(0,existingGroup);                        
                     }
-                    existingGroup.Add(currentConfig);
+                    
+                    existingGroup.AddSorted(new RoomViewModel(currentRoomConfig));
+                
+
                 }
                 finally
                 {
@@ -57,9 +64,9 @@ namespace SmartHive.LevelMapApp.Views
         /// </summary>
         /// <param name="config"></param>
         /// <returns></returns>
-        private RoomTypeGroup FindRoomTypeGroupForStatus(RoomStatus status)
+        private RoomTypeGroup FindRoomTypeGroupForStatus(IRoomConfig status)
         {
-            RoomGroupType type = RoomTypeGroup.MapRoomStatusToGroup(status);
+            RoomGroupType type = RoomTypeGroup.MapRoomStatusToGroup(status.RoomStatus);
             return this.FirstOrDefault<RoomTypeGroup>(t => t.GroupType == type);
         }
        
@@ -71,7 +78,7 @@ namespace SmartHive.LevelMapApp.Views
         /// <returns></returns>
         private RoomTypeGroup FindRoomTypeGroupForRoom(IRoomConfig room)
         {
-            return this.FirstOrDefault<RoomTypeGroup>(t => t.FirstOrDefault<IRoomConfig>(r => r.Location.Equals(room.Location)) != null);
+            return this.FirstOrDefault<RoomTypeGroup>(t => t.FirstOrDefault<RoomViewModel>(r => r.Location.Equals(room.Location)) != null);
         }
 
 
@@ -87,7 +94,7 @@ namespace SmartHive.LevelMapApp.Views
     /// <summary>
     /// Collection of RommConfigurations with the same Room Booking Status
     /// </summary>
-    public class RoomTypeGroup : ObservableCollection<IRoomConfig>
+    public class RoomTypeGroup : ObservableCollection<RoomViewModel>
     {
         public RoomGroupType GroupType { get; private set; }
 
@@ -128,6 +135,16 @@ namespace SmartHive.LevelMapApp.Views
             }
         }
         
+        public void AddSorted(RoomViewModel roomViewModel)
+        {
+            IComparer<RoomViewModel> comparer = new RoomViewModelComparer();
+
+            int i = 0;
+            while (i < this.Count && comparer.Compare(this[i], roomViewModel) < 0)
+                i++;
+            this.Insert(i, roomViewModel);
+        }
        
     }
+
 }

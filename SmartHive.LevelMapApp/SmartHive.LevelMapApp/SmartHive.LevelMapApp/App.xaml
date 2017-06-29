@@ -15,14 +15,34 @@
                     <x:String>#686765</x:String>
                 </x:Arguments>
             </Color>
+        <!-- Unknown,
+        RoomFree,
+        RoomScheduled,
+        RoomScheduledAndOccupied,
+        RoomOccupied -->
             <Color x:FactoryMethod="FromHex" x:Key="RoomAvaliableColor">
                 <x:Arguments>
                     <x:String>#B7F7C5</x:String>
                 </x:Arguments>
             </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="RoomScheduled">
+                <x:Arguments>
+                    <x:String>#F6F8CB</x:String>
+                </x:Arguments>
+            </Color>
             <Color x:FactoryMethod="FromHex" x:Key="RoomScheduledAndOccupied">
                 <x:Arguments>
-                    <x:String>#F7B1AF</x:String>
+                    <x:String>#FEA29D</x:String>
+                </x:Arguments>
+            </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="RoomOccupied">
+                <x:Arguments>
+                    <x:String>#F9CCC9</x:String>
+                </x:Arguments>
+            </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="RoomUnknown">
+                <x:Arguments>
+                    <x:String>#C0C0C0</x:String>
                 </x:Arguments>
             </Color>
             <Style x:Key="TitleLabel" TargetType="Label">

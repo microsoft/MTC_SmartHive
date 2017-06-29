@@ -46,12 +46,14 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
+                        <StackLayout  Orientation="Vertical" Margin="5">
                             <StackLayout Orientation="Horizontal">
-                                <!--Image Source="{Binding IconTop}"/ -->
+                                <BoxView MinimumWidthRequest="10" BackgroundColor="{Binding RoomStatusColor}" />
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding TitleFull}" TextColor="#f35e20" />
+                                    <StackLayout Orientation="Horizontal" Margin="0">
+                                        <Label Text="{Binding Title}" TextColor="{StaticResource LabelColor}" />
+                                        <Label Text="{Binding Title_En}" TextColor="{StaticResource LabelColor}" />
+                                    </StackLayout>
                                     <Label Text="{Binding CurrentAppointment.DecodedTitle}" HorizontalOptions="EndAndExpand" TextColor="#503026" />
                                 </StackLayout>
                             </StackLayout>
