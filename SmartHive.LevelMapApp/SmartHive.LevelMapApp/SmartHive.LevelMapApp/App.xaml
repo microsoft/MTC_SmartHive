@@ -15,6 +15,16 @@
                     <x:String>#686765</x:String>
                 </x:Arguments>
             </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="RoomAvaliableColor">
+                <x:Arguments>
+                    <x:String>#B7F7C5</x:String>
+                </x:Arguments>
+            </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="RoomScheduledAndOccupied">
+                <x:Arguments>
+                    <x:String>#F7B1AF</x:String>
+                </x:Arguments>
+            </Color>
             <Style x:Key="TitleLabel" TargetType="Label">
             <Setter Property="FontSize" Value="70"/>
             </Style>

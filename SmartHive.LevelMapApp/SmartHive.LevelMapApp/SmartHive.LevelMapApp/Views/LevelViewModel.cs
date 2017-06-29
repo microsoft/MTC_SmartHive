@@ -117,11 +117,13 @@ namespace SmartHive.LevelMapApp.Views
             {
                 case RoomGroupType.FreeRooms:
                     this.RoomStatusTitle = "Свободные комнаты";
-                    this.GroupTitleBgColor = Color.FromHex("#B7F7C5");
+                    this.GroupTitleBgColor = (Color)Application.Current.Resources["RoomAvaliableColor"];
+                        //Color.FromHex("#B7F7C5");
                     break;                
                 default:
                     this.RoomStatusTitle = "Помещения на этаже";
-                    this.GroupTitleBgColor = Color.FromHex("#F7B1AF");
+                    this.GroupTitleBgColor = (Color)Application.Current.Resources["RoomScheduledAndOccupied"];
+                       // Color.FromHex("#F7B1AF");
                     break;
             }
         }
