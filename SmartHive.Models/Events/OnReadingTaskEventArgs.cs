@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHive.Models.Events
 {
-    public sealed class OnReadingTaskEventArgs
+    public sealed class OnReadingTaskEventArgs : IEventBase
     {
         public string subscriptionAddress { get; set; }
     }

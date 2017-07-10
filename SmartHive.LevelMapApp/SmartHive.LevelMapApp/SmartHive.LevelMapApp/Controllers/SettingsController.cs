@@ -9,7 +9,7 @@ using Plugin.Settings.Abstractions;
 
 namespace SmartHive.LevelMapApp.Controllers
 {
-    public class SettingsController : ISettingsProvider
+    public class SettingsController : AbstractController, ISettingsProvider
     {
         private static SettingsController appSettings = null;
         public static ISettingsProvider AppSettings

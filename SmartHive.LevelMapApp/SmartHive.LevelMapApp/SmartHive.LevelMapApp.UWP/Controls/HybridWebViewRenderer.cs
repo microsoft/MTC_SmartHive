@@ -17,13 +17,13 @@ namespace SmartHive.LevelMapApp.UWP.Controls
     {
         const string JavaScriptFunction = "function invokeCSharpAction(data){window.external.notify(data);}";
 
-        protected override void OnElementChanged(ElementChangedEventArgs<HybridWebView> e)
+        protected async override void OnElementChanged(ElementChangedEventArgs<HybridWebView> e)
         {
             base.OnElementChanged(e);
             if (Control == null)
             {
-                Windows.UI.Xaml.Controls.WebView levelMapView = new Windows.UI.Xaml.Controls.WebView();
-
+                await Windows.UI.Xaml.Controls.WebView.ClearTemporaryWebDataAsync();
+                Windows.UI.Xaml.Controls.WebView levelMapView = new Windows.UI.Xaml.Controls.WebView();                
                 SetNativeControl(levelMapView);
             }
             if (e.OldElement != null)

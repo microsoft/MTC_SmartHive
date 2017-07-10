@@ -1,0 +1,4 @@
+C:\PROJECTS\SmartHive\SmartHive.Controllers\SmartHive.Controllers.csproj;neutral
+C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\SmartHive.LevelMapApp.UWP.csproj;arm
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models.csproj;neutral
+C:\PROJECTS\SmartHive\SmartHive.Models\SmartHive.Models.csproj;neutral

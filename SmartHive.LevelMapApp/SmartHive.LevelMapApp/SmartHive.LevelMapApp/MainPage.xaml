@@ -7,12 +7,6 @@
              x:Class="SmartHive.LevelMapApp.MainPage"
              x:Name="mainPage">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <Grid x:Name="mainGrid" ColumnSpacing="0" RowSpacing="2">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
@@ -30,22 +24,24 @@
                     <OnPlatform x:TypeArguments="ImageSource" Android="MicrosoftLogo.png" iOS="MicrosoftLogo.png"  WinPhone="Assets/MicrosoftLogo.png"/>
                 </Image.Source>
             </Image>
-            <Label x:Name="LevelName" Text="Microsoft Technology Center" TextColor="{StaticResource LabelColor}" Style="{StaticResource TitleLabel}" 
+            <Label x:Name="LevelName" Text="Microsoft Technology Center" TextColor="{StaticResource LabelColor}" Style="{StaticResource RoomGroupTitleLabel}" 
                    HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start"/>
         </StackLayout>
 
         <cntrl:CalendarClockView x:Name="clockView" Grid.Column="1" Grid.Row="0" Margin="5" VerticalOptions="Center"/>
 
-        <cntrl:HybridWebView x:Name="levelMapWebView" Grid.Column="0" Grid.Row="1" Uri="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame"
-            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-        
+        <ScrollView Grid.Column="0" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <cntrl:HybridWebView x:Name="levelMapWebView"  Uri="http://cloud.wiregeo.com/?PHJXfrNo&amp;frame" WidthRequest="1410" HeightRequest="1080"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </ScrollView>
+
         <ListView x:Name="roomsScheduleView" Grid.Column="1" Grid.Row="1" IsGroupingEnabled="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout  Orientation="Vertical" Margin="5">
                             <StackLayout Orientation="Horizontal">
-                                <BoxView MinimumWidthRequest="10" BackgroundColor="{Binding RoomStatusColor}" />
+                                <BoxView MinimumWidthRequest="5" MinimumHeightRequest="5" WidthRequest="10" HeightRequest="10" BackgroundColor="{Binding RoomStatusColor}" HorizontalOptions="Start" />
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal" Margin="0">
                                         <Label Text="{Binding Title}" TextColor="{StaticResource LabelColor}" />

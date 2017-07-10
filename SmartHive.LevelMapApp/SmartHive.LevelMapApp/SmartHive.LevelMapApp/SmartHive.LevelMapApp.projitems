@@ -12,6 +12,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\AbstractController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\IAppTelemetryController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\IEventTransport.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ILevelMapController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\MainPageController.cs" />

@@ -29,8 +29,9 @@ namespace SmartHive.LevelMapApp.UWP
 
             // Initialize Service Bus connection and set required event handlers
             IEventTransport ServiceBusEventTransport = new ServiceBusEventTransportUwp();
+            IAppTelemetryController TelemetryController = new AppTelemetryManagerUwp();
 
-            SmartHive.LevelMapApp.App  mainApp = new SmartHive.LevelMapApp.App(ServiceBusEventTransport);
+            SmartHive.LevelMapApp.App  mainApp = new SmartHive.LevelMapApp.App(ServiceBusEventTransport, TelemetryController);
            
             this.settingsController = mainApp.settingsController;
 

@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace SmartHive.Models.Events
 {
-    public sealed class OnScheduleUpdateEventArgs
+    public sealed class OnScheduleUpdateEventArgs : IEventBase
     {
         public const string DateTimeFormat = @"dd\/MM\/yyyy HH:mm";
         public OnScheduleUpdateEventArgs()
@@ -27,7 +27,7 @@ namespace SmartHive.Models.Events
     }
 
     public sealed class Appointment
-    {        
+    {
         public Appointment()
         {
             StartTime = string.Empty;
@@ -37,7 +37,21 @@ namespace SmartHive.Models.Events
             MeetingExternalLink = string.Empty;
         }
         public string StartTime { get; set; }
+        public DateTime StartDateTime
+        {
+            get
+            {
+                return DateTime.ParseExact(this.StartTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture);
+            }
+        }
         public string EndTime { get; set; }
+        public DateTime EndDateTime
+        {
+            get
+            {
+                return DateTime.ParseExact(this.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture);
+            }
+        }
         public string Location { get; set; }
         public string Title { get; set; }
         public string Category { get; set; }

@@ -10,7 +10,7 @@ using Rg.Plugins.Popup.Extensions;
 
 namespace SmartHive.LevelMapApp.Controllers
 {
-    internal class MainPageController
+    internal class MainPageController : AbstractController
     {
         private RoomDetailPopupPage roomDetailPopup;
         private ContentPage mainPage;
@@ -29,9 +29,11 @@ namespace SmartHive.LevelMapApp.Controllers
                 return settingsProvider.GetLevelConfig(levelId);
             }
         }
-        internal async void LevelView_LevelRoomClicked(string JsonData)
+
+        internal void LevelView_LevelRoomClicked(string JsonData)
         {
 
+            
             JavaScriptAreaEvent eventParams = (JavaScriptAreaEvent)JsonConvert.DeserializeObject(JsonData, typeof(JavaScriptAreaEvent));
 
             foreach (IRoomConfig roomCfg in CurrentLevel.RoomsConfig)
@@ -39,10 +41,12 @@ namespace SmartHive.LevelMapApp.Controllers
                 if (roomCfg.FloorMapVarName.Equals(eventParams.Variable))
                 {
                     ShowRoomDetailPopup(roomCfg);
+                    TelemetryLog.TrackPageView(roomCfg.Location);
                     return;
                 }
             }
-           
+            // This looks like incorrect behavior
+            TelemetryLog.TrackAppEvent("no page view handler: " + JsonData);
         }
 
         private async void ShowRoomDetailPopup(IRoomConfig config)

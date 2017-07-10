@@ -2,13 +2,14 @@
 using SmartHive.Models.Config;
 using SmartHive.Models.Events;
 using System.Collections.Generic;
+using System.Threading;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 
 namespace SmartHive.LevelMapApp.Controllers
 {
-    public  class ServiceBusEventController
+    public  class ServiceBusEventController : AbstractController
     {
         private IEventTransport transport;
         private ILevelMapController mapController;
@@ -17,6 +18,14 @@ namespace SmartHive.LevelMapApp.Controllers
         public event EventHandler<IRoomSensor> OnRoomSensorChanged;
         public event EventHandler<Appointment> OnRoomScheduleStatusChanged;
 
+        private Dictionary<string, Appointment[]> LevelSchedule = new Dictionary<string, Appointment[]>();
+
+        private bool BackgroundStatusUpdateEnabled = true;
+        private TimeSpan taskScheduleCheckInterval = TimeSpan.FromMinutes(10);
+
+#if !__ANDROID__
+        private Mutex updateMutex = new Mutex(false, "LevelViewModelUpdateMutex");
+#endif
         public ServiceBusEventController(IEventTransport transport, ISettingsProvider settingsProvider)
         {
             //TODO : Add Factory method to choose map provider
@@ -34,7 +43,62 @@ namespace SmartHive.LevelMapApp.Controllers
                 InitTransport();
             else
                 this.levelConfig.OnSettingsLoaded += LevelConfig_OnSettingsLoaded;
+
+
+            StartUpdateTimer();
         }       
+
+        private void StartUpdateTimer()
+        {
+            Xamarin.Forms.Device.StartTimer(taskScheduleCheckInterval, () =>
+            {
+                this.TelemetryLog.TrackAppEvent("Update cached rooms. Cached rooms count: " + LevelSchedule.Keys.Count);
+                if (LevelSchedule.Keys.Count > 0)
+                { // Update runs only if we have cached data (connection works well)
+                    foreach (IRoomConfig room in this.levelConfig.RoomsConfig)
+                    {
+                        try
+                        {
+#if !__ANDROID__
+                                    updateMutex.WaitOne(5 * 1000);                                    
+#endif
+                            UpdateRoomStatus(room, null);
+                            Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                            {
+
+                                this.OnRoomScheduleStatusChanged(room, room.CurrentAppointment);
+                            });
+                        }
+                        catch (Exception ex)
+                        {
+                            this.TelemetryLog.TrackAppException(ex);
+                        }
+                        finally
+                        {
+#if !__ANDROID__
+                                    updateMutex.ReleaseMutex();
+#endif
+                        }
+                    }
+                }
+                return BackgroundStatusUpdateEnabled;
+            });
+        }
+
+
+        internal Appointment[] RoomSchedule(string RoomId)
+        {
+            if (LevelSchedule.ContainsKey(RoomId))
+            {
+                return LevelSchedule[RoomId];
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
 
         private void InitTransport()
         {
@@ -44,38 +108,63 @@ namespace SmartHive.LevelMapApp.Controllers
 
         private void LevelConfig_OnSettingsLoaded(object sender, bool e)
         {
+            this.TelemetryLog.TrackAppEvent("LevelConfig_OnSettingsLoaded");
             InitTransport();
         }
 
         private void Transport_OnServiceBusConnected(object sender, string e)
         {
+            this.TelemetryLog.TrackAppEvent("Transport_OnServiceBusConnected");
             this.transport.OnScheduleUpdate += Transport_OnScheduleUpdate;
             this.transport.OnNotification += Transport_OnNotification;
         }
 
         private void Transport_OnNotification(object sender, OnNotificationEventArgs e)
         {
-            IRoomConfig roomConfig = this.levelConfig.GetRoomConfigForSensorDeviceId(e.DeviceId);
-            if (roomConfig != null)
+            try
             {
-                var sensor = roomConfig.RoomSensors.FirstOrDefault<IRoomSensor>(s => s.DeviceId.Equals(e.DeviceId) && s.Telemetry.Equals(e.ValueLabel));
+#if !__ANDROID__
+                  updateMutex.WaitOne(5 * 1000);                        
+#endif
+                // Log this event
+                this.TelemetryLog.TrackAppEvent(e);
 
-                bool IsChanged = false;
-                                                
-                if (sensor != null)
+                IRoomConfig roomConfig = this.levelConfig.GetRoomConfigForSensorDeviceId(e.DeviceId);
+                if (roomConfig != null)
                 {
-                    // Check if value was changed
-                    IsChanged = sensor.LastMeasurement == null|| (!string.IsNullOrEmpty(sensor.LastMeasurement.Value) && !sensor.LastMeasurement.Value.Equals(e.Value)); 
-                    sensor.LastMeasurement = e;
-                    if (IsChanged && this.OnRoomSensorChanged != null)
+                    var sensor = roomConfig.RoomSensors.FirstOrDefault<IRoomSensor>(s => s.DeviceId.Equals(e.DeviceId) && s.Telemetry.Equals(e.ValueLabel));
+
+                    bool IsChanged = false;
+
+                    if (sensor != null)
                     {
-                        UpdateRoomStatus(roomConfig, sensor);
-                        Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                        // Check if value was changed
+                        IsChanged = sensor.LastMeasurement == null || (!string.IsNullOrEmpty(sensor.LastMeasurement.Value) && !sensor.LastMeasurement.Value.Equals(e.Value));
+                        sensor.LastMeasurement = e;
+                        if (IsChanged && this.OnRoomSensorChanged != null)
                         {
-                            this.OnRoomSensorChanged.Invoke(roomConfig, sensor);
-                        });                        
+                            UpdateRoomStatus(roomConfig, sensor);
+                            Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                            {
+                                this.OnRoomSensorChanged.Invoke(roomConfig, sensor);
+                            });
+                        }
                     }
                 }
+                else
+                {
+                    this.TelemetryLog.TrackAppEvent("Error: no config found for " + e.DeviceId);
+                }          
+            }catch(Exception ex)
+            {
+                this.TelemetryLog.TrackAppEvent("Transport_OnNotification Error");
+                this.TelemetryLog.TrackAppException(ex);
+            }
+            finally
+            {
+                #if !__ANDROID__
+                                    updateMutex.ReleaseMutex();
+                 #endif
             }
         }
 
@@ -105,7 +194,7 @@ namespace SmartHive.LevelMapApp.Controllers
             DateTime leeWayEndTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
             // Remove outdated appointments
             // TODO? Perform this check for all rooms ?
-            if (roomConfig.CurrentAppointment != null && leeWayEndTime >= DateTime.ParseExact(roomConfig.CurrentAppointment.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture))
+            if (roomConfig.CurrentAppointment != null && leeWayEndTime >= roomConfig.CurrentAppointment.EndDateTime)
             { // Check if room appointment expired
                 roomConfig.CurrentAppointment = null;
             }
@@ -136,19 +225,40 @@ namespace SmartHive.LevelMapApp.Controllers
 
         private void Transport_OnScheduleUpdate(object sender, OnScheduleUpdateEventArgs e)
         {
+
+            try
+            {
+#if !__ANDROID__
+                        updateMutex.WaitOne(5 * 1000);                        
+#endif
+
+
+             // Log this event
+             this.TelemetryLog.TrackAppEvent(e);
+
             IRoomConfig roomConfig = this.levelConfig.GetRoomConfig(e.RoomId);
             if (roomConfig == null)
+            {
+                // Log this event
+                this.TelemetryLog.TrackAppEvent("Error: no config for RoomId:" + e.RoomId);
                 return;
-
+            }
+                          
             Appointment currentAppointment = null;
             if (e.Schedule != null &&  e.Schedule.Length > 0)
             {
                 //Assume event started early to add leeway
                 DateTime leeWayStartTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
-                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => leeWayStartTime >= DateTime.ParseExact(a.StartTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture));               
+                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => leeWayStartTime >= a.StartDateTime);
             }
 
-            bool IsChanged = false;
+            // save Schedule information for the room
+            if (this.LevelSchedule.ContainsKey(e.RoomId))
+                this.LevelSchedule[e.RoomId] = e.Schedule;
+            else
+                this.LevelSchedule.Add(e.RoomId, e.Schedule);
+
+                bool IsChanged = false;
             if (roomConfig.CurrentAppointment != null)
             {
                 IsChanged = !new AppointmentComparer().Equals(roomConfig.CurrentAppointment, currentAppointment);
@@ -172,6 +282,18 @@ namespace SmartHive.LevelMapApp.Controllers
                 });
 
                
+            }
+            }
+            catch(Exception ex)
+            {
+                this.TelemetryLog.TrackAppEvent("Transport_OnScheduleUpdate Error");
+                this.TelemetryLog.TrackAppException(ex);
+            }
+            finally
+            {
+#if !__ANDROID__
+                                    updateMutex.ReleaseMutex();
+#endif
             }
         }
       

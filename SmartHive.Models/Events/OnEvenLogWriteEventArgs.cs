@@ -12,7 +12,7 @@ namespace SmartHive.Models.Events
        Info,Warinig, Error
     }
 
-    public sealed class OnEvenLogWriteEventArgs
+    public sealed class OnEvenLogWriteEventArgs : IEventBase
     {
         public string EventType { get; set; }
         public string Message { get; set; }

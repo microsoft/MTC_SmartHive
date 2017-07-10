@@ -44,6 +44,7 @@
     <Compile Include="Config\RoomConfig.cs" />
     <Compile Include="Config\RoomSensor.cs" />
     <Compile Include="Config\SettingsConst.cs" />
+    <Compile Include="Events\IEventBase.cs" />
     <Compile Include="Events\OnEvenLogWriteEventArgs.cs" />
     <Compile Include="Events\OnNotificationEventArgs.cs" />
     <Compile Include="Events\OnReadingTaskEventArgs.cs" />

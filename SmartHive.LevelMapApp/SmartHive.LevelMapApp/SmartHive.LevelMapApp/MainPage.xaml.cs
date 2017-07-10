@@ -10,8 +10,6 @@ using SmartHive.Models.Config;
 using SmartHive.LevelMapApp.Views;
 using SmartHive.LevelMapApp.Controllers;
 
-
-
 namespace SmartHive.LevelMapApp
 {
 	public partial class MainPage : ContentPage

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="Microsoft.Azure.Amqp" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Microsoft.Azure.Amqp">
+			<ResourceMapSubtree name="AmqpResources.UWP">
+				<NamedResource name="AmqpApplicationProperties" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpApplicationProperties">
+					<Candidate type="String">
+						<Value>Type {0} is not currently supported in AMQP application properties.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpBufferAlreadyReclaimed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpBufferAlreadyReclaimed">
+					<Candidate type="String">
+						<Value>The buffer has already been reclaimed.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpCannotCloneSentMessage" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpCannotCloneSentMessage">
+					<Candidate type="String">
+						<Value>A message cannot be cloned after it has been sent.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpCannotResendMessage" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpCannotResendMessage">
+					<Candidate type="String">
+						<Value>A message cannot be sent because it is either received from a link or is already sent over a link.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpCbsLinkAlreadyOpen" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpCbsLinkAlreadyOpen">
+					<Candidate type="String">
+						<Value>A link to connection '{0}' $cbs node has already been opened.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpChannelNotFound" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpChannelNotFound">
+					<Candidate type="String">
+						<Value>The session channel '{0}' cannot be found in connection '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpConnectionInactive" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpConnectionInactive">
+					<Candidate type="String">
+						<Value>The connection was inactive for more than the allowed {0} milliseconds and is closed by container '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpDeliveryIDInUse" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpDeliveryIDInUse">
+					<Candidate type="String">
+						<Value>The delivery id is already used (id:{0}, next-id:{1}, ulw:{2}, index:{3}).</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpDuplicateMemberOrder" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpDuplicateMemberOrder">
+					<Candidate type="String">
+						<Value>The order {0} is defined more than once for type {1}. Please specify the Order property of AmqpMemberAttribute explicitly to avoid this error.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpDynamicTerminusNotSupported" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpDynamicTerminusNotSupported">
+					<Candidate type="String">
+						<Value>Dynamic terminus is not currently supported.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpEmptyMessageNotAllowed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpEmptyMessageNotAllowed">
+					<Candidate type="String">
+						<Value>Sending an emtpy message is not allowed. At least one message section must be initialized.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpEncodingTypeMismatch" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpEncodingTypeMismatch">
+					<Candidate type="String">
+						<Value>The Encoding value of type ({0}:{1}) is different from that of its base type ({2}:{3}).</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpErrorOccurred" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpErrorOccurred">
+					<Candidate type="String">
+						<Value>An AMQP error occurred (condition='{0}').</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpFieldSessionId" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpFieldSessionId">
+					<Candidate type="String">
+						<Value>No session-id was specified for a session receiver.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpFramingError" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpFramingError">
+					<Candidate type="String">
+						<Value>A valid frame header cannot be formed from the incoming byte stream.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpGlobalOpaqueAddressesNotSupported" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpGlobalOpaqueAddressesNotSupported">
+					<Candidate type="String">
+						<Value>Global opaque (non-DNS) addresses are not supported ('{0}')</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpHandleExceeded" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpHandleExceeded">
+					<Candidate type="String">
+						<Value>Cannot allocate more handles. The maximum number of handles is {0}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpHandleInUse" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpHandleInUse">
+					<Candidate type="String">
+						<Value>The handle '{0}' is already associated with object '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpHandleNotFound" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpHandleNotFound">
+					<Candidate type="String">
+						<Value>The link handle '{0}' cannot be found in session '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpIdleTimeoutNotSupported" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpIdleTimeoutNotSupported">
+					<Candidate type="String">
+						<Value>Idle timeout value specified in connection OPEN ('{0} ms') is not supported. Minimum idle timeout is '{1}' ms.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpIllegalOperationState" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpIllegalOperationState">
+					<Candidate type="String">
+						<Value>operation: {0}, state: {1}</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInsufficientBufferSize" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInsufficientBufferSize">
+					<Candidate type="String">
+						<Value>The requested data size '{0}' is greater than the length of the remaining buffer '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidCommand" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidCommand">
+					<Candidate type="String">
+						<Value>Invalid command.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidFormatCode" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidFormatCode">
+					<Candidate type="String">
+						<Value>The format code '{0}' at frame buffer offset '{1}' is invalid or unexpected.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidLinkAttachAddress" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidLinkAttachAddress">
+					<Candidate type="String">
+						<Value>The hostname within the Target or Source address URL in the ATTACH frame ('{0}') is different than the hostname passed in the connection OPEN ('{1}').</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidLinkAttachScheme" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidLinkAttachScheme">
+					<Candidate type="String">
+						<Value>The scheme of the Target or Source address URL in the ATTACH frame ('{0}') is invalid. Only 'amqp' and 'amqps' schemes are supported.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidMessageBodyType" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidMessageBodyType">
+					<Candidate type="String">
+						<Value>The message body type is invalid.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidMessageSectionCode" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidMessageSectionCode">
+					<Candidate type="String">
+						<Value>The format code '{0}' is not a valid message section code.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidPerformativeCode" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidPerformativeCode">
+					<Candidate type="String">
+						<Value>The descriptor code of the performative '{0}' cannot be processed by the link.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidPropertyType" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidPropertyType">
+					<Candidate type="String">
+						<Value>Invalid type for property '{0}' in the '{1}' section.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidPropertyValue" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidPropertyValue">
+					<Candidate type="String">
+						<Value>Invalid value for property '{0}' in the '{1}' section.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidPublisherOperationForMessagingSku" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidPublisherOperationForMessagingSku">
+					<Candidate type="String">
+						<Value>The operation cannot be performed against publisher '{0}' because the targeted namespace '{1}' is of {2} tier.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidRemoteIp" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidRemoteIp">
+					<Candidate type="String">
+						<Value>Unable to get valid source IP address for connection.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidReOpenOperation" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidReOpenOperation">
+					<Candidate type="String">
+						<Value>Open was already called for the object '{0}' (state={1}).</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidSequenceNumberComparison" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidSequenceNumberComparison">
+					<Candidate type="String">
+						<Value>Comparison of {0} and {1} is invalid because the result is undefined.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpInvalidType" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpInvalidType">
+					<Candidate type="String">
+						<Value>The field {0} is either not set or not a supported type.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpLinkNameInUse" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpLinkNameInUse">
+					<Candidate type="String">
+						<Value>A link with name '{0}' is already attached in session {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpManagementLinkAlreadyOpen" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpManagementLinkAlreadyOpen">
+					<Candidate type="String">
+						<Value>A link to connection '{0}' $management node has already been opened.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpManagementOperationFailed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpManagementOperationFailed">
+					<Candidate type="String">
+						<Value>Management operation failed. status-code: {0}, status-description: {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpMessageSizeExceeded" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpMessageSizeExceeded">
+					<Candidate type="String">
+						<Value>The received message (delivery-id:{0}, size:{1} bytes) exceeds the limit ({2} bytes) currently allowed on the link.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpMissingOrInvalidProperty" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpMissingOrInvalidProperty">
+					<Candidate type="String">
+						<Value>Property '{0}' in the '{1}' section is either missing, has the wrong type, or has an unexpected value.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpMissingProperty" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpMissingProperty">
+					<Candidate type="String">
+						<Value>Missing property '{0}' in the '{1}' section.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpNotSupportMechanism" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpNotSupportMechanism">
+					<Candidate type="String">
+						<Value>None of the server sasl-mechanisms ({0}) are supported by the client ({1}).</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpNoValidAddressForHost" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpNoValidAddressForHost">
+					<Candidate type="String">
+						<Value>No valid IP addresses were found for host {0}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpObjectAborted" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpObjectAborted">
+					<Candidate type="String">
+						<Value>The AMQP object {0} is aborted.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpOperationNotSupported" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpOperationNotSupported">
+					<Candidate type="String">
+						<Value>{0} is not supported over AMQP.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpProtocolVersionNotSet" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpProtocolVersionNotSet">
+					<Candidate type="String">
+						<Value>At least one protocol version must be set for {0}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpProtocolVersionNotSupported" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpProtocolVersionNotSupported">
+					<Candidate type="String">
+						<Value>The requested protocol version '{0}' is not supported. The supported version is '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpPutTokenAudienceMismatch" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpPutTokenAudienceMismatch">
+					<Candidate type="String">
+						<Value>'put-token' operation: the 'name' application property value '{0}' should match the token audience value. Expected: '{1}' </Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpPutTokenFailed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpPutTokenFailed">
+					<Candidate type="String">
+						<Value>Put token failed. status-code: {0}, status-description: {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpRequiredFieldNotSet" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpRequiredFieldNotSet">
+					<Candidate type="String">
+						<Value>The required field '{0}' is not set in '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpTimeout" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpTimeout">
+					<Candidate type="String">
+						<Value>The operation did not complete within the allocated time {0} for object {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpTransferLimitExceeded" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpTransferLimitExceeded">
+					<Candidate type="String">
+						<Value>There is no link credit to accept the delivery (id={0}).</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpTransportNotSecure" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpTransportNotSecure">
+					<Candidate type="String">
+						<Value>The current transport is not secure. Establish a secure transport by setting AmqpTransportSettings.UseSslStreamSecurity to true.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpTransportUpgradeNotAllowed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpTransportUpgradeNotAllowed">
+					<Candidate type="String">
+						<Value>Cannot upgrade transport from type '{0}' to '{1}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpUnknownDescriptor" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpUnknownDescriptor">
+					<Candidate type="String">
+						<Value>The descriptor {0} is unknown while deserializing {1}. This usually happens if a wrong type is given to the ReadObject method or KnownTypesAttribute is not defined.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpUnopenObject" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpUnopenObject">
+					<Candidate type="String">
+						<Value>The object is not open.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AmqpUnsupportedTokenType" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/AmqpResources.UWP/AmqpUnsupportedTokenType">
+					<Candidate type="String">
+						<Value>The token type is not supported by this client implementation.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="ResourcesGeneric.UWP">
+				<NamedResource name="ActionItemIsAlreadyScheduled" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ActionItemIsAlreadyScheduled">
+					<Candidate type="String">
+						<Value>The ActionItem was scheduled for execution but has not completed yet.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ArgumentNullOrEmpty" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ArgumentNullOrEmpty">
+					<Candidate type="String">
+						<Value>The argument {0} is null or empty.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ArgumentNullOrWhiteSpace" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ArgumentNullOrWhiteSpace">
+					<Candidate type="String">
+						<Value>The argument {0} is null or white space.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ArgumentOutOfRange" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ArgumentOutOfRange">
+					<Candidate type="String">
+						<Value>The value supplied must be between {0} and {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AsyncCallbackThrewException" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/AsyncCallbackThrewException">
+					<Candidate type="String">
+						<Value>An AsyncCallback threw an exception.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AsyncResultAlreadyEnded" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/AsyncResultAlreadyEnded">
+					<Candidate type="String">
+						<Value>End cannot be called twice on the same AsyncResult.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AsyncResultCompletedTwice" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/AsyncResultCompletedTwice">
+					<Candidate type="String">
+						<Value>The IAsyncResult implementation '{0}' tried to complete a single operation multiple times. This could be caused by an incorrect application of IAsyncResult implementation or other extensibility code, such as an IAsyncResult that returns incorrect CompletedSynchronously values, or invokes the AsyncCallback multiple times.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AsyncTransactionException" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/AsyncTransactionException">
+					<Candidate type="String">
+						<Value>An exception was thrown from a TransactionScope used to flow a transaction into an asynchronous operation.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="BufferAllocationFailed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/BufferAllocationFailed">
+					<Candidate type="String">
+						<Value>Failed to allocate a managed memory buffer of {0} bytes. The amount of available memory may be low.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="BufferAlreadyReclaimed" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/BufferAlreadyReclaimed">
+					<Candidate type="String">
+						<Value>The buffer has already been reclaimed.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="BufferIsNotRightSizeForBufferManager" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/BufferIsNotRightSizeForBufferManager">
+					<Candidate type="String">
+						<Value>This buffer cannot be returned to the buffer manager because it is the wrong size.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CreateSessionOnClosingConnection" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/CreateSessionOnClosingConnection">
+					<Candidate type="String">
+						<Value>Can't create session when the connection is closing.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CreditListenerAlreadyRegistered" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/CreditListenerAlreadyRegistered">
+					<Candidate type="String">
+						<Value>Credit listener is already registered.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DispositionListenerAlreadyRegistered" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/DispositionListenerAlreadyRegistered">
+					<Candidate type="String">
+						<Value>Disposition listener is already registered.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DispositionListenerSetNotSupported" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/DispositionListenerSetNotSupported">
+					<Candidate type="String">
+						<Value>Not supported when the disposition listener is set.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ErrorConvertingToChar" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ErrorConvertingToChar">
+					<Candidate type="String">
+						<Value>Failed to convert to a char.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FailFastMessage" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/FailFastMessage">
+					<Candidate type="String">
+						<Value>An unrecoverable error occurred. For diagnostic purposes, this English message is associated with the failure: '{0}'.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidAsyncResult" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidAsyncResult">
+					<Candidate type="String">
+						<Value>The AsyncResult object used to end this operation was not the object that was returned when the operation was initiated.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidAsyncResultImplementation" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidAsyncResultImplementation">
+					<Candidate type="String">
+						<Value>An incorrect implementation of the IAsyncResult interface may be returning incorrect values from the CompletedSynchronously property or calling the AsyncCallback more than once. The type {0} could be the incorrect implementation.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidAsyncResultImplementationGeneric" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidAsyncResultImplementationGeneric">
+					<Candidate type="String">
+						<Value>An incorrect implementation of the IAsyncResult interface may be returning incorrect values from the CompletedSynchronously property or calling the AsyncCallback more than once.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidBufferSize" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidBufferSize">
+					<Candidate type="String">
+						<Value>The buffer size is invalid.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidFrameSize" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidFrameSize">
+					<Candidate type="String">
+						<Value>Invalid frame size:{0}, maximum frame size:{1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidNullAsyncResult" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidNullAsyncResult">
+					<Candidate type="String">
+						<Value>A null value was returned from an asynchronous 'Begin' method or passed to an AsyncCallback. Asynchronous 'Begin' implementations must return a non-null IAsyncResult and pass the same IAsyncResult object as the parameter to the AsyncCallback.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidSemaphoreExit" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/InvalidSemaphoreExit">
+					<Candidate type="String">
+						<Value>Object synchronization method was called from an unsynchronized block of code.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IOThreadTimerCannotAcceptMaxTimeSpan" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/IOThreadTimerCannotAcceptMaxTimeSpan">
+					<Candidate type="String">
+						<Value>IOThreadTimer cannot accept Timespan.MaxValue.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="MessageListenerAlreadyRegistered" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/MessageListenerAlreadyRegistered">
+					<Candidate type="String">
+						<Value>Message listener is already registered.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="NotSupportFrameCode" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/NotSupportFrameCode">
+					<Candidate type="String">
+						<Value>Unsupported type {0} for array.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ObjectIsReadOnly" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ObjectIsReadOnly">
+					<Candidate type="String">
+						<Value>This object is read-only and cannot be modified.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="OperationTimedOut" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/OperationTimedOut">
+					<Candidate type="String">
+						<Value>The operation timed out.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ServerCertificateNotSet" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ServerCertificateNotSet">
+					<Candidate type="String">
+						<Value>Service certificate must be set.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ShipAssertExceptionMessage" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ShipAssertExceptionMessage">
+					<Candidate type="String">
+						<Value>An unexpected failure occurred. Applications should not attempt to handle this error. For diagnostic purposes, this English message is associated with the failure: {0}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StringIsNotBase64" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/StringIsNotBase64">
+					<Candidate type="String">
+						<Value>'{0}' is not a valid Base64 encoded string.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="TargetHostNotSet" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/TargetHostNotSet">
+					<Candidate type="String">
+						<Value>TargetHost must be set.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="TimeoutMustBeNonNegative" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/TimeoutMustBeNonNegative">
+					<Candidate type="String">
+						<Value>Argument {0} must be a non-negative timeout value. The provided value was {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="TimeoutMustBePositive" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/TimeoutMustBePositive">
+					<Candidate type="String">
+						<Value>Argument {0} must be a positive timeout value. The provided value was {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UnspecifiedError" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/UnspecifiedError">
+					<Candidate type="String">
+						<Value>An error occurred.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UserErrorFormat" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/UserErrorFormat">
+					<Candidate type="String">
+						<Value>{0} If you contact a support representative please include this correlation identifier: {1}, timestamp: {2:u}, errorcode: DG{3}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ValueMustBeNonNegative" uri="ms-resource://Microsoft.Azure.Amqp/Microsoft.Azure.Amqp/ResourcesGeneric.UWP/ValueMustBeNonNegative">
+					<Candidate type="String">
+						<Value>The value of this argument must be non-negative.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

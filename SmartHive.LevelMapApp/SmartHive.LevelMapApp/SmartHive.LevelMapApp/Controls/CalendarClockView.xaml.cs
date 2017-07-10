@@ -67,7 +67,7 @@ namespace SmartHive.LevelMapApp.Controls
             if (!TimeLabel.Text.Equals(dateTimeText))
                 TimeLabel.Text = dateTimeText;
 
-            string dateText = DateTime.Now.ToString("dd/MM/yyyy");
+            string dateText = DateTime.Now.ToString("dd/MM/yyyy ddd");
             if (!DateLabel.Text.Equals(dateText))
                 DateLabel.Text = dateText;
         }

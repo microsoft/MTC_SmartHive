@@ -1,0 +1,10 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.scale-125"
+"ResourceDimensions"		"scale-125"
+
+[Files]
+"C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\split.scale-125.pri"			"resources.pri"
+"C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\PackageLayout\Assets\Wide310x150Logo.scale-125.png"			"Assets\Wide310x150Logo.scale-125.png"
+"C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\PackageLayout\Assets\Square44x44Logo.scale-125.png"			"Assets\Square44x44Logo.scale-125.png"
+"C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\PackageLayout\Assets\SplashScreen.scale-125.png"			"Assets\SplashScreen.scale-125.png"
+"C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\PackageLayout\Assets\LockScreenLogo.scale-125.png"			"Assets\LockScreenLogo.scale-125.png"

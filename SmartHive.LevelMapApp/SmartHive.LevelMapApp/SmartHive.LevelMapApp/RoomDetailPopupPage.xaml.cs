@@ -12,6 +12,7 @@ using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Extensions;
 
 using SmartHive.Models.Config;
+using SmartHive.Models.Events;
 
 namespace SmartHive.LevelMapApp
 {
@@ -30,6 +31,16 @@ namespace SmartHive.LevelMapApp
             private set;
         }
 
+        public Appointment[] RoomSchedule
+        {
+            get
+            {
+                 return  ((SmartHive.LevelMapApp.App)App.Current).serviceBusEventController.RoomSchedule(CurrentRoom.Location);
+               // return new Appointment[] { new Appointment {StartTime = "10:00", EndTime ="11:00", Title="Совте директоров"} };
+              
+            }
+        }
+
         public RoomDetailPopupPage(IRoomConfig roomViewModel)
         {
             InitializeComponent();
@@ -37,6 +48,13 @@ namespace SmartHive.LevelMapApp
             this.CurrentRoom = roomViewModel;
             this.CurrentDate = "Расписание на " + DateTime.Now.ToString("dd/MM/yyyy ddd");
             BindingContext = this;
+            
+            Appointment[] scheduleData = this.RoomSchedule;
+            if (scheduleData != null && scheduleData.Length > 0)
+            {
+                this.roomScheduleListView.ItemsSource = scheduleData;
+                this.roomScheduleListView.IsVisible = true;                
+            }
         }
 
         protected override void OnAppearing()

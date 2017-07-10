@@ -6,6 +6,7 @@ using SmartHive.Models.Config;
 using SmartHive.LevelMapApp.Controllers;
 
 using Xamarin.Forms;
+using HockeyApp;
 
 namespace SmartHive.LevelMapApp
 {
@@ -15,13 +16,14 @@ namespace SmartHive.LevelMapApp
        public ServiceBusEventController serviceBusEventController = null;
        public ISettingsProvider settingsController = null;
        public IEventTransport transport = null;
+        public IAppTelemetryController telemetryLogger = null;
 
-        public App (IEventTransport transport) : base()
+        public App (IEventTransport transport, IAppTelemetryController telemetryLogger) : base()
 		{
 
-			InitializeComponent();
-
+			InitializeComponent();            
             this.transport = transport;
+            this.telemetryLogger = telemetryLogger;
 
             // Handle when your app starts
             this.settingsController = SettingsController.AppSettings;

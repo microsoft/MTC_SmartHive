@@ -19,7 +19,10 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>14913C3D5C7760D248F3DF94E94D2CA5248ECB3E</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>DF9354F7945CAD952C99A70DE264AD437D002914</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -98,6 +101,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AppTelemetryManagerUwp.cs" />
     <Compile Include="Controllers\ServiceBusEventTransportUwp.cs" />
     <Compile Include="Controls\HybridWebViewRenderer.cs" />
     <Compile Include="MainPage.xaml.cs">

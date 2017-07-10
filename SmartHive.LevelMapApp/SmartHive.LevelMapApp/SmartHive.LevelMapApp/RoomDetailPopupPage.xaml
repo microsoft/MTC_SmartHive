@@ -19,8 +19,9 @@
    
     <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
         <AbsoluteLayout>
-            <Frame x:Name="FrameContainer" Margin="15" HorizontalOptions="Center" BackgroundColor="White">
-                <StackLayout IsClippedToBounds="True" Padding="10, 5" Spacing="3">
+            <Frame x:Name="FrameContainer" Margin="15"  HorizontalOptions="Center" BackgroundColor="White">
+                <StackLayout  Padding="10, 5" Spacing="3">
+                    <!-- IsClippedToBounds="True"-->
                     <Grid BackgroundColor="{StaticResource TitleBgColor}"  Padding="10, 5, 10, 5">
                         <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="{Binding CurrentRoom.Title}"  Style="{StaticResource RoomGroupTitleLabel}" Margin="0"  TextColor="{StaticResource LabelColor}" />
@@ -34,8 +35,22 @@
                             <OnPlatform x:TypeArguments="ImageSource" Android="cfmalex.jpg"  iOS="cfmalex.jpg" WinPhone="Assets/cfmalex.jpg"/>
                         </Image.Source -->
                     </Image>
-                    
+                    <ListView x:Name="roomScheduleListView" HorizontalOptions="StartAndExpand" VerticalOptions="Start" IsVisible="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="25">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="0">
+                                        <Label Text="{Binding StartDateTime, StringFormat='{0:HH:mm}'}" TextColor="{StaticResource LabelColor}" Style="{StaticResource RoomGroupTitleLabel}" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="-" TextColor="{StaticResource LabelColor}" Style="{StaticResource RoomGroupTitleLabel}"/>
+                                        <Label  Text="{Binding EndDateTime, StringFormat='{0:HH:mm}'}" TextColor="{StaticResource LabelColor}" Style="{StaticResource RoomGroupTitleLabel}" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Title}" TextColor="{StaticResource LabelColor}" Style="{StaticResource RoomGroupTitleLabel}" HorizontalOptions="StartAndExpand" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
+                
             </Frame>
             <ContentView AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1, 0, -1, -1">
                 <ContentView.GestureRecognizers>

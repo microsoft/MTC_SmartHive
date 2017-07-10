@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace SmartHive.LevelMapApp.Controllers
 {
-    public class WireGeoRoomController : ILevelMapController
+    public class WireGeoRoomController : AbstractController, ILevelMapController
     {
 
         private string ApiToken = string.Empty;
@@ -48,29 +48,36 @@ namespace SmartHive.LevelMapApp.Controllers
 
         private async void SetVariable(string VarName, int Value)
         {
-
-            string RestUrl = ApiUrl + @"variables/ByName/" + VarName;
-
-            VarValue value = new VarValue();
-            value.Token = ApiToken;
-            value.Value = Value;
-            value.Name = VarName;
-            value.Parent = String.Empty;
-
-            // Serialize our concrete class into a JSON String
-            var stringValue = JsonConvert.SerializeObject(value);
-
-            var httpContent = new StringContent(stringValue, Encoding.UTF8, "application/json");
-
-            var httpResponse = await this.httpClient.PutAsync(RestUrl, httpContent);
-            httpResponse.EnsureSuccessStatusCode();
-
-            // If the response contains content we want to read it!
-            if (httpResponse.Content != null)
+            try
             {
-                var responseContent = await httpResponse.Content.ReadAsStringAsync();
+                string RestUrl = ApiUrl + @"variables/ByName/" + VarName;
 
-                // From here on you could deserialize the ResponseContent back again to a concrete C# type using Json.Net
+                this.TelemetryLog.TrackAppEvent("Set Variable rest call " + RestUrl);
+
+                VarValue value = new VarValue();
+                value.Token = ApiToken;
+                value.Value = Value;
+                value.Name = VarName;
+                value.Parent = String.Empty;
+
+                // Serialize our concrete class into a JSON String
+                var stringValue = JsonConvert.SerializeObject(value);
+
+                var httpContent = new StringContent(stringValue, Encoding.UTF8, "application/json");
+
+                var httpResponse = await this.httpClient.PutAsync(RestUrl, httpContent);
+                httpResponse.EnsureSuccessStatusCode();
+
+                // If the response contains content we want to read it!
+                if (httpResponse.Content != null)
+                {
+                    var responseContent = await httpResponse.Content.ReadAsStringAsync();
+
+                    // From here on you could deserialize the ResponseContent back again to a concrete C# type using Json.Net
+                }
+            }catch(HttpRequestException ex)
+            {
+                this.TelemetryLog.TrackAppException(ex);
             }
         }
     }

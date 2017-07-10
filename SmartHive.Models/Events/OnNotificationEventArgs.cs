@@ -8,7 +8,7 @@ using Newtonsoft.Json.Schema;
 
 namespace SmartHive.Models.Events
 {
-    public sealed class OnNotificationEventArgs
+    public sealed class OnNotificationEventArgs : IEventBase
     {
         public string DeviceId { get; set; }
         public string Time { get; set; }

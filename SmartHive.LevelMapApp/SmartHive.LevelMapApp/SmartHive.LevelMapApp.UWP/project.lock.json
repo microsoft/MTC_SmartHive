@@ -2,6 +2,36 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -2530,6 +2560,36 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -5088,6 +5148,36 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -7685,6 +7775,36 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -10252,6 +10372,36 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -12858,6 +13008,36 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -15425,6 +15605,36 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "HockeySDK.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      },
+      "HockeySDK.UWP/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "HockeySDK.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
+        }
+      },
+      "HockeySDK.Xamarin/4.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll": {}
+        }
+      },
       "Microsoft.Azure.Amqp/2.0.4": {
         "type": "package",
         "compile": {
@@ -18032,6 +18242,48 @@
     }
   },
   "libraries": {
+    "HockeySDK.Core/4.1.6": {
+      "sha512": "zpK17DihA+mUBYjoKX8gotGQaMQP7LkWdKp9c0J6qUD7AKlJWRMe/AYuuOqDSKDbmbP+a2tmMBrEdB/kN7rgtw==",
+      "type": "package",
+      "path": "hockeysdk.core/4.1.6",
+      "files": [
+        "hockeysdk.core.4.1.6.nupkg.sha512",
+        "hockeysdk.core.nuspec",
+        "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll",
+        "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll.CodeAnalysisLog.xml",
+        "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.Core45.dll.lastcodeanalysissucceeded",
+        "lib/portable-net45+win8+wp8+wpa81+win81+uap10.0/Microsoft.HockeyApp.XML"
+      ]
+    },
+    "HockeySDK.UWP/4.1.6": {
+      "sha512": "tpJIPvbfHIYETysg+XJq+TZxnBuphk/ObrJGLwYkJxhiSO/8C3iH2pWiPkNQYT8sjEKCsq0uyAJ85UZsKof0yQ==",
+      "type": "package",
+      "path": "hockeysdk.uwp/4.1.6",
+      "files": [
+        "hockeysdk.uwp.4.1.6.nupkg.sha512",
+        "hockeysdk.uwp.nuspec",
+        "lib/uap10.0/Microsoft.HockeyApp.Kit.dll",
+        "lib/uap10.0/Microsoft.HockeyApp.Kit.dll.CodeAnalysisLog.xml",
+        "lib/uap10.0/Microsoft.HockeyApp.Kit.dll.lastcodeanalysissucceeded",
+        "lib/uap10.0/Microsoft.HockeyApp.Kit.pri",
+        "lib/uap10.0/Microsoft.HockeyApp.Kit/Properties/Microsoft.HockeyApp.Kit.rd.xml",
+        "tools/Init.ps1"
+      ]
+    },
+    "HockeySDK.Xamarin/4.1.5": {
+      "sha512": "BcSbR80bi4ABztMZvCDf7AFDP+uw5RRGxGMBqyyBmHKGK1h2xsa1SK3UwBs1l3d0nVzxOY/gOL9yVlslHEVdEg==",
+      "type": "package",
+      "path": "hockeysdk.xamarin/4.1.5",
+      "files": [
+        "hockeysdk.xamarin.4.1.5.nupkg.sha512",
+        "hockeysdk.xamarin.nuspec",
+        "lib/MonoAndroid403/HockeySDK.AndroidBindings.dll",
+        "lib/MonoAndroid403/HockeySDK.dll",
+        "lib/Xamarin.iOS10/HockeySDK.dll",
+        "lib/Xamarin.iOS10/HockeySDK.iOSBindings.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/HockeySDK.dll"
+      ]
+    },
     "Microsoft.Azure.Amqp/2.0.4": {
       "sha512": "biYAGReRTclHy3uhBoCm7YxGCsx6temsk3txHrLPL7bomRPfxuXiJ7lQKM8dCT8QTqRNEWgXZhCOCBM5GJSN3w==",
       "type": "package",
@@ -27034,6 +27286,9 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "HockeySDK.Core >= 4.1.6",
+      "HockeySDK.UWP >= 4.1.6",
+      "HockeySDK.Xamarin >= 4.1.5",
       "Microsoft.Azure.ServiceBus >= 0.0.5-preview",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.3.3",
       "Newtonsoft.Json >= 10.0.2",
@@ -27067,6 +27322,9 @@
       }
     },
     "dependencies": {
+      "HockeySDK.Core": "4.1.6",
+      "HockeySDK.UWP": "4.1.6",
+      "HockeySDK.Xamarin": "4.1.5",
       "Microsoft.Azure.ServiceBus": "0.0.5-preview",
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.3",
       "Newtonsoft.Json": "10.0.2",
