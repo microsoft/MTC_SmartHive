@@ -249,7 +249,7 @@ namespace SmartHive.LevelMapApp.Controllers
             {
                 //Assume event started early to add leeway
                 DateTime leeWayStartTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
-                currentAppointment = e.Schedule.SingleOrDefault<Appointment>(a => leeWayStartTime >= a.StartDateTime);
+                currentAppointment = e.Schedule.FirstOrDefault<Appointment>(a => leeWayStartTime >= a.StartDateTime);
             }
 
             // save Schedule information for the room
