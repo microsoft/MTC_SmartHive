@@ -101,7 +101,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AppTelemetryManagerUwp.cs" />
+    <Compile Include="Controllers\AppManagerUwp.cs" />
+    <Compile Include="Controllers\MainThreadDispatcher.cs" />
     <Compile Include="Controllers\ServiceBusEventTransportUwp.cs" />
     <Compile Include="Controls\HybridWebViewRenderer.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -168,6 +169,11 @@
       <Project>{38d4ba3b-fff0-4e6d-9534-90ed4594dddb}</Project>
       <Name>SmartHive.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.15063.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

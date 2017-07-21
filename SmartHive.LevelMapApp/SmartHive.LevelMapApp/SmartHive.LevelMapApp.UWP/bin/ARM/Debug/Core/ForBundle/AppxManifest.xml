@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="ba5882e9-ecf2-4c97-89f1-40110657c1b0" Publisher="CN=makhlu" Version="1.0.8.0" ProcessorArchitecture="arm" />
+  <Identity Name="ba5882e9-ecf2-4c97-89f1-40110657c1b0" Publisher="CN=makhlu" Version="1.0.18.0" ProcessorArchitecture="arm" />
   <mp:PhoneIdentity PhoneProductId="f736c883-f105-4d30-a719-4bf328872f5e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>SmartHive.LevelMapApp.UWP</DisplayName>
@@ -41,6 +41,10 @@
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"></uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.lockScreenCall" />
+        <uap:Extension Category="windows.aboveLockScreen" />
+      </Extensions>
       <uap:ApplicationContentUriRules>
         <uap:Rule Match="http://cloud.wiregeo.com/*" Type="include" WindowsRuntimeAccess="none" />
         <uap:Rule Match="https://cloud.wiregeo.com/*" Type="include" WindowsRuntimeAccess="none" />
@@ -65,6 +69,7 @@
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.26419.1" />
+    <build:Item Name="WindowsDesktop" Version="10.0.15063.0" />
     <build:Item Name="MakePri.exe" Version="10.0.15063.137 (WinBuild.160101.0800)" />
   </build:Metadata>
 </Package>

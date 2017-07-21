@@ -52,7 +52,7 @@ namespace SmartHive.LevelMapApp.Controllers
         {
             Xamarin.Forms.Device.StartTimer(taskScheduleCheckInterval, () =>
             {
-                this.TelemetryLog.TrackAppEvent("Update cached rooms. Cached rooms count: " + LevelSchedule.Keys.Count);
+                this.AppController.TrackAppEvent("Update cached rooms. Cached rooms count: " + LevelSchedule.Keys.Count);
                 if (LevelSchedule.Keys.Count > 0)
                 { // Update runs only if we have cached data (connection works well)
                     foreach (IRoomConfig room in this.levelConfig.RoomsConfig)
@@ -63,7 +63,7 @@ namespace SmartHive.LevelMapApp.Controllers
                                     updateMutex.WaitOne(5 * 1000);                                    
 #endif
                             UpdateRoomStatus(room, null);
-                            Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                            this.AppController.BeginInvokeOnMainThread(() =>
                             {
 
                                 this.OnRoomScheduleStatusChanged(room, room.CurrentAppointment);
@@ -71,7 +71,7 @@ namespace SmartHive.LevelMapApp.Controllers
                         }
                         catch (Exception ex)
                         {
-                            this.TelemetryLog.TrackAppException(ex);
+                            this.AppController.TrackAppException(ex);
                         }
                         finally
                         {
@@ -106,15 +106,27 @@ namespace SmartHive.LevelMapApp.Controllers
             this.transport.Connect(this.levelConfig);
         }
 
-        private void LevelConfig_OnSettingsLoaded(object sender, bool e)
+        private void LevelConfig_OnSettingsLoaded(object origin, bool isSuccess)
         {
-            this.TelemetryLog.TrackAppEvent("LevelConfig_OnSettingsLoaded");
-            InitTransport();
+            //Configuration loaded sucessfully
+            if (isSuccess)
+            {
+                this.AppController.TrackAppEvent("LevelConfig_OnSettingsLoaded");
+                InitTransport();
+            }
+            else
+            {
+                //Error loading configuration - exception is in origin
+                if (origin is Exception)
+                {
+                    this.AppController.TrackAppException(origin as Exception);
+                }
+            }
         }
 
         private void Transport_OnServiceBusConnected(object sender, string e)
         {
-            this.TelemetryLog.TrackAppEvent("Transport_OnServiceBusConnected");
+            this.AppController.TrackAppEvent("Transport_OnServiceBusConnected");
             this.transport.OnScheduleUpdate += Transport_OnScheduleUpdate;
             this.transport.OnNotification += Transport_OnNotification;
         }
@@ -127,7 +139,7 @@ namespace SmartHive.LevelMapApp.Controllers
                   updateMutex.WaitOne(5 * 1000);                        
 #endif
                 // Log this event
-                this.TelemetryLog.TrackAppEvent(e);
+                this.AppController.TrackAppEvent(e);
 
                 IRoomConfig roomConfig = this.levelConfig.GetRoomConfigForSensorDeviceId(e.DeviceId);
                 if (roomConfig != null)
@@ -144,7 +156,7 @@ namespace SmartHive.LevelMapApp.Controllers
                         if (IsChanged && this.OnRoomSensorChanged != null)
                         {
                             UpdateRoomStatus(roomConfig, sensor);
-                            Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                            this.AppController.BeginInvokeOnMainThread(() =>
                             {
                                 this.OnRoomSensorChanged.Invoke(roomConfig, sensor);
                             });
@@ -153,12 +165,12 @@ namespace SmartHive.LevelMapApp.Controllers
                 }
                 else
                 {
-                    this.TelemetryLog.TrackAppEvent("Error: no config found for " + e.DeviceId);
+                    this.AppController.TrackAppEvent("Error: no config found for " + e.DeviceId);
                 }          
             }catch(Exception ex)
             {
-                this.TelemetryLog.TrackAppEvent("Transport_OnNotification Error");
-                this.TelemetryLog.TrackAppException(ex);
+                this.AppController.TrackAppEvent("Transport_OnNotification Error");
+                this.AppController.TrackAppException(ex);
             }
             finally
             {
@@ -234,13 +246,13 @@ namespace SmartHive.LevelMapApp.Controllers
 
 
              // Log this event
-             this.TelemetryLog.TrackAppEvent(e);
+             this.AppController.TrackAppEvent(e);
 
             IRoomConfig roomConfig = this.levelConfig.GetRoomConfig(e.RoomId);
             if (roomConfig == null)
             {
                 // Log this event
-                this.TelemetryLog.TrackAppEvent("Error: no config for RoomId:" + e.RoomId);
+                this.AppController.TrackAppEvent("Error: no config for RoomId:" + e.RoomId);
                 return;
             }
                           
@@ -276,18 +288,18 @@ namespace SmartHive.LevelMapApp.Controllers
             if (IsChanged && this.OnRoomScheduleStatusChanged != null)
             {
                 UpdateRoomStatus(roomConfig, null);
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
-                {
-                    this.OnRoomScheduleStatusChanged(roomConfig, currentAppointment);
-                });
+                    this.AppController.BeginInvokeOnMainThread(() =>
+                            {
+                                this.OnRoomScheduleStatusChanged(roomConfig, currentAppointment);
+                            });
 
                
             }
             }
             catch(Exception ex)
             {
-                this.TelemetryLog.TrackAppEvent("Transport_OnScheduleUpdate Error");
-                this.TelemetryLog.TrackAppException(ex);
+                this.AppController.TrackAppEvent("Transport_OnScheduleUpdate Error");
+                this.AppController.TrackAppException(ex);
             }
             finally
             {

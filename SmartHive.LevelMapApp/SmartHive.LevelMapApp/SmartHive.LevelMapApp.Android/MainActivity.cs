@@ -16,7 +16,7 @@ namespace SmartHive.LevelMapApp.Droid
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
         private ISettingsProvider settingsController;
-        private AppTelemetryManagerDroid telemetryController;
+        private AppManagerDroid telemetryController;
         protected override void OnCreate (Bundle bundle)
 		{
 			TabLayoutResource = Resource.Layout.Tabbar;
@@ -26,7 +26,7 @@ namespace SmartHive.LevelMapApp.Droid
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
             
-            this.telemetryController = new AppTelemetryManagerDroid();
+            this.telemetryController = new AppManagerDroid();
 
             CrashManager.Register(this, "b707dfb571d74c0b9d55a9a7a1c6b5c5");
             SmartHive.LevelMapApp.App app = new SmartHive.LevelMapApp.App(null, this.telemetryController);

@@ -49,11 +49,22 @@ namespace SmartHive.LevelMapApp.Controllers
             return cfg;
         }
 
-        private void Cfg_OnSettingsLoaded(object sender, bool e)
+        private void Cfg_OnSettingsLoaded(object sender, bool isSuccess)
         {
+            if (!isSuccess) //an error during loading level config
+            {
+                if (sender is Exception)
+                    this.AppController.TrackAppException(sender as Exception);
+
+                this.AppController.TrackAppEvent("Error loading level configuration data");
+
+
+                // TODO: What's next - reload? Display error in UI?
+            }
+
             //Inform subsciber if settings sucessfully loaded
             if (OnSettingsLoaded != null)
-                OnSettingsLoaded.Invoke(sender, e);
+                OnSettingsLoaded.Invoke(sender, isSuccess);
         }
 
         public string GetPropertyValue(string Property)

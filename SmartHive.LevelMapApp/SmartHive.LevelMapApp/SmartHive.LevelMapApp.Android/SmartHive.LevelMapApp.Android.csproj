@@ -167,7 +167,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AppTelemetryManagerDroid.cs" />
+    <Compile Include="Controllers\AppManagerDroid.cs" />
     <Compile Include="Controllers\ServiceBusEventTransportDroid.cs" />
     <Compile Include="Controls\HybridWebViewRenderer.cs">
       <SubType>Code</SubType>

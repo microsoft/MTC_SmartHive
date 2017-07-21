@@ -1,6 +1,6 @@
-MainPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.8.0_ARM_Debug.appx
-SymbolPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\AppPackages\SmartHive.LevelMapApp.UWP_1.0.8.0_Debug_Test\SmartHive.LevelMapApp.UWP_1.0.8.0_ARM_Debug.appxsym
-ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.8.0_scale-100.appx
-ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.8.0_scale-125.appx
-ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.8.0_scale-150.appx
-ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.8.0_scale-400.appx
+MainPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.18.0_ARM_Debug.appx
+SymbolPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\AppPackages\SmartHive.LevelMapApp.UWP_1.0.18.0_Debug_Test\SmartHive.LevelMapApp.UWP_1.0.18.0_ARM_Debug.appxsym
+ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.18.0_scale-100.appx
+ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.18.0_scale-125.appx
+ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.18.0_scale-150.appx
+ResourcePack=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\SmartHive.LevelMapApp.UWP_1.0.18.0_scale-400.appx

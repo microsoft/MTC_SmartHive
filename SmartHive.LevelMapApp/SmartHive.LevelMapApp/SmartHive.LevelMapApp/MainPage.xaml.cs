@@ -49,11 +49,11 @@ namespace SmartHive.LevelMapApp
 
         }
 
-        internal void OnSettingsLoaded(object sender, bool e)
+        internal void OnSettingsLoaded(object sender, bool isSuccess)
         {
-            if (LevelData.Count == 0)
+            if (isSuccess && LevelData.Count == 0)
             {
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                this.controller.AppController.BeginInvokeOnMainThread(() =>
                 {
                     // Initialize all rooms when Settings loaded
                     var levelConfig = sender as ILevelConfig;

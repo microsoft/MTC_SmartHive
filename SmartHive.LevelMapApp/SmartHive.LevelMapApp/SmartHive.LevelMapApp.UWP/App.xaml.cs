@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 using Popup = Rg.Plugins.Popup.Windows.Popup;
 using HockeyApp;
 using Microsoft.HockeyApp;
+using Windows.System.Display;
 
 namespace SmartHive.LevelMapApp.UWP
 {
@@ -25,6 +26,8 @@ namespace SmartHive.LevelMapApp.UWP
     /// </summary>
     sealed partial class App : Application
     {
+
+        private static DisplayRequest appDisplayRequest = new DisplayRequest();
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -33,7 +36,7 @@ namespace SmartHive.LevelMapApp.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            this.UnhandledException += App_UnhandledException;
+            this.UnhandledException += App_UnhandledException;            
             HockeyClient.Current.Configure("b707dfb571d74c0b9d55a9a7a1c6b5c5",
                 new TelemetryConfiguration() { EnableDiagnostics = true })
                 .SetContactInfo("Maxim Khlupnov", "m.khlupnov@inbox.ru")
@@ -42,6 +45,8 @@ namespace SmartHive.LevelMapApp.UWP
                         return "Exception HResult: " + ex.HResult.ToString();
                 });            
         }
+
+  
 
         /// <summary>
         /// ToDo: Log unhandled exception
@@ -106,6 +111,12 @@ namespace SmartHive.LevelMapApp.UWP
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            if (appDisplayRequest != null)
+            {
+                appDisplayRequest.RequestActive();
+            }
+                      
         }
 
         /// <summary>
@@ -115,7 +126,10 @@ namespace SmartHive.LevelMapApp.UWP
         /// <param name="e">Details about the navigation failure</param>
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+            HockeyClient.Current.TrackEvent("NavigationFailed " + e.SourcePageType);
+            HockeyClient.Current.TrackException(e.Exception);
+
+            e.Handled = true;
         }
 
         /// <summary>
@@ -129,6 +143,9 @@ namespace SmartHive.LevelMapApp.UWP
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            HockeyClient.Current.TrackEvent("OnSuspending " + e.SuspendingOperation.Deadline);            
+
+
             deferral.Complete();
         }
     }

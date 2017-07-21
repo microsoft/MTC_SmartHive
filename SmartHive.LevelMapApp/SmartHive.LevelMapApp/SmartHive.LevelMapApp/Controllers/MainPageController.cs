@@ -41,12 +41,12 @@ namespace SmartHive.LevelMapApp.Controllers
                 if (roomCfg.FloorMapVarName.Equals(eventParams.Variable))
                 {
                     ShowRoomDetailPopup(roomCfg);
-                    TelemetryLog.TrackPageView(roomCfg.Location);
+                    this.AppController.TrackPageView(roomCfg.Location);
                     return;
                 }
             }
             // This looks like incorrect behavior
-            TelemetryLog.TrackAppEvent("no page view handler: " + JsonData);
+            this.AppController.TrackAppEvent("no page view handler: " + JsonData);
         }
 
         private async void ShowRoomDetailPopup(IRoomConfig config)

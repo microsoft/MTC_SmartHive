@@ -16,14 +16,14 @@ namespace SmartHive.LevelMapApp
        public ServiceBusEventController serviceBusEventController = null;
        public ISettingsProvider settingsController = null;
        public IEventTransport transport = null;
-        public IAppTelemetryController telemetryLogger = null;
+       public IAppController appController = null;
 
-        public App (IEventTransport transport, IAppTelemetryController telemetryLogger) : base()
+        public App (IEventTransport transport, IAppController appController) : base()
 		{
 
 			InitializeComponent();            
             this.transport = transport;
-            this.telemetryLogger = telemetryLogger;
+            this.appController = appController;
 
             // Handle when your app starts
             this.settingsController = SettingsController.AppSettings;

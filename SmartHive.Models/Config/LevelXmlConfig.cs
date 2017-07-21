@@ -30,20 +30,31 @@ namespace SmartHive.Models.Config
                 this.isLoaded = false;
                 this.config = settings;
                 this.LevelRooms = new Dictionary<string, IRoomConfig>();
-                Task.Run(() => Load());
-            
+                this.Load();
         }
 
         
 
-        public async void Load()
+        public void Load()
         {
-                try
+                                
+                string configUrl = config.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName);
+                HttpClient client = new HttpClient();
+                client.Timeout = new TimeSpan(0, 5, 0); // TODO: Add settings
+
+                client.GetStreamAsync(configUrl).ContinueWith(task =>
                 {
-                    using (HttpClient client = new HttpClient())
+
+                    if (task.Status != TaskStatus.RanToCompletion)
                     {
-                        string configUrl = config.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName);
-                        Stream xmlInStream = await client.GetStreamAsync(configUrl);
+                        ReportAnError(new HttpRequestException(String.Format("Error Http request {0} task status {1}", configUrl, task.Status)));
+                    }
+                    else
+                    {
+
+                        var xmlInStream = task.Result;
+                        if (xmlInStream != null)
+                        {
                             using (XmlReader reader = XmlReader.Create(xmlInStream))
                             {
                                 reader.ReadStartElement();
@@ -55,34 +66,44 @@ namespace SmartHive.Models.Config
                                     {
                                         this.LevelRooms.Add(room.Location, room);
                                         if (string.IsNullOrEmpty(this.ServiceBusNamespace))
-                                            {
-                                                this.SasKey = room.SasKey;
-                                                this.SasKeyName = room.SasKeyName;
-                                                this.ServiceBusNamespace = room.ServiceBusNamespace;
-                                                this.ServiceBusSubscription = room.ServiceBusSubscription;
-                                                this.ServiceBusTopic = room.ServiceBusTopic;
-                                            }
+                                        {
+                                            this.SasKey = room.SasKey;
+                                            this.SasKeyName = room.SasKeyName;
+                                            this.ServiceBusNamespace = room.ServiceBusNamespace;
+                                            this.ServiceBusSubscription = room.ServiceBusSubscription;
+                                            this.ServiceBusTopic = room.ServiceBusTopic;
+                                        }
                                     }
                                 }
-
                             }
-                            // Inform listeners we sucessfuly load settings
-                            if (this.OnSettingsLoaded != null)
-                            {
-                                this.isLoaded = true;
-                                this.OnSettingsLoaded.Invoke(this, true);
-                            }
+                        } else {
+                            ReportAnError(new HttpRequestException("Http req. " + configUrl + " return an error error: " + task.Status));
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Inform listeners about an error
+                        // Inform listeners we sucessfuly load settings
                         if (this.OnSettingsLoaded != null)
                         {
-                            this.OnSettingsLoaded.Invoke(this, false);
-                            this.isLoaded = false;
+                            this.isLoaded = true;
+                            this.OnSettingsLoaded.Invoke(this, true);
                         }
                     }
+                   
+                });                
+        }
+
+
+        private void ReportAnError(Exception ex)
+        {
+            // Inform listeners about an error if we have any
+            if (this.OnSettingsLoaded != null)
+            {
+                this.OnSettingsLoaded.Invoke(ex, false);
+                this.isLoaded = false;
+            }
+            else
+            {
+                // Nothing to do... Cancel
+                throw ex;
+            }
         }
 
 

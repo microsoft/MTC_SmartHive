@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using SmartHive.Models.Config;
 using SmartHive.LevelMapApp.Controllers;
 using SmartHive.LevelMapApp.UWP.Controllers;
+using Windows.ApplicationModel.Core;
 
 namespace SmartHive.LevelMapApp.UWP
 {
@@ -22,21 +23,21 @@ namespace SmartHive.LevelMapApp.UWP
     {
 
         private ISettingsProvider settingsController = null;
+        
 
         public MainPage()
         {
             this.InitializeComponent();
-
-            // Initialize Service Bus connection and set required event handlers
-            IEventTransport ServiceBusEventTransport = new ServiceBusEventTransportUwp();
-            IAppTelemetryController TelemetryController = new AppTelemetryManagerUwp();
-
-            SmartHive.LevelMapApp.App  mainApp = new SmartHive.LevelMapApp.App(ServiceBusEventTransport, TelemetryController);
            
-            this.settingsController = mainApp.settingsController;
+                // Initialize Service Bus connection and set required event handlers
+                IEventTransport ServiceBusEventTransport = new ServiceBusEventTransportUwp();
+                IAppController TelemetryController = new AppManagerUwp();
 
-            LoadApplication(mainApp);   
-            
+                SmartHive.LevelMapApp.App mainApp = new SmartHive.LevelMapApp.App(ServiceBusEventTransport, TelemetryController);
+
+                this.settingsController = mainApp.settingsController;
+
+                LoadApplication(mainApp);
 
         }
   

@@ -24,9 +24,12 @@ namespace SmartHive.LevelMapApp.Controllers
 
         public WireGeoRoomController(ISettingsProvider settingsProvider)
         {
-            this.ApiToken = settingsProvider.GetPropertyValue(WireGeoApiToken_PropertyName);
-            this.ApiUrl = settingsProvider.GetPropertyValue(WireGeoApiUrl_PropertyName);
             this.httpClient = new HttpClient();
+            this.httpClient.Timeout = new TimeSpan(0, 1, 0); // Configure timeout value
+
+
+            this.ApiToken = settingsProvider.GetPropertyValue(WireGeoApiToken_PropertyName);
+            this.ApiUrl = settingsProvider.GetPropertyValue(WireGeoApiUrl_PropertyName);        
         }
 
 
@@ -52,7 +55,7 @@ namespace SmartHive.LevelMapApp.Controllers
             {
                 string RestUrl = ApiUrl + @"variables/ByName/" + VarName;
 
-                this.TelemetryLog.TrackAppEvent("Set Variable rest call " + RestUrl);
+                this.AppController.TrackAppEvent("Http call " + RestUrl);
 
                 VarValue value = new VarValue();
                 value.Token = ApiToken;
@@ -64,20 +67,31 @@ namespace SmartHive.LevelMapApp.Controllers
                 var stringValue = JsonConvert.SerializeObject(value);
 
                 var httpContent = new StringContent(stringValue, Encoding.UTF8, "application/json");
+  
+                        
+                        var httpResponse = httpClient.PutAsync(RestUrl, httpContent)
+                           .ContinueWith(task =>
+                           {
+                               if (task.Status != TaskStatus.RanToCompletion)
+                               {
+                                   this.AppController.TrackAppEvent(String.Format("Error Http request {0} task status {1}", RestUrl, task.Status));                                  
+                               }
+                               else
+                               {
+                                   var respMsg = task.Result;
+                                   // If request faild - log this
+                                   if (respMsg != null && !respMsg.IsSuccessStatusCode)
+                                   {
+                                       this.AppController.TrackAppEvent("Http req. " + RestUrl + " error: " + respMsg.StatusCode);
+                                   }
+                               }
+                           });
+                    
+                                  
 
-                var httpResponse = await this.httpClient.PutAsync(RestUrl, httpContent);
-                httpResponse.EnsureSuccessStatusCode();
-
-                // If the response contains content we want to read it!
-                if (httpResponse.Content != null)
-                {
-                    var responseContent = await httpResponse.Content.ReadAsStringAsync();
-
-                    // From here on you could deserialize the ResponseContent back again to a concrete C# type using Json.Net
-                }
-            }catch(HttpRequestException ex)
+            }catch(Exception ex)
             {
-                this.TelemetryLog.TrackAppException(ex);
+                this.AppController.TrackAppException(ex);
             }
         }
     }
