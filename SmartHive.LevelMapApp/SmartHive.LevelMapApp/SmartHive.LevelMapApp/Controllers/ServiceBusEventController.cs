@@ -85,7 +85,6 @@ namespace SmartHive.LevelMapApp.Controllers
             });
         }
 
-
         internal Appointment[] RoomSchedule(string RoomId)
         {
             if (LevelSchedule.ContainsKey(RoomId))
@@ -98,7 +97,6 @@ namespace SmartHive.LevelMapApp.Controllers
             }
 
         }
-
 
         private void InitTransport()
         {
@@ -179,7 +177,6 @@ namespace SmartHive.LevelMapApp.Controllers
                  #endif
             }
         }
-
 
         /// <summary>
         /// Calculate IRoomConfig.RoomStatus property based on last events
@@ -264,26 +261,28 @@ namespace SmartHive.LevelMapApp.Controllers
                 currentAppointment = e.Schedule.FirstOrDefault<Appointment>(a => leeWayStartTime >= a.StartDateTime);
             }
 
-            // save Schedule information for the room
-            if (this.LevelSchedule.ContainsKey(e.RoomId))
-                this.LevelSchedule[e.RoomId] = e.Schedule;
-            else
-                this.LevelSchedule.Add(e.RoomId, e.Schedule);
+                // save Schedule information for the room
+                if (this.LevelSchedule.ContainsKey(e.RoomId))
+                {
+                    this.LevelSchedule[e.RoomId] = e.Schedule;
+                }
+                else
+                {
+                    this.LevelSchedule.Add(e.RoomId, e.Schedule);
+                }
 
-                bool IsChanged = false;
+            bool IsChanged = false;
             if (roomConfig.CurrentAppointment != null)
             {
+                    // if we have current appointment - check if something was changed
                 IsChanged = !new AppointmentComparer().Equals(roomConfig.CurrentAppointment, currentAppointment);
             }
             else
-            {
-                IsChanged = roomConfig.CurrentAppointment != currentAppointment;
+            {                    
+                    IsChanged = currentAppointment != null; // if old and new are not null - it was updated
             }
-
-            if (currentAppointment != null)
-                roomConfig.CurrentAppointment = currentAppointment;
-            else
-                roomConfig.CurrentAppointment = null;
+           
+            roomConfig.CurrentAppointment = currentAppointment;
 
             if (IsChanged && this.OnRoomScheduleStatusChanged != null)
             {

@@ -30,19 +30,23 @@ namespace SmartHive.Models.Config
                 this.isLoaded = false;
                 this.config = settings;
                 this.LevelRooms = new Dictionary<string, IRoomConfig>();
-                this.Load();
+                Task.Run(() => {
+                    this.Load();
+                    });
         }
 
         
 
-        public void Load()
+        public async void Load()
         {
                                 
                 string configUrl = config.GetPropertyValue(SettingsConst.LevelConfigUrl_PropertyName);
                 HttpClient client = new HttpClient();
+            try
+            {
                 client.Timeout = new TimeSpan(0, 5, 0); // TODO: Add settings
 
-                client.GetStreamAsync(configUrl).ContinueWith(task =>
+                await client.GetStreamAsync(configUrl).ContinueWith(task =>
                 {
 
                     if (task.Status != TaskStatus.RanToCompletion)
@@ -76,7 +80,9 @@ namespace SmartHive.Models.Config
                                     }
                                 }
                             }
-                        } else {
+                        }
+                        else
+                        {
                             ReportAnError(new HttpRequestException("Http req. " + configUrl + " return an error error: " + task.Status));
                         }
                         // Inform listeners we sucessfuly load settings
@@ -86,8 +92,16 @@ namespace SmartHive.Models.Config
                             this.OnSettingsLoaded.Invoke(this, true);
                         }
                     }
-                   
-                });                
+
+                });
+            }catch(Exception ex)
+            {
+                ReportAnError(ex);
+            }
+            finally
+            {
+                client.Dispose();
+            }
         }
 
 

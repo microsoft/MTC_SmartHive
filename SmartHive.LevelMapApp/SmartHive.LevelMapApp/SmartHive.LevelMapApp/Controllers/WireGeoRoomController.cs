@@ -4,6 +4,7 @@ using SmartHive.Models.Config;
 using SmartHive.Models.Events;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -21,12 +22,12 @@ namespace SmartHive.LevelMapApp.Controllers
         private string ApiUrl = string.Empty;
         private HttpClient httpClient = null;
 
+        private static Hashtable statusCache = new Hashtable();
 
         public WireGeoRoomController(ISettingsProvider settingsProvider)
         {
             this.httpClient = new HttpClient();
             this.httpClient.Timeout = new TimeSpan(0, 1, 0); // Configure timeout value
-
 
             this.ApiToken = settingsProvider.GetPropertyValue(WireGeoApiToken_PropertyName);
             this.ApiUrl = settingsProvider.GetPropertyValue(WireGeoApiUrl_PropertyName);        
@@ -35,7 +36,32 @@ namespace SmartHive.LevelMapApp.Controllers
 
         public void SetRoomStatus(IRoomConfig roomConfig)
         {
-            SetVariable(roomConfig.FloorMapVarName, (int)roomConfig.RoomStatus);
+            if (roomConfig != null)
+            {
+                if (statusCache[roomConfig.FloorMapVarName] == null)
+                {
+                    statusCache[roomConfig.FloorMapVarName] = (int)roomConfig.RoomStatus;
+                }
+                else if ((int)statusCache[roomConfig.FloorMapVarName] == (int)roomConfig.RoomStatus) { 
+                    // status stays the same - ignore
+                    return;
+                }
+                else
+                {
+                    // update current status
+                    statusCache[roomConfig.FloorMapVarName] = (int)roomConfig.RoomStatus;
+                }
+
+
+                    Task.Run(() =>
+                    {
+                        SetVariable(roomConfig.FloorMapVarName, (int)roomConfig.RoomStatus);
+                    });
+            }
+            else
+            {
+                this.AppController.TrackAppEvent("Error: trying set room status for null room reference");
+            }
         }
 
         public void OnRoomSensorChanged(object sender, IRoomSensor e)
@@ -51,6 +77,12 @@ namespace SmartHive.LevelMapApp.Controllers
 
         private async void SetVariable(string VarName, int Value)
         {
+            if (string.IsNullOrEmpty(VarName))
+            {
+                this.AppController.TrackAppEvent("Error: trying set room status for null or empty room reference");
+                return;
+            }
+
             try
             {
                 string RestUrl = ApiUrl + @"variables/ByName/" + VarName;
@@ -67,29 +99,28 @@ namespace SmartHive.LevelMapApp.Controllers
                 var stringValue = JsonConvert.SerializeObject(value);
 
                 var httpContent = new StringContent(stringValue, Encoding.UTF8, "application/json");
-  
-                        
-                        var httpResponse = httpClient.PutAsync(RestUrl, httpContent)
-                           .ContinueWith(task =>
-                           {
-                               if (task.Status != TaskStatus.RanToCompletion)
-                               {
-                                   this.AppController.TrackAppEvent(String.Format("Error Http request {0} task status {1}", RestUrl, task.Status));                                  
-                               }
-                               else
-                               {
-                                   var respMsg = task.Result;
+
+
+                await httpClient.PutAsync(RestUrl, httpContent)
+                   .ContinueWith(task =>
+                   {
+                       if (task.Status != TaskStatus.RanToCompletion)
+                       {
+                           this.AppController.TrackAppEvent(String.Format("Error Http request {0} task status {1}", RestUrl, task.Status));
+                       }
+                       else
+                       {
+                           var respMsg = task.Result;
                                    // If request faild - log this
                                    if (respMsg != null && !respMsg.IsSuccessStatusCode)
-                                   {
-                                       this.AppController.TrackAppEvent("Http req. " + RestUrl + " error: " + respMsg.StatusCode);
-                                   }
-                               }
-                           });
-                    
-                                  
+                           {
+                               this.AppController.TrackAppEvent("Http req. " + RestUrl + " error: " + respMsg.StatusCode);
+                           }
+                       }
+                   });
 
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 this.AppController.TrackAppException(ex);
             }

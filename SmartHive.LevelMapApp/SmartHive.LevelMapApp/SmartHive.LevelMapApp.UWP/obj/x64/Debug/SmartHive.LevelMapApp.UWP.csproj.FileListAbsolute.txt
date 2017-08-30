@@ -258,3 +258,4 @@ C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.Leve
 C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\x64\Debug\Microsoft.HockeyApp.Kit.dll
 C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\x64\Debug\HockeySDK.dll
 C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\Microsoft.HockeyApp.Kit.pri.xml
+C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\obj\x64\Debug\SmartHive.LevelMapApp.UWP.csproj.CoreCompileInputs.cache
