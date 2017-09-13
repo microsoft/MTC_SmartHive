@@ -409,22 +409,22 @@
     <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\System.Xml.XmlSerializer\4.3.0\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xam.Plugins.Settings\2.5.4\lib\UAP10\Plugin.Settings.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xam.Plugins.Settings\3.0.1\lib\UAP10\Plugin.Settings.Abstractions.dll">
       <PackagePath>Plugin.Settings.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xam.Plugins.Settings\2.5.4\lib\UAP10\Plugin.Settings.dll">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xam.Plugins.Settings\3.0.1\lib\UAP10\Plugin.Settings.dll">
       <PackagePath>Plugin.Settings.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.231\lib\uap10.0\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.270\lib\uap10.0\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.231\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.270\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
       <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.231\lib\uap10.0\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.270\lib\uap10.0\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.231\lib\uap10.0\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.270\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.Controllers\bin\Debug\SmartHive.Controllers.dll">
@@ -569,10 +569,10 @@
     <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\HockeySDK.UWP\4.1.6\lib\uap10.0\Microsoft.HockeyApp.Kit\Properties\Microsoft.HockeyApp.Kit.rd.xml">
       <PackagePath>Microsoft.HockeyApp.Kit\Properties\Microsoft.HockeyApp.Kit.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.231\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.270\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.231\lib\uap10.0\Xamarin.Forms.Platform.UAP\Properties\Xamarin.Forms.Platform.UAP.rd.xml">
+    <AppxPackagedFile Include="C:\Users\makhlu.EUROPE\.nuget\packages\Xamarin.Forms\2.3.4.270\lib\uap10.0\Xamarin.Forms.Platform.UAP\Properties\Xamarin.Forms.Platform.UAP.rd.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Properties\Xamarin.Forms.Platform.UAP.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\ARM\Debug\resources.pri">

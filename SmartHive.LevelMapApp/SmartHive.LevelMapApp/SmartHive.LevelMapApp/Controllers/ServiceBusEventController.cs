@@ -242,60 +242,58 @@ namespace SmartHive.LevelMapApp.Controllers
 #endif
 
 
-             // Log this event
-             this.AppController.TrackAppEvent(e);
-
-            IRoomConfig roomConfig = this.levelConfig.GetRoomConfig(e.RoomId);
-            if (roomConfig == null)
-            {
                 // Log this event
-                this.AppController.TrackAppEvent("Error: no config for RoomId:" + e.RoomId);
-                return;
-            }
-                          
-            Appointment currentAppointment = null;
-            if (e.Schedule != null &&  e.Schedule.Length > 0)
-            {
-                //Assume event started early to add leeway
-                DateTime leeWayStartTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
-                currentAppointment = e.Schedule.FirstOrDefault<Appointment>(a => leeWayStartTime >= a.StartDateTime);
-            }
+                this.AppController.TrackAppEvent(e);
+
+                IRoomConfig roomConfig = this.levelConfig.GetRoomConfig(e.RoomId);
+                if (roomConfig == null)
+                {
+                    // Log this event
+                    this.AppController.TrackAppEvent("Error: no config for RoomId:" + e.RoomId);
+                    return;
+                }
+
+                Appointment currentAppointment = null;
+                if (e.Schedule != null && e.Schedule.Length > 0)
+                {
+                    //Assume event started early to add leeway
+                    DateTime leeWayStartTime = DateTime.Now.AddSeconds(roomConfig.EventLeewaySeconds);
+                    currentAppointment = e.Schedule.FirstOrDefault<Appointment>(a => leeWayStartTime >= a.StartDateTime);
+                }
 
                 // save Schedule information for the room
                 if (this.LevelSchedule.ContainsKey(e.RoomId))
-                {
                     this.LevelSchedule[e.RoomId] = e.Schedule;
+                else
+                    this.LevelSchedule.Add(e.RoomId, e.Schedule);
+
+                bool IsChanged = false;
+                if (roomConfig.CurrentAppointment != null)
+                {
+                    IsChanged = !new AppointmentComparer().Equals(roomConfig.CurrentAppointment, currentAppointment);
                 }
                 else
                 {
-                    this.LevelSchedule.Add(e.RoomId, e.Schedule);
+                    IsChanged = roomConfig.CurrentAppointment != currentAppointment;
                 }
 
-            bool IsChanged = false;
-            if (roomConfig.CurrentAppointment != null)
-            {
-                    // if we have current appointment - check if something was changed
-                IsChanged = !new AppointmentComparer().Equals(roomConfig.CurrentAppointment, currentAppointment);
-            }
-            else
-            {                    
-                    IsChanged = currentAppointment != null; // if old and new are not null - it was updated
-            }
-           
-            roomConfig.CurrentAppointment = currentAppointment;
+                if (currentAppointment != null)
+                    roomConfig.CurrentAppointment = currentAppointment;
+                else
+                    roomConfig.CurrentAppointment = null;
 
-            if (IsChanged && this.OnRoomScheduleStatusChanged != null)
-            {
-                UpdateRoomStatus(roomConfig, null);
+                if (IsChanged && this.OnRoomScheduleStatusChanged != null)
+                {
+                    UpdateRoomStatus(roomConfig, null);
                     this.AppController.BeginInvokeOnMainThread(() =>
-                            {
-                                this.OnRoomScheduleStatusChanged(roomConfig, currentAppointment);
-                            });
+                    {
+                        this.OnRoomScheduleStatusChanged(roomConfig, currentAppointment);
+                    });
 
-               
+
+                }
             }
-            }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 this.AppController.TrackAppEvent("Transport_OnScheduleUpdate Error");
                 this.AppController.TrackAppException(ex);
@@ -307,6 +305,6 @@ namespace SmartHive.LevelMapApp.Controllers
 #endif
             }
         }
-      
+
     }
 }

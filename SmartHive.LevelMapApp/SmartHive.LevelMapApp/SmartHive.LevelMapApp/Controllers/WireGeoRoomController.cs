@@ -36,9 +36,17 @@ namespace SmartHive.LevelMapApp.Controllers
 
         public void SetRoomStatus(IRoomConfig roomConfig)
         {
-            if (roomConfig != null)
+            if (roomConfig == null) { 
+                this.AppController.TrackAppEvent("Error: trying set room status for null room reference");
+                return;
+            }else if (roomConfig.FloorMapVarName == null)
             {
-                if (statusCache[roomConfig.FloorMapVarName] == null)
+                this.AppController.TrackAppEvent(String.Format("Error: no FloorMapVarName specified in config file for room location {0}", roomConfig.Location));
+                return;
+            }
+
+
+            if (statusCache[roomConfig.FloorMapVarName] == null)
                 {
                     statusCache[roomConfig.FloorMapVarName] = (int)roomConfig.RoomStatus;
                 }
@@ -57,11 +65,7 @@ namespace SmartHive.LevelMapApp.Controllers
                     {
                         SetVariable(roomConfig.FloorMapVarName, (int)roomConfig.RoomStatus);
                     });
-            }
-            else
-            {
-                this.AppController.TrackAppEvent("Error: trying set room status for null room reference");
-            }
+           
         }
 
         public void OnRoomSensorChanged(object sender, IRoomSensor e)
