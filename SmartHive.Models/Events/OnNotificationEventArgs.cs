@@ -42,7 +42,7 @@ namespace SmartHive.Models.Events
                           'type': 'string'
                         },
                         'Value': {
-                          'type': 'number'
+
                         },
                         'EventProcessedUtcTime': {
                           'type': 'string'

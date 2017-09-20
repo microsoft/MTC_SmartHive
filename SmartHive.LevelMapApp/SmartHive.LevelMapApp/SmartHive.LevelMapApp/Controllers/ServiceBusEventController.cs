@@ -209,14 +209,20 @@ namespace SmartHive.LevelMapApp.Controllers
             }
            
 
-            double PiR = -1.0;
+            bool isPirOn = false;
 
-            if (piRSensor != null && piRSensor.LastMeasurement != null)// PiR sensor changed
+            if (piRSensor != null && piRSensor.LastMeasurement != null 
+                && !Boolean.TryParse(piRSensor.LastMeasurement.Value, out isPirOn))// PiR sensor changed
             {
-                Double.TryParse(piRSensor.LastMeasurement.Value, out PiR);            
+                // Pir Sensor can be a number value in some case
+                double PiR = -1.0;
+                if (Double.TryParse(piRSensor.LastMeasurement.Value, out PiR))
+                {
+                    isPirOn = PiR > 0.0;
+                }                
             }
 
-            if (PiR > 0.0) //Presense detected
+            if (isPirOn) //Presense detected
             {
                 if (roomConfig.CurrentAppointment != null)
                     roomConfig.RoomStatus = RoomStatus.RoomScheduledAndOccupied;
