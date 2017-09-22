@@ -1,0 +1,8 @@
+bld\Release\split.pri
+bld\Release\split.map.txt
+bld\Release\split.language-de.pri
+bld\Release\split.language-de.map.txt
+bld\Release\split.scale-140.pri
+bld\Release\split.scale-140.map.txt
+bld\Release\split.scale-180.pri
+bld\Release\split.scale-180.map.txt

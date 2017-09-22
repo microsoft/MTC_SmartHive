@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-  <Identity Name="SmartHive.ScheduleBoard" Version="1.1.0.123" Publisher="CN=makhlu" />
+  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.1.0.4" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" />
   <Properties>
-    <DisplayName>ScheduleBoard</DisplayName>
+    <DisplayName>SmartHive</DisplayName>
     <PublisherDisplayName>Maxim Khlupnov</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="MTC Schedule" Description="Microsoft technology center Moscow engagements schedule" BackgroundColor="#22bdef" ForegroundText="light" Square150x150Logo="images\logo.png" Square30x30Logo="images\smalllogo.png" ToastCapable="true">
+      <m2:VisualElements DisplayName="SmartHive - Room Schedule Board" Description="Transform your tablet into room's engements schedule board app" BackgroundColor="#22bdef" ForegroundText="light" Square150x150Logo="images\logo.png" Square30x30Logo="images\smalllogo.png" ToastCapable="true">
         <m2:DefaultTile Wide310x150Logo="images\logo_310_150.png" DefaultSize="wide310x150Logo">
         </m2:DefaultTile>
         <m2:SplashScreen Image="images\splashscreen.png" BackgroundColor="#22bdef" />
@@ -29,7 +29,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <Capability Name="privateNetworkClientServer" />
-    <Capability Name="enterpriseAuthentication" />
     <Capability Name="videosLibrary" />
   </Capabilities>
   <build:Metadata>

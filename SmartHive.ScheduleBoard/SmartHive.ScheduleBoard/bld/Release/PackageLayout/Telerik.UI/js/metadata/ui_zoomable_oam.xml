@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadZoomable" name="Telerik.UI.RadZoomable" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadZoomable</title>
+  <description type="text/plain">Allows to put any control in WinJS.UI.SemanticZoom control</description>
+  <icons>
+    <icon src="zoomable_html_12.png" />
+    <icon src="zoomable_html_16.png" />
+  </icons>
+  <properties>
+    <property name="isCurrentView" datatype="Boolean" required="false" readonly="true">
+      <description type="text/plain">Gets a value determining whether the control is the current view.</description>
+    </property>
+    <property name="isZoomedOut" datatype="Boolean" required="false" readonly="true">
+      <description type="text/plain">Gets a value determining whether the control is the zoomedOut view.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadZoomable"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts />
+</widget>

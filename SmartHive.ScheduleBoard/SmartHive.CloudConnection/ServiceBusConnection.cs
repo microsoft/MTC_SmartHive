@@ -11,7 +11,11 @@ using Newtonsoft.Json;
 using Windows.Foundation;
 using SmartHive.CloudConnection.Events;
 using System.Globalization;
-//using Microsoft.HockeyApp;
+
+using ppatierno.AzureSBLite;
+using ppatierno.AzureSBLite.Messaging;
+using System.Xml;
+using System.Runtime.Serialization;
 
 namespace SmartHive.CloudConnection
 {
@@ -22,21 +26,11 @@ namespace SmartHive.CloudConnection
        internal string ServiceBusNamespace { get; set; }
        internal string SasKeyName { get; set; }
 
-       internal string SasKey { get; set; }
-
-        private const int MaxMessageBatchCount = 10;
-        private HttpClientHelper HttpHelper = null;
-        private string baseAddressHttp;
-        private string topicAddress;
-        private string subscriptionAddress;
-
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-
-
-        private ThreadPoolTimer SASTokenRenewTimer;
-
-        Mutex ReaderMutex = new Mutex(false);
-        TimeSpan MutexWaitTime = TimeSpan.FromMinutes(1);
+       internal string SasKey { get; set; }       
+        internal string TopicName { get; set; }
+        internal string SubscriptionName { get; set; }
+        
+        private SubscriptionClient subscriptionClient = null;
 
 
        // private static IHockeyClientConfigurable HockeyAppConfig = null;
@@ -55,195 +49,82 @@ namespace SmartHive.CloudConnection
                 this.ServiceBusNamespace = ServiceBusNamespace;
                 this.SasKeyName = SasKeyName;
                 this.SasKey = SasKey;
+                this.TopicName = TopicName;
+                this.SubscriptionName = SubscriptionName;
+                
+
                 // Ensure our background task remains running
                 // taskDeferral = taskInstance.GetDeferral();
 
                 // Mutex will be used to ensure only one thread at a time is talking to the httpClient
                 // this.mutex = new Mutex(false, mutexId);
 
-                this.baseAddressHttp = "https://" + ServiceBusNamespace + ".servicebus.windows.net/";
-                this.topicAddress = baseAddressHttp + TopicName;
-                this.subscriptionAddress = topicAddress + "/Subscriptions/" + SubscriptionName;
+                /*     this.baseAddressHttp = "https://" + ServiceBusNamespace + ".servicebus.windows.net/";
+                     this.topicAddress = baseAddressHttp + TopicName;
+                     this.subscriptionAddress = topicAddress + "/Subscriptions/" + SubscriptionName;
 
-                if (HttpHelper == null)
-                {
-                    HttpHelper = new HttpClientHelper(this);                    
-                }
-
+                     if (HttpHelper == null)
+                     {
+                         HttpHelper = new HttpClientHelper(this);                    
+                     }
+                     */
 
             }
             catch(Exception ex)
             {
-                //DC.Trace(ex.Message + ex.StackTrace);
+             
                 this.LogEvent(EventTypeConsts.Error,"Service bus error", ex.Message);
                 throw ex;
             }
         }
 
-
-        private void  RenewSASToken(ThreadPoolTimer timer)
+        public async void InitSubscription()
         {
-            try
-            {
-                string newToken = HttpHelper.UpdateToken(ServiceBusNamespace, true, SasKeyName, SasKey);
-            }catch(Exception ex)
-            {
-                this.LogEvent(EventTypeConsts.Error, "RenewSASToken error", ex.Message);
-            }
-          
+
+            ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(String.Format("Endpoint=sb://{0}.servicebus.windows.net/;", ServiceBusNamespace));
+            builder.SharedAccessKeyName = this.SasKeyName;
+            builder.SharedAccessKey = this.SasKey;
+            builder.TransportType = TransportType.Amqp;
+
+            MessagingFactory factory = MessagingFactory.CreateFromConnectionString(builder.ToString());
+
+
+            this.subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
+
+            this.subscriptionClient.OnMessage(this.OnMessageAction, new OnMessageOptions { AutoComplete = true });
+
         }
 
-       public async void InitSubscription()
+        private void OnMessageAction(BrokeredMessage brokeredMessage)
         {
-            ReaderMutex.WaitOne(MutexWaitTime); // Wait one minute for mutex
-            // Query topic.
-            try
+            byte[] message = brokeredMessage.GetBytes();
+
+            string sBody = GetMessageText(message);//Encoding.UTF8.GetString(message, 0, message.Length);
+            if (!string.IsNullOrEmpty(sBody))
             {
 
-                byte[] queryTopicResponse = await HttpHelper.GetEntity(this.topicAddress);
-
-                if (queryTopicResponse == null)
-                    return;
-
-                this.LogEvent(EventTypeConsts.Info, "Topic exists", this.topicAddress);
-
-
-                // Query subscription.
-                while (checkSubscription() == null)
-                {
-                    this.LogEvent(EventTypeConsts.Error, "Error reading subscription", this.subscriptionAddress);
-                    await Task.Delay(TimeSpan.FromSeconds(60));
-                }
-
-                // Create a timer-initiated ThreadPool task to renew SAS token regularly
-                SASTokenRenewTimer = ThreadPoolTimer.CreatePeriodicTimer(RenewSASToken, TimeSpan.FromMinutes(15));
-
-                var dispatcher = DispatcherHelper.GetDispatcher;
-                await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-                {
-                    Task.Delay(TimeSpan.FromSeconds(5));
-                    if (OnServiceBusConnected != null)
-                    {
-                        OnServiceBusConnected.Invoke(this.subscriptionAddress, this.subscriptionAddress);
-                        this.LogEvent(EventTypeConsts.Info, "Binding done", "Servicebus handler listining for messages.");
-                    }
-                    else
-                    {
-                        this.LogEvent(EventTypeConsts.Error, "Error", "OnServiceBusConnected handlers not set");
-
-                    }
-
-                });
-
-
+                ProcessMessage(sBody, 100);
+                
             }
-            finally
+            else
             {
-                ReaderMutex.ReleaseMutex();
-                // Log view mode to collect data for Kiosks
-                this.LogEvent(EventTypeConsts.Info, "View mode", String.Format("View IsMain: {0}, view count: {1} ", CoreApplication.GetCurrentView().IsMain, CoreApplication.Views.Count));
+                /// Unknow schema - probably an error
+                this.LogEvent(EventTypeConsts.Error, "Unknown messagen format", sBody);
             }
+
         }
 
-        private async Task<string> checkSubscription()
+        private static string GetMessageText(byte[] body)
         {
-            try
-            {
-                byte[] querySubscriptionResponse = await HttpHelper.GetEntity(this.subscriptionAddress);
-
-                if (querySubscriptionResponse != null)
-                {
-                    this.LogEvent(EventTypeConsts.Info, "Subscription exists", this.subscriptionAddress);
-                    return Encoding.UTF8.GetString(querySubscriptionResponse, 0, querySubscriptionResponse.Length);
-                }
-                else
-                {
-                    this.LogEvent(EventTypeConsts.Error, "Error querying subscription.", this.subscriptionAddress);
-                    return null;
-                }                               
-            }
-            catch (System.ObjectDisposedException)
-            {
-                // Create subscription if it not exists with default settings.
-                this.LogEvent(EventTypeConsts.Warinig, "Subscription not exists. Trying create.", this.subscriptionAddress);
-                try {
-                    createSubscription();
-                }catch(HttpRequestException ex)
-                {
-                    this.LogEvent(EventTypeConsts.Error, "Create subscription http error:", ex.Message + '\n' + this.subscriptionAddress);
-                    return null;
-                }
-            }catch(HttpRequestException ex)
-            {
-                this.LogEvent(EventTypeConsts.Error,"Query subscriptions http error:", ex.Message + '\n' + this.subscriptionAddress);
+            if (body == null)
                 return null;
+
+            using (XmlDictionaryReader xmlReader = XmlDictionaryReader.CreateBinaryReader(body, XmlDictionaryReaderQuotas.Max))
+            {
+                DataContractSerializer dataContractSerializer = new DataContractSerializer(typeof(string));
+                return dataContractSerializer.ReadObject(xmlReader, false) as string;
             }
-            return null;
-        }
-
-
-        private async void createSubscription()
-        {
-              byte[] subscriptionDescription = Encoding.UTF8.GetBytes("<entry xmlns='http://www.w3.org/2005/Atom'><content type='application/xml'>"
-             + "<SubscriptionDescription xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\">"
-             + "</SubscriptionDescription></content></entry>");
-
-              await HttpHelper.CreateEntity(this.subscriptionAddress, subscriptionDescription);
-        }
-
-        public async void ReadMessageAsync(string Location, int eventsExpiration)
-        {           
-            try
-                {
-                ReaderMutex.WaitOne(MutexWaitTime); // Wait one minute for mutex
-                
-                ServiceBusHttpMessage receiveMessage = await HttpHelper.ReceiveAndDeleteMessage(this.subscriptionAddress);
-                int countInBatch = 0;
-                // Read messages in batches (10 messages or nothing)
-                while (receiveMessage != null)
-                {
-                        countInBatch++;
-
-                        string sBody = receiveMessage.GetMessageText();
-                        if (!string.IsNullOrEmpty(sBody))
-                        {
-                            ProcessMessage(sBody, eventsExpiration);
-                        }else {
-                            /// Unknow schema - probably an error
-                        this.LogEvent(EventTypeConsts.Error, "Unknown messagen format", sBody);
-                        }
-
-                    if (countInBatch < MaxMessageBatchCount)
-                    {
-                        receiveMessage = await HttpHelper.ReceiveAndDeleteMessage(this.subscriptionAddress);
-                        if (receiveMessage != null)
-                        {
-                            /// wait a little bit before we'll process next message
-                            await Task.Yield();
-                        }
-                    }
-                    else
-                    {
-                        break; // Limith count of messages in single batch
-                    }
-                }
-                
-                }
-                catch (Exception ex)
-                {
-                    //  DC.Trace(ex.Message + ex.StackTrace);
-                    // some wrong message format - report and igore
-                    this.LogEvent(EventTypeConsts.Error,"Message error", ex.Message);
-                   
-                }
-                finally
-                {
-                    ReaderMutex.ReleaseMutex();
-                }
-
-            
-        }
-        
+        } 
 
         private async void ProcessMessage(string sBody, int eventsExpiration)
         {
@@ -271,15 +152,16 @@ namespace SmartHive.CloudConnection
                 }
                 else if (ScheduleUpdateEventSchema.IsValid(sBody))
                 {
-                    OnScheduleUpdateEventArgs eventData = JsonConvert.DeserializeObject<OnScheduleUpdateEventArgs>(sBody);
+                OnScheduleUpdateEventArgs eventData = JsonConvert.DeserializeObject<OnScheduleUpdateEventArgs>(sBody);
 
-                    eventData.Schedule = this.FilterAppointments(eventData, eventsExpiration);
+                    Appointment[] filteredList = this.FilterAppointments(eventData, eventsExpiration);
 
-                    if (eventData != null && OnScheduleUpdate != null)
+                    if (filteredList != null && OnScheduleUpdate != null)
                     {
                         var dispatcher = DispatcherHelper.GetDispatcher;
                         await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                         {
+
                             OnScheduleUpdate.Invoke(sBody, eventData);
                         });
                     }

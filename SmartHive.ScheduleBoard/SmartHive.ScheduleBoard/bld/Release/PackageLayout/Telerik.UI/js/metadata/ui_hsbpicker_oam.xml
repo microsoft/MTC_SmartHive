@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadHSBPicker" name="Telerik.UI.RadHSBPicker" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadHSBPicker</title>
+  <description type="text/plain">A ColorPicker control.</description>
+  <icons>
+    <icon src="colorpicker_html_12.png" />
+    <icon src="colorpicker_html_16.png" />
+  </icons>
+  <properties>
+    <property name="color" datatype="Object" required="false">
+      <description type="text/plain">Like value(), but it returns a Color object. This does not trigger the "change" event.</description>
+    </property>
+    <property name="value" datatype="String" required="false">
+      <description type="text/plain">Get or set the selected color. If no argument is given, this returns the currently selected color as a string in format #FFFFFF  when the opacity option is off, or rgba(255, 255, 255, 1) when opacity is requested. If one argument is given, it selects the new color and updates the UI.  The argument can be a string in hex, rgb or rgba format, or a Color object. This does not trigger the "change" event. Returns the string representation of the current color.</description>
+    </property>
+    <property name="previousColor" datatype="Object" required="false">
+      <description type="text/plain">Get or set the previous color. Returns the string representation of the previous color.</description>
+    </property>
+    <property name="opacity" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">Enable or disable opacity.</description>
+    </property>
+    <property name="opacityValue" datatype="Number" required="false" isInteger="true">
+      <description type="text/plain">Get or set opacity. The values are between 0 and 1. This does not trigger the "change" event.</description>
+    </property>
+    <property name="brightness" datatype="Number" required="false" isInteger="true">
+      <description type="text/plain">Get or set brightness. The values are between 0 and 100.</description>
+    </property>
+    <property name="tooltip" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Enables or disables tooltips.</description>
+    </property>
+    <property name="transitions" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">Enables or disables transitions.</description>
+    </property>
+    <property name="width" datatype="Object" required="false">
+      <description type="text/plain">Get or set the width of the control. When opacity is off the minimal width of the control is 350px. When opacity is on the minimal width is 450px.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadHSBPicker"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts />
+</widget>

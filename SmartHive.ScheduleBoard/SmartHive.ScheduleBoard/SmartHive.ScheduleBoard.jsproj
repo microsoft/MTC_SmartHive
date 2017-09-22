@@ -55,9 +55,9 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>DF9354F7945CAD952C99A70DE264AD437D002914</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>6729E5E6F9B5221CA84D1D46AEE625C584FB1307</PackageCertificateThumbprint>
     <AppxBundle>Auto</AppxBundle>
-    <PackageCertificateKeyFile>SmartHive.ScheduleBoard_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>SmartHive.ScheduleBoard_StoreKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\default.css" />
@@ -102,6 +102,7 @@
     <Content Include="js\SettingsFlyout-Design.js" />
     <Content Include="js\ToastHelper.js" />
     <Content Include="Metadata\Microsoft.VS.Actions.CustomAction_oam.xml" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="packages.config" />
     <Content Include="res\rooms.xml">
       <SubType>Designer</SubType>
@@ -115,6 +116,7 @@
     <Content Include="js\SettingsFlyout-Conection.js" />
     <Content Include="js\default.js" />
     <None Include="SmartHive.ScheduleBoard_TemporaryKey.pfx" />
+    <None Include="SmartHive.ScheduleBoard_StoreKey.pfx" />
     <Content Include="WinJS\css\ui-dark.css" />
     <Content Include="WinJS\css\ui-dark.min.css" />
     <Content Include="WinJS\css\ui-light.css" />

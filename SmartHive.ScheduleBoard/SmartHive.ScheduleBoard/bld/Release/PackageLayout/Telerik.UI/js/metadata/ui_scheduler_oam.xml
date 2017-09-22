@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadScheduler" name="Telerik.UI.RadScheduler" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadScheduler</title>
+  <description type="text/plain">Scheduler control - CTP version</description>
+  <icons>
+    <icon src="scheduler_html_12.png" />
+    <icon src="scheduler_html_16.png" />
+  </icons>
+  <properties>
+    <property name="messages" datatype="Object" required="false">
+      <description type="text/plain">Gets the localization messages used by the control.</description>
+    </property>
+    <property name="allDayEventTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">Gets or sets the template to be used to render the "all day" scheduler events. The fields which can be used in the template are: description [String] - the event description;  end [Date] - the event end date;  isAllDay [Boolean] - if true the event is "all day";  resources [Array] - the event resources;  start [Date] - the event start date;  title [String] - the event title</description>
+    </property>
+    <property name="allDaySlot" datatype="Boolean" required="false" defaultValue="true">
+      <description type="text/plain">If set to true the scheduler will display a slot for "all day" events.</description>
+    </property>
+    <property name="dataSource" datatype="Telerik.Data.SchedulerDataSource" required="false">
+      <description type="text/plain">Gets or sets the data source object for the scheduler.</description>
+    </property>
+    <property name="date" datatype="Date" required="false">
+      <description type="text/plain">The current date of the scheduler. Used to determine the period which is displayed by the control.</description>
+    </property>
+    <property name="dateHeaderTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">The template used to render the date header cells. By default the scheduler renders the date using the current culture date format. The fields which can be used in the template are: date [Date] - represents the major tick date.</description>
+    </property>
+    <property name="editable" datatype="Telerik.UI.Scheduler._EditableConfiguration" required="false">
+      <description type="text/plain">Gets and sets the editing related (create/update/delete) options for the scheduler.</description>
+    </property>
+    <property name="endTime" datatype="Date" required="false">
+      <description type="text/plain">The end time of the week and day views. The scheduler will display events ending before the endTime.</description>
+    </property>
+    <property name="eventTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">The template used to render the scheduler events. The fields which can be used in the template are: description [String] - the event description;  end [Date] - the event end date;  resources [Array] - the event resources;  start [Date] - the event start date;  title [String] - the event title</description>
+    </property>
+    <property name="group" datatype="Telerik.UI.Scheduler._GroupConfiguration" required="false">
+      <description type="text/plain">The configuration of the scheduler resource(s) grouping.</description>
+    </property>
+    <property name="height" datatype="Number" required="false">
+      <description type="text/plain">Sets the height of the scheduler.</description>
+    </property>
+    <property name="majorTick" datatype="Number" required="false" defaultValue="60">
+      <description type="text/plain">The number of minutes represented by a major tick.</description>
+    </property>
+    <property name="majorTimeHeaderTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">The template used to render the major ticks. By default the scheduler renders the time using the current culture date format. The fields which can be used in the template are: date [Date] - represents the major tick date.</description>
+    </property>
+    <property name="minorTickCount" datatype="Number" required="false" defaultValue="2">
+      <description type="text/plain">The number of time slots to display per major tick.</description>
+    </property>
+    <property name="minorTimeHeaderTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description type="text/plain">The template used to render the minor ticks. By default the scheduler renders a space " ". The fields which can be used in the template are: date [Date] - represents the major tick date.</description>
+    </property>
+    <property name="resources" datatype="Array" required="false">
+      <description type="text/plain">The configuration of the scheduler resource(s). A scheduler resource is optional metadata that can be associated with a scheduler event.</description>
+    </property>
+    <property name="selectable" datatype="Boolean" required="false" defaultValue="false">
+      <description type="text/plain">If set to true the user would be able to select scheduler cells and events. By default selection is disabled.</description>
+    </property>
+    <property name="startTime" datatype="Date" required="false">
+      <description type="text/plain">The start time of the week and day views. The scheduler will display events starting after the startTime.</description>
+    </property>
+    <property name="timezone" datatype="String" required="false">
+      <description type="text/plain">The timezone which the scheduler will use to display the scheduler appointment dates. By default the current system timezone is used. This is an acceptable default when the scheduler control is bound to local array of events. It is advisable to specify a timezone if the scheduler is bound to a remote service. That way all users would see the same dates and times no matter their configured system timezone.</description>
+    </property>
+    <property name="view" datatype="Object" required="false" readonly="true">
+      <description type="text/plain">Gets the current scheduler view object.</description>
+    </property>
+    <property name="views" datatype="Array" required="false">
+      <description type="text/plain">The views displayed by the scheduler and their configuration. The array items can be either objects specifying the view configuration or strings representing the view types (assuming default configuration). By default the RadScheduler control displays "day" and "week" views.</description>
+    </property>
+    <property name="width" datatype="Number" required="false" defaultValue="null">
+      <description type="text/plain">Sets the width of the scheduler.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div style="height: 600px" data-win-control="Telerik.UI.RadScheduler"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts>
+    <part name="scheduler" class="t-scheduler">
+      <description type="text/plain">The RadScheduler widget.</description>
+    </part>
+  </blend:parts>
+</widget>

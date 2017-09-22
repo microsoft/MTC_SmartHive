@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Telerik.UI.1.0/js/Telerik.UI.RadCalendar" name="Telerik.UI.RadCalendar" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Telerik Inc." />
+  <title type="text/plain">RadCalendar</title>
+  <description type="text/plain">A calendar control for picking dates, with navigation.</description>
+  <icons>
+    <icon src="calendar_html_12.png" />
+    <icon src="calendar_html_16.png" />
+  </icons>
+  <properties>
+    <property name="culture" datatype="String" required="false">
+      <description type="text/plain">Gets or sets the culture of the calendar.</description>
+    </property>
+    <property name="dates" datatype="Array" required="false" defaultValue="[]">
+      <description type="text/plain">Specifies a list of dates, which will be passed to the month template. Default value is [].</description>
+    </property>
+    <property name="depth" datatype="String" required="false" defaultValue="month">
+      <description type="text/plain">Specifies the navigation depth. Valid values are: 'month', 'year', 'decade', 'century'. Default value is "month".</description>
+      <options>
+        <option value="month">month</option>
+        <option value="year">year</option>
+        <option value="decade">decade</option>
+        <option value="century">century</option>
+      </options>
+    </property>
+    <property name="footer" datatype="Telerik.UI.Calendar._FooterConfiguration" required="false">
+      <description type="text/plain">Configuration options for the footer.</description>
+    </property>
+    <property name="max" datatype="Date" required="false" defaultValue="11/31/2099">
+      <description type="text/plain">Specifies the maximum date, which the calendar can show. Default value is Date(2099, 11, 31).</description>
+    </property>
+    <property name="min" datatype="Date" required="false" defaultValue="0/1/1900">
+      <description type="text/plain">Specifies the minimum date, which the calendar can show. Default value is Date(1900, 0, 1).</description>
+    </property>
+    <property name="month" datatype="Telerik.UI.Calendar._MonthConfiguration" required="false">
+      <description type="text/plain">Templates for the cells rendered in the "month" view.</description>
+    </property>
+    <property name="view" datatype="String" required="false" defaultValue="month">
+      <description type="text/plain">Gets or sets the current view. Valid values are: 'month', 'year', 'decade', 'century'. Default value is "month".</description>
+      <options>
+        <option value="month">month</option>
+        <option value="year">year</option>
+        <option value="decade">decade</option>
+        <option value="century">century</option>
+      </options>
+    </property>
+    <property name="current" datatype="Date" required="false" hidden="true">
+      <description type="text/plain">Returns the currently focused date.</description>
+    </property>
+    <property name="selection" datatype="Telerik.UI.Calendar._SelectionConfiguration" required="false">
+      <description type="text/plain">Configures the selection mode of the control.</description>
+    </property>
+    <property name="value" datatype="Date" required="false" defaultValue="null">
+      <description type="text/plain">Specifies the selected date. Default value is null.</description>
+    </property>
+    <property name="selectedDateRange" datatype="Object" required="false">
+      <description type="text/plain">Gets or sets an object that contains the start and end date of the current selection.  Use this property when the selection mode is "singleRange". The object has two properties: start and end, which are of type Date.</description>
+    </property>
+    <property name="selectedDateRanges" datatype="Array" required="false">
+      <description type="text/plain">Gets or sets an array of objects containing the start and end dates of each selected range. The elements of the array have two properties: start and end, which are of type Date. Use this property when the selection mode is "multipleRanges".</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description type="text/plain">Gets the DOM element that hosts this control.</description>
+    </property>
+    <property name="initialized" datatype="Boolean" required="false" hidden="true" readonly="true">
+      <description type="text/plain">Indicates whether the control is initialized.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="Telerik.UI.RadCalendar"></div>]]></content>
+  <requires>
+    <require type="javascript" src="///Telerik.UI/js/jquery.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="///Telerik.UI/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/common.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="///Telerik.UI/css/dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+  </requires>
+  <blend:parts>
+    <part name="calendar" class="t-calendar">
+      <description type="text/plain">The RadCalendar widget.</description>
+    </part>
+  </blend:parts>
+</widget>

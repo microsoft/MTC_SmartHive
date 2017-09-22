@@ -1,2 +1,2 @@
-MainPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\x86\Debug\SmartHive.LevelMapApp.UWP_1.0.26.0_x86_Debug.appx
-SymbolPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\AppPackages\SmartHive.LevelMapApp.UWP_1.0.26.0_Debug_Test\SmartHive.LevelMapApp.UWP_1.0.26.0_x86_Debug.appxsym
+MainPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\bin\x86\Debug\SmartHive.LevelMapApp.UWP_1.0.30.0_x86_Debug.appx
+SymbolPackage=C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\AppPackages\SmartHive.LevelMapApp.UWP_1.0.30.0_Debug_Test\SmartHive.LevelMapApp.UWP_1.0.30.0_x86_Debug.appxsym

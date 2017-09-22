@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="Microsoft.HockeyApp.Kit" version="1.0" primary="true">
+		<Qualifiers>
+			<Language>EN, DE</Language>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="Microsoft.HockeyApp.Kit">
+				<NamedResource name="Microsoft.HockeyApp.Kit.xr.xml" uri="ms-resource://Microsoft.HockeyApp.Kit/Files/Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit.xr.xml">
+					<Candidate type="Path">
+						<Value>Microsoft.HockeyApp.Kit\Microsoft.HockeyApp.Kit.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Assets">
+					<NamedResource name="DefaultGravatar.png" uri="ms-resource://Microsoft.HockeyApp.Kit/Files/Microsoft.HockeyApp.Kit/Assets/DefaultGravatar.png">
+						<Candidate type="Path">
+							<Value>Microsoft.HockeyApp.Kit\Assets\DefaultGravatar.png</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Views">
+					<NamedResource name="FeedbackFlyout.xbf" uri="ms-resource://Microsoft.HockeyApp.Kit/Files/Microsoft.HockeyApp.Kit/Views/FeedbackFlyout.xbf">
+						<Candidate type="Path">
+							<Value>Microsoft.HockeyApp.Kit\Views\FeedbackFlyout.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="FeedbackThreadView.xbf" uri="ms-resource://Microsoft.HockeyApp.Kit/Files/Microsoft.HockeyApp.Kit/Views/FeedbackThreadView.xbf">
+						<Candidate type="Path">
+							<Value>Microsoft.HockeyApp.Kit\Views\FeedbackThreadView.xbf</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="LoginDialog.xbf" uri="ms-resource://Microsoft.HockeyApp.Kit/Files/Microsoft.HockeyApp.Kit/Views/LoginDialog.xbf">
+						<Candidate type="Path">
+							<Value>Microsoft.HockeyApp.Kit\Views\LoginDialog.xbf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Microsoft.HockeyApp.Kit">
+			<ResourceMapSubtree name="Resources">
+				<NamedResource name="AttachImg" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AttachImg">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Attach image</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bild anhängen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthAuthorizeButton" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthAuthorizeButton">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Submit</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Senden</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthAuthorizeHeader" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthAuthorizeHeader">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Login</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Login</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthAuthorizeNote" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthAuthorizeNote">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Please enter your HockeyApp account's email address and password to authorize access to this app.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Geben Sie die E-Mail-Adresse und das Kennwort Ihres HockeyApp-Accounts ein, um Zugriff auf diese App zu erhalten.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthCredentialsError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthCredentialsError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>You have entered an invalid email or password. Please check your input and try again.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>E-Mail-Adresse oder Kennwort sind nicht korrekt. Bitte Eingaben prüfen und erneut versuchen.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Authentication_AppSecretMissing" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Authentication_AppSecretMissing">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>The HockeySDK authorization secret has not been set. Please contact the developer of this app.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Das HockeyApp „Authorization Secret“ wurde nicht hinterlegt. Bitte wenden Sie sich an den Entwickler dieser App.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthIdentifyButton" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthIdentifyButton">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Submit</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Senden</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthIdentifyHeader" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthIdentifyHeader">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Login</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Login</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthIdentifyNote" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthIdentifyNote">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Please enter your HockeyApp account's email address to authorize access to this app.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Geben Sie die E-Mail-Adresse Ihres HockeyApp-Accounts ein, um Zugriff auf diese App zu erhalten.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthNetworkError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthNetworkError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Failed to authorize because your device appears to be disconnected from the Internet. Please try again.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Die Autorisierung ist fehlgeschlagen, da Ihr Gerät anscheinend nicht mit dem Internet verbunden ist. Bitte erneut versuchen.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthNoInternet" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthNoInternet">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Your device appears to be disconnected from the Internet. Please try again.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Ihr Gerät scheint nicht mit dem Internet verbunden zu sein. Bitte nochmal versuchen.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthNoMemberError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthNoMemberError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>You are not authorized to use this app. Please contact the developer of this app.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Sie sind nicht berechtigt, diese App zu nutzen. Bitte wenden Sie sich an den Entwickler dieser App.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthUnknownError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthUnknownError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Authorization error. Please contact the developer of this app.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Autorisierungsfehler. Bitte wenden Sie sich an den Entwickler dieser App.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="AuthWorking" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/AuthWorking">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Working...</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bitte warten...</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Cancel" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Cancel">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Cancel</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Abbrechen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CloseActiveThreadQuestion" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/CloseActiveThreadQuestion">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>This thread will be closed and can not be reopened from the app. Are you sure?</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Der aktuelle Thread wird geschlossen und kann innerhalb der App nicht wieder geöffnet werden. Sind Sie sicher?</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CloseNewThreadQuestion" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/CloseNewThreadQuestion">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Are you sure you want to cancel your message?</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Wollen Sie Ihre Nachricht verwerfen?</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CrashData" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/CrashData">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Crash Data</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Delete" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Delete">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Delete</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Löschen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Dismiss" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Dismiss">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Dismiss</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Verwerfen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Email" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Email">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Email</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>E-Mail</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="EmailEmptyWarning" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/EmailEmptyWarning">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Please enter a valid email.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bitte geben Sie eine gültige E-Mail-Adresse an.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackDateFormat" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/FeedbackDateFormat">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>dd/MM/yyyy HH:mm</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>dd.MM.yyyy HH:mm</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackDrawingColor" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/FeedbackDrawingColor">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>#FFFF0000</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>#FFFF0000</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackFetchError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/FeedbackFetchError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>There has been a connection problem with the server. Please try again or contact the developer of this app.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Die Verbindung ist fehlgeschlagen. Bitte versuchen Sie es noch einmal oder kontaktieren Sie den Entwickler der App.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackNoInternet" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/FeedbackNoInternet">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Your device appears to be disconnected from the Internet. Please try again.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Ihr Gerät scheint nicht mit dem Internet verbunden zu sein. Bitte nochmal versuchen.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackPageTitle" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/FeedbackPageTitle">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Feedback</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Feedback</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackSendError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/FeedbackSendError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Could not send Feedback. Are you connected to the internet?</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Die Verbindung ist fehlgeschlagen. Sind Sie mit dem Internet verbunden?</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ImgClose" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/ImgClose">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Close</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Schließen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ImgDelete" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/ImgDelete">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Delete</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Löschen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ImgOk" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/ImgOk">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Save</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Speichern</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ImgReset" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/ImgReset">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Reset</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Reset</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Install" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Install">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Install</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Installieren</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InstallProviderProfile" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/InstallProviderProfile">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Install Profile</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Profil installieren</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Message" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Message">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Message</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Nachricht</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="MessageEmptyWarning" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/MessageEmptyWarning">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Please enter a message or add an image as attachment.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bitte geben Sie eine Nachricht ein oder hängen Sie ein Bild an.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Name" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Name">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Name</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Name:</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="No" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/No">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>No</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Nein</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="NoUpdateAvailable" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/NoUpdateAvailable">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>There is currently no new version of the app available.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Aktuell ist keine neuere Version der App verfügbar.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="OpenAttachment" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/OpenAttachment">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Öffnen</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Öffnen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Password" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Password">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Passwort</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Passwort</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ReleaseNotes" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/ReleaseNotes">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Releasenotes</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Releasenotes</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Reload" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Reload">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Reload</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Erneut laden</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="RemoveAttachment" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/RemoveAttachment">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Remove</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Entfernen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Reply" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Reply">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Reply</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Antworten</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Send" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Send">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Send</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Senden</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SendCrashQuestion" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/SendCrashQuestion">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>The app quit unexpectedly. Would you like to send information about this to the developer?</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Die Anwendung oder ein Hintergrundprozess ist abgestürzt, Möchten Sie einen Bericht senden, sodass wir das Problem beheben können?</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Show" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Show">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Show</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Anzeigen</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Size" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Size">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Size</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Größe</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Subject" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Subject">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Subject</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Betreff</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SubjectEmptyWarning" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/SubjectEmptyWarning">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Please enter a subject.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bitte geben Sie einen Betreff ein.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Update" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Update">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Update</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Update</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UpdateAPIError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/UpdateAPIError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>The Installation of the update failed with the error: {0}. 
+Update via web will be tried.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Die Installation scheiterte mit folgendem Fehler: {0]
+Der Download über den Browser wird versucht.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UpdateAvailable" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/UpdateAvailable">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>A new version of the app is available.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Eine neue Version der App ist verfügbar.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UpdateInProgress" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/UpdateInProgress">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Update in progress...</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Update wird durchgeführt...</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UpdateNotification" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/UpdateNotification">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Update notification</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Update Hinweis</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UpdateUnknownError" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/UpdateUnknownError">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Unknown error while checking for app updates. Are you connected to the internet?</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Unbekannter Fehler bei der Suche nach App-Updates. Sind Sie mit dem Internet verbunden?</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="UserEmptyWarning" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/UserEmptyWarning">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Please enter a name.</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bitte geben Sie einen Namen ein.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Version" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Version">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Version</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Version</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Working" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Working">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Working...</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Bitte warten...</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Yes" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/Yes">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Yes</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Ja</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="YourMessage" uri="ms-resource://Microsoft.HockeyApp.Kit/Microsoft.HockeyApp.Kit/Resources/YourMessage">
+					<Candidate qualifiers="Language-EN" isDefault="true" type="String">
+						<Value>Your message ...</Value>
+					</Candidate>
+					<Candidate qualifiers="Language-DE" type="String">
+						<Value>Ihre Nachricht ...</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

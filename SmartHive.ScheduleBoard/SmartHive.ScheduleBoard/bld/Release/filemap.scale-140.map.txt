@@ -1,0 +1,7 @@
+﻿[ResourceMetadata]
+"ResourceId"			"filemap.scale-140"
+"ResourceDimensions"		"scale-140"
+
+[Files]
+"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\filemap.scale-140.pri"			"resources.pri"
+"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\images\BadgeLogo.scale-140.png"			"images\BadgeLogo.scale-140.png"

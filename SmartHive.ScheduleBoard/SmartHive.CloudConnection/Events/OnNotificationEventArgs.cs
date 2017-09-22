@@ -39,8 +39,7 @@ namespace SmartHive.CloudConnection.Events
                         'ValueUnits': {
                           'type': 'string'
                         },
-                        'Value': {
-                          'type': 'number'
+                        'Value': {                          
                         },
                         'EventProcessedUtcTime': {
                           'type': 'string'

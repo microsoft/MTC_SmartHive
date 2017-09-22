@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rooms>
+  <Room Location="Conf Room MTC Msc Alexander Garden_26;Conf Room MTC Msc Botanical Garden_24;Conf Room MTC Msc Hermitage Garden_14;Conf Room MTC Msc Izmailovsky Park_10;Conf Room MTC Msc Kolomenskoe Park_8;Conf Room MTC Msc Ostankino Park_10;Conf Room MTC Msc Neskuchniy Garden_9;Conf Room MTC Msc Acuarium Garden _9">
+    <Title></Title>
+    <Title_En>Executive Briefing Center</Title_En>
+    <IconTop>/images/MTC_logo.png</IconTop>
+    <IconBottom>/images/MSFT_logo_Wht.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Vorobievy Hills _30;Conf Room MTC Msc Sokolniki Park_16;Conf Room MTC Msc Patriarshy Ponds_45;Conf Room MTC Msc Lefortovo Park_16">
+    <Title>Мероприятия | </Title>
+    <Title_En>Engagements</Title_En>
+    <IconTop>/images/MTC_logo.png</IconTop>
+    <IconBottom>/images/MSFT_logo_Wht.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Alexander Garden_26">
+    <Title>Александровский сад | </Title>
+    <Title_En>Alexander Garden</Title_En>
+    <IconTop>https://yastatic.net/morda-logo/i/apple-touch-icon/ru-120x120.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Acuarium Garden _9">
+    <Title>Сад Аквариум | </Title>
+    <Title_En>Aquarium Garden</Title_En>
+    <IconTop>/images/MeetingRooms/Сад Аквариум.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Botanical Garden_24">
+    <Title>Ботанический сад | </Title>
+    <Title_En>Botanical Garden</Title_En>
+    <IconTop>/images/MeetingRooms/Ботанический сад.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Hermitage Garden_14">
+    <Title>Сад Эрмитаж | </Title>
+    <Title_En>Hermitage Garden</Title_En>
+    <IconTop>/images/MeetingRooms/Сад Эрмитаж.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Izmailovsky Park_10">
+    <Title>Измайловский парк | </Title>
+    <Title_En>Izmailovsky Park</Title_En>
+    <IconTop>images/MeetingRooms/Измайловский парк.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Kolomenskoe Park_8">
+    <Title>Парк Коломенское | </Title>
+    <Title_En>Kolomenskoe Park</Title_En>
+    <IconTop></IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Lefortovo Park_16">
+    <Title>Лефортовский парк | </Title>
+    <Title_En>Lefortovo Park</Title_En>
+    <IconTop>/images/MeetingRooms/Лефортовский парк.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Neskuchniy Garden_9">
+    <Title>Нескучный сад | </Title>
+    <Title_En>Neskuchniy Garden</Title_En>
+    <IconTop>/images/MeetingRooms/Нескучный сад.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Orchard_8">
+    <Title>Фруктовый сад | </Title>
+    <Title_En>Orchard</Title_En>
+    <IconTop></IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Ostankino Park_10">
+    <Title>Парк Останкино | </Title>
+    <Title_En>Ostankino Park</Title_En>
+    <IconTop>/images/MeetingRooms/Парк Останкино.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Patriarshy Ponds_45">
+    <Title>Патриаршие пруды | </Title>
+    <Title_En>Patriarshy Ponds</Title_En>
+    <IconTop>/images/MeetingRooms/Патриаршие пруды.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Sokolniki Park_16">
+    <Title>Парк Сокольники | </Title>
+    <Title_En>Sokolniki Park</Title_En>
+    <IconTop>/images/MeetingRooms/Парк Сокольники.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+  <Room Location="Conf Room MTC Msc Vorobievy Hills _30">
+    <Title>Воробьевы горы | </Title>
+    <Title_En>Sparrow Hills</Title_En>
+    <IconTop>/images/MeetingRooms/Воробьевы горы.png</IconTop>
+    <IconBottom>/images/MTC_logo.png</IconBottom>
+  </Room>
+</Rooms>

@@ -14,7 +14,7 @@
 // limitations under the License.
 //---------------------------------------------------------------------------------
 
-using Microsoft.ServiceBus.Messaging;
+
 using System;
 using System.Globalization;
 using System.Runtime.Serialization;

@@ -14,13 +14,13 @@ namespace SmartHive.CloudConnection.Events
         internal const string DateTimeFormat = @"dd\/MM\/yyyy HH:mm";
         public OnScheduleUpdateEventArgs()
         {
-            RoomId = string.Empty;
-            Schedule = new Appointment[0];
+            this.RoomId = string.Empty;
+            this.Schedule = new Appointment[0];
         }
         public string RoomId { get; set; }
         public Appointment[] Schedule { get; set; }
 
-        public System.DateTimeOffset ParseDateString(string sDate)
+        public static System.DateTimeOffset ParseDateString(string sDate)
         {
             return System.DateTimeOffset.ParseExact(sDate, DateTimeFormat, CultureInfo.InvariantCulture);
         }
@@ -30,11 +30,12 @@ namespace SmartHive.CloudConnection.Events
     {        
         public Appointment()
         {
-            StartTime = string.Empty;
-            EndTime = string.Empty;
-            Location = string.Empty;
-            Title = string.Empty;
-            MeetingExternalLink = string.Empty;
+            this.StartTime = string.Empty;
+            this.EndTime = string.Empty;
+            this.Location = string.Empty;
+            this.Title = string.Empty;
+            this.Category = string.Empty;
+            this.MeetingExternalLink = string.Empty;
         }
         public string StartTime { get; set; }
         public string EndTime { get; set; }

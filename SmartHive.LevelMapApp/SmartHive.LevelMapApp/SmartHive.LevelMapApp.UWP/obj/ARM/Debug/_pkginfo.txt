@@ -1,1 +1,1 @@
-C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\AppPackages\SmartHive.LevelMapApp.UWP_1.0.26.0_Debug_Test\SmartHive.LevelMapApp.UWP_1.0.26.0_x86_x64_arm_Debug.appxbundle
+C:\PROJECTS\SmartHive\SmartHive.LevelMapApp\SmartHive.LevelMapApp\SmartHive.LevelMapApp.UWP\AppPackages\SmartHive.LevelMapApp.UWP_1.0.30.0_Debug_Test\SmartHive.LevelMapApp.UWP_1.0.30.0_x86_x64_arm_Debug.appxbundle

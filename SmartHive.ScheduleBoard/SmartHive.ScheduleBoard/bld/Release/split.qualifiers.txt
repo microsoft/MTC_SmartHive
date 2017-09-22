@@ -1,0 +1,3 @@
+Language=DE
+Scale=140
+Scale=180
