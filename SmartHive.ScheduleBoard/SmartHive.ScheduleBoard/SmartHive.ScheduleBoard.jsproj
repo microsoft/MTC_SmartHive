@@ -102,24 +102,9 @@
     <Content Include="js\SettingsFlyout-Design.js" />
     <Content Include="js\ToastHelper.js" />
     <Content Include="Metadata\Microsoft.VS.Actions.CustomAction_oam.xml" />
-    <None Include="Package.StoreAssociation.xml" />
     <Content Include="packages.config" />
-    <Content Include="res\rooms.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="images\smalllogo.png" />
-    <Content Include="images\splashscreen.png" />
-    <Content Include="images\storelogo.png" />
-    <AppxManifest Include="package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
-    <Content Include="js\SettingsFlyout-Conection.js" />
-    <Content Include="js\default.js" />
-    <None Include="SmartHive.ScheduleBoard_TemporaryKey.pfx" />
-    <None Include="SmartHive.ScheduleBoard_StoreKey.pfx" />
     <Content Include="WinJS\css\ui-dark.css" />
     <Content Include="WinJS\css\ui-dark.min.css" />
-    <Content Include="WinJS\css\ui-light.css" />
     <Content Include="WinJS\css\ui-light.min.css" />
     <Content Include="WinJS\fonts\Symbols.ttf" />
     <Content Include="WinJS\js\base.js" />
@@ -133,6 +118,22 @@
     <Content Include="WinJS\js\WinJS.intellisense.js" />
     <Content Include="WinJS\License.txt" />
     <Content Include="WinJS\README.md" />
+    <None Include="app.config" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="res\rooms.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="images\smalllogo.png" />
+    <Content Include="images\splashscreen.png" />
+    <Content Include="images\storelogo.png" />
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="js\SettingsFlyout-Conection.js" />
+    <Content Include="js\default.js" />
+    <None Include="SmartHive.ScheduleBoard_TemporaryKey.pfx" />
+    <None Include="SmartHive.ScheduleBoard_StoreKey.pfx" />
+    <Content Include="WinJS\css\ui-light.css" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Telerik.UI, Version=2014.1.221" />
@@ -141,6 +142,13 @@
     <ProjectReference Include="..\SmartHive.CloudConnection\SmartHive.CloudConnection.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 
        Other similar extension points exist, see Microsoft.Common.targets.

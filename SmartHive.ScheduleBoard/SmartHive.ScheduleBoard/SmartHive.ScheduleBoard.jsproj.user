@@ -8,7 +8,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ReferenceCachePath>C:\Users\makhlu.EUROPE\AppData\Local\Temp\SmartHive.ScheduleBoard_refcache</ReferenceCachePath>
-    <AppxPackageIsForStore>True</AppxPackageIsForStore>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
     <AppxShowAllApps>True</AppxShowAllApps>
     <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
     <MachineName>10.101.50.62</MachineName>
     <RequireAuthentication>false</RequireAuthentication>
-    <DebuggerType>ManagedOnly</DebuggerType>
+    <DebuggerType>Script</DebuggerType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <MachineName>10.101.50.62</MachineName>

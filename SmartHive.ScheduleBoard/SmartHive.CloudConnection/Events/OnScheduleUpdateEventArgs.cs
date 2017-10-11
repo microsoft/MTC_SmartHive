@@ -43,6 +43,11 @@ namespace SmartHive.CloudConnection.Events
         public string Title { get; set; }
         public string Category { get; set; }
         public string MeetingExternalLink { get; set; }
+
+        public System.DateTimeOffset ParseDateString(string sDate)
+        {
+            return OnScheduleUpdateEventArgs.ParseDateString(sDate);
+        }
     }
 
     public static class ScheduleUpdateEventSchema

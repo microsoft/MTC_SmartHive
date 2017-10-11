@@ -1,0 +1,2583 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.Devices.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Azure.Devices.Client.AmqpConnectionPoolSettings">
+            <summary>
+            contains Amqp Connection Pool settings for DeviceClient
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.AmqpTransportSettings">
+            <summary>
+            contains Amqp transport-specific settings for DeviceClient
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.IRetryPolicy">
+            <summary>
+            Represents a retry policy
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.NoRetry">
+            <summary>
+            Represents a retry policy that performs no retries.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.ExponentialBackoff">
+            <summary>
+            Represents a retry policy that performs a specified number of retries, using a randomized exponential back off scheme to determine the interval between retries.
+            </summary>
+            <param name="retryCount">The maximum number of retry attempts.</param>
+            <param name="minBackoff">The minimum backoff time</param>
+            <param name="maxBackoff">The maximum backoff time.</param>
+            <param name="deltaBackoff">The value that will be used to calculate a random delta in the exponential delay between retries.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategyWrapper">
+            <summary>
+            Provides the base implementation of the retry mechanism for unreliable actions and transient conditions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.AsyncExecution">
+            <summary>
+            Provides a wrapper for a non-generic <see cref="T:System.Threading.Tasks.Task" /> and calls into the pipeline
+            to retry only the generic version of the <see cref="T:System.Threading.Tasks.Task" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.AsyncExecution.StartAsGenericTask(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Wraps the non-generic <see cref="T:System.Threading.Tasks.Task" /> into a generic <see cref="T:System.Threading.Tasks.Task" />.
+            </summary>
+            <param name="taskAction">The task to wrap.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> that wraps the non-generic <see cref="T:System.Threading.Tasks.Task" />.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.AsyncExecution`1">
+            <summary>
+            Handles the execution and retries of the user-initiated task.
+            </summary>
+            <typeparam name="TResult">The result type of the user-initiated task.</typeparam>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff">
+            <summary>
+            A retry strategy with backoff parameters for calculating the exponential delay between retries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff" /> class. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff.#ctor(System.Int32,System.TimeSpan,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff" /> class with the specified retry settings.
+            </summary>
+            <param name="retryCount">The maximum number of retry attempts.</param>
+            <param name="minBackoff">The minimum backoff time</param>
+            <param name="maxBackoff">The maximum backoff time.</param>
+            <param name="deltaBackoff">The value that will be used to calculate a random delta in the exponential delay between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff.#ctor(System.String,System.Int32,System.TimeSpan,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff" /> class with the specified name and retry settings.
+            </summary>
+            <param name="name">The name of the retry strategy.</param>
+            <param name="retryCount">The maximum number of retry attempts.</param>
+            <param name="minBackoff">The minimum backoff time</param>
+            <param name="maxBackoff">The maximum backoff time.</param>
+            <param name="deltaBackoff">The value that will be used to calculate a random delta in the exponential delay between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff.#ctor(System.String,System.Int32,System.TimeSpan,System.TimeSpan,System.TimeSpan,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff" /> class with the specified name, retry settings, and fast retry option.
+            </summary>
+            <param name="name">The name of the retry strategy.</param>
+            <param name="retryCount">The maximum number of retry attempts.</param>
+            <param name="minBackoff">The minimum backoff time</param>
+            <param name="maxBackoff">The maximum backoff time.</param>
+            <param name="deltaBackoff">The value that will be used to calculate a random delta in the exponential delay between retries.</param>
+            <param name="firstFastRetry">true to immediately retry in the first attempt; otherwise, false. The subsequent retries will remain subject to the configured retry interval.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.ExponentialBackoff.GetShouldRetry">
+            <summary>
+            Returns the corresponding ShouldRetry delegate.
+            </summary>
+            <returns>The ShouldRetry delegate.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval">
+            <summary>
+            Represents a retry strategy with a specified number of retry attempts and a default, fixed time interval between retries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> class. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> class with the specified number of retry attempts. 
+            </summary>
+            <param name="retryCount">The number of retry attempts.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval.#ctor(System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> class with the specified number of retry attempts and time interval. 
+            </summary>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="retryInterval">The time interval between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval.#ctor(System.String,System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> class with the specified number of retry attempts, time interval, and retry strategy. 
+            </summary>
+            <param name="name">The retry strategy name.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="retryInterval">The time interval between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval.#ctor(System.String,System.Int32,System.TimeSpan,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> class with the specified number of retry attempts, time interval, retry strategy, and fast start option. 
+            </summary>
+            <param name="name">The retry strategy name.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="retryInterval">The time interval between retries.</param>
+            <param name="firstFastRetry">true to immediately retry in the first attempt; otherwise, false. The subsequent retries will remain subject to the configured retry interval.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval.GetShouldRetry">
+            <summary>
+            Returns the corresponding ShouldRetry delegate.
+            </summary>
+            <returns>The ShouldRetry delegate.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Guard">
+            <summary>
+            Implements the common guard methods.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Guard.ArgumentNotNullOrEmptyString(System.String,System.String)">
+            <summary>
+            Checks a string argument to ensure that it isn't null or empty.
+            </summary>
+            <param name="argumentValue">The argument value to check.</param>
+            <param name="argumentName">The name of the argument.</param>
+            <returns>The return value should be ignored. It is intended to be used only when validating arguments during instance creation (for example, when calling the base constructor).</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Guard.ArgumentNotNull(System.Object,System.String)">
+            <summary>
+            Checks an argument to ensure that it isn't null.
+            </summary>
+            <param name="argumentValue">The argument value to check.</param>
+            <param name="argumentName">The name of the argument.</param>
+            <returns>The return value should be ignored. It is intended to be used only when validating arguments during instance creation (for example, when calling the base constructor).</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Guard.ArgumentNotNegativeValue(System.Int32,System.String)">
+            <summary>
+            Checks an argument to ensure that its 32-bit signed value isn't negative.
+            </summary>
+            <param name="argumentValue">The <see cref="T:System.Int32" /> value of the argument.</param>
+            <param name="argumentName">The name of the argument for diagnostic purposes.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Guard.ArgumentNotNegativeValue(System.Int64,System.String)">
+            <summary>
+            Checks an argument to ensure that its 64-bit signed value isn't negative.
+            </summary>
+            <param name="argumentValue">The <see cref="T:System.Int64" /> value of the argument.</param>
+            <param name="argumentName">The name of the argument for diagnostic purposes.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Guard.ArgumentNotGreaterThan(System.Double,System.Double,System.String)">
+            <summary>
+            Checks an argument to ensure that its value doesn't exceed the specified ceiling baseline.
+            </summary>
+            <param name="argumentValue">The <see cref="T:System.Double" /> value of the argument.</param>
+            <param name="ceilingValue">The <see cref="T:System.Double" /> ceiling value of the argument.</param>
+            <param name="argumentName">The name of the argument for diagnostic purposes.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental">
+            <summary>
+            A retry strategy with a specified number of retry attempts and an incremental time interval between retries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental" /> class. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental.#ctor(System.Int32,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental" /> class with the specified retry settings.
+            </summary>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="initialInterval">The initial interval that will apply for the first retry.</param>
+            <param name="increment">The incremental time value that will be used to calculate the progressive delay between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental.#ctor(System.String,System.Int32,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental" /> class with the specified name and retry settings.
+            </summary>
+            <param name="name">The retry strategy name.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="initialInterval">The initial interval that will apply for the first retry.</param>
+            <param name="increment">The incremental time value that will be used to calculate the progressive delay between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental.#ctor(System.String,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental" /> class with the specified number of retry attempts, time interval, retry strategy, and fast start option. 
+            </summary>
+            <param name="name">The retry strategy name.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="initialInterval">The initial interval that will apply for the first retry.</param>
+            <param name="increment">The incremental time value that will be used to calculate the progressive delay between retries.</param>
+            <param name="firstFastRetry">true to immediately retry in the first attempt; otherwise, false. The subsequent retries will remain subject to the configured retry interval.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental.GetShouldRetry">
+            <summary>
+            Returns the corresponding ShouldRetry delegate.
+            </summary>
+            <returns>The ShouldRetry delegate.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy">
+            <summary>
+            Defines an interface that must be implemented by custom components responsible for detecting specific transient conditions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy.IsTransient(System.Exception)">
+            <summary>
+            Determines whether the specified exception represents a transient failure that can be compensated by a retry.
+            </summary>
+            <param name="ex">The exception object to be verified.</param>
+            <returns>true if the specified exception is considered as transient; otherwise, false.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryingEventArgs">
+            <summary>
+            Contains information that is required for the <see cref="E:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.Retrying" /> event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryingEventArgs.CurrentRetryCount">
+            <summary>
+            Gets the current retry count.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryingEventArgs.Delay">
+            <summary>
+            Gets the delay that indicates how long the current thread will be suspended before the next iteration is invoked.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryingEventArgs.LastException">
+            <summary>
+            Gets the exception that caused the retry conditions to occur.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryingEventArgs.#ctor(System.Int32,System.TimeSpan,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryingEventArgs" /> class.
+            </summary>
+            <param name="currentRetryCount">The current retry attempt count.</param>
+            <param name="delay">The delay that indicates how long the current thread will be suspended before the next iteration is invoked.</param>
+            <param name="lastException">The exception that caused the retry conditions to occur.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException">
+            <summary>
+            The special type of exception that provides managed exit from a retry loop. The user code can use this
+            exception to notify the retry policy that no further retry attempts are required.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException" /> class with a default error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException" /> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException" /> class with a reference to the inner exception
+            that is the cause of this exception.
+            </summary>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryLimitExceededException" /> class with a specified error message and inner exception.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy">
+            <summary>
+            Provides the base implementation of the retry mechanism for unreliable actions and transient conditions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.TransientErrorIgnoreStrategy">
+            <summary>
+            Implements a strategy that ignores any transient errors.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.TransientErrorIgnoreStrategy.IsTransient(System.Exception)">
+            <summary>
+            Always returns false.
+            </summary>
+            <param name="ex">The exception.</param>
+            <returns>Always false.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.TransientErrorCatchAllStrategy">
+            <summary>
+            Implements a strategy that treats all exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.TransientErrorCatchAllStrategy.IsTransient(System.Exception)">
+            <summary>
+            Always returns true.
+            </summary>
+            <param name="ex">The exception.</param>
+            <returns>Always true.</returns>
+        </member>
+        <member name="E:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.Retrying">
+            <summary>
+            An instance of a callback delegate that will be invoked whenever a retry condition is encountered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.NoRetry">
+            <summary>
+            Returns a default policy that performs no retries, but invokes the action only once.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.DefaultFixed">
+            <summary>
+            Returns a default policy that implements a fixed retry interval configured with the default <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> retry strategy.
+            The default retry policy treats all caught exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.DefaultProgressive">
+            <summary>
+            Returns a default policy that implements a progressive retry interval configured with the default <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Incremental" /> retry strategy.
+            The default retry policy treats all caught exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.DefaultExponential">
+            <summary>
+            Returns a default policy that implements a random exponential retry interval configured with the default <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.FixedInterval" /> retry strategy.
+            The default retry policy treats all caught exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.RetryStrategy">
+            <summary>
+            Gets the retry strategy.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ErrorDetectionStrategy">
+            <summary>
+            Gets the instance of the error detection strategy.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.#ctor(Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy,Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy" /> class with the specified number of retry attempts and parameters defining the progressive delay between retries.
+            </summary>
+            <param name="errorDetectionStrategy">The <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy" /> that is responsible for detecting transient conditions.</param>
+            <param name="retryStrategy">The strategy to use for this retry policy.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.#ctor(Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy" /> class with the specified number of retry attempts and default fixed time interval between retries.
+            </summary>
+            <param name="errorDetectionStrategy">The <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy" /> that is responsible for detecting transient conditions.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.#ctor(Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy,System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy" /> class with the specified number of retry attempts and fixed time interval between retries.
+            </summary>
+            <param name="errorDetectionStrategy">The <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy" /> that is responsible for detecting transient conditions.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="retryInterval">The interval between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.#ctor(Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy,System.Int32,System.TimeSpan,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy" /> class with the specified number of retry attempts and backoff parameters for calculating the exponential delay between retries.
+            </summary>
+            <param name="errorDetectionStrategy">The <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy" /> that is responsible for detecting transient conditions.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="minBackoff">The minimum backoff time.</param>
+            <param name="maxBackoff">The maximum backoff time.</param>
+            <param name="deltaBackoff">The time value that will be used to calculate a random delta in the exponential delay between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.#ctor(Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy,System.Int32,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy" /> class with the specified number of retry attempts and parameters defining the progressive delay between retries.
+            </summary>
+            <param name="errorDetectionStrategy">The <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ITransientErrorDetectionStrategy" /> that is responsible for detecting transient conditions.</param>
+            <param name="retryCount">The number of retry attempts.</param>
+            <param name="initialInterval">The initial interval that will apply for the first retry.</param>
+            <param name="increment">The incremental time value that will be used to calculate the progressive delay between retries.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ExecuteAction(System.Action)">
+            <summary>
+            Repetitively executes the specified action while it satisfies the current retry policy.
+            </summary>
+            <param name="action">A delegate that represents the executable action that doesn't return any results.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ExecuteAction``1(System.Func{``0})">
+            <summary>
+            Repetitively executes the specified action while it satisfies the current retry policy.
+            </summary>
+            <typeparam name="TResult">The type of result expected from the executable action.</typeparam>
+            <param name="func">A delegate that represents the executable action that returns the result of type <typeparamref name="TResult" />.</param>
+            <returns>The result from the action.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ExecuteAsync(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Repetitively executes the specified asynchronous task while it satisfies the current retry policy.
+            </summary>
+            <param name="taskAction">A function that returns a started task (also known as "hot" task).</param>
+            <returns>
+            A task that will run to completion if the original task completes successfully (either the
+            first time or after retrying transient failures). If the task fails with a non-transient error or
+            the retry limit is reached, the returned task will transition to a faulted state and the exception must be observed.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ExecuteAsync(System.Func{System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+            <summary>
+            Repetitively executes the specified asynchronous task while it satisfies the current retry policy.
+            </summary>
+            <param name="taskAction">A function that returns a started task (also known as "hot" task).</param>
+            <param name="cancellationToken">The token used to cancel the retry operation. This token does not cancel the execution of the asynchronous task.</param>
+            <returns>
+            Returns a task that will run to completion if the original task completes successfully (either the
+            first time or after retrying transient failures). If the task fails with a non-transient error or
+            the retry limit is reached, the returned task will transition to a faulted state and the exception must be observed.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ExecuteAsync``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Repeatedly executes the specified asynchronous task while it satisfies the current retry policy.
+            </summary>
+            <param name="taskFunc">A function that returns a started task (also known as "hot" task).</param>
+            <returns>
+            Returns a task that will run to completion if the original task completes successfully (either the
+            first time or after retrying transient failures). If the task fails with a non-transient error or
+            the retry limit is reached, the returned task will transition to a faulted state and the exception must be observed.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.ExecuteAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Repeatedly executes the specified asynchronous task while it satisfies the current retry policy.
+            </summary>
+            <param name="taskFunc">A function that returns a started task (also known as "hot" task).</param>
+            <param name="cancellationToken">The token used to cancel the retry operation. This token does not cancel the execution of the asynchronous task.</param>
+            <returns>
+            Returns a task that will run to completion if the original task completes successfully (either the
+            first time or after retrying transient failures). If the task fails with a non-transient error or
+            the retry limit is reached, the returned task will transition to a faulted state and the exception must be observed.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryPolicy.OnRetrying(System.Int32,System.Exception,System.TimeSpan)">
+            <summary>
+            Notifies the subscribers whenever a retry condition is encountered.
+            </summary>
+            <param name="retryCount">The current retry attempt count.</param>
+            <param name="lastError">The exception that caused the retry conditions to occur.</param>
+            <param name="delay">The delay that indicates how long the current thread will be suspended before the next iteration is invoked.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy">
+            <summary>
+            Represents a retry strategy that determines the number of retry attempts and the interval between retries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultClientRetryCount">
+            <summary>
+            Represents the default number of retry attempts.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultClientBackoff">
+            <summary>
+            Represents the default amount of time used when calculating a random delta in the exponential delay between retries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultMaxBackoff">
+            <summary>
+            Represents the default maximum amount of time used when calculating the exponential delay between retries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultMinBackoff">
+            <summary>
+            Represents the default minimum amount of time used when calculating the exponential delay between retries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultRetryInterval">
+            <summary>
+            Represents the default interval between retries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultRetryIncrement">
+            <summary>
+            Represents the default time increment between retry attempts in the progressive delay policy.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultFirstFastRetry">
+            <summary>
+            Represents the default flag indicating whether the first retry attempt will be made immediately,
+            whereas subsequent retries will remain subject to the retry interval.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.NoRetry">
+            <summary>
+            Returns a default policy that performs no retries, but invokes the action only once.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultFixed">
+            <summary>
+            Returns a default policy that implements a fixed retry interval configured with the <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultClientRetryCount" /> and <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultRetryInterval" /> parameters.
+            The default retry policy treats all caught exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultProgressive">
+            <summary>
+            Returns a default policy that implements a progressive retry interval configured with the <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultClientRetryCount" />, <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultRetryInterval" />, and <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultRetryIncrement" /> parameters.
+            The default retry policy treats all caught exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultExponential">
+            <summary>
+            Returns a default policy that implements a random exponential retry interval configured with the <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultClientRetryCount" />, <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultMinBackoff" />, <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultMaxBackoff" />, and <see cref="F:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.DefaultClientBackoff" /> parameters.
+            The default retry policy treats all caught exceptions as transient errors.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.FastFirstRetry">
+            <summary>
+            Gets or sets a value indicating whether the first retry attempt will be made immediately,
+            whereas subsequent retries will remain subject to the retry interval.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.Name">
+            <summary>
+            Gets the name of the retry strategy.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy" /> class. 
+            </summary>
+            <param name="name">The name of the retry strategy.</param>
+            <param name="firstFastRetry">true to immediately retry in the first attempt; otherwise, false. The subsequent retries will remain subject to the configured retry interval.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TransientFaultHandling.RetryStrategy.GetShouldRetry">
+            <summary>
+            Returns the corresponding ShouldRetry delegate.
+            </summary>
+            <returns>The ShouldRetry delegate.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.ShouldRetry">
+            <summary>
+            Defines a callback delegate that will be invoked whenever a retry condition is encountered.
+            </summary>
+            <param name="retryCount">The current retry attempt count.</param>
+            <param name="lastException">The exception that caused the retry conditions to occur.</param>
+            <param name="delay">The delay that indicates how long the current thread will be suspended before the next iteration is invoked.</param>
+            <returns><see langword="true" /> if a retry is allowed; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.ArgumentCannotBeGreaterThanBaseline">
+            <summary>
+              Looks up a localized string similar to ArgumentCannotBeGreaterThanBaseline.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.ArgumentCannotBeNegative">
+            <summary>
+              Looks up a localized string similar to ArgumentCannotBeNegative.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.RetryLimitExceeded">
+            <summary>
+              Looks up a localized string similar to RetryLimitExceeded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.StringCannotBeEmpty">
+            <summary>
+              Looks up a localized string similar to StringCannotBeEmpty.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.TaskCannotBeNull">
+            <summary>
+              Looks up a localized string similar to TaskCannotBeNull.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.TransientFaultHandling.Properties.Resources.TaskMustBeScheduled">
+            <summary>
+              Looks up a localized string similar to TaskMustBeScheduled.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.AuthenticationMethodFactory">
+            <summary>
+            Creates an instance of an implementation of <see cref="T:Microsoft.Azure.Devices.Client.IAuthenticationMethod"/> based on known authentication parameters.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.AuthenticationMethodFactory.CreateAuthenticationWithSharedAccessPolicyKey(System.String,System.String,System.String)">
+            <summary>
+            Creates a <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey"/> instance based on the parameters.
+            </summary>
+            <param name="deviceId">Device Identifier.</param>
+            <param name="policyName">Name of the shared access policy to use.</param>
+            <param name="key">Key associated with the shared access policy.</param>
+            <returns>A new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey"/> class.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.AuthenticationMethodFactory.CreateAuthenticationWithToken(System.String,System.String)">
+            <summary>
+            Creates a <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken"/> instance based on the parameters.
+            </summary>
+            <param name="deviceId">Device Identifier.</param>
+            <param name="token">Security token associated with the device.</param>
+            <returns>A new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken"/> class.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.AuthenticationMethodFactory.CreateAuthenticationWithRegistrySymmetricKey(System.String,System.String)">
+            <summary>
+            Creates a <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey"/> instance based on the parameters.
+            </summary>
+            <param name="deviceId">Device Identifier.</param>
+            <param name="key">Key associated with the device in the device registry.</param>
+            <returns>A new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey"/> class.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Errors.ErrorCode">
+            <summary>
+            Unique code for each instance of DeviceGateway exception that identifies the error condition that caused the failure.
+            </summary>
+            <remarks>
+            These error codes will allow us to do automatic analysis and aggregation of error responses sent from resource provider and frontend.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceAlreadyExistsException">
+            <summary>
+            The exception that is thrown when an attempt to create a device fails because it already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceAlreadyExistsException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceAlreadyExistsException"/> class with the message string containing the identifier of the already existing device.
+            </summary>
+            <param name="deviceId">Device identifier that already exists.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceAlreadyExistsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceAlreadyExistsException"/> class with the message string set to the device identifier of the already existing device and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException">
+            <summary>
+            The exception that is thrown when an attempt to enqueue a message fails because the message queue for the device is already full.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException"/> class with the message string containing the identifier of the already existing device.
+            </summary>
+            <param name="maximumQueueDepth">Maximum number of messages in the queue.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException"/> class with the message string set to the message parameter.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException"/> class with the message string set to the message parameter and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Exceptions.DeviceMaximumQueueDepthExceededException.MaximumQueueDepth">
+            <summary>
+            Gets the value of the maximum number of messages in the device queue.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMessageLockLostException">
+            <summary>
+            The exception that is thrown when an attempt to communicate with a device fails because the lock token was lost (if the connection is lost and regained for example). This timeout has the same effect as if the message was abandonned.
+            </summary>
+            <remarks>
+            An abandoned message will be re-enqueued in the per-device queue, and the <see cref="T:Microsoft.Azure.Devices.Client.DeviceClient"/> instance will receive it again. A rejected message will be deleted from the queue and not received again by the device.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceMessageLockLostException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMessageLockLostException"/> class with the message string containing the device identifier that could not be found.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceMessageLockLostException.#ctor(System.String,System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceMessageLockLostException"/> class with the message string containing the device identifier that could not be found.
+            </summary>
+            <param name="deviceId">Device identifier.</param>
+            <param name="messageId">Message identifier.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException">
+            <summary>
+            The exception that is thrown when an attempt to communicate with a device fails because the given device identifier cannot be found.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException"/> class with the message string containing the device identifier that could not be found.
+            </summary>
+            <param name="deviceId">Device identifier that already exists.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException"/> class with the message string containing the device identifier and the IoT hub instance that could not be found.
+            </summary>
+            <param name="deviceId">Device identifier that already exists.</param>
+            <param name="iotHubName">Name of the IOT Hub instance.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException"/> class with the message string containing the device identifier that could not be found.
+            </summary>
+            <param name="deviceId">Device identifier that already exists.</param>
+            <param name="iotHubName">Name of the IOT Hub instance.</param>
+            <param name="trackingId">Tracking identifier that is used for telemetry purposes.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.DeviceNotFoundException"/> class with the message string containing the identifier of the device that could not be found and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubCommunicationException">
+            <summary>
+            The exception that is thrown when an attempt to communicate with the IoT Hub service fails.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.IotHubCommunicationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubCommunicationException"/> class with the message string set to the message parameter.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.IotHubCommunicationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubCommunicationException"/> class with the message string set to the message parameter and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubNotFoundException">
+            <summary>
+            The exception that is thrown when the IoT hub instance is not found.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.IotHubNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubNotFoundException"/> class with the message string containing the name of the IoT hub instance that couldn't be found.
+            </summary>
+            <param name="iotHubName">IoT hub name that could not be found.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.IotHubNotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubNotFoundException"/> class with the message string containing the name of the IoT hub instance that couldn't be found.
+            </summary>
+            <param name="iotHubName">IoT hub name that could not be found.</param>
+            <param name="trackingId">Tracking identifier for telemetry purposes.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubThrottledException">
+            <summary>
+            The exception that is thrown when the service requires exponential back-off because it has exceeded the maximum number of allowed active requests.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.IotHubThrottledException.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubThrottledException"/> class with the message string containing the maximum count of active requests.
+            </summary>
+            <param name="maximumBatchCount">Maximum count of active requests.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.IotHubThrottledException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.IotHubThrottledException"/> class with the message string set to the message parameter and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException">
+            <summary>
+            The exception that is thrown when an attempt to send a message fails because the length of the message exceeds the maximum size allowed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException"/> class with the message string containing the maximum sized allowed for a message, in bytes.
+            </summary>
+            <param name="maximumMessageSizeInBytes">Device identifier that already exists.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException"/> class with the message string set to the message parameter.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException"/> class with the message string set to the message parameter and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Exceptions.MessageTooLargeException.MaximumMessageSizeInBytes">
+            <summary>
+            Gets the value of the maximum size of a message in bytes.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Exceptions.QuotaExceededException">
+            <summary>
+            The exception that is thrown when an attempt to add a device fails because the maximum number of registered devices has been reached.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.QuotaExceededException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.QuotaExceededException"/> class with the message string set to the message parameter.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Exceptions.QuotaExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.Exceptions.QuotaExceededException"/> class with the message string set to the message parameter and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">A description of the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.InternalBufferManager.PreallocatedBufferManager.ReturnBuffer(System.Byte[])">
+            <summary>
+            Returned buffer must have been acquired via a call to TakeBuffer
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.ReadOnlyDictionary45`2">
+            <summary>
+            Read-only wrapper for another generic dictionary.
+            </summary>
+            <typeparam name="TKey">Type to be used for keys.</typeparam>
+            <typeparam name="TValue">Type to be used for values</typeparam>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.BearerTokenScheme">
+            <summary>
+            The scheme name for Bearer token auth.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.CertificateScheme">
+            <summary>
+            The scheme name to use for certificate authentication handler
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.AuthenticationScheme">
+            <summary>
+            The claim type for the authentication scheme.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.ResourceProviderClientAccessRole">
+            <summary>
+            The role capable of invoking ResourceProvider from CSM. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.ResourceProviderAdminAccessRole">
+            <summary>
+            The role capable of invoking ResourceProvider from ACIS
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.ResourceProviderFullAccessRole">
+            <summary>
+            For use when giving permissions to both resource provider roles
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.AuthenticationFailed">
+            <summary>
+            Authentication failed message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.AuthorizationFailed">
+            <summary>
+            Authorization failed message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.MissingCertificate">
+            <summary>
+            Missing certificate message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.KeyLengthInBytes">
+            <summary>
+            Default size of device gateway and device keys
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.WwwAuthenticateHeader">
+            <summary>
+            The name of the authentication challenge response header.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.DefaultSaSKeyName">
+            <summary>
+            Default SaS Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.AdminSaSKeyName">
+            <summary>
+            Admin SaS Key name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.SaSKeyLength">
+            <summary>
+            SaS Key length.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.SharedAccessKey">
+            <summary>
+            Shared Access Key
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.SharedAccessKeyFieldName">
+            <summary>
+            Shared Access Key Field Name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.SecurityConstants.SharedAccessKeyFullFieldName">
+            <summary>
+            Shared Access Key Full Field Name
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.TaskConstants.Completed">
+            <summary>
+                A <see cref="T:System.Threading.Tasks.Task" /> that has been completed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Common.Api.ApiResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.FailedToSerializeUnsupportedType">
+            <summary>
+              Looks up a localized string similar to Serialization operation failed due to unsupported type {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.HostNameIsNull">
+            <summary>
+              Looks up a localized string similar to The HostName is null..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.InvalidPassword">
+            <summary>
+              Looks up a localized string similar to The password is not valid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.InvalidUser">
+            <summary>
+              Looks up a localized string similar to The User is not valid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.MessageBodyConsumed">
+            <summary>
+              Looks up a localized string similar to The message body cannot be read multiple times. To reuse it store the value after reading..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Api.ApiResources.MessageDisposed">
+            <summary>
+              Looks up a localized string similar to This messaging entity has already been closed, aborted, or disposed..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Common.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ActionItemIsAlreadyScheduled">
+            <summary>
+              Looks up a localized string similar to The ActionItem was scheduled for execution but has not completed yet..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ArgumentMustBeNonNegative">
+            <summary>
+              Looks up a localized string similar to The value of this argument must be non-negative..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ArgumentMustBePositive">
+            <summary>
+              Looks up a localized string similar to The value of this argument must be positive..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ArgumentNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The argument {0} is null or empty..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ArgumentNullOrWhiteSpace">
+            <summary>
+              Looks up a localized string similar to The argument {0} is null or white space..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ArgumentOutOfRange">
+            <summary>
+              Looks up a localized string similar to The value supplied must be between {0} and {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.AsyncCallbackThrewException">
+            <summary>
+              Looks up a localized string similar to An AsyncCallback threw an exception..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.AsyncResultAlreadyEnded">
+            <summary>
+              Looks up a localized string similar to End cannot be called twice on the same AsyncResult..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.AsyncResultCompletedTwice">
+            <summary>
+              Looks up a localized string similar to The IAsyncResult implementation &apos;{0}&apos; tried to complete a single operation multiple times. This could be caused by an incorrect application of IAsyncResult implementation or other extensibility code, such as an IAsyncResult that returns incorrect CompletedSynchronously values, or invokes the AsyncCallback multiple times..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.AsyncTransactionException">
+            <summary>
+              Looks up a localized string similar to An exception was thrown from a TransactionScope used to flow a transaction into an asynchronous operation..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.BufferAllocationFailed">
+            <summary>
+              Looks up a localized string similar to Failed to allocate a managed memory buffer of {0} bytes. The amount of available memory may be low..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.BufferAlreadyReclaimed">
+            <summary>
+              Looks up a localized string similar to The buffer has already been reclaimed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.BufferIsNotRightSizeForBufferManager">
+            <summary>
+              Looks up a localized string similar to This buffer cannot be returned to the buffer manager because it is the wrong size..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.FailFastMessage">
+            <summary>
+              Looks up a localized string similar to An unrecoverable error occurred. For diagnostic purposes, this English message is associated with the failure: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.InvalidAsyncResult">
+            <summary>
+              Looks up a localized string similar to The AsyncResult object used to end this operation was not the object that was returned when the operation was initiated..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.InvalidAsyncResultImplementation">
+            <summary>
+              Looks up a localized string similar to An incorrect implementation of the IAsyncResult interface may be returning incorrect values from the CompletedSynchronously property or calling the AsyncCallback more than once. The type {0} could be the incorrect implementation..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.InvalidAsyncResultImplementationGeneric">
+            <summary>
+              Looks up a localized string similar to An incorrect implementation of the IAsyncResult interface may be returning incorrect values from the CompletedSynchronously property or calling the AsyncCallback more than once..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.InvalidBufferSize">
+            <summary>
+              Looks up a localized string similar to The buffer size is invalid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.InvalidNullAsyncResult">
+            <summary>
+              Looks up a localized string similar to A null value was returned from an asynchronous &apos;Begin&apos; method or passed to an AsyncCallback. Asynchronous &apos;Begin&apos; implementations must return a non-null IAsyncResult and pass the same IAsyncResult object as the parameter to the AsyncCallback..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.InvalidSemaphoreExit">
+            <summary>
+              Looks up a localized string similar to Object synchronization method was called from an unsynchronized block of code..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.IOThreadTimerCannotAcceptMaxTimeSpan">
+            <summary>
+              Looks up a localized string similar to IOThreadTimer cannot accept Timespan.MaxValue..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ObjectIsReadOnly">
+            <summary>
+              Looks up a localized string similar to This object is read-only and cannot be modified..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.OffsetExceedsBufferSize">
+            <summary>
+              Looks up a localized string similar to The specified offset exceeds the buffer size ({0} bytes)..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.OperationTimeoutExpired">
+            <summary>
+              Looks up a localized string similar to Operation timeout expired..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ShipAssertExceptionMessage">
+            <summary>
+              Looks up a localized string similar to An unexpected failure occurred. Applications should not attempt to handle this error. For diagnostic purposes, this English message is associated with the failure: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.SizeExceedsRemainingBufferSpace">
+            <summary>
+              Looks up a localized string similar to The specified size exceeds the remaining buffer space ({0} bytes)..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.StringIsNotBase64">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; is not a valid Base64 encoded string..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.TimeoutMustBeNonNegative">
+            <summary>
+              Looks up a localized string similar to Argument {0} must be a non-negative timeout value. The provided value was {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.TimeoutMustBePositive">
+            <summary>
+              Looks up a localized string similar to Argument {0} must be a positive timeout value. The provided value was {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.UserErrorFormat">
+            <summary>
+              Looks up a localized string similar to {0} If you contact a support representative please include this correlation identifier: {1}, timestamp: {2:u}, errorcode: DG{3}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Common.Resources.ValueMustBeNonNegative">
+            <summary>
+              Looks up a localized string similar to The value of this argument must be non-negative..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Common.TaskUtils">
+            <summary>
+            Stephen Cleary approved
+            http://stackoverflow.com/questions/15428604/how-to-run-a-task-on-a-custom-taskscheduler-using-await
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Common.UrlEncodedDictionarySerializer.Tokenizer">
+            <summary>
+            Tokenizer state machine
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.TaskHelpers.CreateTask(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},System.Object)">
+            <summary>
+            Create a Task based on Begin/End IAsyncResult pattern.
+            </summary>
+            <param name="begin"></param>
+            <param name="end"></param>
+            <param name="state"> 
+            This parameter helps reduce allocations by passing state to the Funcs. e.g.:
+             await TaskHelpers.CreateTask(
+                 (c, s) => ((Transaction)s).BeginCommit(c, s),
+                 (a) => ((Transaction)a.AsyncState).EndCommit(a),
+                 transaction);
+            </param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.EventTraceActivity">
+            <summary>
+            This class holds the ActivityId that would be set on the thread for ETW during the trace. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.CorrelationId">
+            <summary>
+            Used in message responses and feedback
+            Specifies the tracing correlation Id for the request; the resource provider *must* log this 
+            so that end-to-end requests can be correlated across Azure. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.MessageId">
+            <summary>
+            [Required for two way requests] Used to correlate two-way communication. 
+            Format: A case-sensitive string ( up to 128 char long) of ASCII 7-bit alphanumeric chars
+             + {'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. 
+            Non-alphanumeric characters are from URN RFC.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.To">
+            <summary>
+            [Required] Destination of the message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.EnqueuedTime">
+            <summary>
+            Time when the Message was received by the server
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.DeliveryCount">
+            <summary>
+            Number of times the message has been previously delivered
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ExpiryTimeUtc">
+            <summary>
+            [Optional] The time when this message is considered expired
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.UserId">
+            <summary>
+            [Required in feedback messages] Used to specify the origin of messages generated by IOT hub. Possible value: “{hub name}/”
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.Operation">
+            <summary>
+            [Optional] Used to specify the role of the message in the communication pattern. 
+            Possible values: 
+                “d2c”: event message (device to cloud) 
+                “c2d”: message 
+                “d2creq”: inquiry request 
+                “d2cres”: inquiry response 
+                “c2dreq”: command request 
+                “c2dres”: command response
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.Ack">
+            <summary>
+            [Optional] Used to specify the feedback required for the consumption of the message by the device. 
+            Possible values: 
+                “none”: no feedback 
+                “positive”: receive a feedback message if the message was consumed 
+                “negative”: receive a feedback message if the message expired without being completed by the device 
+                “full”: both positive and negative
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.MessageSchema">
+            <summary>
+            [Optional] Used to specify the schema of the message content.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.CreationTimeUtc">
+            <summary>
+            [Optional] Custom date property set by the originator of the message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ContentEncoding">
+            <summary>
+            [Optional] Used to specify the content encoding type of the message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ContentType">
+            <summary>
+            [Optional] Used to specify the content type of the message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.MessageLockToken">
+            <summary>
+            The lock token of the retrieved message 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.MessageLockTimeout">
+            <summary>
+            Amount of time in seconds to lock message before abandoning the lock and allowing the message to be retrieved again
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.SequenceNumber">
+            <summary>
+            iothub-sequencenumber
+            A monotonically increasing identifier for each message
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.TrackingId">
+            <summary>
+            iothub-servicetrackingid
+            A tracking id to help trace errors on the service
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.HttpAppPropertyPrefix">
+            <summary>
+            Prefix for all Application property Http Headers
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.HttpIotHubName">
+            <summary>
+            Internal HTTP custom headers
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientIpAddress">
+            <summary>
+            x-ms-client-ip-address
+            Set to the client IP address used in the request; this is required since the resource provider 
+            will not have access to the client IP.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.PrincipalName">
+            <summary>
+            x-ms-client-principal-name
+            Set to the principal ID / UPN of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientTenantId">
+            <summary>
+            x-ms-client-tenant-id
+            Set to the tenant ID of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientAudience">
+            <summary>
+            x-ms-client-audience
+            Set to the tenant ID of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientIssuer">
+            <summary>
+            x-ms-client-issuer
+            Set to the issuer of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientObjectId">
+            <summary>
+            x-ms-client-object-id
+            Set to the object Id of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientAppId">
+            <summary>
+            x-ms-client-app-id
+            Set to the app Id of the client JWT making the request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ClientRequestId">
+            <summary>
+            x-ms-client-request-id
+            Caller-specified request ID, in the form of a GUID with no decoration such as curly braces 
+            (e.g. client-request-id: 9C4D50EE-2D56-4CD3-8152-34347DC9F2B0). 
+            A caller-defined value that identifies the given request.   If specified, this will be 
+            included in response information as a way to map the request. 
+            If the caller provides this header – the resource provider *must* log this with their 
+            traces to facilitate tracing a single request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ReturnClientRequestId">
+            <summary>
+            x-ms-return-client-request-id
+            Optional
+            True or false and indicates if a client-request-id should be provided.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ActivityId">
+            <summary>
+            x-ms-activity-id
+            The value that is used to pass activityID in REST API between services
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.ApiVersion">
+            <summary>
+            api-version
+            Specifies the version of the protocol used to make this request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.MicrosoftAsyncOperationHeaderName">
+            <summary>
+            Azure-AsyncOperation
+            Set to the URL where the result of the long running operation can be checked; to optionally be used in addition to the Location header.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.CustomHeaderConstants.RequestId">
+            <summary>
+            x-ms-request-id
+            A unique identifier for the current operation, service generated.
+            All the resource providers *must* return this value in the response headers to facilitate debugging.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DeliveryAcknowledgement">
+            <summary>
+            Specifies the different acknowledgement levels for message delivery.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeliveryAcknowledgement.None">
+            <summary>
+            Acknowledgement is NOT sent on delivery or failure.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeliveryAcknowledgement.NegativeOnly">
+            <summary>
+            Acknowledgement is sent only if delivery fails.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeliveryAcknowledgement.PositiveOnly">
+            <summary>
+            Acknowledgement is sent only on delivery succeeds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeliveryAcknowledgement.Full">
+            <summary>
+            An acknowledgement is sent on delivery success or failure.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey">
+            <summary>
+            Authentication method that uses the symmetric key associated with the device in the device registry. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey"/> class.
+            </summary>
+            <param name="deviceId">Device identifier.</param>
+            <param name="key">Symmetric key associated with the device.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey.DeviceId">
+            <summary>
+            Gets or sets the device identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey.Key">
+            <summary>
+            Gets or sets the key associated with the device.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey.KeyAsBase64String">
+            <summary>
+            Gets or sets the Base64 formatted key associated with the device.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithRegistrySymmetricKey.Populate(Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder)">
+            <summary>
+            Populates an <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance based on the properties of the current instance.
+            </summary>
+            <param name="iotHubConnectionStringBuilder">Instance to populate.</param>
+            <returns>The populated <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey">
+            <summary>
+            Authentication method that uses a shared access policy key. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey"/> class.
+            </summary>
+            <param name="deviceId">Device identifier.</param>
+            <param name="policyName">Name of the shared access policy to use.</param>
+            <param name="key">Key associated with the shared access policy.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey.DeviceId">
+            <summary>
+            Gets or sets the device identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey.Key">
+            <summary>
+            Gets or sets the key associated with the shared policy.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey.PolicyName">
+            <summary>
+            Name of the shared access policy.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithSharedAccessPolicyKey.Populate(Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder)">
+            <summary>
+            Populates an <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance based on the properties of the current instance.
+            </summary>
+            <param name="iotHubConnectionStringBuilder">Instance to populate.</param>
+            <returns>The populated <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken">
+            <summary>
+            Authentication method that uses a shared access signature token. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken"/> class.
+            </summary>
+            <param name="deviceId">Device Identifier.</param>
+            <param name="token">Security Token.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken.DeviceId">
+            <summary>
+            Gets or sets the device identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken.Token">
+            <summary>
+            Gets or sets the security token associated with the device.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithToken.Populate(Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder)">
+            <summary>
+            Populates an <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance based on the properties of the current instance.
+            </summary>
+            <param name="iotHubConnectionStringBuilder">Instance to populate.</param>
+            <returns>The populated <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DesiredPropertyUpdateCallback">
+            <summary>
+            Delegate for desired property update callbacks.  This will be called
+            every time we receive a PATCH from the service.
+            </summary>
+            <param name="desiredProperties">Properties that were contained in the update that was received from the service</param>
+            <param name="userContext">Context object passed in when the callback was registered</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.ConnectionStatusChangesHandler">
+            <summary>
+            Delegate for connection status changed.
+            </summary>
+            <param name="status">The updated connection status</param>
+            <param name="reason">The reason for the connection status change</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DeviceClient">
+            <summary>
+            Contains methods that a device can use to send messages to and receive from the service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceClient.OperationTimeoutInMilliseconds">
+            <summary>
+            Stores the timeout used in the operation retries.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceClient.RetryPolicy">
+            <summary>
+            Stores the retry strategy used in the operation retries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetRetryPolicy(Microsoft.Azure.Devices.Client.IRetryPolicy)">
+            <summary>
+            Sets the retry policy used in the operation retries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeviceClient.deviceMethods">
+            <summary>
+            Stores Methods supported by the client device and their associated delegate.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeviceClient.desiredPropertyUpdateCallback">
+            <summary>
+            Callback to call whenever the twin's desired state is updated by the service
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeviceClient.patchSubscribedWithService">
+            <summary>
+            Has twin funcitonality been enabled with the service?
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.DeviceClient.twinPatchCallbackContext">
+            <summary>
+            userContext passed when registering the twin patch callback
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.Create(System.String,Microsoft.Azure.Devices.Client.IAuthenticationMethod)">
+            <summary>
+            Create an Amqp DeviceClient from individual parameters
+            </summary>
+            <param name="hostname">The fully-qualified DNS hostname of IoT Hub</param>
+            <param name="authenticationMethod">The authentication method that is used</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.Create(System.String,Microsoft.Azure.Devices.Client.IAuthenticationMethod,Microsoft.Azure.Devices.Client.TransportType)">
+            <summary>
+            Create a DeviceClient from individual parameters
+            </summary>
+            <param name="hostname">The fully-qualified DNS hostname of IoT Hub</param>
+            <param name="authenticationMethod">The authentication method that is used</param>
+            <param name="transportType">The transportType used (Http1 or Amqp)</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.Create(System.String,Microsoft.Azure.Devices.Client.IAuthenticationMethod,Microsoft.Azure.Devices.Client.ITransportSettings[])">
+            <summary>
+            Create a DeviceClient from individual parameters
+            </summary>
+            <param name="hostname">The fully-qualified DNS hostname of IoT Hub</param>
+            <param name="authenticationMethod">The authentication method that is used</param>
+            <param name="transportSettings">Prioritized list of transportTypes and their settings</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String)">
+            <summary>
+            Create a DeviceClient using Amqp transport from the specified connection string
+            </summary>
+            <param name="connectionString">Connection string for the IoT hub (including DeviceId)</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,System.String)">
+            <summary>
+            Create a DeviceClient using Amqp transport from the specified connection string
+            (WinRT) Create a DeviceClient using Http transport from the specified connection string
+            </summary>
+            <param name="connectionString">IoT Hub-Scope Connection string for the IoT hub (without DeviceId)</param>
+            <param name="deviceId">Id of the Device</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,Microsoft.Azure.Devices.Client.TransportType)">
+            <summary>
+            Create DeviceClient from the specified connection string using the specified transport type
+            (PCL) Only Http transport is allowed
+            </summary>
+            <param name="connectionString">Connection string for the IoT hub (including DeviceId)</param>
+            <param name="transportType">Specifies whether Amqp or Http transport is used</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,Microsoft.Azure.Devices.Client.TransportType,Microsoft.Azure.Devices.Client.IDeviceClientPipelineBuilder)">
+            <summary>
+            Create DeviceClient from the specified connection string using the specified transport type
+            (PCL) Only Http transport is allowed
+            </summary>
+            <param name="connectionString">Connection string for the IoT hub (including DeviceId)</param>
+            <param name="transportType">Specifies whether Amqp or Http transport is used</param>
+            <param name="pipelineBuilder">Device client pipeline builder</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,System.String,Microsoft.Azure.Devices.Client.TransportType)">
+            <summary>
+            Create DeviceClient from the specified connection string using the specified transport type
+            </summary>
+            <param name="connectionString">IoT Hub-Scope Connection string for the IoT hub (without DeviceId)</param>
+            <param name="deviceId">Id of the device</param>
+            <param name="transportType">The transportType used (Http1 or Amqp)</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,Microsoft.Azure.Devices.Client.ITransportSettings[])">
+            <summary>
+            Create DeviceClient from the specified connection string using a prioritized list of transports
+            </summary>
+            <param name="connectionString">Connection string for the IoT hub (with DeviceId)</param>
+            <param name="transportSettings">Prioritized list of transports and their settings</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,Microsoft.Azure.Devices.Client.ITransportSettings[],Microsoft.Azure.Devices.Client.IDeviceClientPipelineBuilder)">
+            <summary>
+            Create DeviceClient from the specified connection string using a prioritized list of transports
+            </summary>
+            <param name="connectionString">Connection string for the IoT hub (with DeviceId)</param>
+            <param name="transportSettings">Prioritized list of transports and their settings</param>
+            <param name="pipelineBuilder">Device client pipeline builder</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CreateFromConnectionString(System.String,System.String,Microsoft.Azure.Devices.Client.ITransportSettings[])">
+            <summary>
+            Create DeviceClient from the specified connection string using the prioritized list of transports
+            </summary>
+            <param name="connectionString">Connection string for the IoT hub (without DeviceId)</param>
+            <param name="deviceId">Id of the device</param>
+            <param name="transportSettings">Prioritized list of transportTypes and their settings</param>
+            <returns>DeviceClient</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.OpenAsync">
+            <summary>
+            Explicitly open the DeviceClient instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CloseAsync">
+            <summary>
+            Close the DeviceClient instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.ReceiveAsync">
+            <summary>
+            Receive a message from the device queue using the default timeout.
+            </summary>
+            <returns>The receive message or null if there was no message until the default timeout</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.ReceiveAsync(System.TimeSpan)">
+            <summary>
+            Receive a message from the device queue with the specified timeout
+            </summary>
+            <returns>The receive message or null if there was no message until the specified time has elapsed</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CompleteAsync(System.String)">
+            <summary>
+            Deletes a received message from the device queue
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.CompleteAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Deletes a received message from the device queue
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.AbandonAsync(System.String)">
+            <summary>
+            Puts a received message back onto the device queue
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.AbandonAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Puts a received message back onto the device queue
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.RejectAsync(System.String)">
+            <summary>
+            Deletes a received message from the device queue and indicates to the server that the message could not be processed.
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.RejectAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Deletes a received message from the device queue and indicates to the server that the message could not be processed.
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SendEventAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Sends an event to device hub
+            </summary>
+            <returns>The message containing the event</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SendEventBatchAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Client.Message})">
+            <summary>
+            Sends a batch of events to device hub
+            </summary>
+            <returns>The task containing the event</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.UploadToBlobAsync(System.String,System.IO.Stream)">
+            <summary>
+            Uploads a stream to a block blob in a storage account associated with the IoTHub for that device.
+            If the blob already exists, it will be overwritten.
+            </summary>
+            <param name="blobName"></param>
+            <param name="source"></param>
+            <returns>AsncTask</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetMethodHandlerAsync(System.String,Microsoft.Azure.Devices.Client.MethodCallback,System.Object)">
+            <summary>
+            Registers a new delgate for the named method. If a delegate is already associated with
+            the named method, it will be replaced with the new delegate.
+            <param name="methodName">The name of the method to associate with the delegate.</param>
+            <param name="methodHandler">The delegate to be used when a method with the given name is called by the cloud service.</param>
+            <param name="userContext">generic parameter to be interpreted by the client code.</param>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetMethodDefaultHandlerAsync(Microsoft.Azure.Devices.Client.MethodCallback,System.Object)">
+            <summary>
+            Registers a new delegate that is called for a method that doesn't have a delegate registered for its name. 
+            If a default delegate is already registered it will replace with the new delegate.
+            </summary>
+            <param name="methodHandler">The delegate to be used when a method is called by the cloud service and there is no delegate registered for that method name.</param>
+            <param name="userContext">Generic parameter to be interpreted by the client code.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetMethodHandler(System.String,Microsoft.Azure.Devices.Client.MethodCallback,System.Object)">
+            <summary>
+            Registers a new delgate for the named method. If a delegate is already associated with
+            the named method, it will be replaced with the new delegate.
+            <param name="methodName">The name of the method to associate with the delegate.</param>
+            <param name="methodHandler">The delegate to be used when a method with the given name is called by the cloud service.</param>
+            <param name="userContext">generic parameter to be interpreted by the client code.</param>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetConnectionStatusChangesHandler(Microsoft.Azure.Devices.Client.ConnectionStatusChangesHandler)">
+            <summary>
+            Registers a new delgate for the connection status changed callback. If a delegate is already associated, 
+            it will be replaced with the new delegate.
+            <param name="statusChangedCallback">The name of the method to associate with the delegate.</param>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.OnConnectionOpened(System.Object,Microsoft.Azure.Devices.Client.Transport.ConnectionEventArgs)">
+            <summary>
+            The delgate for handling disrupted connection/links in the transport layer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.OnConnectionClosed(System.Object,Microsoft.Azure.Devices.Client.Transport.ConnectionEventArgs)">
+            <summary>
+            The delegate for handling disrupted connection/links in the transport layer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.OnMethodCalled(Microsoft.Azure.Devices.Client.MethodRequestInternal)">
+            <summary>
+            The delgate for handling direct methods received from service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetDesiredPropertyUpdateCallback(Microsoft.Azure.Devices.Client.DesiredPropertyUpdateCallback,System.Object)">
+            <summary>
+            Set a callback that will be called whenever the client receives a state update 
+            (desired or reported) from the service.  This has the side-effect of subscribing
+            to the PATCH topic on the service.
+            </summary>
+            <param name="callback">Callback to call after the state update has been received and applied</param>
+            <param name="userContext">Context object that will be passed into callback</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.SetDesiredPropertyUpdateCallbackAsync(Microsoft.Azure.Devices.Client.DesiredPropertyUpdateCallback,System.Object)">
+            <summary>
+            Set a callback that will be called whenever the client receives a state update 
+            (desired or reported) from the service.  This has the side-effect of subscribing
+            to the PATCH topic on the service.
+            </summary>
+            <param name="callback">Callback to call after the state update has been received and applied</param>
+            <param name="userContext">Context object that will be passed into callback</param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.GetTwinAsync">
+            <summary>
+            Retrieve a device twin object for the current device.
+            </summary>
+            <returns>The device twin object for the current device</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceClient.UpdateReportedPropertiesAsync(Microsoft.Azure.Devices.Shared.TwinCollection)">
+            <summary>
+            Push reported property changes up to the service.
+            </summary>
+            <param name="reportedProperties">Reported properties to push</param>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Http1TransportSettings">
+            <summary>
+            contains Http1 transport-specific settings for DeviceClient
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.IAuthenticationMethod">
+            <summary>
+            Authentication interface to use for device communications.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IAuthenticationMethod.Populate(Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder)">
+            <summary>
+            Populates an <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance based on the properties of the current instance.
+            </summary>
+            <param name="iotHubConnectionStringBuilder">Instance to populate.</param>
+            <returns>The populated <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubDeviceMuxConnection.OnCreateSendingLink(Microsoft.Azure.Devices.Client.IotHubConnectionString)">
+                      The input connection string can only be a device-scope connection string
+                     *
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder">
+            <summary>
+            Builds a connection string for the IoT Hub service based on the properties populated by the user.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.Create(System.String,Microsoft.Azure.Devices.Client.IAuthenticationMethod)">
+            <summary>
+            Creates a connection string based on the hostname of the IoT Hub and the authentication method passed as a parameter.
+            </summary>
+            <param name="hostname">The fully-qualified DNS hostname of IoT Hub</param>
+            <param name="authenticationMethod">The authentication method that is used</param>
+            <returns>A new instance of the <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> class with a populated connection string.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.Create(System.String)">
+            <summary>
+            Creates a connection string based on the hostname of the IoT Hub and the authentication method passed as a parameter.
+            </summary>
+            <param name="iotHubConnectionString">The connection string.</param>
+            <returns>A new instance of the <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> class with a populated connection string.</returns>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.HostName">
+            <summary>
+            Gets or sets the value of the fully-qualified DNS hostname of the IoT Hub service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.AuthenticationMethod">
+            <summary>
+            Gets or sets the authentication method to be used with the IoT Hub service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.DeviceId">
+            <summary>
+            Gets the device identifier of the device connecting to the service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.SharedAccessKeyName">
+            <summary>
+            Gets the shared acess key name used to connect the device to the IoT Hub service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.SharedAccessKey">
+            <summary>
+            Gets the shared access key used to connect to the IoT Hub service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.GatewayHostName">
+            <summary>
+            Gets the optional name of the gateway to connect to
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.SharedAccessSignature">
+            <summary>
+            Gets the shared access signature used to connect to the IoT Hub service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder.ToString">
+            <summary>
+            Produces the connection string based on the values of the <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance properties.
+            </summary>
+            <returns>A properly formatted connection string.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.ITransportSettings">
+            <summary>
+            Interface used to define various transport-specific settings for DeviceClient
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Message">
+            <summary>
+            The data structure represent the message that is used for interacting with IotHub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.#ctor">
+            <summary>
+            Default constructor with no body data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.#ctor(System.IO.Stream)">
+            <summary>
+            Constructor which uses the argument stream as the body stream.
+            </summary>
+            <param name="stream">a stream which will be used as body stream.</param>
+            <remarks>User is expected to own the disposing of the stream when using this constructor.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.#ctor(System.Byte[])">
+            <summary>
+            Constructor which uses the input byte array as the body
+            </summary>
+            <param name="byteArray">a byte array which will be used to
+            form the body stream</param>
+            <remarks>user should treat the input byte array as immutable when
+            sending the message.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.#ctor(Microsoft.Azure.Amqp.AmqpMessage)">
+            <summary>
+            This constructor is only used in the receive path from Amqp path, 
+            or in Cloning from a Message that has serialized.
+            </summary>
+            <param name="amqpMessage"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.#ctor(System.IO.Stream,System.Boolean)">
+            <summary>
+            This constructor is only used on the Gateway http path so that 
+            we can clean up the stream.
+            </summary>
+            <param name="stream"></param>
+            <param name="ownStream"></param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.MessageId">
+            <summary>
+            [Required for two way requests] Used to correlate two-way communication. 
+            Format: A case-sensitive string ( up to 128 char long) of ASCII 7-bit alphanumeric chars 
+            + {'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. 
+            Non-alphanumeric characters are from URN RFC.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.To">
+            <summary>
+            [Required] Destination of the message
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.ExpiryTimeUtc">
+            <summary>
+            [Optional] The time when this message is considered expired
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.CorrelationId">
+            <summary>
+            Used in message responses and feedback
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.Ack">
+            <summary>
+            Indicates whether consumption or expiration of the message should post data to the feedback queue
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.SequenceNumber">
+            <summary>
+            [Required] SequenceNumber of the received message
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.LockToken">
+            <summary>
+            [Required] LockToken of the received message
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.EnqueuedTimeUtc">
+            <summary>
+            Time when the message was received by the server
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.DeliveryCount">
+            <summary>
+            Time when the message was received by the server
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.UserId">
+            <summary>
+            [Required in feedback messages] Used to specify the origin of messages generated by device hub. 
+            Possible value: “{hub name}/”
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.MqttTopicName">
+            <summary>
+            For outgoing messages, contains the Mqtt topic that the message is being sent to
+            For incoming messages, contains the Mqtt topic that the message arrived on
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.MessageSchema">
+            <summary>
+            Used to specify the schema of the message content.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.CreationTimeUtc">
+            <summary>
+            Custom date property set by the originator of the message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.ContentType">
+            <summary>
+            Used to specify the content type of the message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.ContentEncoding">
+            <summary>
+            Used to specify the content encoding type of the message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.Properties">
+            <summary>
+            Gets the dictionary of user properties which are set when user send the data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.SystemProperties">
+            <summary>
+            Gets the dictionary of system properties which are managed internally.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Message.DeliveryTag">
+            <summary>
+            Gets or sets the deliveryTag which is used for server side checkpointing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.Dispose">
+            <summary>
+            Dispose the current event data instance
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.GetBodyStream">
+            <summary>
+            Return the body stream of the current event data instance
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the event data has already been disposed.</exception>
+            <remarks>This method can only be called once and afterwards method will throw <see cref="T:System.InvalidOperationException"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Message.GetBytes">
+            <summary>
+            This methods return the body stream as a byte array
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.ObjectDisposedException">throws if the event data has already been disposed.</exception>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MessageConverter.UpdateMessageHeaderAndProperties(Microsoft.Azure.Amqp.AmqpMessage,Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Copies the properties from the amqp message to the Message instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MessageConverter.UpdateAmqpMessageHeadersAndProperties(Microsoft.Azure.Amqp.AmqpMessage,Microsoft.Azure.Devices.Client.Message,System.Boolean)">
+            <summary>
+            Copies the Message instance's properties to the AmqpMessage instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.MethodRequestInternal">
+            <summary>
+            The data structure represent the method request coming from the IotHub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodRequestInternal.#ctor">
+            <summary>
+            Default constructor with no body data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodRequestInternal.#ctor(System.String,System.String,System.IO.Stream)">
+            <summary>
+            This constructor is only used in the receive path from Amqp path, 
+            or in Cloning from a Message that has serialized.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.MethodRequestInternal.Name">
+            <summary>
+            Property indicating the method name for this instance
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.MethodRequestInternal.RequestId">
+            <summary>
+            the request ID for the transport layer
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodRequestInternal.Dispose">
+            <summary>
+            Dispose the current method data instance
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodRequestInternal.GetBodyStream">
+            <summary>
+            Return the body stream of the current method data instance
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the method data has already been disposed.</exception>
+            <remarks>This method can only be called once and afterwards method will throw <see cref="T:System.InvalidOperationException"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodRequestInternal.GetBytes">
+            <summary>
+            This methods return the body stream as a byte array
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the method data has already been disposed.</exception>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.MethodResponseInternal">
+            <summary>
+            The data structure represent the method response that is used for interacting with IotHub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.#ctor">
+            <summary>
+            Default constructor with no body data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.#ctor(System.String,System.Int32)">
+            <summary>
+            Default constructor with no requestId and status data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.#ctor(System.IO.Stream)">
+            <summary>
+            Constructor which uses the argument stream as the body stream.
+            </summary>
+            <param name="stream">a stream which will be used as body stream.</param>
+            <remarks>User is expected to own the disposing of the stream when using this constructor.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.#ctor(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Constructor which uses the input byte array as the body
+            </summary>
+            <param name="byteArray">a byte array which will be used to form the body stream</param>
+            <param name="requestId">the method request id corresponding to this respond</param>
+            <param name="status">the status code of the method call</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.MethodResponseInternal.Status">
+            <summary>
+            contains the response of the device client application method handler.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.MethodResponseInternal.RequestId">
+            <summary>
+            the request Id for the transport layer
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.Dispose">
+            <summary>
+            Dispose the current method data instance
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.GetBodyStream">
+            <summary>
+            Return the body stream of the current method data instance
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the method data has already been disposed.</exception>
+            <remarks>This method can only be called once and afterwards method will throw <see cref="T:System.InvalidOperationException"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponseInternal.GetBytes">
+            <summary>
+            This methods return the body stream as a byte array
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">throws if the method has been called.</exception>
+            <exception cref="T:System.ObjectDisposedException">throws if the method data has already been disposed.</exception>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.MethodResponse">
+            <summary>
+            The data structure represent the Device Twin Method that is used for triggering an activity on the device
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponse.#ctor(System.Byte[],System.Int32)">
+            <summary>
+            Make a new instance of the return class and validates that the payload is correct JSON.
+            </summary>
+            <param name="result">data returned by the method call.</param>
+            <param name="status">status indicating success or failure.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodResponse.#ctor(System.Int32)">
+            <summary>
+            Constructor which uses the input byte array as the body
+            </summary>
+            <param name="status">an integer code contianing a method call status.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.MethodResponse.Result">
+            <summary>
+            Property containing entire result data. The formatting is checked for JSON correctness
+            upon setting this property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.MethodResponse.Status">
+            <summary>
+            contains the response of the device client application method handler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodConverter.ConstructMethodRequestFromAmqpMessage(Microsoft.Azure.Amqp.AmqpMessage)">
+            <summary>
+            Copies the properties from the amqp message to the MethodRequest instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.MethodConverter.PopulateAmqpMessageFromMethodResponse(Microsoft.Azure.Amqp.AmqpMessage,Microsoft.Azure.Devices.Client.MethodResponseInternal)">
+            <summary>
+            Copies the Method instance's properties to the AmqpMessage instance.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.PutOperationType.CreateEntity">
+            <summary>
+            The PUT operation will create a new entity
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.PutOperationType.UpdateEntity">
+            <summary>
+            The PUT operation will update (replace) an existing entity as per ETag rules
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.PutOperationType.ForceUpdateEntity">
+            <summary>
+            The PUT operation will update (replace) an existing entity ignoring ETag rules
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.ConnectionEventArgs">
+            <summary>
+            Connection event arguments for passing information from tranpsort to DeviceClient
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.ConnectionType">
+            <summary>
+            Connection types supported by DeviceClientConnectionStatusManager
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.ConnectionStatusChangeResult">
+            <summary>
+            Connection status change result supported by DeviceClient
+            </summary>   
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.ProtocolRoutingDelegatingHandler">
+            <summary>
+            Transport handler router. 
+            Tries to open open connection in the protocol order it was set. 
+            If fails tries to open the next one, etc.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler">
+            <summary>
+            Contains the implementation of methods that a device can use to send messages to and receive from the service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.OpenAsync(System.Threading.CancellationToken)">
+            <summary>
+            Explicitly open the DeviceClient instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.ReceiveAsync(System.Threading.CancellationToken)">
+            <summary>
+            Receive a message from the device queue with the specified timeout
+            </summary>
+            <returns>The receive message or null if there was no message until the specified time has elapsed</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.ReceiveAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Receive a message from the device queue with the specified timeout
+            </summary>
+            <returns>The receive message or null if there was no message until the specified time has elapsed</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.CompleteAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a received message from the device queue
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.AbandonAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Puts a received message back onto the device queue
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.RejectAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a received message from the device queue and indicates to the server that the message could not be processed.
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.SendEventAsync(Microsoft.Azure.Devices.Client.Message,System.Threading.CancellationToken)">
+            <summary>
+            Sends an event to device hub
+            </summary>
+            <returns>The message containing the event</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.SendEventAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Client.Message},System.Threading.CancellationToken)">
+            <summary>
+            Sends a batch of events to device hub
+            </summary>
+            <returns>The task containing the event</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.GateKeeperDelegatingHandler.CloseAsync">
+            <summary>
+            Close the DeviceClient instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase">
+            <summary>
+            Contains the implementation of methods that a device can use to send messages to and receive from the service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.OpenAsync">
+            <summary>
+            Explicitly open the DeviceClient instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.CloseAsync">
+            <summary>
+            Close the DeviceClient instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.ReceiveAsync">
+            <summary>
+            Receive a message from the device queue using the default timeout.
+            </summary>
+            <returns>The receive message or null if there was no message until the default timeout</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.ReceiveAsync(System.TimeSpan)">
+            <summary>
+            Receive a message from the device queue with the specified timeout
+            </summary>
+            <returns>The receive message or null if there was no message until the specified time has elapsed</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.CompleteAsync(System.String)">
+            <summary>
+            Deletes a received message from the device queue
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.CompleteAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Deletes a received message from the device queue
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.AbandonAsync(System.String)">
+            <summary>
+            Puts a received message back onto the device queue
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.AbandonAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Puts a received message back onto the device queue
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.RejectAsync(System.String)">
+            <summary>
+            Deletes a received message from the device queue and indicates to the server that the message could not be processed.
+            </summary>
+            <returns>The previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.RejectAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Deletes a received message from the device queue and indicates to the server that the message could not be processed.
+            </summary>
+            <returns>The lock identifier for the previously received message</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.SendEventAsync(Microsoft.Azure.Devices.Client.Message)">
+            <summary>
+            Sends an event to device hub
+            </summary>
+            <returns>The message containing the event</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.TransportHandlerBase.SendEventBatchAsync(System.Collections.Generic.IEnumerable{Microsoft.Azure.Devices.Client.Message})">
+            <summary>
+            Sends a batch of events to device hub
+            </summary>
+            <returns>The task containing the event</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.Transport.Mqtt.SimpleWorkQueue`1">
+            <summary>
+            Simple work queue with lifecycle state machine. 
+            It is running work items if it is available; otherwise waits for new work item. 
+            Worker will resume work as soon as new work has arrived.
+            </summary>
+            <typeparam name="TWork"></typeparam>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.Transport.Mqtt.SimpleWorkQueue`1.BacklogSize">
+            <summary>
+            Current backlog size
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.Mqtt.SimpleWorkQueue`1.Post(DotNetty.Transport.Channels.IChannelHandlerContext,`0)">
+            <summary>
+            Puts the new work to backlog queue and resume work if worker is idle.
+            </summary>
+            <param name="context"></param>
+            <param name="workItem"></param>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.Mqtt.SimpleWorkQueue`1.Complete">
+            <summary>
+            Stops work gracefully. All backlog will be processed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.Transport.Mqtt.TransientErrorIgnoreStrategy.IsTransient(System.Exception)">
+            <summary>
+            Always returns false.
+            
+            </summary>
+            <param name="ex">The exception.</param>
+            <returns>
+            Always false.
+            </returns>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.ConnectionStatus">
+            <summary>
+            Connection Status supported by DeviceClient
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.ConnectionStatusChangeReason">
+            <summary>
+            Connection status change reason supported by DeviceClient
+            </summary>   
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.TransportType">
+            <summary>
+            Transport types supported by DeviceClient - AMQP/TCP, HTTP 1.1, MQTT/TCP, AMQP/WS, MQTT/WS
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Amqp">
+            <summary>
+            Advanced Message Queuing Protocol transport.
+            Try Amqp over TCP first and fallback to Amqp over WebSocket if that fails
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Http1">
+            <summary>
+            HyperText Transfer Protocol version 1 transport.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Amqp_WebSocket_Only">
+            <summary>
+            Advanced Message Queuing Protocol transport over WebSocket only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Amqp_Tcp_Only">
+            <summary>
+            Advanced Message Queuing Protocol transport over native TCP only
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Mqtt">
+            <summary>
+            Message Queuing Telemetry Transport.
+            Try Mqtt over TCP first and fallback to Mqtt over WebSocket if that fails
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Mqtt_WebSocket_Only">
+            <summary>
+            Message Queuing Telemetry Transport over Websocket only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.TransportType.Mqtt_Tcp_Only">
+            <summary>
+            Message Queuing Telemetry Transport over native TCP only
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.RetryPolicyType">
+            <summary>
+            Retry Strategy types supported by DeviceClient
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.RetryPolicyType.No_Retry">
+            <summary>
+            No retry.  A single attempt of operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Devices.Client.RetryPolicyType.Exponential_Backoff_With_Jitter">
+            <summary>
+            A retry strategy which exponentially augments the retry delay and adds a random value to the delay at each retry.
+            This is the DEFAULT policy to use
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.MethodResposeStatusCode">
+            <summary>
+            Status code for Method Response
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithX509Certificate">
+            <summary>
+            Authentication method that uses a X.509 certificate
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithX509Certificate.#ctor(System.String,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithX509Certificate"/> class.
+            </summary>
+            <param name="deviceId">Device Identifier.</param>
+            <param name="certificate">X.509 Certificate.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithX509Certificate.DeviceId">
+            <summary>
+            Gets or sets the device identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithX509Certificate.Certificate">
+            <summary>
+            Gets or sets the X.509 certificate associated with this device
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.DeviceAuthenticationWithX509Certificate.Populate(Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder)">
+            <summary>
+            Populates an <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance based on the properties of the current instance.
+            </summary>
+            <param name="iotHubConnectionStringBuilder">Instance to populate.</param>
+            <returns>The populated <see cref="T:Microsoft.Azure.Devices.Client.IotHubConnectionStringBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubClientWebSocket.HttpResponse.TryParseBuffer">
+            <summary>
+            Parse the bytes received so far.
+            If possible:
+               -Parse the Status line
+               -Parse the HTTP Headers
+               -if HTTP Headers Content-Length is present do we have that much content received?
+            If all the above succeed then this method returns true, otherwise false (need to receive more data from network stream).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Devices.Client.IotHubClientWebSocket.IndexOfAsciiChars(System.Byte[],System.Int32,System.Int32,System.Char,System.Char)">
+            <summary>
+            Check if the given buffer contains the 2 specified ascii characters (in sequence) without having to allocate or convert byte[] into string
+            </summary>
+        </member>
+    </members>
+</doc>
