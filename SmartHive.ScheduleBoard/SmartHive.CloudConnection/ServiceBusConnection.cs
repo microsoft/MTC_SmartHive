@@ -17,6 +17,7 @@ using ppatierno.AzureSBLite.Messaging;
 using System.Xml;
 using System.Runtime.Serialization;
 
+using Windows.ApplicationModel.Background;
 
 namespace SmartHive.CloudConnection
 {
@@ -31,10 +32,16 @@ namespace SmartHive.CloudConnection
         internal string TopicName { get; set; }
         internal string SubscriptionName { get; set; }
         
-        private SubscriptionClient subscriptionClient = null;
+        private static SubscriptionClient subscriptionClient = null;
+
+        internal static ServiceBusConnection Connection{
+            get;
+            private set;
+        }
 
 
-       // private static IHockeyClientConfigurable HockeyAppConfig = null;
+
+        // private static IHockeyClientConfigurable HockeyAppConfig = null;
 
         /** */
         public event EventHandler<OnNotificationEventArgs> OnNotification;
@@ -54,7 +61,15 @@ namespace SmartHive.CloudConnection
                 this.SasKey = SasKey;
                 this.TopicName = TopicName;
                 this.SubscriptionName = SubscriptionName;
-                  
+
+                //Set singleton
+                ServiceBusConnection.Connection = this;
+
+                var builder = new BackgroundTaskBuilder();
+                builder.Name = "DeviceConnection";
+                builder.SetTrigger(new TimeTrigger(15, true));                
+                BackgroundTaskRegistration task = builder.Register();
+
             }
             catch(Exception ex)
             {
@@ -74,9 +89,9 @@ namespace SmartHive.CloudConnection
 
             MessagingFactory factory = MessagingFactory.CreateFromConnectionString(builder.ToString());
 
-            this.subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
+            subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
 
-            this.subscriptionClient.OnMessage(this.OnMessageAction, new OnMessageOptions { AutoComplete = true });
+            subscriptionClient.OnMessage(this.OnMessageAction, new OnMessageOptions { AutoComplete = true });
 
             var dispatcher = DispatcherHelper.GetDispatcher;
 
@@ -207,6 +222,16 @@ namespace SmartHive.CloudConnection
             }
         }
        
+        /**
+         * keep connection open
+         */
+        internal static void keepConnection()
+        {
+            if (subscriptionClient == null || subscriptionClient.IsClosed)
+            {
+                ServiceBusConnection.Connection.InitSubscription();
+            }
+        }
     }
    
 }

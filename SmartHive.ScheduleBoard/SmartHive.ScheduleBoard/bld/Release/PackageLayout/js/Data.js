@@ -170,6 +170,9 @@ function LoadApplicationConfiguration() {
                     if (MtcScheduleBoard.Data.Settings.RoomDefinitionUrl != null) {
                         // Try downalod configuration
                         MtcScheduleBoard.Data.RoomDefinitionDataSource.read();
+
+                        MtcScheduleBoard.Data.DeviceConnection = new Device
+
                         return;
                     }
                 }
@@ -260,13 +263,12 @@ function InitServiceConnection() {
         MtcScheduleBoard.Data.ServiceConnectiont = null; // explicitly release old reference
 
         if (MtcScheduleBoard.Data.Settings.SasKeyName && MtcScheduleBoard.Data.Settings.SasKey) {
-            // Initialize service bus connection component
-            MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.ServiceBusConnection("mtcdatacenter","windowsStoreTest", "wgoc", "tablet", "TFJROm8dtZKxDOvtGalLYIc3aK+yTE2Ym30rwMr7X8U=");                                            
+            // Initialize service bus connection component           
 
-          /*  MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.ServiceBusConnection(MtcScheduleBoard.Data.Settings.ServiceBusNamespace,
+            MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.ServiceBusConnection(MtcScheduleBoard.Data.Settings.ServiceBusNamespace,
                                             MtcScheduleBoard.Data.Settings.ServiceBusSubscription, MtcScheduleBoard.Data.Settings.ServiceBusTopic,
                                             MtcScheduleBoard.Data.Settings.SasKeyName, MtcScheduleBoard.Data.Settings.SasKey);
-                                            */
+                        
         } else {
             // Initialize Http connection
             MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.HttpConnection(MtcScheduleBoard.Data.Settings.WebServiceUrl);          
@@ -294,8 +296,12 @@ function InitServiceConnection() {
                 });
             });
 
-           // MtcScheduleBoard.Data.ServiceConnectiont.initSubscription();
-            // readMessage();
+            MtcScheduleBoard.Data.ServiceConnectiont.initSubscription();
+
+            if (MtcScheduleBoard.Data.ServiceConnectiont instanceof SmartHive.CloudConnection.HttpConnection) {
+                // Legacy approach for HTTP - continusly query 
+                readMessage();
+            }
             
 
     } catch (e) {       
@@ -312,7 +318,7 @@ function InitServiceConnection() {
     }
 }
 
-var readsCountUntilReconnect = 1000;
+var readsCountUntilReconnect = 10000;
 function readMessage(){      
 
     try {
