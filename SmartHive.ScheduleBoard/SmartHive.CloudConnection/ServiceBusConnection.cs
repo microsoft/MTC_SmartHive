@@ -17,29 +17,22 @@ using ppatierno.AzureSBLite.Messaging;
 using System.Xml;
 using System.Runtime.Serialization;
 
-using Windows.ApplicationModel.Background;
 
 namespace SmartHive.CloudConnection
 {
 
-    public sealed class ServiceBusConnection 
+    public sealed class ServiceBusConnection
     {
-        
-       internal string ServiceBusNamespace { get; set; }
-       internal string SasKeyName { get; set; }
 
-       internal string SasKey { get; set; }       
+        internal string ServiceBusNamespace { get; set; }
+        internal string SasKeyName { get; set; }
+
+        internal string SasKey { get; set; }
         internal string TopicName { get; set; }
         internal string SubscriptionName { get; set; }
-        
-        private static SubscriptionClient subscriptionClient = null;
 
-        internal static ServiceBusConnection Connection{
-            get;
-            private set;
-        }
-
-
+        private SubscriptionClient subscriptionClient = null;
+       // private DeviceConnection deviceConnection = null;
 
         // private static IHockeyClientConfigurable HockeyAppConfig = null;
 
@@ -62,24 +55,17 @@ namespace SmartHive.CloudConnection
                 this.TopicName = TopicName;
                 this.SubscriptionName = SubscriptionName;
 
-                //Set singleton
-                ServiceBusConnection.Connection = this;
-
-                var builder = new BackgroundTaskBuilder();
-                builder.Name = "DeviceConnection";
-                builder.SetTrigger(new TimeTrigger(15, true));                
-                BackgroundTaskRegistration task = builder.Register();
-
+               // this.deviceConnection = new DeviceConnection(this);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-             
-                this.LogEvent(EventTypeConsts.Error,"Service bus error", ex.Message);
+
+                this.LogEvent(EventTypeConsts.Error, "Service bus error", ex.Message);
                 throw ex;
             }
         }
 
-        public async  void InitSubscription()
+        public async void InitSubscription()
         {
 
             ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(String.Format("Endpoint=sb://{0}.servicebus.windows.net/;", ServiceBusNamespace));
@@ -89,9 +75,16 @@ namespace SmartHive.CloudConnection
 
             MessagingFactory factory = MessagingFactory.CreateFromConnectionString(builder.ToString());
 
-            subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
+            this.subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
 
-            subscriptionClient.OnMessage(this.OnMessageAction, new OnMessageOptions { AutoComplete = true });
+            try
+            {
+                this.subscriptionClient.OnMessage(this.OnMessageAction, new OnMessageOptions { AutoComplete = true });
+            }
+            catch (Exception ex)
+            { ///System.ObjectDisposedException ?
+                this.LogEvent(EventTypeConsts.Error, ex.Message, ex.StackTrace);
+            }
 
             var dispatcher = DispatcherHelper.GetDispatcher;
 
@@ -102,7 +95,7 @@ namespace SmartHive.CloudConnection
                 {
                     OnServiceBusConnected.Invoke(this.SubscriptionName, this.TopicName);
                     this.LogEvent(EventTypeConsts.Info, "Binding done", "Servicebus handler listining for messages.");
-                }                
+                }
             });
 
         }
@@ -116,7 +109,7 @@ namespace SmartHive.CloudConnection
             {
 
                 ProcessMessage(sBody, 100);
-                
+
             }
             else
             {
@@ -136,75 +129,75 @@ namespace SmartHive.CloudConnection
                 DataContractSerializer dataContractSerializer = new DataContractSerializer(typeof(string));
                 return dataContractSerializer.ReadObject(xmlReader, false) as string;
             }
-        } 
+        }
 
         private void ProcessMessage(string sBody, int eventsExpiration)
         {
-                // Check if this is sensort notification
-                if (NotificationEventSchema.IsValid(sBody))
-                {
-                    OnNotificationEventArgs eventData = JsonConvert.DeserializeObject<OnNotificationEventArgs>(sBody);
+            // Check if this is sensort notification
+            if (NotificationEventSchema.IsValid(sBody))
+            {
+                OnNotificationEventArgs eventData = JsonConvert.DeserializeObject<OnNotificationEventArgs>(sBody);
 
-                    if (eventData != null && OnNotification != null)
-                    {
+                if (eventData != null && OnNotification != null)
+                {
 
                     DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                    {
+                        double fValue = 0.0;
+                        if (double.TryParse(eventData.Value, out fValue))
                         {
-                            double fValue = 0.0;
-                            if (double.TryParse(eventData.Value, out fValue))
-                            {
-                                eventData.Value = fValue.ToString("F1");
-                            }
+                            eventData.Value = fValue.ToString("F1");
+                        }
 
-                            OnNotification.Invoke(sBody, eventData);
-                        });
+                        OnNotification.Invoke(sBody, eventData);
+                    });
 
 
-                    }
                 }
-                else if (ScheduleUpdateEventSchema.IsValid(sBody))
-                {
+            }
+            else if (ScheduleUpdateEventSchema.IsValid(sBody))
+            {
                 OnScheduleUpdateEventArgs eventData = JsonConvert.DeserializeObject<OnScheduleUpdateEventArgs>(sBody);
 
-                    List<Appointment> filteredList = this.FilterAppointments(eventData, eventsExpiration);
+                List<Appointment> filteredList = this.FilterAppointments(eventData, eventsExpiration);
 
-                    if (filteredList != null && OnScheduleUpdate != null)
+                if (filteredList != null && OnScheduleUpdate != null)
+                {
+
+                    DispatcherHelper.CheckBeginInvokeOnUI(() =>
                     {
 
-                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
-                        {
+                        OnScheduleUpdate.Invoke(sBody, filteredList);
+                    });
+                }
+            }
+            else
+            {
+                /// Unknow schema - probably an error
+                this.LogEvent(EventTypeConsts.Error, "Unknown json format", sBody);
+            }
 
-                            OnScheduleUpdate.Invoke(sBody, filteredList);
-                        });
-                    }
-                }
-                else
-                {
-                    /// Unknow schema - probably an error
-                    this.LogEvent(EventTypeConsts.Error, "Unknown json format", sBody);
-                }
-            
         }
 
-        private List<Appointment> FilterAppointments(OnScheduleUpdateEventArgs eventData,  int eventsExpiration)
+        private List<Appointment> FilterAppointments(OnScheduleUpdateEventArgs eventData, int eventsExpiration)
         {
             if (eventData == null || eventData.Schedule == null)
                 return new List<Appointment>();
 
-                DateTime expirationTime = DateTime.Now.AddMinutes(eventsExpiration * -1);
-                //return all engagements  and not finished yet or finished not leater then eventsExpiration minutes
-                return eventData.Schedule.Where<Appointment>(a => 
-                        expirationTime.CompareTo(DateTime.ParseExact(a.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture)) <= 0)
-                        .ToList<Appointment>();                
+            DateTime expirationTime = DateTime.Now.AddMinutes(eventsExpiration * -1);
+            //return all engagements  and not finished yet or finished not leater then eventsExpiration minutes
+            return eventData.Schedule.Where<Appointment>(a =>
+                    expirationTime.CompareTo(DateTime.ParseExact(a.EndTime, OnScheduleUpdateEventArgs.DateTimeFormat, CultureInfo.InvariantCulture)) <= 0)
+                    .ToList<Appointment>();
         }
 
-        internal  void LogEvent(EventTypeConsts eventType, string Message, string Description)
+        internal void LogEvent(EventTypeConsts eventType, string Message, string Description)
         {
             string EventTypeName = Enum.GetName(typeof(EventTypeConsts), eventType);
 
             if (OnEventLog != null)
             {
-               
+
                 DispatcherHelper.CheckBeginInvokeOnUI(() =>
                 {
                     OnEventLog.Invoke(EventTypeName, new OnEvenLogWriteEventArgs()
@@ -216,22 +209,24 @@ namespace SmartHive.CloudConnection
 
 
                 });
-            }else
+            }
+            else
             {
                 MessageHelper.ShowToastMessage(Message, Description);
             }
         }
-       
+
         /**
-         * keep connection open
-         */
-        internal static void keepConnection()
+     * keep connection open
+     */
+        public void keepConnection()
         {
             if (subscriptionClient == null || subscriptionClient.IsClosed)
             {
-                ServiceBusConnection.Connection.InitSubscription();
+                InitSubscription();
             }
         }
+
     }
-   
+
 }

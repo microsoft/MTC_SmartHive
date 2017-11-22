@@ -4,4 +4,5 @@
 
 [Files]
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\split.scale-140.pri"			"resources.pri"
+"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\images\storelogo.scale-140.png"			"images\storelogo.scale-140.png"
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\images\BadgeLogo.scale-140.png"			"images\BadgeLogo.scale-140.png"

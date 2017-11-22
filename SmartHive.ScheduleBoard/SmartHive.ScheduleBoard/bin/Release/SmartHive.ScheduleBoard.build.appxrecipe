@@ -25,8 +25,8 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\SmartHive.CloudConnection.winmd">
       <PackagePath>SmartHive.CloudConnection.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.ServiceBus.winmd">
-      <PackagePath>Microsoft.ServiceBus.winmd</PackagePath>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\AzureSBLite.WinRT.dll">
+      <PackagePath>AzureSBLite.WinRT.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.Schema.dll">
       <PackagePath>Newtonsoft.Json.Schema.dll</PackagePath>
@@ -40,17 +40,14 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\AzureSBLite.1.3.0.0\lib\windows81\Amqp.Store.dll">
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Amqp.Store.dll">
       <PackagePath>Amqp.Store.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\AzureSBLite.1.3.0.0\lib\windows81\AzureSBLite.WinRT.dll">
-      <PackagePath>AzureSBLite.WinRT.dll</PackagePath>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\AMQPNetLite.2.1.0\lib\netcore451\Amqp.Net.dll">
+      <PackagePath>Amqp.Net.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.ApplicationInsights.2.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.Azure.Devices.Client.PCL.1.0.16\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Microsoft.Azure.Devices.Client.PCL.dll">
-      <PackagePath>Microsoft.Azure.Devices.Client.PCL.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\HockeySDK.Core.4.1.6\lib\portable-net45+win8+wp8+wpa81+win81+uap10.0\Microsoft.HockeyApp.Core45.dll">
       <PackagePath>Microsoft.HockeyApp.Core45.dll</PackagePath>
@@ -58,8 +55,20 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\HockeySDK.WINRT.4.1.6\lib\portable-win81\Microsoft.HockeyApp.Kit.dll">
       <PackagePath>Microsoft.HockeyApp.Kit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PCLCrypto.1.0.86\lib\win81\PCLCrypto.dll">
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PCLCrypto.2.0.147\lib\portable-win81+wpa81\PCLCrypto.dll">
       <PackagePath>PCLCrypto.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PInvoke.BCrypt.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.BCrypt.dll">
+      <PackagePath>PInvoke.BCrypt.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PInvoke.Kernel32.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.Kernel32.dll">
+      <PackagePath>PInvoke.Kernel32.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PInvoke.NCrypt.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.NCrypt.dll">
+      <PackagePath>PInvoke.NCrypt.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PInvoke.Windows.Core.0.5.111\lib\portable-net45+win8+wpa81\PInvoke.Windows.Core.dll">
+      <PackagePath>PInvoke.Windows.Core.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
@@ -67,7 +76,7 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll">
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Validation.2.4.18\lib\portable-net45+win8+wp8+wpa81\Validation.dll">
       <PackagePath>Validation.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows 8.1 HTML Q1 2014\ExtensionSDKs\Telerik.UI\Redist\CommonConfiguration\neutral\Telerik.UI\js\metadata\autocompletebox_html_12.png">
@@ -292,17 +301,20 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\css\default.css">
       <PackagePath>css\default.css</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\css\viewModeBox.css">
+      <PackagePath>css\viewModeBox.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-dark.css">
       <PackagePath>WinJS\css\ui-dark.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-dark.min.css">
       <PackagePath>WinJS\css\ui-dark.min.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-light.css">
-      <PackagePath>WinJS\css\ui-light.css</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-light.min.css">
       <PackagePath>WinJS\css\ui-light.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\css\ui-light.css">
+      <PackagePath>WinJS\css\ui-light.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\default.html">
       <PackagePath>default.html</PackagePath>
@@ -321,6 +333,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\SettingsFlyout-Design.html">
       <PackagePath>html\SettingsFlyout-Design.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\html\viewModeControl.html">
+      <PackagePath>html\viewModeControl.html</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\BadgeLogo.scale-100.png">
       <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
@@ -381,6 +396,12 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\MTC_Tile_Transparent.png">
       <PackagePath>images\MTC_Tile_Transparent.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\modeEvents.png">
+      <PackagePath>images\SmartHive\modeEvents.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\modeMap.png">
+      <PackagePath>images\SmartHive\modeMap.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\Temperature.png">
       <PackagePath>images\SmartHive\Temperature.png</PackagePath>
     </AppxPackagedFile>
@@ -393,16 +414,24 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\SmartHive\won.png">
       <PackagePath>images\SmartHive\won.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\storelogo.scale-100.png">
+      <PackagePath>images\storelogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\storelogo.scale-140.png">
+      <PackagePath>images\storelogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\storelogo.scale-180.png">
+      <PackagePath>images\storelogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\smalllogo.png">
       <PackagePath>images\smalllogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\splashscreen.png">
       <PackagePath>images\splashscreen.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\storelogo.png">
-      <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\images\circleloadinganimation.gif">
@@ -438,11 +467,8 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\ToastHelper.js">
       <PackagePath>js\ToastHelper.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\SettingsFlyout-Conection.js">
-      <PackagePath>js\SettingsFlyout-Conection.js</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\default.js">
-      <PackagePath>js\default.js</PackagePath>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\viewModeBoxControl.js">
+      <PackagePath>js\viewModeBoxControl.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\base.js">
       <PackagePath>WinJS\js\base.js</PackagePath>
@@ -464,6 +490,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\WinJS\js\WinJS.intellisense.js">
       <PackagePath>WinJS\js\WinJS.intellisense.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\SettingsFlyout-Conection.js">
+      <PackagePath>js\SettingsFlyout-Conection.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\Metadata\Microsoft.VS.Actions.CustomAction_oam.xml">
       <PackagePath>Metadata\Microsoft.VS.Actions.CustomAction_oam.xml</PackagePath>

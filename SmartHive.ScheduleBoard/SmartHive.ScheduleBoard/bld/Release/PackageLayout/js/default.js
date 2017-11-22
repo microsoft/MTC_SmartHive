@@ -52,8 +52,6 @@ var promises = [];
         }
 
         appDisplayRequest.requestActive();
-
-        GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize();
        
     };
     

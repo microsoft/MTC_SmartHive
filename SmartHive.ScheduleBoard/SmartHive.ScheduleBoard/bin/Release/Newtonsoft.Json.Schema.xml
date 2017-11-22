@@ -144,6 +144,21 @@
             A 'validator' error.
             </summary>
         </member>
+        <member name="F:Newtonsoft.Json.Schema.ErrorType.Valid">
+            <summary>
+            A 'valid' error.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.ErrorType.Const">
+            <summary>
+            A 'const' error.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.ErrorType.Contains">
+            <summary>
+            A 'contains' error.
+            </summary>
+        </member>
         <member name="T:Newtonsoft.Json.Schema.ExternalSchema">
             <summary>
             Represents an external <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.
@@ -173,6 +188,55 @@
             Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.ExternalSchema"/> class with the specified <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.
             </summary>
             <param name="schema">The schema.</param>
+        </member>
+        <member name="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider">
+            <summary>
+            Customizes <see cref="T:Newtonsoft.Json.Schema.JSchema"/> generation for a <see cref="T:System.Type"/>.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider.GetSchema(Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext)">
+            <summary>
+            Gets a <see cref="T:Newtonsoft.Json.Schema.JSchema"/> for a <see cref="T:System.Type"/>.
+            </summary>
+            <param name="context">The <see cref="T:System.Type"/> and associated information used to generate a <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.</param>
+            <returns>The generated <see cref="T:Newtonsoft.Json.Schema.JSchema"/> or <c>null</c> if type should not have a customized schema.</returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider.CanGenerateSchema(Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext)">
+            <summary>
+            Determines whether this instance can generate a <see cref="T:Newtonsoft.Json.Schema.JSchema"/> for the specified object type.
+            </summary>
+            <param name="context">The <see cref="T:System.Type"/> and associated information.</param>
+            <returns><c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute">
+            <summary>
+            Instructs the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerator"/> to use the specified <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider"/> when generating the member or class.
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.ProviderType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the provider.
+            </summary>
+            <value>The <see cref="T:System.Type"/> of the provider.</value>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.ProviderParameters">
+            <summary>
+            The parameter list to use when constructing the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider"/> described by <see cref="P:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.ProviderType"/>.
+            If null, the default constructor is used.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute"/> class.
+            </summary>
+            <param name="providerType">Type of the provider.</param>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.#ctor(System.Type,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute"/> class.
+            </summary>
+            <param name="providerType">Type of the provider.</param>
+            <param name="providerParameters">Parameter list to use when constructing the JSchemaGenerationProvider. Can be null.</param>
         </member>
         <member name="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerator">
             <summary>
@@ -240,6 +304,16 @@
             Describes a <see cref="T:System.Type"/> and its context when generating a <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.
             </summary>
         </member>
+        <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext.SchemaTitle">
+            <summary>
+            The schema title.
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext.SchemaDescription">
+            <summary>
+            The schema description.
+            </summary>
+        </member>
         <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext.ObjectType">
             <summary>
             The object type.
@@ -264,16 +338,6 @@
             <summary>
             The current <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerator"/>.
             </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext.#ctor(System.Type,Newtonsoft.Json.Required,Newtonsoft.Json.Serialization.JsonProperty,Newtonsoft.Json.Serialization.JsonContainerContract,Newtonsoft.Json.Schema.Generation.JSchemaGenerator)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext"/> class.
-            </summary>
-            <param name="objectType">The object type.</param>
-            <param name="required">The required state.</param>
-            <param name="memberProperty">The member property.</param>
-            <param name="parentContract">The parent contract.</param>
-            <param name="generator">The current <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerator"/>.</param>
         </member>
         <member name="T:Newtonsoft.Json.Schema.Generation.SchemaIdGenerationHandling">
             <summary>
@@ -360,48 +424,6 @@
             All schemas can be referenced.
             </summary>
         </member>
-        <member name="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute">
-            <summary>
-            Instructs the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerator"/> to use the specified <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider"/> when generating the member or class.
-            </summary>
-        </member>
-        <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.ProviderType">
-            <summary>
-            Gets the <see cref="T:System.Type"/> of the provider.
-            </summary>
-            <value>The <see cref="T:System.Type"/> of the provider.</value>
-        </member>
-        <member name="P:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.ProviderParameters">
-            <summary>
-            The parameter list to use when constructing the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider"/> described by <see cref="P:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.ProviderType"/>.
-            If null, the default constructor is used.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.#ctor(System.Type)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute"/> class.
-            </summary>
-            <param name="providerType">Type of the provider.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute.#ctor(System.Type,System.Object[])">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProviderAttribute"/> class.
-            </summary>
-            <param name="providerType">Type of the provider.</param>
-            <param name="providerParameters">Parameter list to use when constructing the JSchemaGenerationProvider. Can be null.</param>
-        </member>
-        <member name="T:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider">
-            <summary>
-            Customizes <see cref="T:Newtonsoft.Json.Schema.JSchema"/> generation for a <see cref="T:System.Type"/>.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.Generation.JSchemaGenerationProvider.GetSchema(Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext)">
-            <summary>
-            Gets a <see cref="T:Newtonsoft.Json.Schema.JSchema"/> for a <see cref="T:System.Type"/>.
-            </summary>
-            <param name="context">The <see cref="T:System.Type"/> and associated information used to generate a <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.</param>
-            <returns>The generated <see cref="T:Newtonsoft.Json.Schema.JSchema"/> or <c>null</c> if type should not have a customized schema.</returns>
-        </member>
         <member name="T:Newtonsoft.Json.Schema.Generation.StringEnumGenerationProvider">
             <summary>
             Customizes <see cref="T:Newtonsoft.Json.Schema.JSchema"/> generation for <see cref="T:System.Enum"/> to be a string value.
@@ -419,6 +441,13 @@
             </summary>
             <param name="context">The <see cref="T:System.Type"/> and associated information used to generate a <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.</param>
             <returns>The generated <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.</returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.Generation.StringEnumGenerationProvider.CanGenerateSchema(Newtonsoft.Json.Schema.Generation.JSchemaTypeGenerationContext)">
+            <summary>
+            Determines whether this instance can generate a <see cref="T:Newtonsoft.Json.Schema.JSchema"/> for the specified object type.
+            </summary>
+            <param name="context">The <see cref="T:System.Type"/> and associated information.</param>
+            <returns><c>true</c> if this instance can convert the specified object type; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Schema.Infrastructure.EmailHelpers.Validate(System.String,System.Boolean)">
             <summary>
@@ -440,6 +469,17 @@
             <summary>
             An in-memory representation of a JSON Schema.
             </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchema.SchemaVersion">
+            <summary>
+            Gets or sets the $schema. This value will only be read from JSON and written to JSON if the <see cref="T:Newtonsoft.Json.Schema.JSchema"/> is the root schema.
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchema.Valid">
+            <summary>
+            Gets or sets a flag indicating whether this schema is <c>true</c> and always valid, or <c>false</c> and always invalid.
+            </summary>
+            <value>A flag indicating whether this schema is <c>true</c> and always valid, or <c>false</c> and always invalid.</value>
         </member>
         <member name="P:Newtonsoft.Json.Schema.JSchema.Id">
             <summary>
@@ -508,11 +548,29 @@
             </summary>
             <value>The Not schema.</value>
         </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchema.Contains">
+            <summary>
+            Gets the Contains schema.
+            </summary>
+            <value>The Contains schema.</value>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchema.PropertyNames">
+            <summary>
+            Gets the PropertyNames schema.
+            </summary>
+            <value>The PropertyNames schema.</value>
+        </member>
         <member name="P:Newtonsoft.Json.Schema.JSchema.Enum">
             <summary>
             Gets the collection of valid enum values allowed.
             </summary>
             <value>A collection of valid enum values allowed.</value>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchema.Const">
+            <summary>
+            Gets or sets the const value.
+            </summary>
+            <value>The const value.</value>
         </member>
         <member name="P:Newtonsoft.Json.Schema.JSchema.UniqueItems">
             <summary>
@@ -620,11 +678,16 @@
         </member>
         <member name="M:Newtonsoft.Json.Schema.JSchema.ToString">
             <summary>
-            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            Returns the JSON for this schema.
             </summary>
-            <returns>
-            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </returns>
+            <returns>The JSON for this schema.</returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchema.ToString(Newtonsoft.Json.Schema.SchemaVersion)">
+            <summary>
+            Returns the JSON for this schema using the specified <see cref="P:Newtonsoft.Json.Schema.JSchema.SchemaVersion"/>.
+            </summary>
+            <param name="version">The <see cref="P:Newtonsoft.Json.Schema.JSchema.SchemaVersion"/> used to create JSON for this schema.</param>
+            <returns>The JSON for this schema.</returns>
         </member>
         <member name="P:Newtonsoft.Json.Schema.JSchema.Title">
             <summary>
@@ -744,6 +807,81 @@
             <param name="settings">The <see cref="T:Newtonsoft.Json.Schema.JSchemaReaderSettings"/> used to load the schema.</param>
             <returns>A <see cref="T:Newtonsoft.Json.Schema.JSchema"/> populated from the string that contains JSON.</returns>
         </member>
+        <member name="T:Newtonsoft.Json.Schema.JSchemaException">
+            <summary>
+            The exception thrown when an error occurs in Json.NET Schema.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaException"/> class.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaException"/> class
+            with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaException"/> class
+            with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver">
+            <summary>
+            Resolves external JSON Schemas named by a Uniform Resource Identifier (URI) using cached schemas.
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.PreloadedUris">
+            <summary>
+            Gets a collection of preloaded URIs.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.#ctor(Newtonsoft.Json.Schema.JSchemaResolver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> class with the specified fallback resolver.
+            </summary>
+            <param name="resolver">The fallback resolver used when no cached schema was found.</param>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> class.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.GetSchemaResource(Newtonsoft.Json.Schema.ResolveSchemaContext,Newtonsoft.Json.Schema.SchemaReference)">
+            <summary>
+            Gets the schema resource for a given schema reference.
+            </summary>
+            <param name="context">The schema ID context.</param>
+            <param name="reference">The schema reference.</param>
+            <returns>The schema resource for a given schema reference.</returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.Add(System.Uri,System.Byte[])">
+            <summary>
+            Adds a byte array for a schema to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store and maps it to a URI.
+            </summary>
+            <param name="uri">The URI of the schema that is being added to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store.</param>
+            <param name="value">The byte array for a schema that corresponds to the provided URI.</param>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.Add(System.Uri,System.IO.Stream)">
+            <summary>
+            Adds a <see cref="T:System.IO.Stream"/> for a schema to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store and maps it to a URI.
+            </summary>
+            <param name="uri">The URI of the schema that is being added to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store.</param>
+            <param name="value">The <see cref="T:System.IO.Stream"/> for a schema that corresponds to the provided URI.</param>
+        </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.Add(System.Uri,System.String)">
+            <summary>
+            Adds a <see cref="T:System.String"/> for a schema to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store and maps it to a URI.
+            </summary>
+            <param name="uri">The URI of the schema that is being added to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store.</param>
+            <param name="value">The <see cref="T:System.String"/> for a schema that corresponds to the provided URI.</param>
+        </member>
         <member name="T:Newtonsoft.Json.Schema.JSchemaReaderException">
             <summary>
             The exception thrown when an error occurs in Json.NET Schema.
@@ -819,6 +957,11 @@
             </summary>
             <value>The converters.</value>
         </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchemaReaderSettings.RegexTimeout">
+            <summary>
+            Gets or sets an optional timeout that will be used when executing regular expressions during validation.
+            </summary>
+        </member>
         <member name="E:Newtonsoft.Json.Schema.JSchemaReaderSettings.ValidationEventHandler">
             <summary>
             Sets an event handler for receiving information about receives information about JSON Schema syntax errors. 
@@ -857,6 +1000,51 @@
             Sets the credentials used to authenticate web requests.
             </summary>
         </member>
+        <member name="T:Newtonsoft.Json.Schema.JSchemaType">
+            <summary>
+            The value types allowed by the <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.None">
+            <summary>
+            No type specified.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.String">
+            <summary>
+            String type.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Number">
+            <summary>
+            Number type.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Integer">
+            <summary>
+            Integer type.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Boolean">
+            <summary>
+            Boolean type.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Object">
+            <summary>
+            Object type.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Array">
+            <summary>
+            Array type.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Null">
+            <summary>
+            Null type.
+            </summary>
+        </member>
         <member name="T:Newtonsoft.Json.Schema.JSchemaUrlResolver">
             <summary>
             Resolves external JSON Schemas named by a Uniform Resource Identifier (URI).
@@ -893,6 +1081,11 @@
         <member name="E:Newtonsoft.Json.Schema.JSchemaValidatingReader.ValidationEventHandler">
             <summary>
             Sets an event handler for receiving schema validation errors.
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchemaValidatingReader.RegexMatchTimeout">
+            <summary>
+            Gets or sets a timeout that will be used when executing regular expressions.
             </summary>
         </member>
         <member name="P:Newtonsoft.Json.Schema.JSchemaValidatingReader.Value">
@@ -1007,6 +1200,12 @@
             true if the next token was read successfully; false if there are no more tokens to read.
             </returns>
         </member>
+        <member name="M:Newtonsoft.Json.Schema.JSchemaValidatingReader.Close">
+            <summary>
+            Changes the reader's state to <see cref="F:Newtonsoft.Json.JsonReader.State.Closed"/>.
+            If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> is also closed.
+            </summary>
+        </member>
         <member name="T:Newtonsoft.Json.Schema.JSchemaValidatingWriter">
             <summary>
             Represents a writer that provides <see cref="T:Newtonsoft.Json.Schema.JSchema"/> validation.
@@ -1028,6 +1227,11 @@
         <member name="E:Newtonsoft.Json.Schema.JSchemaValidatingWriter.ValidationEventHandler">
             <summary>
             Sets an event handler for receiving schema validation errors.
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchemaValidatingWriter.RegexMatchTimeout">
+            <summary>
+            Gets or sets a timeout that will be used when executing regular expressions.
             </summary>
         </member>
         <member name="M:Newtonsoft.Json.Schema.JSchemaValidatingWriter.Flush">
@@ -1280,10 +1484,38 @@
             <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
             <param name="validationError">The <see cref="P:Newtonsoft.Json.Schema.JSchemaValidationException.ValidationError"/> for ths exception.</param>
         </member>
+        <member name="T:Newtonsoft.Json.Schema.JSchemaWriterReferenceHandling">
+            <summary>
+            Specifies reference handling options when writing schemas.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaWriterReferenceHandling.Always">
+            <summary>
+            Always write references to previously encountered schemas.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaWriterReferenceHandling.Never">
+            <summary>
+            Never write references to previously encountered schemas. Writing a schema with a recursive relationship will error.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.JSchemaWriterReferenceHandling.Auto">
+            <summary>
+            Never write references to previously encountered schemas unless there is a recursive relationship,
+            in which case a reference will be written.
+            </summary>
+        </member>
         <member name="T:Newtonsoft.Json.Schema.JSchemaWriterSettings">
             <summary>
             Specifies the settings used when writing a <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.
             </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchemaWriterSettings.Version">
+            <summary>
+            Gets or set the <see cref="T:Newtonsoft.Json.Schema.SchemaVersion"/> of the written JSON. Explicitly setting the version will include the <c>$schema</c> property
+            and limit the written schema to only features available in that version.
+            </summary>
+            <value>The <see cref="T:Newtonsoft.Json.Schema.SchemaVersion"/> of the written JSON.</value>
         </member>
         <member name="P:Newtonsoft.Json.Schema.JSchemaWriterSettings.ExternalSchemas">
             <summary>
@@ -1291,60 +1523,17 @@
             </summary>
             <value>The <see cref="T:Newtonsoft.Json.Schema.ExternalSchema"/>s used when resolving the schema reference to write.</value>
         </member>
+        <member name="P:Newtonsoft.Json.Schema.JSchemaWriterSettings.ReferenceHandling">
+            <summary>
+            Gets or sets the <see cref="T:Newtonsoft.Json.Schema.JSchemaWriterReferenceHandling"/> setting used when writing schema references.
+            This setting doesn't effect <see cref="P:Newtonsoft.Json.Schema.JSchemaWriterSettings.ExternalSchemas"/> references.
+            </summary>
+            <value>The <see cref="T:Newtonsoft.Json.Schema.JSchemaWriterReferenceHandling"/> setting used when writing schema references.</value>
+        </member>
         <member name="M:Newtonsoft.Json.Schema.JSchemaWriterSettings.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaWriterSettings"/> class.
             </summary>
-        </member>
-        <member name="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver">
-            <summary>
-            Resolves external JSON Schemas named by a Uniform Resource Identifier (URI) using cached schemas.
-            </summary>
-        </member>
-        <member name="P:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.PreloadedUris">
-            <summary>
-            Gets a collection of preloaded URIs.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.#ctor(Newtonsoft.Json.Schema.JSchemaResolver)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> class with the specified fallback resolver.
-            </summary>
-            <param name="resolver">The fallback resolver used when no cached schema was found.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> class.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.GetSchemaResource(Newtonsoft.Json.Schema.ResolveSchemaContext,Newtonsoft.Json.Schema.SchemaReference)">
-            <summary>
-            Gets the schema resource for a given schema reference.
-            </summary>
-            <param name="context">The schema ID context.</param>
-            <param name="reference">The schema reference.</param>
-            <returns>The schema resource for a given schema reference.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.Add(System.Uri,System.Byte[])">
-            <summary>
-            Adds a byte array for a schema to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store and maps it to a URI.
-            </summary>
-            <param name="uri">The URI of the schema that is being added to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store.</param>
-            <param name="value">The byte array for a schema that corresponds to the provided URI.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.Add(System.Uri,System.IO.Stream)">
-            <summary>
-            Adds a <see cref="T:System.IO.Stream"/> for a schema to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store and maps it to a URI.
-            </summary>
-            <param name="uri">The URI of the schema that is being added to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store.</param>
-            <param name="value">The <see cref="T:System.IO.Stream"/> for a schema that corresponds to the provided URI.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaPreloadedResolver.Add(System.Uri,System.String)">
-            <summary>
-            Adds a <see cref="T:System.String"/> for a schema to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store and maps it to a URI.
-            </summary>
-            <param name="uri">The URI of the schema that is being added to the <see cref="T:Newtonsoft.Json.Schema.JSchemaPreloadedResolver"/> store.</param>
-            <param name="value">The <see cref="T:System.String"/> for a schema that corresponds to the provided URI.</param>
         </member>
         <member name="T:Newtonsoft.Json.Schema.JsonValidatorContext">
             <summary>
@@ -1400,6 +1589,20 @@
             Register the specified license with Json.NET Schema. A license can be purchased at <see href="http://www.newtonsoft.com/jsonschema">http://www.newtonsoft.com/jsonschema</see>.
             </summary>
             <param name="license">The license text to register.</param>
+            <remarks> 
+            The recommended way to register the license key is to call <see cref="M:Newtonsoft.Json.Schema.License.RegisterLicense(System.String)"/> once during application start up.
+            In ASP.NET web applications it can be placed in the <c>Startup.cs</c> or <c>Global.asax.cs</c>,
+            in WPF applications it can be placed in the <c>Application.Startup</c> event,
+            and in Console applications it can be placed in the <c>static void Main(string[] args)</c> event.
+            </remarks>
+            <example> 
+            This sample shows how to register a Json.NET Schema license with the <see cref="M:Newtonsoft.Json.Schema.License.RegisterLicense(System.String)"/> method.
+            <code>
+            // replace with your license key
+            string licenseKey = "json-schema-license-key";
+            License.RegisterLicense(licenseKey);
+            </code>
+            </example>
         </member>
         <member name="T:Newtonsoft.Json.Schema.ResolveSchemaContext">
             <summary>
@@ -1473,76 +1676,6 @@
             <param name="schema">The schema to test with.</param>
             <param name="validationEventHandler">The validation event handler.</param>
         </member>
-        <member name="T:Newtonsoft.Json.Schema.JSchemaException">
-            <summary>
-            The exception thrown when an error occurs in Json.NET Schema.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaException.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaException"/> class.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaException.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaException"/> class
-            with a specified error message.
-            </summary>
-            <param name="message">The error message that explains the reason for the exception.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Schema.JSchemaException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JSchemaException"/> class
-            with a specified error message and a reference to the inner exception that is the cause of this exception.
-            </summary>
-            <param name="message">The error message that explains the reason for the exception.</param>
-            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
-        </member>
-        <member name="T:Newtonsoft.Json.Schema.JSchemaType">
-            <summary>
-            The value types allowed by the <see cref="T:Newtonsoft.Json.Schema.JSchema"/>.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.None">
-            <summary>
-            No type specified.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.String">
-            <summary>
-            String type.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Number">
-            <summary>
-            Number type.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Integer">
-            <summary>
-            Integer type.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Boolean">
-            <summary>
-            Boolean type.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Object">
-            <summary>
-            Object type.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Array">
-            <summary>
-            Array type.
-            </summary>
-        </member>
-        <member name="F:Newtonsoft.Json.Schema.JSchemaType.Null">
-            <summary>
-            Null type.
-            </summary>
-        </member>
         <member name="T:Newtonsoft.Json.Schema.SchemaReference">
             <summary>
             Describes a schema reference.
@@ -1584,6 +1717,31 @@
         <member name="T:Newtonsoft.Json.Schema.SchemaValidationEventHandler">
             <summary>
             Represents the callback method that will handle JSON schema validation events and the <see cref="T:Newtonsoft.Json.Schema.SchemaValidationEventArgs"/>.
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.Schema.SchemaVersion">
+            <summary>
+            JSON Schema version.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.SchemaVersion.Unset">
+            <summary>
+            Version has not been set.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.SchemaVersion.Draft3">
+            <summary>
+            Draft 3. Schema URI <c>http://json-schema.org/draft-03/schema#</c>.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.SchemaVersion.Draft4">
+            <summary>
+            Draft 4. Schema URI <c>http://json-schema.org/draft-04/schema#</c>.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.Schema.SchemaVersion.Draft6">
+            <summary>
+            Draft 6. Schema URI <c>http://json-schema.org/draft-06/schema#</c>.
             </summary>
         </member>
         <member name="T:Newtonsoft.Json.Schema.ValidationError">

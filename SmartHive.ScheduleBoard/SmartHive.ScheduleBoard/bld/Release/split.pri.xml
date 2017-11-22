@@ -41,6 +41,11 @@
 					<Value>{0} is not supported over AMQP.</Value>
 				</Candidate>
 			</NamedResource>
+			<NamedResource name="AmqpProtocolMismatch" uri="ms-resource://58131MaximKhlupnov.SmartHive/Amqp.SRAmqp/AmqpProtocolMismatch">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The protocol requested by peer '{0}' does not match expected '{1}'. Make sure both sides agree on protocol id and version.</Value>
+				</Candidate>
+			</NamedResource>
 			<NamedResource name="AmqpTimeout" uri="ms-resource://58131MaximKhlupnov.SmartHive/Amqp.SRAmqp/AmqpTimeout">
 				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
 					<Value>The operation {0} did not complete within the allocated time {1} for object {2}.</Value>
@@ -124,6 +129,11 @@
 						<Value>css\default.css</Value>
 					</Candidate>
 				</NamedResource>
+				<NamedResource name="viewModeBox.css" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/css/viewModeBox.css">
+					<Candidate type="Path">
+						<Value>css\viewModeBox.css</Value>
+					</Candidate>
+				</NamedResource>
 			</ResourceMapSubtree>
 			<ResourceMapSubtree name="html">
 				<NamedResource name="content.html" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/html/content.html">
@@ -149,6 +159,11 @@
 				<NamedResource name="SettingsFlyout-Design.html" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/html/SettingsFlyout-Design.html">
 					<Candidate type="Path">
 						<Value>html\SettingsFlyout-Design.html</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="viewModeControl.html" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/html/viewModeControl.html">
+					<Candidate type="Path">
+						<Value>html\viewModeControl.html</Value>
 					</Candidate>
 				</NamedResource>
 			</ResourceMapSubtree>
@@ -199,8 +214,8 @@
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="storelogo.png" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/images/storelogo.png">
-					<Candidate type="Path">
-						<Value>images\storelogo.png</Value>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>images\storelogo.scale-100.png</Value>
 					</Candidate>
 				</NamedResource>
 				<ResourceMapSubtree name="MeetingRooms">
@@ -271,6 +286,16 @@
 							<Value>images\SmartHive\lost.png</Value>
 						</Candidate>
 					</NamedResource>
+					<NamedResource name="modeEvents.png" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/images/SmartHive/modeEvents.png">
+						<Candidate type="Path">
+							<Value>images\SmartHive\modeEvents.png</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="modeMap.png" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/images/SmartHive/modeMap.png">
+						<Candidate type="Path">
+							<Value>images\SmartHive\modeMap.png</Value>
+						</Candidate>
+					</NamedResource>
 					<NamedResource name="Temperature.png" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/images/SmartHive/Temperature.png">
 						<Candidate type="Path">
 							<Value>images\SmartHive\Temperature.png</Value>
@@ -332,6 +357,11 @@
 				<NamedResource name="ToastHelper.js" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/js/ToastHelper.js">
 					<Candidate type="Path">
 						<Value>js\ToastHelper.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="viewModeBoxControl.js" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/js/viewModeBoxControl.js">
+					<Candidate type="Path">
+						<Value>js\viewModeBoxControl.js</Value>
 					</Candidate>
 				</NamedResource>
 				<ResourceMapSubtree name="js">
@@ -805,6 +835,11 @@ Update via web will be tried.</Value>
 			<NamedResource name="Argument_EmptyString" uri="ms-resource://58131MaximKhlupnov.SmartHive/Validation.Strings/Argument_EmptyString">
 				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
 					<Value>'{0}' cannot be an empty string ("") or start with the null character.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Argument_EnumNotDefined" uri="ms-resource://58131MaximKhlupnov.SmartHive/Validation.Strings/Argument_EnumNotDefined">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>'{0}' must be set to a value defined by the enum '{1}'.</Value>
 				</Candidate>
 			</NamedResource>
 			<NamedResource name="Argument_NullElement" uri="ms-resource://58131MaximKhlupnov.SmartHive/Validation.Strings/Argument_NullElement">

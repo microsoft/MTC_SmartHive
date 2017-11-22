@@ -83,17 +83,21 @@
                 return;
             }
 
-            grid.dataSource.data.length = 0;
+            //
+            grid.dataSource.data.length = 0;            
 
-            if (schedule.schedule && schedule.schedule.length > 0 && grid.dataSource.data) {
+            if (schedule && schedule.length > 0 && grid.dataSource.data) {
                 
-                for (var i = 0; i < schedule.schedule.length; i++) {                                       
+                
+
+                for (var i = 0; i < schedule.length; i++) {
+                    let appointment = schedule[i];
                     grid.dataSource.data.push({
-                        startTime: schedule.parseDateString(schedule.schedule[i].startTime),
-                        endTime: schedule.parseDateString(schedule.schedule[i].endTime),
-                        location: schedule.schedule[i].location,
-                        title: schedule.schedule[i].title,
-                        category: schedule.schedule[i].category,
+                        startTime: appointment.parseDateString(appointment.startTime),
+                        endTime: appointment.parseDateString(appointment.endTime),
+                        location: appointment.location,
+                        title: appointment.title,
+                        category: appointment.category,
                         meetingExternalLink: ""
                     });
                 }

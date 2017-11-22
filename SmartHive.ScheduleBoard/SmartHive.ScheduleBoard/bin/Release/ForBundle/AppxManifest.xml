@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.1.0.4" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
+  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.10" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>SmartHive</DisplayName>
     <PublisherDisplayName>Maxim Khlupnov</PublisherDisplayName>
@@ -51,7 +51,7 @@
     <build:Item Name="Blend" Version="12.0.41212.0" />
     <build:Item Name="VisualStudio" Version="14.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2015" />
-    <build:Item Name="OperatingSystem" Version="10.0.15063.0 (WinBuild.160101.0800)" />
+    <build:Item Name="OperatingSystem" Version="10.0.16299.15 (WinBuild.160101.0800)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25431.1" />
     <build:Item Name="ProjectGUID" Value="fa859204-6687-4250-9155-f7ce9b47ad43" />
     <build:Item Name="Telerik.UI" Version="2014.1.221" />
@@ -61,13 +61,13 @@
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>CLRHost.dll</Path>
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.ScheduleUpdateEventSchema" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.Appointment" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnScheduleUpdateEventArgs" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.NotificationEventSchema" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnEvenLogWriteEventArgs" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnNotificationEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnScheduleUpdateEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.Appointment" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnReadingTaskEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.ScheduleUpdateEventSchema" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.HttpConnection" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.MessageHelper" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.ServiceBusConnection" ThreadingModel="both" />

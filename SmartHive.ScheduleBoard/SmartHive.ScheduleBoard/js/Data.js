@@ -28,6 +28,7 @@ MtcScheduleBoard.Data.Settings = {
     SasKeyName: "",
     SasKey: "",
     EventExpirationAfter: 20,
+    LevelMapUrl: "",
     AppVersion: getAppVersion()
 }; //Declare MtcScheduleBoard.Data.Settings namespace
 
@@ -265,7 +266,10 @@ function InitServiceConnection() {
             MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.ServiceBusConnection(MtcScheduleBoard.Data.Settings.ServiceBusNamespace,
                                             MtcScheduleBoard.Data.Settings.ServiceBusSubscription, MtcScheduleBoard.Data.Settings.ServiceBusTopic,
                                             MtcScheduleBoard.Data.Settings.SasKeyName, MtcScheduleBoard.Data.Settings.SasKey);
-                                            
+
+            //refresh connection each 10 mins 
+            setInterval(function (){MtcScheduleBoard.Data.ServiceConnectiont.keepConnection();}, 10 * 60 * 1000); 
+
         } else {
             // Initialize Http connection
             MtcScheduleBoard.Data.ServiceConnectiont = new SmartHive.CloudConnection.HttpConnection(MtcScheduleBoard.Data.Settings.WebServiceUrl);          

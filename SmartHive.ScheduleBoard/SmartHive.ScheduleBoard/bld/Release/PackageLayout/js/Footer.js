@@ -40,7 +40,7 @@
 	        if (valueLabel) {
 
 	            if (valueLabel === "Sensor") {
-	                MtcScheduleBoard.UI.SensorData.Pir = (value === "1.0");//;
+	                MtcScheduleBoard.UI.SensorData.Pir = (value === "1.0") || (value === "True");//;
 
 	                if (MtcScheduleBoard.UI.SensorData.Pir)
 	                    $('div.t-tile').css('background', 'red');

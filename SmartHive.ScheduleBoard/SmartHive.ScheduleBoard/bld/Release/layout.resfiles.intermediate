@@ -1,10 +1,12 @@
 css\default.css
+css\viewModeBox.css
 default.html
 html\content.html
 html\footer.html
 html\header.html
 html\SettingsFlyout-Connection.html
 html\SettingsFlyout-Design.html
+html\viewModeControl.html
 images\BadgeLogo.scale-100.png
 images\BadgeLogo.scale-140.png
 images\BadgeLogo.scale-180.png
@@ -28,10 +30,14 @@ images\MTC_Tile_Transparent.png
 images\smalllogo.png
 images\SmartHive\Humidity.png
 images\SmartHive\lost.png
+images\SmartHive\modeEvents.png
+images\SmartHive\modeMap.png
 images\SmartHive\Temperature.png
 images\SmartHive\won.png
 images\splashscreen.png
-images\storelogo.png
+images\storelogo.scale-100.png
+images\storelogo.scale-140.png
+images\storelogo.scale-180.png
 js\ClockControl.js
 js\Content.js
 js\Data.js
@@ -44,6 +50,7 @@ js\js\Interactivity.1.0.js
 js\SettingsFlyout-Conection.js
 js\SettingsFlyout-Design.js
 js\ToastHelper.js
+js\viewModeBoxControl.js
 Metadata\Microsoft.VS.Actions.CustomAction_oam.xml
 packages.config
 res\rooms.xml
