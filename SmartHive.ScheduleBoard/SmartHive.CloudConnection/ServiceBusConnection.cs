@@ -67,24 +67,20 @@ namespace SmartHive.CloudConnection
 
         public async void InitSubscription()
         {
-
-            ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(String.Format("Endpoint=sb://{0}.servicebus.windows.net/;", ServiceBusNamespace));
-            builder.SharedAccessKeyName = this.SasKeyName;
-            builder.SharedAccessKey = this.SasKey;
-            builder.TransportType = TransportType.Amqp;
-
-            MessagingFactory factory = MessagingFactory.CreateFromConnectionString(builder.ToString());
-
-            this.subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
-
             try
-            {
+                {
+                ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(String.Format("Endpoint=sb://{0}.servicebus.windows.net/;", ServiceBusNamespace));
+                builder.SharedAccessKeyName = this.SasKeyName;
+                builder.SharedAccessKey = this.SasKey;
+                builder.TransportType = TransportType.Amqp;
+
+                MessagingFactory factory = MessagingFactory.CreateFromConnectionString(builder.ToString());
+
+                this.subscriptionClient = factory.CreateSubscriptionClient(TopicName, SubscriptionName);
+
+            
                 this.subscriptionClient.OnMessage(this.OnMessageAction, new OnMessageOptions { AutoComplete = true });
-            }
-            catch (Exception ex)
-            { ///System.ObjectDisposedException ?
-                this.LogEvent(EventTypeConsts.Error, ex.Message, ex.StackTrace);
-            }
+           
 
             var dispatcher = DispatcherHelper.GetDispatcher;
 
@@ -98,6 +94,11 @@ namespace SmartHive.CloudConnection
                 }
             });
 
+            }
+            catch (Exception ex)
+            { ///System.ObjectDisposedException ?
+                this.LogEvent(EventTypeConsts.Error, ex.Message, ex.StackTrace);
+            }
         }
 
         private void OnMessageAction(BrokeredMessage brokeredMessage)
@@ -223,7 +224,10 @@ namespace SmartHive.CloudConnection
         {
             if (subscriptionClient == null || subscriptionClient.IsClosed)
             {
+                // Just to insure we initialize dispatcher for UI thrread
+                var dispatcher = DispatcherHelper.GetDispatcher;               
                 InitSubscription();
+                
             }
         }
 

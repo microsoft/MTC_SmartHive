@@ -104,7 +104,6 @@
     <Content Include="js\Footer.js" />
     <Content Include="js\Header.js" />
     <Content Include="js\jquery.tmpl.min.js" />
-    <Content Include="js\js\ai.js" />
     <Content Include="js\js\Interactivity.1.0.js" />
     <Content Include="js\SettingsFlyout-Design.js" />
     <Content Include="js\ToastHelper.js" />

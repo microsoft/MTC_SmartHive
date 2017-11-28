@@ -267,8 +267,9 @@ function InitServiceConnection() {
                                             MtcScheduleBoard.Data.Settings.ServiceBusSubscription, MtcScheduleBoard.Data.Settings.ServiceBusTopic,
                                             MtcScheduleBoard.Data.Settings.SasKeyName, MtcScheduleBoard.Data.Settings.SasKey);
 
-            //refresh connection each 10 mins 
-            setInterval(function (){MtcScheduleBoard.Data.ServiceConnectiont.keepConnection();}, 10 * 60 * 1000); 
+            //set ServiceBuss connection watchdog
+            LoadApplicationConfigurationTimeOutId = setTimeout(KeepServiceBusConnection, 5 * 1000);
+            
 
         } else {
             // Initialize Http connection
@@ -317,6 +318,29 @@ function InitServiceConnection() {
             );
 
     }
+}
+
+/**
+*
+Check ServiceBus connection status and reinitialize it if any issues
+*/
+function KeepServiceBusConnection() {
+        
+    if (MtcScheduleBoard.Data.ServiceConnectiont != null) {
+        try{
+            MtcScheduleBoard.Data.ServiceConnectiont.keepConnection();
+        } catch (ex) {
+            MtcScheduleBoard.UI.StatusControl.trackAppInsightsError(ex, "ServiceBus connection error.");
+            MtcScheduleBoard.Data.ServiceConnectiont = null;
+            InitServiceConnection();
+            return;
+        }
+    } else {
+        InitServiceConnection();
+        return;
+    }
+
+    LoadApplicationConfigurationTimeOutId = setTimeout(KeepServiceBusConnection, 5 * 1000);
 }
 
 var readsCountUntilReconnect = 1000;

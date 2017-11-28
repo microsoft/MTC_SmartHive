@@ -31,6 +31,12 @@
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.Schema.dll">
       <PackagePath>Newtonsoft.Json.Schema.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.HockeyApp.Core45.dll">
+      <PackagePath>Microsoft.HockeyApp.Core45.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.HockeyApp.Kit.dll">
+      <PackagePath>Microsoft.HockeyApp.Kit.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PCLWebUtility.dll">
       <PackagePath>PCLWebUtility.dll</PackagePath>
     </AppxPackagedFile>
@@ -45,15 +51,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\AMQPNetLite.2.1.0\lib\netcore451\Amqp.Net.dll">
       <PackagePath>Amqp.Net.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\Microsoft.ApplicationInsights.2.1.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
-      <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\HockeySDK.Core.4.1.6\lib\portable-net45+win8+wp8+wpa81+win81+uap10.0\Microsoft.HockeyApp.Core45.dll">
-      <PackagePath>Microsoft.HockeyApp.Core45.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\HockeySDK.WINRT.4.1.6\lib\portable-win81\Microsoft.HockeyApp.Kit.dll">
-      <PackagePath>Microsoft.HockeyApp.Kit.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\packages\PCLCrypto.2.0.147\lib\portable-win81+wpa81\PCLCrypto.dll">
       <PackagePath>PCLCrypto.dll</PackagePath>
@@ -454,9 +451,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\jquery.tmpl.min.js">
       <PackagePath>js\jquery.tmpl.min.js</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\js\ai.js">
-      <PackagePath>js\js\ai.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\js\js\Interactivity.1.0.js">
       <PackagePath>js\js\Interactivity.1.0.js</PackagePath>

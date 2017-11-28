@@ -34,7 +34,6 @@
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\SettingsFlyout-Design.js"			"js\SettingsFlyout-Design.js"
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\SettingsFlyout-Conection.js"			"js\SettingsFlyout-Conection.js"
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\js\Interactivity.1.0.js"			"js\js\Interactivity.1.0.js"
-"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\js\ai.js"			"js\js\ai.js"
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\jquery.tmpl.min.js"			"js\jquery.tmpl.min.js"
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\Header.js"			"js\Header.js"
 "C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\js\Footer.js"			"js\Footer.js"

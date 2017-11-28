@@ -13,6 +13,14 @@ var promises = [];
     var appDisplayRequest = new Windows.System.Display.DisplayRequest;
     var promises = [];
     
+    window.DeviceConnection = new SmartHive.CloudConnection.DeviceConnection();
+    window.DeviceConnection.init();
+
+    app.onloaded = function (args) {
+        // Track app crashes via Hockey app
+        window.DeviceConnection.sendCrashes();
+    };
+
 	app.addEventListener("error", function (err) {
         
 	    var message = err.detail.message ?  err.detail.message : err.detail.errorMessage;	   
@@ -164,18 +172,26 @@ var promises = [];
                    
                     if (!errMessage)
                         errMessage = "Unknown error";
-                                       
-                    MtcScheduleBoard.UI.StatusControl.pageStatusControl.setStatusLabel(errMessage);
-                    $('#statusText').css('color', 'red');
 
-                    //Display toast notofication if status is hidden
-                    if ($('#status').css('display') == 'none') {
-                        MtcScheduleBoard.ToastHelper.AddMessageToast("Error", errMessage);
+                    // Log error message
+                    MtcScheduleBoard.UI.StatusControl.trackAppInsightsError(err, errMessage);
 
-                        $('#screenSaver').show(); // And show status
+                    // Display error message
+                    try{                                         
+                        MtcScheduleBoard.UI.StatusControl.pageStatusControl.setStatusLabel(errMessage);
+                        $('#statusText').css('color', 'red');
+
+                        //Display toast notofication if status is hidden
+                        if ($('#status').css('display') == 'none') {
+                            MtcScheduleBoard.ToastHelper.AddMessageToast("Error", errMessage);
+
+                            $('#screenSaver').show(); // And show status
+                        }
+                    }catch(ex){
+                        throw new WinJS.ErrorFromName(ex.message, "Can't display error message");
                     }
                   
-                    MtcScheduleBoard.UI.StatusControl.trackAppInsightsError(err, errMessage);
+                    
                     
                                       
                 },

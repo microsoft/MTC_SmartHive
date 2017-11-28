@@ -2,17 +2,16 @@
 	overflow: hidden;
 	position: relative;
     display: none;
+    width: 100px;
 }
 /* Text selection color */
 #viewModeBoxWrapper:hover{
-	background-color: #355A73 !important;
-	color: #fff;
+    border: 1px solid #355A73;	
 }
 
 .viewModeBoxUpper {
 	height: 90px;
-	border: 1px solid #355A73;
-	border-bottom: 0;
+	border: 1px solid white;	
 	overflow: hidden;
 }
 
@@ -29,50 +28,5 @@
     height:60px !important;
 }
 
-.viewModeBoxLowerLeft {
-	height: 30px;
-	width: 108px;
-	border-left: 1px solid #355A73;    
-	border-bottom: 1px solid #355A73;
-	font-size: 18px;
-	color: #086b2a;   
-}
 
-#viewModeBoxLargeText {
-	width: 110px;
-	padding-left: 9px;
-	/*padding-top: 6px; */
-	text-overflow: ellipsis;
-	overflow: hidden;
-    color: white;
-}
 
-.viewModeBoxLowerRight {
-	position: absolute;
-	bottom: -28px;
-	right: -28px;
-	border-top: 1px solid #355A73;
-	width: 58px;
-	height: 57px;
-	transform: rotate(-45deg);
-	overflow: hidden;
-}
-
-.viewModeBoxLowerRightInner {
-	width: 90%;
-	height: 90%;
-	background-color: #355A73;
-	transform: rotate(45deg);
-	position: relative;
-	top: -36px;
-	left: 3px;
-}
-
-#viewModeBoxLowerRightText {
-	position: absolute;
-	bottom: 4px;
-	right: 4px;
-	color: white;
-	font-size: 12px;
-	font-weight: bold;
-}

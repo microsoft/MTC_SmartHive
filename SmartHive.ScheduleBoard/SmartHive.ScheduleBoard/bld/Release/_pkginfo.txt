@@ -1,1 +1,1 @@
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\AppPackages\SmartHive.ScheduleBoard_1.2.0.10_Test\SmartHive.ScheduleBoard_1.2.0.10_AnyCPU.appxbundle
+C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\AppPackages\SmartHive.ScheduleBoard_1.2.0.13_Test\SmartHive.ScheduleBoard_1.2.0.13_AnyCPU.appxbundle

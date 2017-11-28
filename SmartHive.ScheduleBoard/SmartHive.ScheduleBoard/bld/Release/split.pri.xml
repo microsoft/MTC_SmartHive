@@ -365,11 +365,6 @@
 					</Candidate>
 				</NamedResource>
 				<ResourceMapSubtree name="js">
-					<NamedResource name="ai.js" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/js/js/ai.js">
-						<Candidate type="Path">
-							<Value>js\js\ai.js</Value>
-						</Candidate>
-					</NamedResource>
 					<NamedResource name="Interactivity.1.0.js" uri="ms-resource://58131MaximKhlupnov.SmartHive/Files/js/js/Interactivity.1.0.js">
 						<Candidate type="Path">
 							<Value>js\js\Interactivity.1.0.js</Value>

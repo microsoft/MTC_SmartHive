@@ -4,7 +4,6 @@ C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Rele
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Amqp.Store.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\AzureSBLite.WinRT.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\bouncy_castle_hmac_sha_pcl.dll
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.ApplicationInsights.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.HockeyApp.Core45.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.HockeyApp.Kit.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.dll

@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.10" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
+  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.13" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>SmartHive</DisplayName>
     <PublisherDisplayName>Maxim Khlupnov</PublisherDisplayName>
@@ -61,16 +61,17 @@
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>CLRHost.dll</Path>
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.ScheduleUpdateEventSchema" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.Appointment" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnScheduleUpdateEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnReadingTaskEventArgs" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.NotificationEventSchema" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnEvenLogWriteEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.Appointment" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.ScheduleUpdateEventSchema" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnNotificationEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.Events.OnReadingTaskEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.ServiceBusConnection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.DeviceConnection" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.HttpConnection" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.MessageHelper" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="SmartHive.CloudConnection.ServiceBusConnection" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
