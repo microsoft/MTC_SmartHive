@@ -227,7 +227,7 @@ namespace SmartHive.CloudConnection
                 // Just to insure we initialize dispatcher for UI thrread
                 var dispatcher = DispatcherHelper.GetDispatcher;               
                 InitSubscription();
-                
+                this.LogEvent(EventTypeConsts.Info, "ServiceBus connection updated", subscriptionClient.IsClosed.ToString());
             }
         }
 

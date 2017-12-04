@@ -267,8 +267,8 @@ function InitServiceConnection() {
                                             MtcScheduleBoard.Data.Settings.ServiceBusSubscription, MtcScheduleBoard.Data.Settings.ServiceBusTopic,
                                             MtcScheduleBoard.Data.Settings.SasKeyName, MtcScheduleBoard.Data.Settings.SasKey);
 
-            //set ServiceBuss connection watchdog
-            LoadApplicationConfigurationTimeOutId = setTimeout(KeepServiceBusConnection, 5 * 1000);
+            //set ServiceBuss connection watchdog for each 15 min.
+            readMessageTimeOutId = setInterval(KeepServiceBusConnection, MtcScheduleBoard.Data.Settings.EventExpirationAfter * 60 * 1000);
             
 
         } else {
@@ -300,10 +300,22 @@ function InitServiceConnection() {
 
             MtcScheduleBoard.Data.ServiceConnectiont.initSubscription();
 
+            MtcScheduleBoard.Data.ServiceConnectiont.addEventListener("onnotification", function (sensor, OnNotificationEventArgs) {
+                clearTimeout(InitServiceConnectionTimeOutId);
+                InitServiceConnectionTimeOutId = setTimeout(InitServiceConnection, 2 * 60 * 60 * 1000); //If we don't have any event's for one hour - reconnect
+            });
+
+
+            MtcScheduleBoard.Data.ServiceConnectiont.addEventListener("onscheduleupdate", function (schedule, OnScheduleUpdateEventArgs) {
+                clearTimeout(InitServiceConnectionTimeOutId);
+                InitServiceConnectionTimeOutId = setTimeout(InitServiceConnection, 2 * 60 * 60 * 1000); //If we don't have any event's for one hour - reconnect
+            });
+
             if (MtcScheduleBoard.Data.ServiceConnectiont instanceof SmartHive.CloudConnection.HttpConnection) {
                 // Legacy approach for HTTP - continusly query 
-                readMessage();
+                readMessageTimeOutId = setInterval(readMessage, 15 * 60 * 1000);
             }
+            
             
 
     } catch (e) {       
@@ -338,9 +350,7 @@ function KeepServiceBusConnection() {
     } else {
         InitServiceConnection();
         return;
-    }
-
-    LoadApplicationConfigurationTimeOutId = setTimeout(KeepServiceBusConnection, 5 * 1000);
+    }    
 }
 
 var readsCountUntilReconnect = 1000;

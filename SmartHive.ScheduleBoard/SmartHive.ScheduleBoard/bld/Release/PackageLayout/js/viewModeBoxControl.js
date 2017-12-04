@@ -31,14 +31,14 @@
         function onModeBoxClick(event) {
             if (isScheduleViewMode) {                
                 $('#modeIcon').attr('src', "/images/SmartHive/modeEvents.png");
-                $('#viewModeBoxLargeText').text("Events");
+              //  $('#viewModeBoxLargeText').text("Events");
                 // $('viewModeBoxLowerRightText').text("Events");
                 showIFrameMap();
                 isScheduleViewMode = false;
 
             } else {
                 $('#modeIcon').attr('src', '/images/SmartHive/modeMap.png');
-                $('#viewModeBoxLargeText').text("Map");
+               // $('#viewModeBoxLargeText').text("Map");
                 showEventView();
                 isScheduleViewMode = true;
             }

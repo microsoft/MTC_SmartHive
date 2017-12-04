@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.13" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
+  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.15" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>SmartHive</DisplayName>
     <PublisherDisplayName>Maxim Khlupnov</PublisherDisplayName>
