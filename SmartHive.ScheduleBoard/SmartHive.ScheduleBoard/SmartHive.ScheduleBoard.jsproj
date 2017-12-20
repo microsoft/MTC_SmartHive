@@ -112,6 +112,7 @@
     <Content Include="packages.config" />
     <Content Include="WinJS\css\ui-dark.css" />
     <Content Include="WinJS\css\ui-dark.min.css" />
+    <Content Include="WinJS\css\ui-light.css" />
     <Content Include="WinJS\css\ui-light.min.css" />
     <Content Include="WinJS\fonts\Symbols.ttf" />
     <Content Include="WinJS\js\base.js" />
@@ -139,9 +140,9 @@
     <Content Include="js\default.js" />
     <None Include="SmartHive.ScheduleBoard_TemporaryKey.pfx" />
     <None Include="SmartHive.ScheduleBoard_StoreKey.pfx" />
-    <Content Include="WinJS\css\ui-light.css" />
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
     <SDKReference Include="Telerik.UI, Version=2014.1.221" />
   </ItemGroup>
   <ItemGroup>

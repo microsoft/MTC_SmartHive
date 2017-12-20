@@ -207,7 +207,7 @@
     
     /* Load selected room settings from RoomDefinitionDataSource*/
     function loadRoomSettings(){
-        var comboBox = document.getElementById("txtRoomFilter");
+        //var comboBox = document.getElementById("txtRoomFilter");
         
         //No selection made
         if (!comboBox || comboBox.selectedIndex < 0)

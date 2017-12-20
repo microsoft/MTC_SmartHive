@@ -8,7 +8,6 @@ C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Rele
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.HockeyApp.Kit.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.Schema.dll
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PCLCrypto.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PCLWebUtility.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\System.Net.Http.Extensions.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\System.Net.Http.Primitives.dll
@@ -20,7 +19,6 @@ C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Rele
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Microsoft.HockeyApp.Kit.pri
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.xml
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Newtonsoft.Json.Schema.xml
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PCLCrypto.xml
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\System.Net.Http.Extensions.xml
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\System.Net.Http.Primitives.xml
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Validation.xml
@@ -42,14 +40,6 @@ C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\obj\Rele
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\obj\Release\MultipleQualifiersPerDimensionFound.txt
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\SmartHive.CloudConnection.winmd.config
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Amqp.Net.dll
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.BCrypt.dll
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.Kernel32.dll
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.NCrypt.dll
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.Windows.Core.dll
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Amqp.Net.pdb
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Amqp.Net.xml
 C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\Amqp.Net.pri
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.BCrypt.xml
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.Kernel32.xml
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.NCrypt.xml
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\bin\Release\PInvoke.Windows.Core.xml

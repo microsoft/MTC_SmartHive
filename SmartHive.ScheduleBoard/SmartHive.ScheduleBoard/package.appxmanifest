@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.15" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" />
+  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.22" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" />
   <Properties>
     <DisplayName>SmartHive</DisplayName>
     <PublisherDisplayName>Maxim Khlupnov</PublisherDisplayName>
