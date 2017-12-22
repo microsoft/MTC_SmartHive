@@ -142,7 +142,6 @@
     <None Include="SmartHive.ScheduleBoard_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
     <SDKReference Include="Telerik.UI, Version=2014.1.221" />
   </ItemGroup>
   <ItemGroup>

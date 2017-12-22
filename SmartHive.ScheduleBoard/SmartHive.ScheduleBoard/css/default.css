@@ -169,7 +169,8 @@ Settings Pane
     line-height: normal;
 }
 
-.win-settingsflyout  input{
-    font-size: 10pt;
+.win-settings-section  input, select{
+    font-size: 12pt;
     line-height: normal;
+    width: 250px;
 }

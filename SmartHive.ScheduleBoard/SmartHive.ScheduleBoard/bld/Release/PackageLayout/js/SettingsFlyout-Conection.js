@@ -120,22 +120,6 @@
             }
             comboBox.add(newOption);
         });
-
- /*       	MtcScheduleBoard.Data.RoomDefinitionDataSource.data.forEach(function (value, i) {
-            
-            // Check if this is unique option and add int combobox
-            var ifExist = $(comboBox).filter('[value==' + value.Location + ']');
-            if (ifExist == null || ifExist.length == 0) {
-                var newOption = document.createElement("option");
-                newOption.text = value.Title_En;
-                newOption.value = value.Location;
-                if (MtcScheduleBoard.Data.Settings.Location && MtcScheduleBoard.Data.Settings.Location == value.Location) {
-                    // Room filter already specified
-                    newOption.selected = true;
-                }
-                comboBox.add(newOption);
-            }
-        });*/
         
         if (MtcScheduleBoard.Data.RoomDefinitionDataSource.data.length > 0) {
             comboBox.disabled = false;
@@ -195,19 +179,12 @@
         LoadApplicationConfiguration();
 
 
-       /* if (MtcScheduleBoard.Data.RoomDefinitionDataSource.view.length < 1) {
-            displayMessage("rooms.xml is empty. please specify room definitions");
-            return false;
-        }*/
-
-       
-
         return true;
     }
     
     /* Load selected room settings from RoomDefinitionDataSource*/
     function loadRoomSettings(){
-        //var comboBox = document.getElementById("txtRoomFilter");
+        var comboBox = document.getElementById("txtRoomFilter");
         
         //No selection made
         if (!comboBox || comboBox.selectedIndex < 0)
@@ -232,17 +209,12 @@
             
             MtcScheduleBoard.Data.Settings = item;
         } else {
-            //Filter removed
-            MtcScheduleBoard.Data.Settings.Location = "";
-            MtcScheduleBoard.Data.Settings.Title = "";
-            MtcScheduleBoard.Data.Settings.Title_En = "";
-            MtcScheduleBoard.Data.Settings.IconTop = "";
-            MtcScheduleBoard.Data.Settings.IconBottom = "";
-            MtcScheduleBoard.Data.Settings.Css = "";
+            //Filter removed - clear all settings
+            MtcScheduleBoard.Data.Settings = JSON.parse(JSON.stringify(MtcScheduleBoard.Data.DefaultSettings));
         }
 
         MtcScheduleBoard.Data.setSettings();
-        
+        MtcScheduleBoard.UI.StatusControl.pageStatusControl.setStatusLabel("Settings updated please restart app to apply.");
         settingsWasChanged = true;
         
     }

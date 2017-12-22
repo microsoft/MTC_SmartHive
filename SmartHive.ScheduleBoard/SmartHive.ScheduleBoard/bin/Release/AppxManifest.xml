@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.22" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
+  <Identity Name="58131MaximKhlupnov.SmartHive" Version="1.2.0.25" Publisher="CN=F71E1258-A0AE-44CA-83B1-C90A2316993D" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>SmartHive</DisplayName>
     <PublisherDisplayName>Maxim Khlupnov</PublisherDisplayName>
@@ -47,9 +47,6 @@
     <build:Item Name="Telerik.UI" Version="2014.1.221" />
     <build:Item Name="MakePri.exe" Version="6.3.9600.17336 (winblue.150226-1500)" />
   </build:Metadata>
-  <Dependencies>
-    <PackageDependency Name="Microsoft.WinJS.2.0" MinVersion="1.0.9600.17018" />
-  </Dependencies>
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>

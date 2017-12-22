@@ -2,7 +2,7 @@
 
 MtcScheduleBoard.Data = MtcScheduleBoard.Data || {  }; // Declare MtcScheduleBoard.Data.Settings namespace
 
-MtcScheduleBoard.Data.Settings = {
+MtcScheduleBoard.Data.DefaultSettings = {
 	HttpServerUrl: "http://mtcscheduleboard.azurewebsites.net",
 	WebServiceUrl: null, 
 	RoomDefinitionUrl: null,
@@ -31,6 +31,8 @@ MtcScheduleBoard.Data.Settings = {
     LevelMapUrl: "",
     AppVersion: getAppVersion()
 }; //Declare MtcScheduleBoard.Data.Settings namespace
+
+MtcScheduleBoard.Data.Settings = JSON.parse(JSON.stringify(MtcScheduleBoard.Data.DefaultSettings));
 
 MtcScheduleBoard.Data.LocationFilters = function () {
 	if (MtcScheduleBoard.Data.Settings.Location && MtcScheduleBoard.Data.Settings.Location.length > 0) {
