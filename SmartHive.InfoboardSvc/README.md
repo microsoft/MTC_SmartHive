@@ -1,1 +1,1 @@
-# will be published soon
+# Service witching Exchange and Sensors telemetry
