@@ -1,0 +1,18 @@
+/*top div styles*/
+#header{}
+#header img {height: 150px; }
+/*content div styles*/
+#content{}
+.k-grid-content td{vertical-align: top;}
+
+/*footer div styles*/
+#footer{}
+#footerLogo {height: 130px; width: 199px; }
+
+/*video player styles*/
+#screenSaver {position: relative !important; } 
+
+/*Less size for clock and data*/
+/*Less size for clock and data*/
+#ClockControl{position: relative !important; top: 10px !important; font-size: 60pt !important;} 
+#DateControl {position: relative !important; top: 10px !important; font-size: 60pt !important;}  

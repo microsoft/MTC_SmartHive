@@ -1,0 +1,13 @@
+/*top div styles*/
+#header{}
+/*content div styles*/
+#content{}
+/*footer div styles*/
+#footer{}
+
+/*video player styles*/
+#screenSaver {position: relative !important; } 
+
+/*Less size for clock and data*/
+#ClockControl{ font-size: 60pt !important;}  
+#DateControl { font-size: 60pt !important;}    

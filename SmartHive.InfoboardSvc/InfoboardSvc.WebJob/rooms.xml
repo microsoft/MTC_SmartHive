@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+  <Rooms>
+    <Room Location="Conf Room MTC Msc Alexander Garden_26">
+      <ServiceBusTopic>alexandergarden</ServiceBusTopic>
+    </Room>
+    <Room Location="Conf Room MTC Msc Hermitage Garden_14">
+      <ServiceBusTopic>hermitagegarden</ServiceBusTopic>
+    </Room>
+    <Room Location="Conf Room MTC Msc Neskuchniy Garden_9">
+      <ServiceBusTopic>neskuchniygarden</ServiceBusTopic>
+    </Room>
+    <Room Location="Conf Room MTC Msc Patriarshy Ponds_45">
+      <ServiceBusTopic>patriarshy</ServiceBusTopic>
+    </Room>
+    <Room Location="Conf Room MTC Msc Vorobievy Hills _30">
+      <ServiceBusTopic>vorobievy</ServiceBusTopic>
+    </Room>
+    <!-- Room Location="Conf Room Msc 601_Innovation (3)">
+      <ServiceBusTopic>khbp-6</ServiceBusTopic>
+    </Room -->
+  </Rooms>
