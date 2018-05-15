@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicController.cs" />
-    <Compile Include="FloorMapController.cs" />
     <Compile Include="Helpers\CallbackMethods.cs" />
     <Compile Include="Helpers\ExchangeCredential.cs" />
     <Compile Include="Helpers\ExchangeHelper.cs" />

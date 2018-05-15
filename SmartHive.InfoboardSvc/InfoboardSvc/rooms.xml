@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Rooms>
+    <Room Location="Embedded_Systems">
+      <Title>Демозона  |</Title>
+      <Title_En>Device bar</Title_En>
+      <IconTop>http://mtcscheduleboard.azurewebsites.net/Images/MTC_logo.png</IconTop>
+      <IconBottom>http://mtcscheduleboard.azurewebsites.net/Images/MTC_logo.png</IconBottom>
+      <Css>http://mtcscheduleboard.azurewebsites.net/css/RoomStyles.css</Css>
+      <ServiceBusNamespace></ServiceBusNamespace>
+      <ServiceBusTopic></ServiceBusTopic>
+      <ServiceBusSubscription></ServiceBusSubscription>
+      <SasKeyName></SasKeyName>
+      <SasKey></SasKey>
+      <FloorMapVarName></FloorMapVarName>
+      <DeviceId></DeviceId>
+      <Sensors>
+        <Sensor DeviceId="Embedded_Systems" Telemetry="Temperature"/>
+        <Sensor DeviceId="Embedded_Systems" Telemetry="Sensor"/>
+      </Sensors>
+    </Room> 
+
+  </Rooms>
+</Config>
