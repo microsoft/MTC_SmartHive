@@ -1,1 +1,1 @@
-# Service witching Exchange and Sensors telemetry
+# Service watching Exchange and Sensors telemetry
