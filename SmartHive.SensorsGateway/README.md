@@ -1,1 +1,1 @@
-# <a href="/MaxKhlupnov/SmartHive">Sources published here...</a>
+# <a href="https://github.com/MaxKhlupnov/SmartHive">Sources published here...</a>
