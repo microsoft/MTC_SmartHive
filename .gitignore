@@ -80,3 +80,11 @@
 /SmartHive.InfoboardSvc/InfoboardSvc.Common.Data/InfoboardSvc.Common.Data.csproj.vspscc
 /SmartHive.InfoboardSvc/InfoboardSvc.Common/InfoboardSvc.Common.csproj.vspscc
 /SmartHive.InfoboardSvc/InfoboardSvc/DefaultScreenSaver.mp4
+/obj
+/packages
+/SmartSpaces
+/Smarthive.TelemetryProcessing
+/docker-compose.dcproj
+/docker-compose.override.yml
+/docker-compose.yml
+/.dockerignore
