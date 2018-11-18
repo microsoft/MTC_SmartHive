@@ -27,7 +27,7 @@ namespace InfoboardSvc.WebJob
         /***
          * https://github.com/Azure/azure-webjobs-sdk/wiki/EventHub-support
          */
-        public static void HandleSensorsTelemetry([EventHubTrigger("YOUREVENTHUBNAME",ConsumerGroup = "YOURCONSUMERGROUPNAME")] EventData[] messages)
+        public static void HandleSensorsTelemetry([EventHubTrigger("%EVENTHUBNAME%",ConsumerGroup = "%CONSUMERGROUPNAME%")] EventData[] messages)
         {
             string instrumentationKey = ConfigurationManager.AppSettings["Microsoft.ApplicationInsights.Key"];
             TelemetryClient telemetry = null;
