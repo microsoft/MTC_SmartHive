@@ -1,0 +1,45 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Sensors.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Sensor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sensor.Id" />
+            <div class="form-group">
+                <label asp-for="Sensor.RoomId" class="control-label"></label>
+                <select asp-for="Sensor.RoomId" class="form-control" asp-items="ViewBag.RoomId"></select>
+                <span asp-validation-for="Sensor.RoomId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sensor.Telemetry" class="control-label"></label>
+                <select asp-for="Sensor.Telemetry" class="form-control" asp-items="ViewBag.Telemetry"></select>
+                <span asp-validation-for="Sensor.Telemetry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sensor.DeviceId" class="control-label"></label>
+                <select asp-for="Sensor.DeviceId" class="form-control" asp-items="ViewBag.DeviceId"></select>
+                <span asp-validation-for="Sensor.DeviceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

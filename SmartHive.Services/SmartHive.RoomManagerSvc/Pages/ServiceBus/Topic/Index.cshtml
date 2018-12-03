@@ -1,0 +1,54 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.ServiceBus.Topic.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceBusTopic[0].TopicName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceBusTopic[0].SasKeyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceBusTopic[0].SasKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceBusTopic[0].NamespaceNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ServiceBusTopic) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SasKeyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SasKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamespaceNavigation.Namespace)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TopicId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TopicId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TopicId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

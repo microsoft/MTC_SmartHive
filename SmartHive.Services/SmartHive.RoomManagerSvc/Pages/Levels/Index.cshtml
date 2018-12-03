@@ -1,0 +1,54 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Levels.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Level[0].LevelNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level[0].LevelCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level[0].LevelMapUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level[0].Office)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Level) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LevelNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LevelCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LevelMapUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Office.OfficeAddress)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LevelId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.LevelId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LevelId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

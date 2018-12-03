@@ -1,0 +1,54 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Offices.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Office[0].OfficeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Office[0].OfficeAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Office[0].Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Office[0].Longitude)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Office) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OfficeId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.OfficeId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OfficeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

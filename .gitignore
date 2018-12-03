@@ -92,3 +92,7 @@
 /SmartHive.AzureDeployment
 /SmartHive.InfoboardSvc/WebJob1
 /SmartHive.InfoboardSvc/InfoboardSvc.WebJob/bin/Debug
+*.Development.json
+/SmartHive.Services/SmartHive.IoTHubSvc/appsettings.Development.json
+/SmartHive.Services/SmartHive.RoomManagerSvc/appsettings.Development.json
+/SmartHive.Services/SmartHive.ServiceBusSvc/appsettings.Development.json

@@ -1,0 +1,49 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Devices.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Device</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Device.DeviceId" class="control-label"></label>
+                <input asp-for="Device.DeviceId" class="form-control" />
+                <span asp-validation-for="Device.DeviceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Device.RoomId" class="control-label"></label>
+                <input asp-for="Device.RoomId" class="form-control" />
+                <span asp-validation-for="Device.RoomId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Device.Name" class="control-label"></label>
+                <input asp-for="Device.Name" class="form-control" />
+                <span asp-validation-for="Device.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Device.Description" class="control-label"></label>
+                <input asp-for="Device.Description" class="form-control" />
+                <span asp-validation-for="Device.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

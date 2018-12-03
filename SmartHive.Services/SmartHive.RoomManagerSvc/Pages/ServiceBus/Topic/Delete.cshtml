@@ -1,0 +1,46 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.ServiceBus.Topic.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ServiceBusTopic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.TopicName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.TopicName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.SasKeyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.SasKeyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.SasKey)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.SasKey)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.NamespaceNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.NamespaceNavigation.Namespace)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ServiceBusTopic.TopicId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,46 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Levels.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Level</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Level.LevelNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Level.LevelNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Level.LevelCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Level.LevelCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Level.LevelMapUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Level.LevelMapUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Level.Office)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Level.Office.OfficeAddress)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Level.LevelId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Devices.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Device</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.RoomId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Device.RoomId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Device.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Device.Description)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Device.DeviceId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

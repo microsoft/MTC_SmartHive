@@ -1,0 +1,43 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.ServiceBus.Topic.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ServiceBusTopic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.TopicName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.TopicName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.SasKeyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.SasKeyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.SasKey)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.SasKey)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceBusTopic.NamespaceNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceBusTopic.NamespaceNavigation.Namespace)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ServiceBusTopic.TopicId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

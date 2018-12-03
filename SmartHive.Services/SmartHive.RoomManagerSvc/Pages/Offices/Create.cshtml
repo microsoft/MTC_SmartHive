@@ -1,0 +1,54 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Offices.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Office</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Office.OfficeId" class="control-label"></label>
+                <input asp-for="Office.OfficeId" class="form-control" />
+                <span asp-validation-for="Office.OfficeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Office.OfficeCode" class="control-label"></label>
+                <input asp-for="Office.OfficeCode" class="form-control" />
+                <span asp-validation-for="Office.OfficeCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Office.OfficeAddress" class="control-label"></label>
+                <input asp-for="Office.OfficeAddress" class="form-control" />
+                <span asp-validation-for="Office.OfficeAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Office.Latitude" class="control-label"></label>
+                <input asp-for="Office.Latitude" class="form-control" />
+                <span asp-validation-for="Office.Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Office.Longitude" class="control-label"></label>
+                <input asp-for="Office.Longitude" class="form-control" />
+                <span asp-validation-for="Office.Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,50 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Levels.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Level</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Level.LevelId" />
+            <div class="form-group">
+                <label asp-for="Level.OfficeId" class="control-label"></label>
+                <select asp-for="Level.OfficeId" class="form-control" asp-items="ViewBag.OfficeId"></select>
+                <span asp-validation-for="Level.OfficeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level.LevelNumber" class="control-label"></label>
+                <input asp-for="Level.LevelNumber" class="form-control" />
+                <span asp-validation-for="Level.LevelNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level.LevelCode" class="control-label"></label>
+                <input asp-for="Level.LevelCode" class="form-control" />
+                <span asp-validation-for="Level.LevelCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level.LevelMapUrl" class="control-label"></label>
+                <input asp-for="Level.LevelMapUrl" class="form-control" />
+                <span asp-validation-for="Level.LevelMapUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

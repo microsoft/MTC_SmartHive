@@ -1,0 +1,48 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Levels.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Level</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Level.LevelId" class="control-label"></label>
+                <input asp-for="Level.LevelId" class="form-control" />
+                <span asp-validation-for="Level.LevelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level.OfficeId" class="control-label"></label>
+                <select asp-for="Level.OfficeId" class ="form-control" asp-items="ViewBag.OfficeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level.LevelNumber" class="control-label"></label>
+                <input asp-for="Level.LevelNumber" class="form-control" />
+                <span asp-validation-for="Level.LevelNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level.LevelCode" class="control-label"></label>
+                <input asp-for="Level.LevelCode" class="form-control" />
+                <span asp-validation-for="Level.LevelCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

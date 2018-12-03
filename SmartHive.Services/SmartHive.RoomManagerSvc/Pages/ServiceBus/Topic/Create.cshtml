@@ -1,0 +1,53 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.ServiceBus.Topic.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>ServiceBusTopic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServiceBusTopic.TopicId" class="control-label"></label>
+                <input asp-for="ServiceBusTopic.TopicId" class="form-control" />
+                <span asp-validation-for="ServiceBusTopic.TopicId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceBusTopic.Namespace" class="control-label"></label>
+                <select asp-for="ServiceBusTopic.Namespace" class ="form-control" asp-items="ViewBag.Namespace"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceBusTopic.TopicName" class="control-label"></label>
+                <input asp-for="ServiceBusTopic.TopicName" class="form-control" />
+                <span asp-validation-for="ServiceBusTopic.TopicName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceBusTopic.SasKeyName" class="control-label"></label>
+                <input asp-for="ServiceBusTopic.SasKeyName" class="form-control" />
+                <span asp-validation-for="ServiceBusTopic.SasKeyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceBusTopic.SasKey" class="control-label"></label>
+                <input asp-for="ServiceBusTopic.SasKey" class="form-control" />
+                <span asp-validation-for="ServiceBusTopic.SasKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

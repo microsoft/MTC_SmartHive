@@ -1,0 +1,48 @@
+﻿@page
+@model SmartHive.RoomManagerSvc.Pages.Sensors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sensor[0].Device)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sensor[0].Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sensor[0].TelemetryNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sensor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Device.DeviceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.ExchangeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelemetryNavigation.Telemetry1)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

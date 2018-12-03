@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/SmartHive.RoomManagerSvc/SmartHive.RoomManagerSvc.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "buildForDebug",            
+            "args": [
+                "./scripts/dockerTask.sh",
+                "buildForDebug"
+            ],
+            "group": "build",
+            "showOutput": "always"
+        }
+    ]
+}

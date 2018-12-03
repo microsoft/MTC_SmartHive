@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8b8a0bab-c34d-43bf-b8f9-aeeffddd8c6e" ChangeDateTime="08/10/2018 11:38:02">
+    <Property Name="ElementName" Value="[dbo].[Office].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Office]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OfficeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e28dfa7e-2e99-4934-a86a-566ae72e5cef" ChangeDateTime="08/10/2018 11:44:43">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LevelId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c5a6f358-7b5c-4c49-8a4d-0c862162d78c" ChangeDateTime="08/10/2018 11:52:14">
+    <Property Name="ElementName" Value="[dbo].[Room].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Room]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoomId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81971428-1c7d-41f9-8592-16b617475883" ChangeDateTime="08/10/2018 11:57:13">
+    <Property Name="ElementName" Value="[dbo].[ServiceBusTopic].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ServiceBusTopic]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ServiceBusTopic" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2340bcb9-baa1-49ce-b79d-c5180ba8f1ed" ChangeDateTime="08/10/2018 11:57:38">
+    <Property Name="ElementName" Value="[dbo].[ServiceBusTopic].[ServiceBusTopic]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ServiceBusTopic]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TopicName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="22dc6194-08a8-4c1e-b998-24ec123690bb" ChangeDateTime="08/10/2018 11:58:02">
+    <Property Name="ElementName" Value="[dbo].[ServiceBusTopic].[Key]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ServiceBusTopic]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SasKeyName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1be2d17a-999c-41ca-8f28-3ac18f2a1a9b" ChangeDateTime="08/10/2018 12:18:55">
+    <Property Name="ElementName" Value="[dbo].[ServiceBusNamespace].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ServiceBusNamespace]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Namespace" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0e83eab5-ff89-4233-9c65-02a969fa5d3d" ChangeDateTime="08/15/2018 13:40:49">
+    <Property Name="ElementName" Value="[dbo].[DeviceSettings].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DeviceSettings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DeviceId" />
+  </Operation>
+</Operations>
