@@ -211,10 +211,6 @@
     <Content Include="rooms.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Properties\webjobs-list.json" />
     <Content Include="Areas\HelpPage\Views\Web.config">
       <SubType>Designer</SubType>
@@ -245,6 +241,10 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Properties\PublishProfiles\MTCScheduleBoard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\MTCScheduleBoard - Web Deploy.pubxml" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
