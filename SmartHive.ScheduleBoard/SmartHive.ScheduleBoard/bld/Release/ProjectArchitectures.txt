@@ -1,2 +1,0 @@
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.CloudConnection\SmartHive.CloudConnection.csproj;neutral
-C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard.jsproj;neutral

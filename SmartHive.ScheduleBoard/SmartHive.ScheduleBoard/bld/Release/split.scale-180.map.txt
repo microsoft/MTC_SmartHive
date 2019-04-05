@@ -1,8 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.scale-180"
-"ResourceDimensions"		"scale-180"
-
-[Files]
-"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\split.scale-180.pri"			"resources.pri"
-"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\images\storelogo.scale-180.png"			"images\storelogo.scale-180.png"
-"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\PackageLayout\images\BadgeLogo.scale-180.png"			"images\BadgeLogo.scale-180.png"

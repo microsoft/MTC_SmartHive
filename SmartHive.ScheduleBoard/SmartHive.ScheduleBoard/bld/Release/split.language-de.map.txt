@@ -1,6 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.language-de"
-"ResourceDimensions"		"language-de"
-
-[Files]
-"C:\PROJECTS\SmartHive\SmartHive.ScheduleBoard\SmartHive.ScheduleBoard\bld\Release\split.language-de.pri"			"resources.pri"
