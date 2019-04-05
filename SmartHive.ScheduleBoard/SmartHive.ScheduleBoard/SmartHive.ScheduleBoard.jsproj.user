@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+    <MachineName>10.101.50.62</MachineName>
+    <DebuggerType>Script</DebuggerType>
+    <RequireAuthentication>false</RequireAuthentication>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ReferenceCachePath>C:\Users\makhlu.EUROPE\AppData\Local\Temp\SmartHive.ScheduleBoard_refcache</ReferenceCachePath>
+    <AppxPackageIsForStore>True</AppxPackageIsForStore>
+    <AppxShowAllApps>True</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerType>ManagedOnly</DebuggerType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <MachineName>10.101.50.62</MachineName>
+    <RequireAuthentication>false</RequireAuthentication>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

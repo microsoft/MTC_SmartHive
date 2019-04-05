@@ -96,3 +96,11 @@
 /SmartHive.Services/SmartHive.IoTHubSvc/appsettings.Development.json
 /SmartHive.Services/SmartHive.RoomManagerSvc/appsettings.Development.json
 /SmartHive.Services/SmartHive.ServiceBusSvc/appsettings.Development.json
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/bin/Release
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/bld/Release
+/SmartHive.ScheduleBoard/packages
+/SmartHive.ScheduleBoard/.vs/config
+/SmartHive.ScheduleBoard/Backup/GalaSoft.MvvmLight.Win8
+/SmartHive.ScheduleBoard/SmartHive.ScheduleBoard/BundleArtifacts
+/SmartHive.ScheduleBoard/SmartHive.CloudConnection/bin/Release
+/SmartHive.ScheduleBoard/SmartHive.CloudConnection/obj/Release
