@@ -105,6 +105,7 @@
     <Content Include="js\Footer.js" />
     <Content Include="js\Header.js" />
     <Content Include="js\jquery.tmpl.min.js" />
+    <Content Include="js\js\ai.0.js" />
     <Content Include="js\js\Interactivity.1.0.js" />
     <Content Include="js\SettingsFlyout-Design.js" />
     <Content Include="js\ToastHelper.js" />
@@ -147,8 +148,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartHive.CloudConnection\SmartHive.CloudConnection.csproj">
-		<Properties>SkipValidatePackageReferences=true</Properties>
-	</ProjectReference>	
+      <Properties>SkipValidatePackageReferences=true</Properties>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

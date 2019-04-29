@@ -5,7 +5,7 @@ var MtcScheduleBoard = MtcScheduleBoard || {}; // Define global namespace
 
 (function () {
     "use strict";    
-var promises = [];
+
     WinJS.Binding.optimizeBindingReferences = true;
 
     var app = WinJS.Application;
@@ -423,10 +423,9 @@ var promises = [];
                             }, 10 * 1000);
                             
                         },
-                        videoDownloadError.bind(),
-                        function () {
-                            MtcScheduleBoard.UI.StatusControl.pageStatusControl.videoDownloadProgress();
-                        }
+                        videoDownloadError.bind(promise), // On download error handler
+                        MtcScheduleBoard.UI.StatusControl.pageStatusControl.videoDownloadProgress.bind() // Ondownload status update 
+                        
                 ).done(function () {
                     untrackPromise(promise);
                     MtcScheduleBoard.UI.StatusControl.trackAppInsightsEvent("video downloaded");                    
@@ -435,15 +434,18 @@ var promises = [];
 
     }
 
-    function cssDownloadError(err) {
-
+    function cssDownloadError(err) {        
         setTimeout(startCssDownload, 1 * 60 * 1000); //repeat css download in one minute
-
+        MtcScheduleBoard.UI.StatusControl.trackAppInsightsEvent("css download error");
         throw new WinJS.ErrorFromName("CSS downlaod error", "Http Error:" + err.status + " for " + MtcScheduleBoard.Data.Settings.Css);
 
     }
 
     function videoDownloadError(err) {
+        MtcScheduleBoard.UI.StatusControl.trackAppInsightsEvent("video download error");
+        var promise = this;
+        untrackPromise(promise);
+        downloader = null;
         var status = Windows.Networking.BackgroundTransfer.BackgroundTransferError.getStatus(err.number);
 
         setTimeout(startScreenSaverVideoDownload, 1 * 60 * 1000); //repeat video download in one minute
