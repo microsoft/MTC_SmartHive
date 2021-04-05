@@ -1,3 +1,6 @@
+THIS REPO HAS BEEN ARCHIVED AND IS NO LONGER MAINTAINED April 5, 2021
+
+
 SmartHive is smart meeting room solution for enterprise. 
 <ul>
   <li>Smart hive makes room usage efficient and transparent.</li>
